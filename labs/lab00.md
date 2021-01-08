@@ -41,7 +41,7 @@ Please follow these instructions
     - Enter the name `csci-476-594-spring2021-private`
     - Select `Private`
     - Navigate to the `Settings` >> `Manage Access` section
-    - Add {{site.data.settings.github}} as a collaborator
+    - Add {{site.data.settings.github}} and {{site.data.settings.tagithub}} as a collaborator
 
 Once your repository is initialized, you can pull it down to your local machine.
 Instructions can be found on the home page of your new repository.
@@ -173,4 +173,3 @@ Please submit your assignment via your **private** GitHub repository. Specifical
   - A screenshot verifying your response to the questionnaire.
   - A screenshot verifying your SEED VM is setup and running on your machine.
   - Please write 3 brief _lessons learned_ from the Tasks and/or review in this assignment.
-- Make sure you have added {{site.data.settings.github}} as a collaborator to your project so we can access your submission.
