@@ -30,10 +30,10 @@ officehours: '<a target="_blank" href="https://zoom.us/j/94923050762?pwd=bVhWZlF
 tagithub: 'sammgithub'
 tagithub: '<a target="_blank" href="https://github.com/sammgithub/">sammgithub</a>'
 ta: 'Seraj Mostafa'
-taemail: <a target="_blank" href="mailto:serajmostafa@montana.edu?subject=CS 476 Help">serajmostafa@montana.edu</a>'
+taemail: '<a target="_blank" href="mailto:serajmostafa@montana.edu?subject=CS 476 Help">serajmostafa@montana.edu</a>'
 taoffice: '' #'<a target="_blank" href="https://www.montana.edu/calendar/locations.php?building=342">NAH 253</a>'
-taofficehours: <a target="_blank" href="https://montana-student.webex.com/meet/serajmostafa">(W) 2:10-4pm, and by appointment (via WebEx)</a>'
-tawebexlink: 'https://montana-student.webex.com/meet/serajmostafa'
+taofficehours: '<a target="_blank" href="https://montana-student.webex.com/meet/serajmostafa">(W) 2:10-4pm, and by appointment (via WebEx)</a>'
+tahelplink: 'https://montana-student.webex.com/meet/serajmostafa'
 
 # Course-specific variables
 title: 'Computer Security'

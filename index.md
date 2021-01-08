@@ -7,6 +7,7 @@ layout: default
 
 <div class="col-md-3 order-2 mt-3" markdown="1">
 {% include contact.html %}
+{% include contactTA.html %}
 </div>
 
 {%comment%}
@@ -35,7 +36,7 @@ _>> Course dates: {{ site.data.settings.dates }}_{:.text-muted} <br/>
 
 ##### Office Hours / People / Getting Help
 <i class="fas fa-external-link-alt"></i> [Travis's Office Hours (Zoom)]({{site.data.settings.zoomhelplink}}) *>> A virtual meeting place for Travis's office hours*{:.text-muted} <br/>
-<i class="fas fa-external-link-alt"></i> [TA Office Hours (Zoom)]({{site.data.settings.zoomhelplink}}) *>> A virtual meeting place for TA office hours*{:.text-muted} <br/>
+<i class="fas fa-external-link-alt"></i> [TA Office Hours (WebEx)]({{site.data.settings.tahelplink}}) *>> A virtual meeting place for TA office hours*{:.text-muted} <br/>
 <i class="fas fa-external-link-alt"></i> [CS Student Success Center]({{site.data.settings.ssclink}}) *>> Get help from TAs and peers*{:.text-muted} <br/>
 
 ##### Links
