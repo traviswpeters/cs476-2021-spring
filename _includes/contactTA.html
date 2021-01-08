@@ -1,0 +1,30 @@
+<!-- contact info -->
+<div class="card shadow">
+
+  <img class="card-img-top m-0" src="{{ site.baseurl }}/assets/ta.png" alt="Card image" style="width:100%">
+
+  <div class="card-body p-2" markdown="1">
+  **TA**
+  {:.pb-2 .m-0 .text-center}
+  <div class="row small">
+   <div class="col-2 text-center"><i class="fas fa-user-circle"></i></div>
+   <div class="col p-0 m-0 pr-3">{{ site.data.settings.ta }}</div>
+  </div>
+  <div class="row small">
+   <div class="col-2 text-center"><i class="fas fa-envelope"></i></div>
+   <div class="col p-0 m-0 pr-3 text-truncate">{{ site.data.settings.taemail }}</div>
+  </div>
+  {%comment%}
+  <div class="row small">
+   <div class="col-2 text-center"><i class="fas fa-map-pin"></i></div>
+   <div class="col p-0 m-0 pr-3">{{ site.data.settings.taoffice }}</div>
+  </div>
+  {%endcomment%}
+  <div class="row small">
+   <div class="col-2 text-center"><i class="fas fa-clock"></i></div>
+   <div class="col p-0 m-0 pr-3">{{ site.data.settings.taofficehours }}</div>
+  </div>
+
+  </div>
+
+</div>

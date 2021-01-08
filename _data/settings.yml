@@ -1,0 +1,134 @@
+# NOTES FOR NEXT TIME
+# -------------------
+# pa0/
+# - reorder Task 8 to be the 1st task (git/github stuff should be setup immediately.)
+# - use GitHub Classrooms next time?!
+
+
+###
+### Website Settings
+### => NOTE: Access variables here with: {{site.data.settings.XXXXXXXXX}}
+###
+siteauthor: '[Travis Peters](https://www.traviswpeters.com/)'
+
+# --> baseurl set in _config.yml
+homeurl: https://www.traviswpeters.com/
+url: https://www.traviswpeters.com/476-2021-spring/
+githuburl: https://github.com/traviswpeters/cs476-2021-spring/
+
+# Instructor-specific variables
+school: 'Montana State University'
+img: 'assets/me.png'
+instructor: '<a target="_blank" href="https://www.traviswpeters.com/">Prof. Travis Peters</a>'
+github: '<a target="_blank" href="https://github.com/traviswpeters/">traviswpeters</a>'
+email: '<a target="_blank" href="mailto:travis.peters1@montana.edu?subject=CS 476 Help">travis.peters1@montana.edu</a>'
+office: '<a target="_blank" href="https://www.montana.edu/calendar/locations.php?building=342">NAH 253A</a>'
+officehours: '<a target="_blank" href="https://zoom.us/j/94923050762?pwd=bVhWZlFKc3JGRjRXUXd5Ri94QUtoUT09">(M) 2-4pm, (F) 11-12pm, and by appointment (via Zoom)</a>'
+#webexlink: 'https://montana.webex.com/meet/w52k448'
+
+# TA-specific variables
+ta: '' #'<a target="_blank" href="https://reesep.github.io">Reese Pearsall</a>'
+taemail: '' #'<a target="_blank" href="mailto:reese.pearsall@student.montana.edu?subject=CS 476 Help">reese.pearsall@student.montana.edu</a>'
+taoffice: '' #'<a target="_blank" href="https://www.montana.edu/calendar/locations.php?building=342">NAH 253</a>'
+taofficehours: '' #'<a target="_blank" href="https://montana.webex.com/meet/b37k331">(W) 10am-11am, (Th) 11am-12pm, and by appointment (via WebEx)</a>'
+tawebexlink: '' #'https://montana.webex.com/meet/b37k331'
+
+# Course-specific variables
+title: 'Computer Security'
+titlenum: 'CS 476'
+gradtitle: 'Advanced Security'
+gradtitlenum: 'CS 594'
+term: 'Spring 2021'
+hours: 'Tuesday/Thursday (3:05 &ndash; 4:20 p.m.)'
+dates: 'January 11, 2021 - April 30, 2021'
+finalexamdate: 'TBD' # https://www.montana.edu/registrar/Schedules.html
+
+# Textbook(s)
+textbook: 'Software Security: Principles, Policies, and Protection (SS3P). Mathias Payer (2019, v0.35)'
+textbooklink: 'files/textbook-softsec.pdf'
+textbookwebsite: 'https://nebelwelt.net/SS3P/'
+
+textbookss3pid: 'SS3P'
+textbookss3p: 'Software Security: Principles, Policies, and Protection (SS3P). Mathias Payer (2019, v0.35)'
+textbookss3plink: 'files/textbook-softsec.pdf'
+textbookss3pwebsite: 'https://nebelwelt.net/SS3P/'
+
+textbookseedid: 'SEED'
+textbookseed: 'Computer & Internet Security: A Hands-on Approach (2nd Edition). Wenliang Du (2019).'
+textbookseedlink: 'https://www.handsonsecurity.net'
+
+# Course Links
+questionnaire: '[Course Questionnaire](https://forms.gle/DM3MNeEpyZ95pg9b7)'
+d2l: '[D2L (476)](https://ecat.montana.edu/d2l/home/636105) / [D2L (594)](https://ecat.montana.edu/d2l/home/636053)'
+slack: '[Slack](https://join.slack.com/t/msucompsec2021/shared_invite/zt-kf2v5uxz-2cUyH0gCtZHWGjKUySsrIg)'
+gradescope: '[Gradescope](https://www.gradescope.com/courses/222589)'
+ssclink: 'https://www.cs.montana.edu/student-success-center.html'
+codelink: '#' #'https://github.com/traviswpeters/csci476-code'
+zoomlink: 'https://zoom.us/j/96227676994?pwd=cFNrRVM4NzhYZk5vL0ZEWlpqZk0rZz09' # class; no need to register...
+zoomhelplink: 'https://zoom.us/j/94923050762?pwd=bVhWZlFKc3JGRjRXUXd5Ri94QUtoUT09' # "other"; no need to register...
+
+# locations of things (notes, slides, etc.)
+slides: "files"
+notes: "files"
+reading: "files"
+solutions: "files"
+
+menu:
+# - {name: 'About', url: '#about-the-course'}
+- {name: 'Logistics', url: '#logistics-in-a-nutshell'}
+- {name: 'Schedule', url: '#schedule'}
+- {name: 'Grading', url: '#grading'}
+# - {name: 'Class (Zoom)', url: 'https://zoom.us/j/96227676994?pwd=cFNrRVM4NzhYZk5vL0ZEWlpqZk0rZz09', type: 'external'}
+# - {name: 'Office Hours (Zoom)', url: 'https://zoom.us/j/94923050762?pwd=bVhWZlFKc3JGRjRXUXd5Ri94QUtoUT09', type: 'external'}
+# - {name: 'Code (GitHub)', url: 'https://github.com/traviswpeters/csci476-code', type: 'external'}
+# - {name: 'Labs', url: '#labs'}
+- {name: 'Assignments', url: '#assignments'}
+#- {name: 'Project', url: 'project'}
+- {name: 'FAQs', url: '#faqs'}
+- {name: '|', url: '|'} # hacky menu divider
+- {name: 'Lab Info & Tips', url: 'labs'}
+- {name: 'Resources', url: 'resources'}
+# - {name: 'COVID-19 Info', url: 'covid19'}
+
+# SEED LINKS
+seedlabs: 'https://seedsecuritylabs.org/Labs_16.04/'
+seedcode: '<i class="fas fa-external-link-alt"></i> [CSCI 476 Code](https://github.com/traviswpeters/csci476-code)' # my fork
+
+# solo assignments
+assignments:
+  pa0:
+    show: True
+    name: 'PA0: Getting Started'
+    url: 'pa0'
+    duedate: 'Sunday [09/06/2020] @ 11:59 PM (MST)'
+  pa1:
+    show: True
+    name: ''
+    url: ''
+    duedate: 'TBD'
+  pa2:
+    show: True
+    name: ''
+    url: ''
+    duedate: 'TBD'
+
+# group assignments
+# groupassignments:
+#   pa3:
+#     show: False
+#     name: ''
+#     url: ''
+#     duedate: ''
+
+project:
+  link: 'project'
+  teamslink: '' # sign-up, peer eval assignments, etc.
+  presentationslink: 'project/teams.html'
+  rubricpdf:  'project/rubric.pdf'
+  due-proposal: 'TBD'
+  due-presentation: 'TBD'
+  due-final: 'TBD'
+  due-evaluations: 'TBD'
+  self-eval-link: 'TBD'
+  team-eval-link: 'TBD'
+  presentation-eval-link: 'TBD'

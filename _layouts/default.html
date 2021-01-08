@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+{% include head.html %}
+
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid col-sm-11 p-4 mb-4">
+<div class="row flex-xl-nowrap m-0">
+
+<div class="d-none d-xl-block col-xl-2">
+</div>
+
+<div class="col-12 col-md-12 col-xl-8 bg-white rounded shadow-lg pb-4">
+{% include header.html %}
+{{ content }}
+{% include footer.html %}
+</div>
+
+<div class="d-none d-xl-block col-xl-2">
+    {% if page.disableNav %}
+    <!-- no interactive nav bar -->
+    {% else %}
+    <nav id="toc" data-toggle="toc" class="sticky-top"></nav>
+    {% endif %}
+</div>
+
+</div>
+</div>
+
+<!-- Optional JavaScript for Bootstrap - jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+<script src="{{ site.baseurl }}/assets/js/prism.js"></script>
+
+<!-- Calendly badge widget begin -->
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+<script type="text/javascript">Calendly.initBadgeWidget({ url: 'https://calendly.com/travis-peters', text: 'Schedule time with me', color: '#00a2ff', textColor: '#ffffff', branding: true });</script>
+<!-- Calendly badge widget end -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    /*
+     * class hacking: add bootstrap/bootswatch class labels to my custom classes (notes, slides, etc.)
+     */
+
+    // admin styles
+    $('.new').addClass('badge badge-pill badge-primary');
+    $('.announcement').addClass('alert alert-primary').prepend('<h4 class="alert-heading">Class Announcement!</h4>');
+    $('.timestamp').prepend('&mdash;Posted ');
+
+    // add icons / style class elements...
+    $( ".activity" ).each(function(index) {
+        $(this).html('<i class="far fa-lightbulb"></i> ' +$(this).html()+ '' );
+    });
+    $( ".code" ).each(function(index) {
+        $(this).html('<i class="far fa-file-code"></i> ' +$(this).html()+ '' );
+    });
+    $( ".slides" ).each(function(index) {
+        $(this).html('<i class="far fa-file-pdf pl-1"></i> ' +$(this).html()+ '' );
+    });
+    $( ".pdf" ).each(function(index) {
+        $(this).html('<i class="far fa-file-pdf"></i> ' +$(this).html()+ '' );
+    });
+    $( ".video" ).each(function(index) {
+        $(this).html('<i class="far fa-play-circle pl-1"></i> ' +$(this).html()+ '' );
+        $(this).attr('target', '_blank');
+    });
+
+    // add links to all section headers...
+    $( ":header" ).each(function(index) {
+      var attr = $(this).attr('id');
+      if (typeof attr !== typeof undefined && attr !== false) {
+        $(this).html( '<a href="#' + attr + '">' +$(this).html()+ ' </a>' );
+      }
+    });
+
+    // add links to weeks on schedule
+    $('td[id^="week"]').filter(function () {
+        $(this).html(function(index, text){
+            return '<a href="#' + text.toLowerCase().replace(' ', '') + '"><strong>' + text + '</strong></a>';
+        });
+    });
+
+    // use javascript to detect all external links and add the target='_blank' attribute to them.
+    // -> thanks, https://code.luasoftware.com/tutorials/hugo/how-to-create-link-with-target-blanks-in-hugo-markdown/
+    var links = document.getElementsByTagName("a");
+    for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+        if (links[i].hostname != window.location.hostname) {
+            links[i].target = '_blank';
+        }
+    }
+
+});
+</script>
+
+{% include mathjax.html %}
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+.DS_Store
+.sass-cache/
+_site/
+.jekyll-metadata
+.jekyll-cache/
+
+# ignore code, which I like to store in a directory internal to this website.
+code
+
+# specific executables
+files/SLIDES
+
+# don't ignore some specific files (e.g., for easy distribution)
