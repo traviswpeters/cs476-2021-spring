@@ -8,12 +8,11 @@ published: False
 duedate: 'TBD'
 ---
 
-## {{page.title}}
-{:.titletext}
-SEED Lab: A Hands-on Lab for Security Education
-{:.subtitletext}
+# {{page.title}}
+##### Due: {{ page.duedate }}
+{:.text-center .pt-0 .m-0}
 
-### Overview
+## Overview
 
 A secure one-way hash function needs to satisfy two properties: (1) the one-way property and (2) the collision-resistance property.
 The _**one-way property**_ ensures that given a hash value $$h$$, it is computationally infeasible to find an input $$M$$, such that $$hash(M) = h$$.
@@ -45,7 +44,7 @@ This lab covers the following topics:
 - Chapter 22 in {{ site.data.settings.textbook }}
 - A tool for [Fast MD5 Collision Generation](https://www.win.tue.nl/hashclash/): `md5collgen` _(installed already on the 16.04 SEED VM)_
 
-### Tasks
+## Tasks
 {:.titletext}
 This lab has been tested on the pre-built [SEEDUbuntu16.04 VM](https://seedsecuritylabs.org/lab_env.html).
 {:.subtitletext}

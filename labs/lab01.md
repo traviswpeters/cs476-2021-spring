@@ -8,10 +8,9 @@ published: False
 duedate: 'TBD'
 ---
 
-## {{page.title}}
-{:.titletext}
-SEED Lab: A Hands-on Lab for Security Education
-{:.subtitletext}
+# {{page.title}}
+##### Due: {{ page.duedate }}
+{:.text-center .pt-0 .m-0}
 
 ### Overview
 

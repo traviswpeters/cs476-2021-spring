@@ -39,7 +39,9 @@ Any submissions found in violation will receive an automatic 0, and the miscondu
 <!-- At the top of each README include, at a minimum: -->
 
 > **Title of Lab**  
-> **First Name**, **Last Name**, **NetID** **(NOT GID)**, **preferred email address**  
+> **FirstName** **LastName**, **NetID** << NOT GID!  
+> **Preferred Email Address**  
+> **CSCI 476 or CSCI 594** << depending on the section you are enrolled in   
 > **Date**
 
 > **Task 1**  

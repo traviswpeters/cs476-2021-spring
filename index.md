@@ -222,7 +222,7 @@ _Stay tuned for more information coming soon..._
 {% for page in sorted_pages %}
 {% for tag in page.tags %}
 {% if tag == "labs" %}
-- [{{page.title}}]({{site.baseurl}}/{{page.url}}) _>> Due: **{{page.duedate}}**_{:.text-muted .ml-2}
+- [{{page.title}}]({{site.baseurl}}{{page.url}}) _>> Due: **{{page.duedate}}**_{:.text-muted .ml-2}
   {:.m-0 .p-0}
 {% endif %}
 {% endfor %}

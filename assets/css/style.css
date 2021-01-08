@@ -40,7 +40,8 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     text-align: center;
-    padding-bottom: 0.85rem;
+    padding-top: 0.85rem;
+    padding-bottom: 0.15rem;
 }
 
 h2 {
