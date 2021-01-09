@@ -567,6 +567,8 @@ Alternatively, checkout resources from
 [FreeCodeCamp's List of 500 Free Computer Science Courses from the World’s Top CS Universities](https://www.freecodecamp.org/news/free-courses-top-cs-universities/)
 or specific online learning platforms such as [Coursera](https://www.coursera.org), [Udemy](https://www.udemy.com), [edX](https://www.edx.org), or [Khan    Academy](https://www.khanacademy.org) (to name a few).
 
+Feel free to touch base as we get into the semester to discuss any concepts that are unclear.
+
 ###### Q: Help! This stuff is hard... How can I get help in this class?
 {:.mb-1}
 
