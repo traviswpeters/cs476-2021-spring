@@ -553,6 +553,20 @@ Why not introduce one of the most powerful and popular ones used today while you
 
 {% endcomment %}
 
+###### Q: I don't have all of the required/recommended prerequisites - can I take this class?
+{:.mb-1}
+
+I'm typically supportive of students that wish to enroll in the course even if they do not satisfy all of the recommended prerequisites,
+so long as you understand that you may need to talk with me and/or do additional work independently to make sure you are adequately prepared for assignments.
+
+If you haven't taken one of the recommended prerequisites,
+  you might consider looking over resources from a recent offering of that class here at MSU or online elsewhere.
+For example, [review the faculty at MSU](https://www.cs.montana.edu/directory/) - if you click into their faculty page (and perhaps their websites) you can see the courses they've recently taught;
+they likely have links to past classes that are available or you can contact them to inquire further.
+Alternatively, checkout resources from
+[FreeCodeCamp's List of 500 Free Computer Science Courses from the World’s Top CS Universities](https://www.freecodecamp.org/news/free-courses-top-cs-universities/)
+or specific online learning platforms such as [Coursera](https://www.coursera.org), [Udemy](https://www.udemy.com), [edX](https://www.edx.org), or [Khan    Academy](https://www.khanacademy.org) (to name a few).
+
 ###### Q: Help! This stuff is hard... How can I get help in this class?
 {:.mb-1}
 
