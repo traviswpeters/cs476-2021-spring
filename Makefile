@@ -56,7 +56,7 @@ release:
 
 .PHONY: work # -> open course-related slides, admin folders, and code
 work:
-	-open $(ADMIN) # iCloud stuff (slides, etc.)
+	-open $(ADMIN)/../.. # iCloud stuff (slides, etc.)
 	-open $(ADMINREPO) # admin (solutions, exams, etc.)
 	-open $(CODE) # public code
 	-open $(WEBSITE) # Website

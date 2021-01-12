@@ -45,7 +45,7 @@ _>> Course dates: {{ site.data.settings.dates }}_{:.text-muted} <br/>
 <i class="fas fa-external-link-alt"></i> [Code]({{site.data.settings.codelink}}) *>> All of the code from class (on GitHub)*{:.text-muted} <br/>
 <i class="fas fa-external-link-alt"></i> {{site.data.settings.slack}} *>> For all course-related communications*{:.text-muted} <br/>
 <i class="fas fa-external-link-alt"></i> {{site.data.settings.d2l}} *>> For tracking course grades, etc.*{:.text-muted} <br/>
-<i class="fas fa-external-link-alt"></i> {{site.data.settings.gradescope}} *>> For submitting and grading exams, providing exam feedback, etc.*{:.text-muted} <br/>
+<!-- <i class="fas fa-external-link-alt"></i> {{site.data.settings.gradescope}} *>> For submitting and grading exams, providing exam feedback, etc.*{:.text-muted} <br/> -->
 
 ## Schedule
 {:.titletext}
@@ -79,40 +79,66 @@ If you have any questions, please contact me.
 <!--   BLANK    --><td markdown="span" markdown="1"></td>
 </tr>
 
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
 <tr>
-<!-- Date -->
 <td markdown="span">01/12/2021 (T)</td>
-<!-- Topics & Lecture Details -->
 <td markdown="span" markdown="1">
 - Course Introduction & Roadmap
 <!-- - [video](){:.video} -->
 <!-- [slides](){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
-<!-- Assignments & Reading -->
 <td markdown="span" markdown="1">
 - Please fill out our {{site.data.settings.questionnaire}}!
 - Please sign-up for our course {{site.data.settings.slack}}!
 </td>
 </tr>
 
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
 <tr>
-<!-- Date Here -->
 <td markdown="span">01/14/2021 (R)</td>
-<!-- Topics & Lecture Details Here -->
+<td markdown="span" markdown="1">
+- Help Session
+</td>
+<td markdown="span" markdown="1">
+</td>
+</tr>
+
+<!-- ========================================= Week 02 ========================================= -->
+
+<tr>
+<!--   Week #   --><td id="week02" markdown="span">Week 02</td>
+<!-- Week Title --><td markdown="span" class="note">Review, Unix Security Basics</td>
+<!--   BLANK    --><td markdown="span" markdown="1"></td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">01/14/2021 (T)</td>
 <td markdown="span" markdown="1">
 - Review + Intro to Software/System Security + Unix Security Basics
 <!-- - [video](){:.video} -->
 <!-- [slides](){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
-<!-- Assignments & Reading Here -->
 <td markdown="span" markdown="1">
 - Read Chapters 1, 2 [(SS3P)]({{site.data.settings.textbookss3plink}})
 </td>
 </tr>
 
-<!-- ========================================= Week 02 ========================================= -->
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">01/14/2021 (R)</td>
+<td markdown="span" markdown="1">
+- TBD
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+</td>
+</tr>
+
 <!-- ========================================= Week 03 ========================================= -->
 <!-- ========================================= Week 04 ========================================= -->
 <!-- ========================================= Week 05 ========================================= -->
