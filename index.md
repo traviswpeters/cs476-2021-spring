@@ -91,6 +91,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 - Please fill out our {{site.data.settings.questionnaire}}!
 - Please sign-up for our course {{site.data.settings.slack}}!
+- [Lab 00](labs/lab00) Released!
 </td>
 </tr>
 
@@ -123,6 +124,7 @@ If you have any questions, please contact me.
 </td>
 <td markdown="span" markdown="1">
 - Read Chapters 1, 2 [(SS3P)]({{site.data.settings.textbookss3plink}})
+- [Lab 00](labs/lab00) Due!
 </td>
 </tr>
 
@@ -441,6 +443,10 @@ This is to align with the university’s stated expectations:
 _In synchronous online courses, students will be expected to participate in the class at the time it is offered.
 Provisions for participation through asynchronous viewing should not be expected by students.
 These standard expectations can be raised at the discretion of course instructors in ways that promote student success._
+
+> Per our in-class poll (1/12/2021), I (Travis) will plan to post recorded videos by default to this webpage so long as at least 80% of students are regularly attending.
+> If synchronous attendance drops below 80% I will stop posting videos by default.
+> Videos will still be available upon request.
 
 ###### Q: How will office hours be run?
 {:.mb-1}
