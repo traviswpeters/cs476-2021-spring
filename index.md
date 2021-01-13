@@ -84,8 +84,8 @@ If you have any questions, please contact me.
 <td markdown="span">01/12/2021 (T)</td>
 <td markdown="span" markdown="1">
 - Course Introduction & Roadmap
-<!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+- [video](https://zoom.us/rec/share/fg6CE1lch3TFSUxFPffD0xkg532B-lHowZtT0O1vq9V9NHtZaeysOIx9umzLMmdh.5IDXT1ASMGb9WCeB){:.video}
+[slides](files/cs476-01-intro.pdf){:.slides}
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
