@@ -75,7 +75,7 @@ touch .hushlogin
     Download our VM customizations file by running this command at the command line within the VM:
     ```bash
     curl https://www.traviswpeters.com/classes/vmcustomizations.txt?$(date +%s) -o .vmcustomizations
-    # NOTE: using unique query parameter to force curl/remote server/proxys to always do a fresh download
+    # NOTE: using unique query parameter to force curl/remote server/proxy servers to always do a fresh download
     ```
     You can re-download this file at anytime.
     Also, you can tweak the configuration to your liking.
