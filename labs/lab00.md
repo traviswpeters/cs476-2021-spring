@@ -85,6 +85,11 @@ git@github.com:studentIAm/csci-460-fall2020-private.git
 ```
 -->
 
+#### 2.4 (Bonus) Pro VM Configuration!
+{:.pt-1 .pb-1}
+
+Check out my tutorial for configuring [SSH access from your host (your physical computer) to your guest (the SEED VM)](../ssh)
+
 ## Task 3: VirtualBox & The SEED VM
 {:.pt-1}
 

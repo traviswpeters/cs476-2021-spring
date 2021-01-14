@@ -5,8 +5,7 @@ published: true
 
 ## SSH Into SEED VMs
 
-[<i class="fas fa-play-circle"></i> **Watch my video walkthrough online here!**](https://montana.techsmithrelay.com/fEM2)
-{:.text-center}
+> NOTE: [<i class="fas fa-play-circle"></i> **Watch my video walkthrough online here!**](https://montana.techsmithrelay.com/fEM2) This video is from spring 2020, but the ideas are the same.
 
 Many have asked how I SSH into the SEED VMs.
 Below is a summary of my approach.
@@ -54,3 +53,31 @@ Now you should be able to SSH into your VM with a simple command like this:
 ```bash
 ssh seed
 ```
+
+## Bonus Configuration
+
+None of the following configurations are required, but they are nice when you are working at the command line a lot.
+
+1. Disable the login banner when you SSH into the SEED VM by (1) SSH-ing into your VM, and (2) adding a special file to your home directory.
+```bash
+# At the command line within your SEED VM, run:
+cd ~
+touch .hushlogin
+```
+2. Add the following snippet to the end of the `~/.bashrc` file on the VM:
+    ```bash
+    # source our class customizations
+    if [ -f ~/.vmcustomizations ]; then
+        source ~/.vmcustomizations
+    fi
+    ```
+
+    Download our VM customizations file by running this command at the command line within the VM:
+    ```bash
+    curl -s https://www.traviswpeters.com/classes/vmcustomizations.txt -o .vmcustomizations
+    ```
+    You can re-download this file at anytime.
+    Also, you can tweak the configuration to your liking.
+    (Most of the configurations change the color profile used when running commands like `ls` at the command line, using `vim`, and change the prompt.)
+
+    You'll have to exit the VM and then SSH back in for the changes to take effect.
