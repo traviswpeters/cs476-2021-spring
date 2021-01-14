@@ -160,7 +160,11 @@ This file should be named `README.md` and it should be at the top-level director
 ## What To Turn In & Instructions On Submitting your Assignment
 {:.pt-1}
 
-Please submit your assignment via your **private** GitHub repository. Specifically,
+Please submit your assignment via your **private** GitHub repository.
+
+For general tips on how to write and format your submission, please see the [Lab Info & Tips page](../labs).
+
+Specifically,
 
 - Create a top-level `README.md` file (written in Markdown) in your private repo that has your
     - **FirstName** **LastName** (**NetID**)
@@ -173,6 +177,7 @@ Please submit your assignment via your **private** GitHub repository. Specifical
   > **NOTE:** While it may seem redundant, please always include the information requested above at the top of your README for each lab.
   > This makes things a lot easier for us when we need to dig into your repo to provide help and feedback specific to a lab.
 
-  - A screenshot verifying your response to the questionnaire.
-  - A screenshot verifying your SEED VM is setup and running on your machine.
-  - Please write 3 brief _lessons learned_ from the Tasks and/or review in this assignment.
+  - **1)** A screenshot verifying your response to the questionnaire.
+  - **2)** A screenshot verifying your SEED VM is setup and running on your machine.
+    > Ideally this should show that you have booted the VM and can login. It might be nice to show that you can find/open the terminal and run a command.
+  - **3)** Please write 3 brief _lessons learned_ from the Tasks and/or review in this assignment.
