@@ -51,6 +51,27 @@ release:
 	git push origin HEAD
 
 ######################################
+# SEED Helpers
+
+.PHONY: vmstart # -> start the primary SEED VM
+vmstart:
+	VBoxManage startvm "SEEDUbuntu20.04" --type headless && ssh seed
+
+.PHONY: vmstop # -> stop the primary SEED VM
+vmstop:
+	VBoxManage controlvm "SEEDUbuntu20.04" poweroff
+
+.PHONY: vmlist # -> see which VMs exist, and which VMs are running
+vmlist:
+	@echo "Available VMs:"
+	@echo "-----------------"
+	@VBoxManage list vms
+	@echo
+	@echo "Running VMs:"
+	@echo "-----------------"
+	@VBoxManage list runningvms
+
+######################################
 # Misc. Helpers
 # ~~> You can safely ignore these...
 
