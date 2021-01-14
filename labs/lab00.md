@@ -158,9 +158,7 @@ This file should be named `README.md` and it should be at the top-level director
 Please submit your assignment via your **private** GitHub repository. Specifically,
 
 - Create a top-level `README.md` file (written in Markdown) in your private repo that has your
-    - **First Name**,
-    - **Last Name**,
-    - **NetID**,
+    - **FirstName** **LastName** (**NetID**)
     - **CSCI 476** or **CSCI 594** (depending on which section you are enrolled in)
     - A good **Email Address** for you.
 - Create a `lab00/` directory for this assignment.
