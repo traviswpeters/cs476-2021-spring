@@ -106,6 +106,10 @@ By the end of this task you should have a fully functional VM where you can run 
      - Unzip it, and you should be able to see a folder.
      - Then follow the ["Install SEED VM on VirtualBox" manual](https://github.com/seed-labs/seed-labs/blob/master/manuals/vm/seedvm-manual.md).
 
+##### Troubleshooting
+
+1. If you have issues regarding the NatNetwork, check out Appendix B from this older manual: [SEED VM 16.04 Manual](https://seedsecuritylabs.org/Labs_16.04/Documents/SEEDVM_VirtualBoxManual.pdf).
+
 ## Task 4: Course Questionnaire
 {:.pt-1}
 
