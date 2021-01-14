@@ -40,7 +40,7 @@ ssh -i ~/.ssh/myseedkey seed@127.0.0.1 -p PORT
 Once you've verified the connection, you can configure your `~/.ssh/config` file to make SSH-ing easier.
 This is a minimal ssh rule that should work for SSH-ing into a SEED VM:
 
-```bash
+```yaml
 Host seed # the host name (e.g., 'ssh seed')
   HostName 127.0.0.1 # the IP address where the target ssh server can be found
   User seed # the user name
