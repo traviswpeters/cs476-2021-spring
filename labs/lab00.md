@@ -108,9 +108,12 @@ By the end of this task you should have a fully functional VM where you can run 
 
 ##### Troubleshooting
 
-1. If you have issues regarding the **NatNetwork**, check out **Appendix B** from this older manual: [SEED VM 16.04 Manual](https://seedsecuritylabs.org/Labs_16.04/Documents/SEEDVM_VirtualBoxManual.pdf).
-2. If you want to create a **shared folder**, check out **Appendix D** from this older manual: [SEED VM 16.04 Manual](https://seedsecuritylabs.org/Labs_16.04/Documents/SEEDVM_VirtualBoxManual.pdf).
-3. In step 5b, if the **"Enable Nested VT-x/AMD-V"** option is greyed out, check out ([this Stack Overflow post](https://stackoverflow.com/questions/54251855/virtualbox-enable-nested-vtx-amd-v-greyed-out)) to fix it.
+1. If you have issues regarding the **NatNetwork**, check out **Step 5d** from the manual:
+   [SEED VM 20.04 Manual](https://github.com/seed-labs/seed-labs/blob/master/manuals/vm/seedvm-manual.md).
+2. If you want to create a **shared folder**, check out **Appendix C** from the manual:
+   [SEED VM 20.04 Manual](https://github.com/seed-labs/seed-labs/blob/master/manuals/vm/seedvm-manual.md).
+3. In step 5b, if the **"Enable Nested VT-x/AMD-V"** option is greyed out,
+   check out [this Stack Overflow post](https://stackoverflow.com/questions/54251855/virtualbox-enable-nested-vtx-amd-v-greyed-out) to fix it.
 
 ## Task 4: Course Questionnaire
 {:.pt-1}
