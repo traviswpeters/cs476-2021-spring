@@ -122,7 +122,8 @@ If you have any questions, please contact me.
 - Intro to Software Security, System Security, and Unix Security Basics
 <!-- - [video](){:.video} -->
 <!-- [slides](){:.slides} -->
-<!-- [activity](){:.activity} -->
+- [activity 1](files/activity-01.pdf){:.activity}
+[activity 2](files/activity-02.pdf){:.activity}
 </td>
 <td markdown="span" markdown="1">
 - [Lab 00](labs/lab00) Due!
