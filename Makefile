@@ -7,11 +7,11 @@ YEAR=2021
 SEMESTER=spring
 LOCALSERVERPORT=4400
 LIVERELOADSERVERPORT=35400
-WEBSITE = $(HOME)/projects/classes/$(SCHOOL)-$(CLASS)-$(YEAR)-$(SEMESTER)
-CODE = $(HOME)/projects/classes/$(SCHOOL)-$(CLASS)-code
+WEBSITE = $(HOME)/projects/class/$(SCHOOL)-$(CLASS)-$(YEAR)-$(SEMESTER)
+CODE = $(HOME)/projects/class/$(SCHOOL)-$(CLASS)-code
 
 ADMIN = $(HOME)/Desktop/msu/teaching/class/$(CLASS)/$(YEAR)
-ADMINREPO = $(HOME)/projects/classes/admin-teaching/
+ADMINREPO = $(HOME)/projects/class/admin-teaching/
 
 .PHONY: help # Generate list of targets with descriptions
 help:
