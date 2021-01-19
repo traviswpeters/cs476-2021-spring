@@ -3,7 +3,49 @@ layout: default
 published: true
 ---
 
-## Roadmap
+## Spring 2021 Roadmap
+
+**Software Security**
+Lab 01: Environment Variable and Set-UID Program Lab
+https://seedsecuritylabs.org/Labs_20.04/Software/Environment_Variable_and_SetUID/
+Lab 02: Shellshock Attack Lab
+https://seedsecuritylabs.org/Labs_20.04/Software/Shellshock/
+Lab 03: Buffer Overflow Vulnerability Lab
+https://seedsecuritylabs.org/Labs_20.04/Software/Buffer_Overflow_Setuid/
+Lab 04: Return-to-libc Attack Lab (Graduate Students Only)
+https://seedsecuritylabs.org/Labs_20.04/Software/Return_to_Libc/
+Lab 05: CTF Buffer Overflow Attack Lab
+https://seedsecuritylabs.org/Labs_20.04/Software/Buffer_Overflow_Server/
+Lab 05: Shellcode Development Lab (New for 2021, Candidate to replace old Lab 05)
+https://seedsecuritylabs.org/Labs_20.04/Software/Shellcode/
+Lab 05: Race-Condition Vulnerability Lab (New for 2021, Candidate to replace old Lab 05)
+https://seedsecuritylabs.org/Labs_20.04/Software/Race_Condition/
+Lab 05: Dirty-COW Attack Lab (New for 2021, Candidate to replace old Lab 05)
+https://seedsecuritylabs.org/Labs_20.04/Software/Dirty_COW/
+Lab 05: Format-String Vulnerability Lab (New for 2021, Candidate to replace old Lab 05)
+https://seedsecuritylabs.org/Labs_20.04/Software/Format_String/
+
+**Web Security**
+Lab 06: SQL Injection Attack Lab
+https://seedsecuritylabs.org/Labs_20.04/Web/Web_SQL_Injection/
+Lab 07: Packet Sniffing and Spoofing Lab
+https://seedsecuritylabs.org/Labs_20.04/Networking/Sniffing_Spoofing/
+Lab 07: Cross-Site Scripting Attack Lab (Elgg) (New for 2021, Replaces old Lab 07)
+https://seedsecuritylabs.org/Labs_20.04/Web/Web_XSS_Elgg/
+Lab 08: TCP/IP Attack Lab
+https://seedsecuritylabs.org/Labs_20.04/Networking/TCP_Attacks/
+Lab 08: Cross-Site Request Forgery Attack Lab (New for 2021, Replaces old Lab 08)
+https://seedsecuritylabs.org/Labs_20.04/Web/Web_CSRF_Elgg/
+
+**Cryptography**
+Lab 09: Secret-Key Encryption Lab
+https://seedsecuritylabs.org/Labs_20.04/Crypto/Crypto_Encryption/
+Lab 10: MD5 Collision Attack Lab
+https://seedsecuritylabs.org/Labs_20.04/Crypto/Crypto_MD5_Collision/
+Lab 11: RSA Encryption and Signature Lab
+https://seedsecuritylabs.org/Labs_20.04/Crypto/Crypto_RSA/
+
+## Roadmap (2021 and beyond)
 
 Myself and others at Montana State University have a vision of expanding the cybersecurity-related course offerings,
   as well as creating a Cybersecurity Masters program.

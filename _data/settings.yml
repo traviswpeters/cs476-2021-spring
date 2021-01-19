@@ -24,7 +24,7 @@ github: '<a target="_blank" href="https://github.com/traviswpeters/">traviswpete
 email: '<a target="_blank" href="mailto:travis.peters1@montana.edu?subject=CS 476 Help">travis.peters1@montana.edu</a>'
 office: '<a target="_blank" href="https://www.montana.edu/calendar/locations.php?building=342">NAH 253A</a>'
 officehours: '<a target="_blank" href="https://zoom.us/j/94923050762?pwd=bVhWZlFKc3JGRjRXUXd5Ri94QUtoUT09">(M) 2-4pm, (F) 11-12pm, and by appointment (via Zoom)</a>'
-#webexlink: 'https://montana.webex.com/meet/w52k448'
+webexlink: 'https://montana.webex.com/meet/w52k448'
 
 # TA-specific variables
 tagithub: 'sammgithub'
@@ -65,9 +65,10 @@ d2l: '[D2L (476)](https://ecat.montana.edu/d2l/home/636105) / [D2L (594)](https:
 slack: '[Slack](https://join.slack.com/t/msucompsec2021/shared_invite/zt-kf2v5uxz-2cUyH0gCtZHWGjKUySsrIg)'
 gradescope: '[Gradescope](https://www.gradescope.com/courses/222589)'
 ssclink: 'https://www.cs.montana.edu/student-success-center.html'
-codelink: '#' #'https://github.com/traviswpeters/csci476-code'
+codelink: 'https://github.com/traviswpeters/cs476-code'
+#codelink: 'https://github.com/traviswpeters/cs460-code'
 zoomlink: 'https://zoom.us/j/96227676994?pwd=cFNrRVM4NzhYZk5vL0ZEWlpqZk0rZz09' # class; no need to register...
-zoomhelplink: 'https://zoom.us/j/94923050762?pwd=bVhWZlFKc3JGRjRXUXd5Ri94QUtoUT09' # "other"; no need to register...
+zoomhelplink: 'https://zoom.us/j/94923050762?pwd=bVhWZlFKc3JGRjRXUXd5Ri94QUtoUT09' # office hours / other; no need to register...
 
 # locations of things (notes, slides, etc.)
 slides: "files"
@@ -76,13 +77,9 @@ reading: "files"
 solutions: "files"
 
 menu:
-# - {name: 'About', url: '#about-the-course'}
 - {name: 'Logistics', url: '#logistics-in-a-nutshell'}
 - {name: 'Schedule', url: '#schedule'}
 - {name: 'Grading', url: '#grading'}
-# - {name: 'Class (Zoom)', url: 'https://zoom.us/j/96227676994?pwd=cFNrRVM4NzhYZk5vL0ZEWlpqZk0rZz09', type: 'external'}
-# - {name: 'Office Hours (Zoom)', url: 'https://zoom.us/j/94923050762?pwd=bVhWZlFKc3JGRjRXUXd5Ri94QUtoUT09', type: 'external'}
-# - {name: 'Code (GitHub)', url: 'https://github.com/traviswpeters/csci476-code', type: 'external'}
 # - {name: 'Labs', url: '#labs'}
 - {name: 'Assignments', url: '#assignments'}
 #- {name: 'Project', url: 'project'}
@@ -90,29 +87,28 @@ menu:
 - {name: '|', url: '|'} # hacky menu divider
 - {name: 'Lab Info & Tips', url: 'labs'}
 - {name: 'Resources', url: 'resources'}
-# - {name: 'COVID-19 Info', url: 'covid19'}
 
 # SEED LINKS
 seedlabs: 'https://seedsecuritylabs.org/Labs_16.04/'
 seedcode: '<i class="fas fa-external-link-alt"></i> [CSCI 476 Code](https://github.com/traviswpeters/csci476-code)' # my fork
 
 # solo assignments
-assignments:
-  pa0:
-    show: True
-    name: 'PA0: Getting Started'
-    url: 'pa0'
-    duedate: 'Sunday [09/06/2020] @ 11:59 PM (MST)'
-  pa1:
-    show: True
-    name: ''
-    url: ''
-    duedate: 'TBD'
-  pa2:
-    show: True
-    name: ''
-    url: ''
-    duedate: 'TBD'
+# assignments:
+#   pa0:
+#     show: False
+#     name: 'PA0: Getting Started'
+#     url: 'pa0'
+#     duedate: 'Sunday [09/06/2020] @ 11:59 PM (MST)'
+#   pa1:
+#     show: False
+#     name: ''
+#     url: ''
+#     duedate: 'TBD'
+#   pa2:
+#     show: False
+#     name: ''
+#     url: ''
+#     duedate: 'TBD'
 
 # group assignments
 # groupassignments:

@@ -76,7 +76,7 @@ If you have any questions, please contact me.
 <tr>
 <!--   Week #   --><td id="week01" markdown="span">Week 01</td>
 <!-- Week Title --><td markdown="span" class="note">Introduction, Course Overview, and Review</td>
-<!--   BLANK    --><td markdown="span" markdown="1"></td>
+<!--   BLANK    --><td markdown="span" class="note" markdown="1"></td>
 </tr>
 
 <!-- Date, Topics & Lecture Details, Assignments & Reading -->
@@ -86,7 +86,6 @@ If you have any questions, please contact me.
 - Course Introduction & Roadmap
 - [video](https://zoom.us/rec/share/fg6CE1lch3TFSUxFPffD0xkg532B-lHowZtT0O1vq9V9NHtZaeysOIx9umzLMmdh.5IDXT1ASMGb9WCeB){:.video}
 [slides](files/cs476-01-intro.pdf){:.slides}
-<!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
 - Please fill out our {{site.data.settings.questionnaire}}!
@@ -109,28 +108,30 @@ If you have any questions, please contact me.
 
 <tr>
 <!--   Week #   --><td id="week02" markdown="span">Week 02</td>
-<!-- Week Title --><td markdown="span" class="note">Review, Unix Security Basics</td>
-<!--   BLANK    --><td markdown="span" markdown="1"></td>
+<!-- Week Title --><td markdown="span" class="note">Software Security</td>
+<!--   BLANK    --><td markdown="span" class="note" markdown="1">
+- Read Chapters 1, 2, 3 [(SS3P)]({{site.data.settings.textbookss3plink}}),
+- [[Linux File Permissions Complete Guide]](https://devconnected.com/linux-file-permissions-complete-guide/)
+</td>
 </tr>
 
 <!-- Date, Topics & Lecture Details, Assignments & Reading -->
 <tr>
-<td markdown="span">01/14/2021 (T)</td>
+<td markdown="span">01/19/2021 (T)</td>
 <td markdown="span" markdown="1">
-- Review + Intro to Software/System Security + Unix Security Basics
+- Intro to Software Security, System Security, and Unix Security Basics
 <!-- - [video](){:.video} -->
 <!-- [slides](){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
-- Read Chapters 1, 2 [(SS3P)]({{site.data.settings.textbookss3plink}})
 - [Lab 00](labs/lab00) Due!
 </td>
 </tr>
 
 <!-- Date, Topics & Lecture Details, Assignments & Reading -->
 <tr>
-<td markdown="span">01/14/2021 (R)</td>
+<td markdown="span">01/21/2021 (R)</td>
 <td markdown="span" markdown="1">
 - TBD
 <!-- - [video](){:.video} -->
@@ -142,26 +143,533 @@ If you have any questions, please contact me.
 </tr>
 
 <!-- ========================================= Week 03 ========================================= -->
+
+<tr>
+<!--   Week #   --><td id="week03" markdown="span">Week 03</td>
+<!-- Week Title --><td markdown="span" class="note">Software Security --- Privileged Programs, Environment Variables, and Attacks via Program Inputs</td>
+<!--   BLANK    --><td markdown="span" class="note" markdown="1">
+- (Optional) Chapters 1, 2 [(SEED)]({{site.data.settings.textbookseedlink}})
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">01/26/2021 (T)</td>
+<td markdown="span" markdown="1">
+- The Set-UID Mechanism & Environment Variables (Part I)
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+- TBD Due!
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">01/28/2021 (R)</td>
+<td markdown="span" markdown="1">
+- The Set-UID Mechanism & Environment Variables (Part II)
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+</td>
+</tr>
+
 <!-- ========================================= Week 04 ========================================= -->
+
+<tr>
+<!--   Week #   --><td id="week04" markdown="span">Week 04</td>
+<!-- Week Title --><td markdown="span" class="note">Software Security --- The Shellshock Attack</td>
+<!--   BLANK    --><td markdown="span" class="note" markdown="1">
+- (Optional) Chapters 3, 9 [(SEED)]({{site.data.settings.textbookseedlink}}),
+- [[CVE-2014-6271]](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6271), [[shellshocker.net]](https://www.minttm.com/takeover-shellshocker-net)
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">02/02/2021 (T)</td>
+<td markdown="span" markdown="1">
+- The Shellshock Attack (Part I)
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+- Lab 01 Due!
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">02/04/2021 (R)</td>
+<td markdown="span" markdown="1">
+- The Shellshock Attack (Part II)
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+</td>
+</tr>
+
 <!-- ========================================= Week 05 ========================================= -->
+
+<tr>
+<!--   Week #   --><td id="week05" markdown="span">Week 05</td>
+<!-- Week Title --><td markdown="span" class="note">Software Security --- Buffer Overflow Vulnerabilities, Attacks, and Defenses</td>
+<!--   BLANK    --><td markdown="span" class="note" markdown="1">
+- (Optional) Chapters 4, 9 [(SEED)]({{site.data.settings.textbookseedlink}}),
+- [[Demystifying the Execve Shellcode (Stack Method)]](http://hackoftheday.securitytube.net/2013/04/demystifying-execve-shellcode-stack.html)
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">02/09/2021 (T)</td>
+<td markdown="span" markdown="1">
+- Buffer Overflow Vulnerabilities, Attacks, and Defenses (Part I)
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+- Lab 02 Due!
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">02/11/2021 (R)</td>
+<td markdown="span" markdown="1">
+- Buffer Overflow Vulnerabilities, Attacks, and Defenses (Part II)
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+</td>
+</tr>
+
 <!-- ========================================= Week 06 ========================================= -->
+
+<tr>
+<!--   Week #   --><td id="week06" markdown="span">Week 06</td>
+<!-- Week Title --><td markdown="span"  markdown="1" class="note">
+- TBD
+<!-- - Return-to-libc Attacks / Generalizing Return-to-libc Attacks: Return-Oriented Programming? -->
+<!-- - Shellcode Development? -->
+<!-- - Format-String Vulnerability? -->
+<!-- - Race Condition? -->
+</td>
+<!--   BLANK    --><td markdown="span" class="note" markdown="1">
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">02/16/2021 (T)</td>
+<td markdown="span" markdown="1">
+<!-- - TBD -->
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+- Lab 03 Due!
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">02/18/2021 (R)</td>
+<td markdown="span" markdown="1">
+<!-- - TBD -->
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+</td>
+</tr>
+
 <!-- ========================================= Week 07 ========================================= -->
+
+<tr>
+<!--   Week #   --><td id="week07" markdown="span">Week 07</td>
+<!-- Week Title --><td markdown="span" class="note">Network & Web Security</td>
+<!--   BLANK    --><td markdown="span" class="note" markdown="1">
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">02/23/2021 (T)</td>
+<td markdown="span" markdown="1">
+- Intro to Web Security
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+- Lab 04 Due!
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">02/25/2021 (R)</td>
+<td markdown="span" markdown="1">
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+</td>
+</tr>
+
 <!-- ========================================= Week 08 ========================================= -->
+
+<tr>
+<!--   Week #   --><td id="week08" markdown="span">Week 08</td>
+<!-- Week Title --><td markdown="span" class="note">Network & Web Security --- SQL Injection Attacks & Countermeasures</td>
+<!--   BLANK    --><td markdown="span" class="note" markdown="1">
+- (Optional) Chapter 12 [(SEED)]({{site.data.settings.textbookseedlink}})
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">03/02/2021 (T)</td>
+<td markdown="span" markdown="1">
+<!-- - TBD -->
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+- TBD Due!
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">03/04/2021 (R)</td>
+<td markdown="span" markdown="1">
+<!-- - TBD -->
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+</td>
+</tr>
+
 <!-- ========================================= Week 09 ========================================= -->
+
+<tr>
+<!--   Week #   --><td id="week09" markdown="span">Week 09</td>
+<!-- Week Title --><td markdown="span" class="note">Network & Web Security --- Cross-Site Scripting (XSS) Attacks & Countermeasures</td>
+<!--   BLANK    --><td markdown="span" class="note" markdown="1">
+- (Optional) Chapter 11 [(SEED)]({{site.data.settings.textbookseedlink}})
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">03/09/2021 (T)</td>
+<td markdown="span" markdown="1">
+<!-- - TBD -->
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+- Lab 05 Due!
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">03/11/2021 (R)</td>
+<td markdown="span" markdown="1">
+<!-- - TBD -->
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+</td>
+</tr>
+
 <!-- ========================================= Week 10 ========================================= -->
+
+<tr>
+<!--   Week #   --><td id="week10" markdown="span">Week 10</td>
+<!-- Week Title --><td markdown="span" class="note">Network & Web Security --- Cross-Site Request Forgery (XSRF) Attacks & Countermeasures</td>
+<!--   BLANK    --><td markdown="span" class="note" markdown="1">
+- (Optional) Chapter 10 [(SEED)]({{site.data.settings.textbookseedlink}})
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">03/16/2021 (T)</td>
+<td markdown="span" markdown="1">
+<!-- - TBD -->
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+- Lab 06 Due!
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">03/18/2021 (R)</td>
+<td markdown="span" markdown="1">
+<!-- - TBD -->
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+</td>
+</tr>
+
 <!-- ========================================= Week 11 ========================================= -->
+
+<tr>
+<!--   Week #   --><td id="week11" markdown="span">Week 11</td>
+<!-- Week Title --><td markdown="span" class="note">Cryptography</td>
+<!--   BLANK    --><td markdown="span" class="note" markdown="1">
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">03/23/2021 (T)</td>
+<td markdown="span" markdown="1">
+- Intro to Cryptography
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+- Lab 07 Due!
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">03/25/2021 (R)</td>
+<td markdown="span" markdown="1">
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+</td>
+</tr>
+
 <!-- ========================================= Week 12 ========================================= -->
+
+<tr>
+<!--   Week #   --><td id="week12" markdown="span">Week 12</td>
+<!-- Week Title --><td markdown="span" class="note">Cryptography --- Symmetric Key Cryptography</td>
+<!--   BLANK    --><td markdown="span" class="note" markdown="1">
+- (Optional) Chapter 21 [(SEED)]({{site.data.settings.textbookseedlink}})
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">03/30/2021 (T)</td>
+<td markdown="span" markdown="1">
+<!-- - TBD -->
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+- TBD Due!
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">04/01/2021 (R)</td>
+<td markdown="span" markdown="1">
+<!-- - TBD -->
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+</td>
+</tr>
+
 <!-- ========================================= Week 13 ========================================= -->
+
+<tr>
+<!--   Week #   --><td id="week13" markdown="span">Week 13</td>
+<!-- Week Title --><td markdown="span" class="note">Cryptography --- Hashing</td>
+<!--   BLANK    --><td markdown="span" class="note" markdown="1">
+- (Optional) Chapter 22 [(SEED)]({{site.data.settings.textbookseedlink}})
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">04/06/2021 (T)</td>
+<td markdown="span" markdown="1">
+<!-- - TBD -->
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+- Lab 08 Due!
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">04/08/2021 (R)</td>
+<td markdown="span" markdown="1">
+<!-- - TBD -->
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+</td>
+</tr>
+
 <!-- ========================================= Week 14 ========================================= -->
+
+<tr>
+<!--   Week #   --><td id="week14" markdown="span">Week 14</td>
+<!-- Week Title --><td markdown="span" class="note">Cryptography --- Asymmetric Key Cryptography</td>
+<!--   BLANK    --><td markdown="span" class="note" markdown="1">
+- (Optional) Chapter 23 [(SEED)]({{site.data.settings.textbookseedlink}})
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">04/13/2021 (T)</td>
+<td markdown="span" markdown="1">
+<!-- - TBD -->
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+- Lab 09 Due!
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">04/15/2021 (R)</td>
+<td markdown="span" markdown="1">
+<!-- - TBD -->
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+</td>
+</tr>
+
 <!-- ========================================= Week 15 ========================================= -->
+
+<tr>
+<!--   Week #   --><td id="week15" markdown="span">Week 15</td>
+<!-- Week Title --><td markdown="span" class="note">Course Wrap-Up</td>
+<!--   BLANK    --><td markdown="span" class="note" markdown="1">
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">04/20/2021 (T)</td>
+<td markdown="span" markdown="1">
+<!-- - TBD -->
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+- Lab 10 Due!
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">04/22/2021 (R)</td>
+<td markdown="span" markdown="1">
+<!-- - TBD -->
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+</td>
+</tr>
+
+<!-- ========================================= Week 16 ========================================= -->
+
+<tr>
+<!--   Week #   --><td id="week16" markdown="span">Week 16</td>
+<!-- Week Title --><td markdown="span" class="note">"Finals Week"</td>
+<!--   BLANK    --><td markdown="span" class="note" markdown="1">
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">04/27/2021 (T)</td>
+<td markdown="span" markdown="1">
+- _No Class_
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+- Final Lab Due!
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">04/29/2021 (R)</td>
+<td markdown="span" markdown="1">
+- _No Class_
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+</td>
+</tr>
+
+<!-- =========================================== END =========================================== -->
 
 </tbody>
 </table>
 
-
+{% comment %}
 _More Schedule Details Coming Soon..._
 {:.alert .alert-primary .text-center}
-{% comment %}
+
 <!--
 
 [minute paper (08/21)](https://forms.gle/dxRexo9t9CBbbFm38){:.activity}
