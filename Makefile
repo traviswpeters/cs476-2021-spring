@@ -55,11 +55,14 @@ release:
 
 .PHONY: vmstart # -> start the primary SEED VM
 vmstart:
-	VBoxManage startvm "SEEDUbuntu20.04" --type headless && ssh seed
+	- VBoxManage startvm "SEEDUbuntu20.04" --type headless && ssh seed
 
 .PHONY: vmstop # -> stop the primary SEED VM
 vmstop:
-	VBoxManage controlvm "SEEDUbuntu20.04" poweroff
+	- VBoxManage controlvm "SEEDUbuntu20.04" poweroff
+
+.PHONY: vmrestart # -> restart the primary SEED VM
+vmrestart: vmstop vmstart
 
 .PHONY: vmlist # -> see which VMs exist, and which VMs are running
 vmlist:
