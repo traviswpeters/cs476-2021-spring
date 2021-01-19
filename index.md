@@ -60,7 +60,7 @@ If you have any questions, please contact me.
 <!-- Thanks! https://idratherbewriting.com/documentation-theme-jekyll/mydoc_tables.html -->
 
 <table class="table table-striped table-bordered table-sm">
-<colgroup><col width="10%" /><col width="60%" /><col width="30%" /></colgroup>
+<colgroup><col width="13%" /><col width="60%" /><col width="30%" /></colgroup>
 <thead>
 <tr class="header">
 <th>Date</th>
@@ -119,11 +119,10 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">01/19/2021 (T)</td>
 <td markdown="span" markdown="1">
-- Intro to Software Security, System Security, and Unix Security Basics
-<!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
-- [activity 1](files/activity-01.pdf){:.activity}
-[activity 2](files/activity-02.pdf){:.activity}
+- Intro to Software Security
+- [video](https://zoom.us/rec/share/-cvS4-5Pd0k8yOqbKxaDkrFISmFKKRjx8YxEwun3lYS7H2pE_-UA--QhWYiLqXLY.PPccZpkiFXjhT1FM){:.video}
+[slides](files/cs476-03-intro2sec-and-review.pdf){:.slides}
+[activity](files/activity-01.pdf){:.activity}
 </td>
 <td markdown="span" markdown="1">
 - [Lab 00](labs/lab00) Due!
@@ -134,10 +133,10 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">01/21/2021 (R)</td>
 <td markdown="span" markdown="1">
-- TBD
+- Intro to Software Security (cont.); Review Systems and Software; Unix Security Basics
 <!-- - [video](){:.video} -->
 <!-- [slides](){:.slides} -->
-<!-- [activity](){:.activity} -->
+- [activity](files/activity-02.pdf){:.activity}
 </td>
 <td markdown="span" markdown="1">
 </td>
