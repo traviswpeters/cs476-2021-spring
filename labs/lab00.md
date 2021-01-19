@@ -19,10 +19,25 @@ You may have opportunities to complete parts of this assignment in class, but yo
 Of particular importance, by the end of this assignment you should be setup with a suitable environment for completing assignments for this course.
 You will also have had the chance to practice with tools we'll be using this semester.
 
+## Task 0: Update Your Zoom Profile
+{:.pt-1}
+
+Our class is entirely online this semester and most (all?) of our interactions for the next few months will be done via Zoom.
+
+At a minimum, please update your **Zoom profile** to include some helpful information:
+1. First name
+2. Last name
+3. A nice photo that clearly shows your face
+
 ## Task 1: Sign-up on Slack
 {:.pt-1}
 
 Please sign-up for our course {{site.data.settings.slack}}!
+
+At a minimum, please also update your **Slack profile** to include some helpful information:
+1. First name
+2. Last name
+3. A nice photo that clearly shows your face
 
 ## Task 2: Getting Your Repo Set Up
 {:.pt-1}
@@ -30,6 +45,14 @@ Please sign-up for our course {{site.data.settings.slack}}!
 You will use a **private** GitHub repository for all of your work this semester,
 which will enable you to share code with the course staff so that we can assess your work and provide feedback.
 Please follow the instructions below to get set up.
+
+#### 2.0 Update Your GitHub Profile
+{:.pt-1 .pb-1}
+
+At a minimum, please also update your **GitHub profile** to include some helpful information:
+1. First name
+2. Last name
+3. A nice photo that clearly shows your face
 
 #### 2.1 Setup Your PRIVATE Repo
 {:.pt-1 .pb-1}
