@@ -60,7 +60,7 @@ If you have any questions, please contact me.
 <!-- Thanks! https://idratherbewriting.com/documentation-theme-jekyll/mydoc_tables.html -->
 
 <table class="table table-striped table-bordered table-sm">
-<colgroup><col width="15%" /><col width="55%" /><col width="30%" /></colgroup>
+<colgroup><col width="10%" /><col width="60%" /><col width="30%" /></colgroup>
 <thead>
 <tr class="header">
 <th>Date</th>
