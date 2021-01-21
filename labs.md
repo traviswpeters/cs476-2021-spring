@@ -49,6 +49,10 @@ Any submissions found in violation will receive an automatic 0, and the miscondu
 - Each lab should be organized within its own subdirectory (`lab01/`, `lab02/`, `lab03/`, ...).
   - The main write-up should be in a file named `README.md` within the correct subdirectory (e.g., `lab02/README.md`).
   - Any source code or other supporting files should also be located within the relevant subdirectory  (e.g., `lab02/script.py`).
+  - Please use a [`.gitignore` file to ignore](https://www.atlassian.com/git/tutorials/saving-changes/gitignore)
+       files that should not get tracked in your git repository.
+       **DO** commit your code and files that are needed to build/run/explain your submission.
+       **DO NOT** commit executables or other generated files (e.g., `.o` files, swap files).
 
 ##### Example Structure of a Lab Report (`README.md`):
 <!-- At the top of each README include, at a minimum: -->
