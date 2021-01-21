@@ -19,6 +19,21 @@ Started in 2002, funded by a total of 1.3 million dollars from NSF, and now used
   and to help instructors adopt these labs in their curricula at no charge.
 We, along with over a thousand other educational institutions around the world, thank Professor Wenliang Du for this superb effort.
 
+<!-- ## Lab Assignments -->
+
+<!-- all normal labs -->
+{% assign sorted_pages = site.pages | sort: 'title' %}
+{% for page in sorted_pages %}
+{% for tag in page.tags %}
+{% if tag == "labs" %}
+- [{{page.title}}]({{site.baseurl}}{{page.url}}) _>> Due: **{{page.duedate}}**_{:.text-muted .ml-2}
+  {:.m-0 .p-0}
+{% endif %}
+{% endfor %}
+{% endfor %}
+<!-- + final lab -->
+<!-- <li><a href="{{ site.baseurl }}/labs/final.html">Final Lab</a></li> -->
+
 ## Tips for Writing Lab Reports
 
 > **NOTE:** All labs are individual labs.
