@@ -26,10 +26,9 @@ For this assignment we'd like you to present a threat model and reflect on your 
    or attack libraries such as
    [CAPEC](http://capec.mitre.org) or
    [OWASP's Top 10](https://owasp.org/www-project-top-ten/)
-
 2. (Reflection) What are the **strengths** of your approach?
 3. (Reflection) What are the **weaknesses** of your approach?
-4. (Reflection) What might you improve your threat model in the future?
+4. (Reflection) What might you improve about your threat model and/or approach in the future?
 
 
 ## What To Turn In & Instructions On Submitting your Assignment
