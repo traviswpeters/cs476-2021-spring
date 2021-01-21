@@ -85,7 +85,8 @@ menu:
 #- {name: 'Project', url: 'project'}
 - {name: 'FAQs', url: '#faqs'}
 - {name: '|', url: '|'} # hacky menu divider
-- {name: 'Lab Info & Tips', url: 'labs'}
+- {name: 'Labs', url: 'labs'}
+# - {name: 'Activities', url: 'activities'}
 - {name: 'Resources', url: 'resources'}
 
 # SEED LINKS
