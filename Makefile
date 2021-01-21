@@ -46,7 +46,7 @@ slides:
 .PHONY: release # commit slides+links
 release:
 	# git add .
-	git add *.md files/
+	git add index.md files/ #*.md
 	git commit -m "Release course updates (slides, links, etc.)"
 	git push origin HEAD
 
