@@ -133,10 +133,10 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">01/21/2021 (R)</td>
 <td markdown="span" markdown="1">
-- Intro to Software Security (cont.); Review Systems and Software; Unix Security Basics
-<!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
-- [activity](files/activity-02.pdf){:.activity}
+- Intro to Software Security (cont.); Review Systems and Software <!-- Unix Security Basics -->
+- [video](https://zoom.us/rec/share/44WnPcckNiKjOz9AaEqwoUR2DFPtCM1D3YxZ9U2C6_ndANdNO_Erm5wIUCpUwClG.RbYkbowCRQZL9Dw4){:.video}
+[slides](files/cs476-04-intro2sec-and-review.pdf){:.slides}
+[activity](files/activity-02.pdf){:.activity}
 </td>
 <td markdown="span" markdown="1">
 </td>
