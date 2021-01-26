@@ -30,22 +30,22 @@ We will use **Zoom** to hold synchronous/online class sessions and office hours,
 ##### Lectures
 
 <!-- & <a target="_blank" href="https://www.montana.edu/calendar/locations.php?building=3"><i class="fas fa-map-pin"></i> Barnard Hall 108</a> -->
-<i class="fas fa-external-link-alt"></i> [Synchronous/Online Class (Zoom)]({{site.data.settings.zoomlink}})
+-  [Synchronous/Online Class (Zoom)]({{site.data.settings.zoomlink}})
 | {{site.data.settings.hours}}
 _>> Course dates: {{ site.data.settings.dates }}_{:.text-muted} <br/>
 
 ##### Office Hours / People / Getting Help
-<i class="fas fa-external-link-alt"></i> [Travis's Office Hours (Zoom)]({{site.data.settings.zoomhelplink}}) *>> A virtual meeting place for Travis's office hours*{:.text-muted} <br/>
-<i class="fas fa-external-link-alt"></i> [TA Office Hours (WebEx)]({{site.data.settings.tahelplink}}) *>> A virtual meeting place for TA office hours*{:.text-muted} <br/>
-<i class="fas fa-external-link-alt"></i> [CS Student Success Center]({{site.data.settings.ssclink}}) *>> Get help from TAs and peers*{:.text-muted} <br/>
+- Travis's Office Hours: {{site.data.settings.officehours}} *>> A virtual meeting place for Travis's office hours*{:.text-muted} <br/>
+- TA Office Hours: {{site.data.settings.taofficehours}} *>> A virtual meeting place for TA office hours*{:.text-muted} <br/>
+- [CS Student Success Center]({{site.data.settings.ssclink}}) *>> Get help from TAs and peers*{:.text-muted} <br/>
 
 ##### Links
-<i class="fas fa-external-link-alt"></i> [Textbook (SS3P)]({{site.data.settings.textbookss3plink}}) *>> **(Required)** {{site.data.settings.textbookss3p}}*{:.text-muted} <br/>
-<i class="fas fa-external-link-alt"></i> [Textbook (SEED)]({{site.data.settings.textbookseedlink}}) *>> **(Optional/Recommended)** {{site.data.settings.textbookseed}}*{:.text-muted} <br/>
-<i class="fas fa-external-link-alt"></i> [Code]({{site.data.settings.codelink}}) *>> All of the code from class (on GitHub)*{:.text-muted} <br/>
-<i class="fas fa-external-link-alt"></i> {{site.data.settings.slack}} *>> For all course-related communications*{:.text-muted} <br/>
-<i class="fas fa-external-link-alt"></i> {{site.data.settings.d2l}} *>> For tracking course grades, etc.*{:.text-muted} <br/>
-<!-- <i class="fas fa-external-link-alt"></i> {{site.data.settings.gradescope}} *>> For submitting and grading exams, providing exam feedback, etc.*{:.text-muted} <br/> -->
+- [Textbook (SS3P)]({{site.data.settings.textbookss3plink}}) *>> **(Required)** {{site.data.settings.textbookss3p}}*{:.text-muted} <br/>
+- [Textbook (SEED)]({{site.data.settings.textbookseedlink}}) *>> **(Optional/Recommended)** {{site.data.settings.textbookseed}}*{:.text-muted} <br/>
+- [Code]({{site.data.settings.codelink}}) *>> All of the code from class (on GitHub)*{:.text-muted} <br/>
+- {{site.data.settings.slack}} *>> For all course-related communications*{:.text-muted} <br/>
+- {{site.data.settings.d2l}} *>> For tracking course grades, etc.*{:.text-muted} <br/>
+<!-- - {{site.data.settings.gradescope}} *>> For submitting and grading exams, providing exam feedback, etc.*{:.text-muted} <br/> -->
 
 ## Schedule
 {:.titletext}
