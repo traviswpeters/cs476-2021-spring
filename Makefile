@@ -24,17 +24,21 @@ help:
 	@echo "-----------------"
 	@grep '^.PHONY: .* #' Makefile | sed 's/\.PHONY: \(.*\) # \(.*\)/\1	# \2/' | expand -t10
 
-.PHONY: local # run a local jekyll server
-local:
+.PHONY: start # run a local jekyll server
+start:
 	@jekyll serve --port $(LOCALSERVERPORT) --livereload-port $(LIVERELOADSERVERPORT) &
+
+.PHONY: stop # stop (kill) any/all currently running instances of ruby/jekyll
+stop:
+	-pgrep -f  'jekyll serve' | xargs kill 1>&2 2> /dev/null
 
 .PHONY: show # show any running jekyll servers
 show:
 	@psgrep jekyll
 
-.PHONY: kill # kill all currently running instances of ruby/jekyll
-kill:
-	-pgrep -f  'jekyll serve' | xargs kill 1>&2 2> /dev/null
+.PHONY: convert # convert a LaTeX file to Markdown --> make convert infile=example.tex outfile=example.md
+convert:
+	@pandoc -s $(infile) -o $(outfile)
 
 .PHONY: slides # fetch exported PDF versions of slides from iCloud and copy to website
 slides:
