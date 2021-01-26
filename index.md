@@ -146,9 +146,12 @@ If you have any questions, please contact me.
 
 <tr>
 <!--   Week #   --><td id="week03" markdown="span">Week 03</td>
-<!-- Week Title --><td markdown="span" class="note">Software Security --- Privileged Programs, Environment Variables, and Attacks via Program Inputs</td>
+<!-- Week Title --><td markdown="span" class="note">Software Security</td>
+<!-- - Shellcode Development? -->
+<!-- - Format-String Vulnerability? -->
+<!-- - Race Condition? -->
+</td>
 <!--   BLANK    --><td markdown="span" class="note" markdown="1">
-- (Optional) Chapters 1, 2 [(SEED)]({{site.data.settings.textbookseedlink}})
 </td>
 </tr>
 
@@ -156,7 +159,7 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">01/26/2021 (T)</td>
 <td markdown="span" markdown="1">
-- The Set-UID Mechanism & Environment Variables (Part I)
+- Review Systems and Software
 <!-- - [video](){:.video} -->
 <!-- [slides](){:.slides} -->
 <!-- [activity](){:.activity} -->
@@ -170,7 +173,7 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">01/28/2021 (R)</td>
 <td markdown="span" markdown="1">
-- The Set-UID Mechanism & Environment Variables (Part II)
+- TBD
 <!-- - [video](){:.video} -->
 <!-- [slides](){:.slides} -->
 <!-- [activity](){:.activity} -->
@@ -183,6 +186,43 @@ If you have any questions, please contact me.
 
 <tr>
 <!--   Week #   --><td id="week04" markdown="span">Week 04</td>
+<!-- Week Title --><td markdown="span" class="note">Software Security --- Privileged Programs, Env. Variables, and Attacks via Program Inputs</td>
+<!--   BLANK    --><td markdown="span" class="note" markdown="1">
+- (Optional) Chapters 1, 2 [(SEED)]({{site.data.settings.textbookseedlink}})
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">02/02/2021 (T)</td>
+<td markdown="span" markdown="1">
+- The Set-UID Mechanism & Environment Variables (Part I)
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+- TBD Due!
+</td>
+</tr>
+
+<!-- Date, Topics & Lecture Details, Assignments & Reading -->
+<tr>
+<td markdown="span">02/04/2021 (R)</td>
+<td markdown="span" markdown="1">
+- The Set-UID Mechanism & Environment Variables (Part II)
+<!-- - [video](){:.video} -->
+<!-- [slides](){:.slides} -->
+<!-- [activity](){:.activity} -->
+</td>
+<td markdown="span" markdown="1">
+</td>
+</tr>
+
+<!-- ========================================= Week 05 ========================================= -->
+
+<tr>
+<!--   Week #   --><td id="week05" markdown="span">Week 05</td>
 <!-- Week Title --><td markdown="span" class="note">Software Security --- The Shellshock Attack</td>
 <!--   BLANK    --><td markdown="span" class="note" markdown="1">
 - (Optional) Chapters 3, 9 [(SEED)]({{site.data.settings.textbookseedlink}}),
@@ -192,7 +232,7 @@ If you have any questions, please contact me.
 
 <!-- Date, Topics & Lecture Details, Assignments & Reading -->
 <tr>
-<td markdown="span">02/02/2021 (T)</td>
+<td markdown="span">02/09/2021 (T)</td>
 <td markdown="span" markdown="1">
 - The Shellshock Attack (Part I)
 <!-- - [video](){:.video} -->
@@ -206,7 +246,7 @@ If you have any questions, please contact me.
 
 <!-- Date, Topics & Lecture Details, Assignments & Reading -->
 <tr>
-<td markdown="span">02/04/2021 (R)</td>
+<td markdown="span">02/11/2021 (R)</td>
 <td markdown="span" markdown="1">
 - The Shellshock Attack (Part II)
 <!-- - [video](){:.video} -->
@@ -217,11 +257,12 @@ If you have any questions, please contact me.
 </td>
 </tr>
 
-<!-- ========================================= Week 05 ========================================= -->
+<!-- ========================================= Week 06 ========================================= -->
 
 <tr>
-<!--   Week #   --><td id="week05" markdown="span">Week 05</td>
+<!--   Week #   --><td id="week06" markdown="span">Week 06</td>
 <!-- Week Title --><td markdown="span" class="note">Software Security --- Buffer Overflow Vulnerabilities, Attacks, and Defenses</td>
+<!-- - Return-to-libc Attacks / Generalizing Return-to-libc Attacks: Return-Oriented Programming? -->
 <!--   BLANK    --><td markdown="span" class="note" markdown="1">
 - (Optional) Chapters 4, 9 [(SEED)]({{site.data.settings.textbookseedlink}}),
 - [[Demystifying the Execve Shellcode (Stack Method)]](http://hackoftheday.securitytube.net/2013/04/demystifying-execve-shellcode-stack.html)
@@ -230,7 +271,7 @@ If you have any questions, please contact me.
 
 <!-- Date, Topics & Lecture Details, Assignments & Reading -->
 <tr>
-<td markdown="span">02/09/2021 (T)</td>
+<td markdown="span">02/16/2021 (T)</td>
 <td markdown="span" markdown="1">
 - Buffer Overflow Vulnerabilities, Attacks, and Defenses (Part I)
 <!-- - [video](){:.video} -->
@@ -244,51 +285,9 @@ If you have any questions, please contact me.
 
 <!-- Date, Topics & Lecture Details, Assignments & Reading -->
 <tr>
-<td markdown="span">02/11/2021 (R)</td>
-<td markdown="span" markdown="1">
-- Buffer Overflow Vulnerabilities, Attacks, and Defenses (Part II)
-<!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
-<!-- [activity](){:.activity} -->
-</td>
-<td markdown="span" markdown="1">
-</td>
-</tr>
-
-<!-- ========================================= Week 06 ========================================= -->
-
-<tr>
-<!--   Week #   --><td id="week06" markdown="span">Week 06</td>
-<!-- Week Title --><td markdown="span"  markdown="1" class="note">
-- TBD
-<!-- - Return-to-libc Attacks / Generalizing Return-to-libc Attacks: Return-Oriented Programming? -->
-<!-- - Shellcode Development? -->
-<!-- - Format-String Vulnerability? -->
-<!-- - Race Condition? -->
-</td>
-<!--   BLANK    --><td markdown="span" class="note" markdown="1">
-</td>
-</tr>
-
-<!-- Date, Topics & Lecture Details, Assignments & Reading -->
-<tr>
-<td markdown="span">02/16/2021 (T)</td>
-<td markdown="span" markdown="1">
-<!-- - TBD -->
-<!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
-<!-- [activity](){:.activity} -->
-</td>
-<td markdown="span" markdown="1">
-- Lab 03 Due!
-</td>
-</tr>
-
-<!-- Date, Topics & Lecture Details, Assignments & Reading -->
-<tr>
 <td markdown="span">02/18/2021 (R)</td>
 <td markdown="span" markdown="1">
-<!-- - TBD -->
+- Buffer Overflow Vulnerabilities, Attacks, and Defenses (Part II)
 <!-- - [video](){:.video} -->
 <!-- [slides](){:.slides} -->
 <!-- [activity](){:.activity} -->
