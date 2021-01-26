@@ -39,7 +39,7 @@ kill:
 .PHONY: slides # fetch exported PDF versions of slides from iCloud and copy to website
 slides:
 	@echo "Fetching PDF versions of slides w/ prefix '$(CLASS)'..."
-	- @mv $(ADMIN)/$(CLASS)-*.pdf $(WEBSITE)/files/ 2> /dev/null
+	-@mv $(ADMIN)/$(CLASS)-*.pdf $(WEBSITE)/files/ 2> /dev/null
 	@echo "\nSlides in 'files/' on website:"
 	@ls -alG $(WEBSITE)/files/$(CLASS)*
 
@@ -52,14 +52,28 @@ release:
 
 ######################################
 # SEED Helpers
+VMNAME=SEEDUbuntu20.04
+
+# SHARED FOLDER SETUP
+# -------------------
+# 1. Need to add $USER to vboxsf group so that it can access shared folders.
+#   $ sudo usermod -aG vboxsf $USER
+# 2. Reboot the VM and log back in.
+# 3. Shared folders should be added/removed on start/stop (similar to how vagrant does it)
 
 .PHONY: vmstart # -> start the primary SEED VM
 vmstart:
-	- VBoxManage startvm "SEEDUbuntu20.04" --type headless && ssh seed
+	-VBoxManage sharedfolder add $(VMNAME) --name "shared_admin" --hostpath "/Users/twp/projects/class/admin" --automount --auto-mount-point "/home/seed/shared_admin"
+	-VBoxManage sharedfolder add $(VMNAME) --name "shared_code" --hostpath "/Users/twp/projects/class/msu-cs476-code" --automount --auto-mount-point "/home/seed/shared_code"
+	-VBoxManage sharedfolder add $(VMNAME) --name "shared_website" --hostpath "/Users/twp/projects/class/msu-cs476-2021-spring" --automount --auto-mount-point "/home/seed/shared_website"
+	-VBoxManage startvm $(VMNAME) --type headless && ssh seed
 
 .PHONY: vmstop # -> stop the primary SEED VM
 vmstop:
-	- VBoxManage controlvm "SEEDUbuntu20.04" poweroff
+	-VBoxManage controlvm $(VMNAME) poweroff
+	-VBoxManage sharedfolder remove $(VMNAME) --name "shared_website"
+	-VBoxManage sharedfolder remove $(VMNAME) --name "shared_code"
+	-VBoxManage sharedfolder remove $(VMNAME) --name "shared_admin"
 
 .PHONY: vmrestart # -> restart the primary SEED VM
 vmrestart: vmstop vmstart
@@ -68,11 +82,11 @@ vmrestart: vmstop vmstart
 vmlist:
 	@echo "Available VMs:"
 	@echo "-----------------"
-	@VBoxManage list vms
+	@VBoxManage list vms | sed 's/"*"/,/g' | column -s ',' -t
 	@echo
 	@echo "Running VMs:"
 	@echo "-----------------"
-	@VBoxManage list runningvms
+	@VBoxManage list runningvms  | sed 's/"*"/,/g' | column -s ',' -t
 
 ######################################
 # Misc. Helpers
