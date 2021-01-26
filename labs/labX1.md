@@ -21,11 +21,12 @@ For this assignment we'd like you to present a threat model and reflect on your 
    Please feel free to present your threat model in textual or graphical form (or a combination of both).
    Please **describe your approach** (e.g., free-form brainstorming, scenario-based brainstorming, asset-centric brainstorming).
    We don't expect that you would use a formal approach to threat modeling, such as STRIDE, but we do want to understand your approach.
-   If you want to go beyond simple brainstorming, consider reading up a bit more on
+   If you want to go beyond simple brainstorming, consider reading up a bit more on other resources and strategies such as
    [Attack Trees](https://www.schneier.com/academic/archives/1999/12/attack_trees.html)
    or attack libraries such as
    [CAPEC](http://capec.mitre.org) or
-   [OWASP's Top 10](https://owasp.org/www-project-top-ten/)
+   [OWASP's Top 10](https://owasp.org/www-project-top-ten/),
+   or [OWASP Threat Modeling Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html).
 2. (Reflection) What are the **strengths** of your approach?
 3. (Reflection) What are the **weaknesses** of your approach?
 4. (Reflection) What might you improve about your threat model and/or approach in the future?
