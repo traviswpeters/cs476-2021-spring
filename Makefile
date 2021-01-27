@@ -46,6 +46,7 @@ slides:
 	-@mv $(ADMIN)/$(CLASS)-*.pdf $(WEBSITE)/files/ 2> /dev/null
 	@echo "\nSlides in 'files/' on website:"
 	@ls -alG $(WEBSITE)/files/$(CLASS)*
+	@open $(WEBSITE)/files/
 
 .PHONY: release # commit slides+links
 release:
