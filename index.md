@@ -160,8 +160,8 @@ If you have any questions, please contact me.
 <td markdown="span">01/26/2021 (T)</td>
 <td markdown="span" markdown="1">
 - Review Systems and Software
-<!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+- [video](https://zoom.us/rec/share/fK-_rhEhpQ2KLQQWEwdBNqGzx_uJKzPBn1Msn5El8_81TwK6OQevOax-4KC2BeNY.-gx7RYhFkEQ4rG0N){:.video}
+[slides](files/cs476-05-intro2sec-and-review.pdf){:.slides}
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
