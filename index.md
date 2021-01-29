@@ -149,9 +149,7 @@ If you have any questions, please contact me.
 <!-- - Shellcode Development? -->
 <!-- - Format-String Vulnerability? -->
 <!-- - Race Condition? -->
-</td>
-<!--   BLANK    --><td markdown="span" class="note" markdown="1">
-</td>
+<!--   BLANK    --><td markdown="span" class="note" markdown="1"></td>
 </tr>
 
 <!-- Date, Topics & Lecture Details, Assignments & Reading -->
