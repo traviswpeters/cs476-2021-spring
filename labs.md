@@ -22,7 +22,7 @@ We, along with over a thousand other educational institutions around the world, 
 <!-- ## Lab Assignments -->
 
 <!-- all normal labs -->
-{% assign sorted_pages = site.pages | sort: 'title' %}
+{% assign sorted_pages = site.pages | sort: 'duedate' %}
 {% for page in sorted_pages %}
 {% for tag in page.tags %}
 {% if tag == "labs" %}
