@@ -173,9 +173,9 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">01/28/2021 (R)</td>
 <td markdown="span" markdown="1">
-- TBD
-<!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+- Probing Memory and Executables
+- [video](https://zoom.us/rec/share/PKBL4n3etmsy5mjOcKfg_0qGgsCRPlM3kmAsQZvqt_AmlqfvNoS3PBV6E4zAk_gO.zbJM6D5gZbj8c_Lt){:.video}
+[slides](files/cs476-06-intro2sec-and-review.pdf){:.slides}
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
