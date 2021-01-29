@@ -111,7 +111,6 @@ If you have any questions, please contact me.
 <!-- Week Title --><td markdown="span" class="note">Software Security</td>
 <!--   BLANK    --><td markdown="span" class="note" markdown="1">
 - Read Chapters 1, 2, 3 [(SS3P)]({{site.data.settings.textbookss3plink}}),
-- [[Linux File Permissions Complete Guide]](https://devconnected.com/linux-file-permissions-complete-guide/)
 </td>
 </tr>
 
@@ -189,6 +188,7 @@ If you have any questions, please contact me.
 <!-- Week Title --><td markdown="span" class="note">Software Security --- Privileged Programs, Env. Variables, and Attacks via Program Inputs</td>
 <!--   BLANK    --><td markdown="span" class="note" markdown="1">
 - (Optional) Chapters 1, 2 [(SEED)]({{site.data.settings.textbookseedlink}})
+- [[Linux File Permissions Complete Guide]](https://devconnected.com/linux-file-permissions-complete-guide/)
 </td>
 </tr>
 
@@ -315,7 +315,7 @@ If you have any questions, please contact me.
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
-- Lab 04 Due!
+- Lab 03 Due!
 </td>
 </tr>
 
@@ -388,7 +388,7 @@ If you have any questions, please contact me.
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
-- Lab 05 Due!
+- Lab 04 Due!
 </td>
 </tr>
 
@@ -425,7 +425,7 @@ If you have any questions, please contact me.
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
-- Lab 06 Due!
+- Lab 05 Due!
 </td>
 </tr>
 
@@ -461,7 +461,7 @@ If you have any questions, please contact me.
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
-- Lab 07 Due!
+- Lab 06 Due!
 </td>
 </tr>
 
@@ -534,7 +534,7 @@ If you have any questions, please contact me.
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
-- Lab 08 Due!
+- Lab 07 Due!
 </td>
 </tr>
 
@@ -571,7 +571,7 @@ If you have any questions, please contact me.
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
-- Lab 09 Due!
+- Lab 08 Due!
 </td>
 </tr>
 
@@ -607,7 +607,7 @@ If you have any questions, please contact me.
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
-- Lab 10 Due!
+- Lab 9 Due!
 </td>
 </tr>
 
