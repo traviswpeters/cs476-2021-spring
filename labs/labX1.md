@@ -32,7 +32,7 @@ For this assignment we'd like you to present a threat model and reflect on your 
 4. (Reflection) What might you improve about your threat model and/or approach in the future?
 
 
-## What To Turn In & Instructions On Submitting your Assignment
+## Instructions On Submitting Your Assignment
 {:.pt-1}
 
 Please submit your assignment via your **private** GitHub repository.

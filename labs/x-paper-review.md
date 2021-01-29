@@ -1,20 +1,18 @@
 ---
-title: 'Extra Credit - Paper Review'
 layout: default
-tags: [extra-credit]
-published: True
+tags: [labs, seed]
+title: 'Paper Review'
+duedate: 'Tuesday [XX/XX/2021] @ 12:00 PM (MST)'
+published: False
 ---
 
 ## {{page.title}}
 {:.titletext}
 
-Due to the unfortunate cancellation of NCUR, I am offering a new extra credit option.
+Find a recent/interesting research paper and write a review of the paper (2 pages max, single-spaced).
 
-**Your Task:**
-Find a recent/interesting research paper and write a 1-2 page (single-spaced) review of the paper.
-
-If you don't know where to start, I suggest skimming the websites/"programs" for conferences from recent years.
-You could try:
+If you don't know where to start, I suggest skimming the websites and "programs" for conferences from recent years.
+You could explore:
 [WiSec (Security and Privacy in Wireless and Mobile Networks)](https://wisec2020.ins.jku.at) /
 [CCS (Computer and Communications Security)](https://www.sigsac.org/ccs/CCS2020/) /
 [USENIX Security](https://www.usenix.org/conference/usenixsecurity20) /
@@ -35,4 +33,6 @@ You could try:
 
 ### What to Submit
 
-Submit your write-up as a **PDF** to **D2L**.
+Submit your write-up as a **PDF** named `reviews/review1.pdf`
+<!-- Submit your write-up as a **PDF** named `reviews/review2.pdf` -->
+<!-- Submit your write-up as a **PDF** named `reviews/review3.pdf` -->

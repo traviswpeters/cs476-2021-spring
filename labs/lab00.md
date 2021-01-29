@@ -189,7 +189,7 @@ This file should be named `README.md` and it should be at the top-level director
 - Responses to the tasks/questions throughout PA0.
  -->
 
-## What To Turn In & Instructions On Submitting your Assignment
+## Instructions On Submitting Your Assignment
 {:.pt-1}
 
 Please submit your assignment via your **private** GitHub repository.

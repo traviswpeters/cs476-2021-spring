@@ -202,7 +202,7 @@ If you have any questions, please contact me.
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
-- TBD Due!
+- [Systems & Software](labs/labX2) Due!
 </td>
 </tr>
 
