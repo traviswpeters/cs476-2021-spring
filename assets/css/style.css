@@ -361,7 +361,8 @@ code.highlighter-rouge {
 } */
 
 /* Adapted from https://stackoverflow.com/a/48694906 */
-/* pre.highlight {
+pre.highlight {
+/*
     background: #e8e8e8;
     border: 1px solid #ddd;
     border-left: 3px solid #003399;
@@ -377,7 +378,8 @@ code.highlighter-rouge {
     display: block;
     word-wrap: break-word;
     border-radius: 3px;
-} */
+*/
+}
 
 /*
  * Dynamic Nav Bar
