@@ -2,7 +2,7 @@
 layout: default
 tags: [labs, seed]
 title: 'Systems & Software - Towards Security'
-duedate: 'Tuesday [02/02/2021] @ 12:00 PM (MST)'
+duedate: 'Tuesday [02/02/2021] @ 11:59 AM (MST)'
 published: True
 ---
 

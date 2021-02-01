@@ -2,7 +2,7 @@
 layout: default
 tags: [labs, seed]
 title: 'Your First Threat Model'
-duedate: 'Tuesday [01/26/2021] @ 12:00 PM (MST)'
+duedate: 'Tuesday [01/26/2021] @ 11:59 AM (MST)'
 published: True
 ---
 

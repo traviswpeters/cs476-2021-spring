@@ -5,7 +5,7 @@ seedurl: 'https://seedsecuritylabs.org/Labs_16.04/Documents/SEEDVM_VirtualBoxMan
 layout: default
 tags: [labs, seed]
 published: True
-duedate: 'Tuesday [01/19/2021] @ 12:00 PM (MST)'
+duedate: 'Tuesday [01/19/2021] @ 11:59 AM (MST)'
 ---
 
 # {{page.title}}
@@ -164,7 +164,7 @@ Here is a list of some things you may want to review.
     - _**(Try it!)**_ Go through a [command line tutorial](https://ryanstutorials.net/linuxtutorial/).
 
 - We will read and write **C** programs in this course.
-  _[**<< cheatsheet >>**](../files/intro-to-C-for-java-programmers.pdf)_
+  _[**<< cheatsheet >>**](../files/read-intro-to-C-for-java-programmers.pdf)_
     - _**(Try it!)**_ Go through some of the [C examples from our OS class](https://www.traviswpeters.com/cs460-2020-fall/pa0/#task-6-programming-in-c).
 
 - We will read and write **Python** programs in this course.
