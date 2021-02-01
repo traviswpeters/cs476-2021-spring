@@ -64,10 +64,10 @@ Great reference materials for labs and programming
 
 ###### Programming & Debugging
 - [The C Beginner's Handbook: Learn C Programming Language basics in just a few hours](https://www.freecodecamp.org/news/the-c-beginners-handbook/)
-  - [An Introduction to C Programming for Java Programmers]({{site.data.settings.reading}}/intro-to-C-for-java-programmers.pdf)
+  - [An Introduction to C Programming for Java Programmers]({{site.data.settings.reading}}/read-intro-to-C-for-java-programmers.pdf)
   - [System Programming Overview / Programming in C Refresher](http://www.lysator.liu.se/c/bwk-tutor.html)
-  - [C and C++ in 5 days]({{site.data.settings.reading}}/C-in-5-days.pdf)
-  - [The C Cheat Sheet](files/the-C-cheat-sheet.pdf)
+  - [C and C++ in 5 days]({{site.data.settings.reading}}/read-C-in-5-days.pdf)
+  - [The C Cheat Sheet](files/read-the-C-cheat-sheet.pdf)
 - [GDB Cheatsheet](https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf)
 - [A Nice `Makefile` Tutorial](https://gist.github.com/isaacs/62a2d1825d04437c6f08)
 - [ASCII/Decimal/Hex/Octal Reference Table](https://i.stack.imgur.com/mij6M.jpg)
@@ -80,7 +80,7 @@ Great reference materials for labs and programming
 - [Browse the Linux Source Code *(thanks @bootlin!)*](https://elixir.bootlin.com/linux/latest/source)
 
 ###### More Technical References
-- [A Tiny Guide to Programming in 32-bit x86 Assembly Language]({{site.data.settings.reading}}/tiny-guide-to-x86-assembly.pdf)
+- [A Tiny Guide to Programming in 32-bit x86 Assembly Language]({{site.data.settings.reading}}/read-tiny-guide-to-x86-assembly.pdf)
 - [The 101 of ELF files on Linux: Understanding and Analysis](https://linux-audit.com/elf-binaries-on-linux-understanding-and-analysis/)
 - [PLT and GOT - the key to code sharing and dynamic libraries](https://www.technovelty.org/linux/plt-and-got-the-key-to-code-sharing-and-dynamic-libraries.html)
 - [The Linux Kernel Module Programming Guide]({{site.data.settings.reading}}/readme-linux-kernel-programming-lkmpg.pdf)
