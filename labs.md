@@ -20,6 +20,9 @@ Started in 2002, funded by a total of 1.3 million dollars from NSF, and now used
 We, along with over a thousand other educational institutions around the world, thank Professor Wenliang Du for this superb effort.
 
 <!-- ## Lab Assignments -->
+For our lab assignments you will want to have the SEED VM properly configured in VirtualBox.
+Specifically, we recommend using the **pre-built SEED VM (Ubuntu 20.04 VM)**.
+See the [SEED Labs setup page](https://seedsecuritylabs.org/labsetup.html) for more information.
 
 <!-- all normal labs -->
 {% assign sorted_pages = site.pages | sort: 'duedate' %}
