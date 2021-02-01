@@ -108,11 +108,6 @@ git@github.com:studentIAm/csci-460-fall2020-private.git
 ```
 -->
 
-#### 2.4 (Bonus) Pro VM Configuration!
-{:.pt-1 .pb-1}
-
-Check out my tutorial for configuring [SSH access from your host (your physical computer) to your guest (the SEED VM)](../ssh)
-
 ## Task 3: VirtualBox & The SEED VM
 {:.pt-1}
 
@@ -128,6 +123,13 @@ By the end of this task you should have a fully functional VM where you can run 
      - Download [SEED-Ubuntu20.04.zip](https://drive.google.com/file/d/138fqx0F8bThLm9ka8cnuxmrD6irtz_4m/view?usp=sharing) _(The download will take a bit)_
      - Unzip it, and you should be able to see a folder.
      - Then follow the ["Install SEED VM on VirtualBox" manual](https://github.com/seed-labs/seed-labs/blob/master/manuals/vm/seedvm-manual.md).
+
+##### (Bonus) Pro VM Configuration!
+{:.pt-1 .pb-1}
+
+Check out my tutorial for configuring [SSH access from your host (your physical computer) to your guest (the SEED VM)](../ssh).
+This tutorial details a few other nice configurations that I use as well.
+Please do let me know if you have suggestions for improvements!
 
 ##### Troubleshooting
 
