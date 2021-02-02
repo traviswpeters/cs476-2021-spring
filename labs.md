@@ -24,18 +24,7 @@ For our lab assignments you will want to have the SEED VM properly configured in
 Specifically, we recommend using the **pre-built SEED VM (Ubuntu 20.04 VM)**.
 See the [SEED Labs setup page](https://seedsecuritylabs.org/labsetup.html) for more information.
 
-<!-- all normal labs -->
-{% assign sorted_pages = site.pages | sort: 'duedate' %}
-{% for page in sorted_pages %}
-{% for tag in page.tags %}
-{% if tag == "labs" %}
-- [{{page.title}}]({{site.baseurl}}{{page.url}}) _>> Due: **{{page.duedate}}**_{:.text-muted .ml-2}
-  {:.m-0 .p-0}
-{% endif %}
-{% endfor %}
-{% endfor %}
-<!-- + final lab -->
-<!-- <li><a href="{{ site.baseurl }}/labs/final.html">Final Lab</a></li> -->
+{% include assignments.html %}
 
 ## Tips for Writing Lab Reports
 

@@ -749,21 +749,11 @@ To ensure that we have access, please double check that Travis and the TA(s) are
 <!-- You can submit an assignment an unlimited number of times. Graders will only grade your most recent submission. -->
 
 ##### Labs
-_Stay tuned for more information coming soon..._
+_This section will be updated periodically. Stay tuned for more information coming soon..._
 
-<!-- all normal labs -->
-{% assign sorted_pages = site.pages | sort: 'title' %}
-{% for page in sorted_pages %}
-{% for tag in page.tags %}
-{% if tag == "labs" %}
-- [{{page.title}}]({{site.baseurl}}{{page.url}}) _>> Due: **{{page.duedate}}**_{:.text-muted .ml-2}
-  {:.m-0 .p-0}
-{% endif %}
-{% endfor %}
-{% endfor %}
-<!-- + final lab -->
-<!-- <li><a href="{{ site.baseurl }}/labs/final.html">Final Lab</a></li> -->
+{% include assignments.html %}
 
+For more information please see the [Labs page](./labs).
 
 ##### Late Penalties
 
