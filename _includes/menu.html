@@ -16,7 +16,7 @@
         <ul class="navbar-nav mr-auto">
         {% for item in site.data.settings.menu %}
             {% assign urlFirstChar = (item.url | slice: 0, 1) %}
-            <!-- NOTE: "if False" => hacky way to keep this code but have it ignored for now... -->
+            {%comment%}<!-- NOTE: "if False" => hacky way to keep this code but have it ignored for now... -->{%endcomment%}
             {% if False and item.name == 'Assignments' or item.name == 'Group Assignments' %}
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ item.name }}</a>
@@ -45,7 +45,7 @@
                       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ item.name }}</a>
                       <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
                         <a class="dropdown-item" href="{{ site.baseurl }}/{{site.data.settings.project.link}}">Project Overview</a>
-                        <!-- <a class="dropdown-item" target="_blank" href="{{site.data.settings.project.teamslink}}">Team Sign-Up & Info</a> -->
+                        <a class="dropdown-item" target="_blank" href="{{site.data.settings.project.teamslink}}">Team Sign-Up & Info</a>
                         <a class="dropdown-item" href="{{ site.baseurl }}/{{site.data.settings.project.presentationslink}}">Teams & Presentations</a>
                         <a class="dropdown-item" href="{{ site.baseurl }}/{{site.data.settings.project.rubricpdf}}">Final Project Rubric</a>
                         <div class="dropdown-divider"></div>
@@ -54,18 +54,17 @@
                       </div>
                     </li>
             {% elsif item.type == 'external' %}
+                <!-- external link -->
                 <li class="nav-item">
                     <a class="nav-link" target="_blank" href="{{ item.url }}">{{ item.name }}</a>
                 </li>
             {% elsif urlFirstChar == '#' %}
+                <!-- link to section of this page -->
                 <li class="nav-item">
                     <a class="nav-link" href="{{ item.url | relative_url }}">#{{ item.name }}</a>
                 </li>
-            {% elsif urlFirstChar == '|' %}
-                <li class="nav-item">
-                    <span class="nav-link">{{ item.name }}</span>
-                </li>
             {% else %}
+                <!-- link to a separate page on this site -->
                 <li class="nav-item">
                     <a class="nav-link" href="{{ item.url | relative_url }}">{{ item.name }}</a>
                 </li>

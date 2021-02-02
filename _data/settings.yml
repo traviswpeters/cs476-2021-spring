@@ -84,7 +84,6 @@ menu:
 - {name: 'Assignments', url: '#assignments'}
 #- {name: 'Project', url: 'project'}
 - {name: 'FAQs', url: '#faqs'}
-- {name: '|', url: '|'} # hacky menu divider
 - {name: 'Labs', url: 'labs'}
 # - {name: 'Activities', url: 'activities'}
 - {name: 'Resources', url: 'resources'}
