@@ -48,7 +48,19 @@ Required and optional course resources, reading materials, etc.
 Great reference materials for labs and programming
 {:.subtitletext}
 
-###### Environment Tools
+##### Cheatsheets
+{:.text-center .pb-1}
+
+[Markdown](https://devhints.io/markdown) /
+[Git](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf) /
+[Command Line](https://cheatography.com/davechild/cheat-sheets/linux-command-line/) /
+[C](./files/read-intro-to-C-for-java-programmers.pdf) /
+[Python](https://overapi.com/python) /
+[Makefile](https://gist.github.com/evertrol/4b6fd05f3b6be2b331c60638b1af7101) /
+[gdb, valgrind, gprof](https://wiki.tiker.net/ToolCheatSheet/)
+{:.text-center .lead}
+
+##### Environment Tools
 - [Wireshark](https://www.wireshark.org)
 - [Docker](https://www.docker.com)
 - [VirtualBox](https://www.virtualbox.org)
@@ -62,7 +74,7 @@ Great reference materials for labs and programming
    - [How to Create and Install SSH Keys From the Linux Shell](https://www.howtogeek.com/424510/how-to-create-and-install-ssh-keys-from-the-linux-shell/)
    - [ssh-keygen - Generate a New SSH Key](https://www.ssh.com/ssh/keygen/) (plus other helpful details)
 
-###### Programming & Debugging
+##### Programming & Debugging
 - [The C Beginner's Handbook: Learn C Programming Language basics in just a few hours](https://www.freecodecamp.org/news/the-c-beginners-handbook/)
   - [An Introduction to C Programming for Java Programmers]({{site.data.settings.reading}}/read-intro-to-C-for-java-programmers.pdf)
   - [System Programming Overview / Programming in C Refresher](http://www.lysator.liu.se/c/bwk-tutor.html)
@@ -73,13 +85,13 @@ Great reference materials for labs and programming
 - [ASCII/Decimal/Hex/Octal Reference Table](https://i.stack.imgur.com/mij6M.jpg)
 - [POSIX Threads Programming](https://computing.llnl.gov/tutorials/pthreads/)
 
-###### Linux
+##### Linux
 - [Linux `man` pages](http://man7.org/linux/man-pages/dir_all_alphabetic.html) (online/HTML version)
 - [Infographic: The Linux Kernel - What Is It, and How Does It Work?](https://www.cyberciti.biz/media/new/cms/2017/04/how-does-linux-kernel-works-explained.png)
 - [Bash scripting cheatsheet](https://devhints.io/bash)
 - [Browse the Linux Source Code *(thanks @bootlin!)*](https://elixir.bootlin.com/linux/latest/source)
 
-###### More Technical References
+##### More Technical References
 - [A Tiny Guide to Programming in 32-bit x86 Assembly Language]({{site.data.settings.reading}}/read-tiny-guide-to-x86-assembly.pdf)
 - [The 101 of ELF files on Linux: Understanding and Analysis](https://linux-audit.com/elf-binaries-on-linux-understanding-and-analysis/)
 - [PLT and GOT - the key to code sharing and dynamic libraries](https://www.technovelty.org/linux/plt-and-got-the-key-to-code-sharing-and-dynamic-libraries.html)
