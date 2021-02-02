@@ -47,7 +47,7 @@ are usually privileged programs. This lab covers the following topics:
 ## Lab Tasks
 
 Code related to this lab can be found in our [class's GitHub repository](https://github.com/traviswpeters/cs476-code).
-Specifically, see `01_setuid/` and `02_envvars/`.
+Specifically, see `01_envvars_setuid/`.
 
 ### Task 1: Manipulating Environment Variables
 
@@ -87,7 +87,7 @@ variables are inherited by the child process or not.
 Please compile and run the following program, and describe your observations.
 
 <!-- https://emgithub.com -->
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F02_envvars%2Fmyprintenv.c&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F01_envvars_setuid%2Fmyprintenv.c&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
 #### Task 2.2
 
@@ -119,7 +119,7 @@ This program simply executes a program called `/usr/bin/env`,
 which prints out the environment variables of the current process.
 
 <!-- https://emgithub.com -->
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F02_envvars%2Fmyenv_execve.c&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F01_envvars_setuid%2Fmyenv_execve.c&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
 #### Task 3.2
 
@@ -150,7 +150,7 @@ passed to the new program `/bin/sh`. Please compile and run the
 following program to verify this.
 
 <!-- https://emgithub.com -->
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F02_envvars%2Fmyenv_system.c&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F01_envvars_setuid%2Fmyenv_system.c&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
 
 ### Task 5: Environment Variables and Set-UID Programs
@@ -173,7 +173,7 @@ Write the following program that can print out all the environment variables in 
 Verify that your implementation correctly prints the environment variables.
 
 <!-- https://emgithub.com -->
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F02_envvars%2Fmyenv_environ.c&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F01_envvars_setuid%2Fmyenv_environ.c&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
 #### Task 5.2
 
@@ -226,7 +226,7 @@ command; however, the programmer only uses the relative path for the
 `ls` command, rather than the absolute path:
 
 <!-- https://emgithub.com -->
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F02_envvars%2Fls_vuln.c&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F01_envvars_setuid%2Fls_vuln.c&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
 Please compile the above program, change its owner to `root`, and make it a Set-UID program.
 
@@ -365,7 +365,7 @@ However, since the `cat` program does not support write operations,
 Vince is confident that Bob cannot use this special audit program to modify any files.
 
 <!-- https://emgithub.com -->
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F01_setuid%2Fcatall.c&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F01_envvars_setuid%2Fcatall.c&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
 #### Task 8.1
 
@@ -411,7 +411,7 @@ Set-UID program. Run the program as a normal user, and describe what
 you observe. Will the file `/etc/zzz` be modified? Please explain.
 
 <!-- https://emgithub.com -->
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F01_setuid%2Fcap_leak.c&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F01_envvars_setuid%2Fcap_leak.c&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
 ## Submission
 
