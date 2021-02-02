@@ -195,8 +195,8 @@ If you have any questions, please contact me.
 <td markdown="span">02/02/2021 (T)</td>
 <td markdown="span" markdown="1">
 - The Set-UID Mechanism & Environment Variables (Part I)
-<!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+- [video](https://zoom.us/rec/share/nC2feo0ZT3NjQtEaek9lVJC9Pkbav7_ifkEE594Udty8yqavP2cq1n-yqJcOe7tT.jyODnN1CJ6IKSI4L){:.video}
+[slides](files/cs476-07-setuid-envvars.pdf){:.slides}
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
