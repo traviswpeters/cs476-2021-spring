@@ -210,7 +210,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 - The Set-UID Mechanism & Environment Variables (Part II)
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -234,7 +234,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 - The Shellshock Attack (Part I)
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -248,7 +248,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 - The Shellshock Attack (Part II)
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -273,7 +273,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 - Buffer Overflow Vulnerabilities, Attacks, and Defenses (Part I)
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -287,7 +287,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 - Buffer Overflow Vulnerabilities, Attacks, and Defenses (Part II)
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -309,7 +309,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 - Intro to Web Security
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -322,7 +322,7 @@ If you have any questions, please contact me.
 <td markdown="span">02/25/2021 (R)</td>
 <td markdown="span" markdown="1">
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -345,7 +345,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 <!-- - TBD -->
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -359,7 +359,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 <!-- - TBD -->
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -382,7 +382,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 <!-- - TBD -->
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -396,7 +396,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 <!-- - TBD -->
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -419,7 +419,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 <!-- - TBD -->
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -433,7 +433,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 <!-- - TBD -->
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -455,7 +455,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 - Intro to Cryptography
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -468,7 +468,7 @@ If you have any questions, please contact me.
 <td markdown="span">03/25/2021 (R)</td>
 <td markdown="span" markdown="1">
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -491,7 +491,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 <!-- - TBD -->
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -505,7 +505,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 <!-- - TBD -->
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -528,7 +528,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 <!-- - TBD -->
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -542,7 +542,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 <!-- - TBD -->
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -565,7 +565,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 <!-- - TBD -->
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -579,7 +579,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 <!-- - TBD -->
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -601,7 +601,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 <!-- - TBD -->
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -615,7 +615,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 <!-- - TBD -->
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -637,7 +637,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 - _No Class_
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -651,7 +651,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 - _No Class_
 <!-- - [video](){:.video} -->
-<!-- [slides](){:.slides} -->
+<!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
