@@ -238,7 +238,7 @@ If you have any questions, please contact me.
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
-- Lab 01 Due!
+- [Lab 01](labs/lab01) Due!
 </td>
 </tr>
 

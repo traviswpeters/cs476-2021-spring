@@ -1,7 +1,7 @@
 ---
 layout: default
 tags: [labs, seed]
-title: 'Lab 01: Environment Variables & Set-UID Programs Lab'
+title: 'Lab 01: Environment Variables & Set-UID Programs'
 duedate: 'Tuesday [02/09/2021] @ 11:59 AM (MST)'
 published: True
 ---
