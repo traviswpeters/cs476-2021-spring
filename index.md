@@ -210,13 +210,15 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 - The Set-UID Mechanism & Environment Variables (Part II)
 - [video](https://zoom.us/rec/share/vmpfH-q97Xob8dnsdYO-QDo_k73GURbSKT5yiBFJH6gBsgYgPGJJ7FsQs_oV4Bsx._sE6zLhTShqPq8B0){:.video}
-[slides (new/spring'21)](files/cs476-08-setuid-envvars.pdf){:.slides}
+[slides (new/spring'21)](files/cs476-07-08-setuid-envvars.pdf){:.slides}
 [slides (old/spring'20)](files/cs476-08-setuid-envvars-SPRING2020.pdf){:.slides}
 - _I decided to remake the slides I lost!_
 - _~~Unfortunately I was unable to recover the updated slides I made this year.~~_
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
+- [[Secure Programming - Executing External Programs Securely]](https://www.oreilly.com/library/view/secure-programming-cookbook/0596003943/ch01s07.html)
+& [[Environment Variables (slides)]](http://www2.cs.uidaho.edu/~krings/CS270/Notes.S10/270-F10-20.pdf)
 </td>
 </tr>
 
