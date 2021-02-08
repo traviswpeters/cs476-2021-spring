@@ -46,27 +46,15 @@ Any submissions found in violation will receive an automatic 0, and the miscondu
        **DO** commit your code and files that are needed to build/run/explain your submission.
        **DO NOT** commit executables or other generated files (e.g., `.o` files, swap files).
 
-##### Example Structure of a Lab Report (`README.md`):
-<!-- At the top of each README include, at a minimum: -->
+#### Example Structure of a Lab Report (`README.md`)
+{:.pb-2}
 
-> **Title of Lab**  
-> **FirstName** **LastName** **(NetID)** << NOT GID!  
-> **Preferred Email Address**  
-> **CSCI 476 or CSCI 594** << depending on the section you are enrolled in   
-> **Date**
+Here is a link to my demo repo that I setup to make some of the formatting expectations clear.
+- [Raw Markdown (on GitHub)](https://raw.githubusercontent.com/traviswpeters/csci-476-594-spring2021-private/main/lab00/README.md)
+- [Rendered Markdown (on GitHub)](https://github.com/traviswpeters/csci-476-594-spring2021-private/blob/main/lab00/README.md)
 
-> **Task 1**  
-> _...summary of the purpose of the task/question..._  
-> _...solution / code snippets / screenshots / other evidence..._  
-> _...observations / conclusions..._  
+> **Please Note:** Try to follow the format of the header in my example EXACTLY!
 
-> **Task 2(a)**  
-> _...summary of the purpose of the task/question..._  
-> _...solution / code snippets / screenshots / other evidence..._  
-> _...observations / conclusions..._  
-> **Task 2(b)**  
-> _...summary of the purpose of the task/question..._  
-> _...solution / code snippets / screenshots / other evidence..._  
-> _...observations / conclusions..._  
+> **Please Note:** I do NOT want your GID, I want to see your Net ID!
 
-> ...
+> **Please Note:** You'll notice that my demo repo is public so that you all can access it - but yours really should be **private**!
