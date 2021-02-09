@@ -1,6 +1,7 @@
 ---
 layout: default
 tags: [labs, seed]
+id: 'lab02'
 title: 'Lab 01: Environment Variables & Set-UID Programs'
 duedate: 'Tuesday [02/09/2021] @ 11:59 AM (MST)'
 published: True
@@ -33,21 +34,19 @@ are usually privileged programs. This lab covers the following topics:
 -   Capability leaking
 -   The dynamic linker/loader
 
-> This lab has been tested on the pre-built SEED VM (Ubuntu 20.04 VM).
-
 ### Resources
 
+- Code related to this lab can be found in our [class's GitHub repository](https://github.com/traviswpeters/cs476-code). Specifically, see `01_envvars_setuid/`.
 - Chapters 1 & 2 in the [SEED Textbook]({{site.data.settings.textbookseedlink}})
 - A related [video lecture](https://www.handsonsecurity.net/video.html) (Udemy course) recorded by Kevin Du.
 - [Checklist for Security of Setuid Programs](https://seedsecuritylabs.org/Labs_16.04/Software/Environment_Variable_and_SetUID/files/setuid.pdf)
 - [Setuid Demystified](http://www.cis.syr.edu/%7Ewedu/minix/projects/setuid_paper.pdf), Chen et al.
 - [How to write a Setuid program](http://nob.cs.ucdavis.edu/%7Ebishop/secprog/1987-sproglogin.pdf), Matt Bishop
 
-
 ## Lab Tasks
-
-Code related to this lab can be found in our [class's GitHub repository](https://github.com/traviswpeters/cs476-code).
-Specifically, see `01_envvars_setuid/`.
+{:.titletext}
+This lab has been tested on the pre-built SEED VM (Ubuntu 20.04 VM).
+{:.subtitletext}
 
 ### Task 1: Manipulating Environment Variables
 
@@ -423,14 +422,4 @@ you observe. Will the file `/etc/zzz` be modified? Please explain.
 
 ## Submission
 
-You need to submit a detailed lab report to describe what you have done and what you have observed, including relevant screenshots, command snippets, and code snippets.
-For any important command snippets or code snippets you must also include a supporting explanation.
-_Simply including commands/code without any explanation will not receive credit._
-For any interesting or surprising observations, you also need to provide explanations.
-You are encouraged to pursue further investigation, beyond what is required by the lab description.
-
-Please submit your write-up in `lab01/README.md` within your **private** GitHub repository.
-Your `README.md` must be written up in valid Markdown.
-Please also include any accompanying resources (e.g., source code, makefiles, screenshots).
-Please do not commit/include any unnecessary files within your repository (I strongly recommend using a `.gitignore` file).
-For general tips on how to write and format your submission, please see the [Lab Info & Tips page](../labs).
+{% include lab_submission.html %}
