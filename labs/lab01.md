@@ -2,12 +2,17 @@
 layout: default
 tags: [labs, seed]
 dirname: 'lab01'
-title: 'Lab 01: Environment Variables & Set-UID Programs'
+labprefix: 'Lab 01'
+labtitle: 'Environment Variables & Set-UID Programs Lab'
+title: 'Lab 01: Environment Variables & Set-UID Programs Lab'
 duedate: 'Tuesday [02/09/2021] @ 11:59 AM (MST)'
 published: True
 ---
 
-## {{page.title}}
+# {{page.labprefix}}: {{page.labtitle}}
+{:.pb-4}
+
+## {{page.labtitle}}
 {:.titletext}
 Adapted from SEED Labs: A Hands-on Lab for Security Education.
 {:.subtitletext}
