@@ -395,4 +395,12 @@ you observe. Will the file `/etc/zzz` be modified? Please explain.
 <!-- https://emgithub.com -->
 <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F01_envvars_setuid%2Fcap_leak.c&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
+<!-- NOTE: This "stub" assumes that page.duedate and page.id variables are defined; the latter should be consistent with our directory naming scheme. -->
+
+## Submission
+
+This lab is due {{page.duedate}}.
+
+Please submit your write-up in `{{page.id}}/README.md` within your **private** GitHub repository.
+
 {% include lab_submission.html %}

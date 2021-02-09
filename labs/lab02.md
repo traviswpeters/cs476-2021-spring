@@ -403,4 +403,12 @@ Please replace the first line of the CGI programs with this program to have your
 
 Repeat Task 3 and describe your observations.
 
+<!-- NOTE: This "stub" assumes that page.duedate and page.id variables are defined; the latter should be consistent with our directory naming scheme. -->
+
+## Submission
+
+This lab is due {{page.duedate}}.
+
+Please submit your write-up in `{{page.id}}/README.md` within your **private** GitHub repository.
+
 {% include lab_submission.html %}
