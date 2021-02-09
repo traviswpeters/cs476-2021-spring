@@ -4,7 +4,7 @@ tags: [labs, seed]
 id: 'lab02'
 title: 'Lab 02: Shellshock Attack Lab'
 duedate: 'Tuesday [02/16/2021] @ 11:59 AM (MST)'
-published: True
+published: False
 ---
 
 _**TODO: Was `bash_shellshock` renamed to `bashbug` on the new VMs?**_
@@ -402,13 +402,5 @@ The program `/bin/bash` is a patched version.
 Please replace the first line of the CGI programs with this program to have your CGI programs used the patched version of bash.
 
 Repeat Task 3 and describe your observations.
-
-<!-- NOTE: This "stub" assumes that page.duedate and page.id variables are defined; the latter should be consistent with our directory naming scheme. -->
-
-## Submission
-
-This lab is due {{page.duedate}}.
-
-Please submit your write-up in `{{page.id}}/README.md` within your **private** GitHub repository.
 
 {% include lab_submission.html %}
