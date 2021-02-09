@@ -1,0 +1,22 @@
+<div class="card bg-secondary border-primary" markdown="1">
+<div class="card-body" markdown="1">
+<h4 class="card-title">Shell Countermeasures</h4>
+<h6 class="card-subtitle mb-2 text-muted">An important change is needed to circumvent shell countermeasures</h6>
+
+The `system(cmd)` function executes the `/bin/sh` program first, and then asks this shell program to run the `cmd` command.
+In Ubuntu 20.04 (and several versions before), `/bin/sh` is actually a symbolic link pointing to `/bin/dash`.
+This shell program has a countermeasure that prevents itself from being executed in a Set-UID process.
+Basically, if `dash` detects that it is executed in a Set-UID process, it immediately changes the effective user ID to the process's real user ID, essentially dropping its privileges.
+
+Since our victim program is a Set-UID program, the countermeasure in `/bin/dash` can prevent our attack.
+To see how our attack works without such a countermeasure, we will link `/bin/sh` to another shell that does not have such a countermeasure.
+There is another shell program called `zsh` in our Ubuntu 20.04 VM.
+Use the following commands to link `/bin/sh` to `/bin/zsh`, and to reset `/bin/sh` to `/bin/dash`, respectively:
+
+```bash
+$ sudo ln -sf /bin/zsh /bin/sh   # set shell to zsh - zsh has no set-uid countermeasure
+$ sudo ln -sf /bin/dash /bin/sh  # set shell to dash - dash has a set-uid countermeasure
+```
+
+</div>
+</div>

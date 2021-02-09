@@ -231,35 +231,10 @@ command; however, the programmer only uses the relative path for the
 Please compile the above program, change its owner to `root`, and make it a Set-UID program.
 
 Can you make this Set-UID program run your code instead of `/bin/ls`?
+
 If you can, is your code running with root privileges? Describe and explain your observations.
 
-<div class="card bg-secondary border-primary" markdown="1">
-<div class="card-body" markdown="1">
-<h4 class="card-title">Shell Countermeasures</h4>
-<h6 class="card-subtitle mb-2 text-muted">An important change is needed to circumvent shell countermeasures</h6>
-
-The `system(cmd)` function executes the `/bin/sh` program first, and
-then asks this shell program to run the `cmd` command. In Ubuntu 20.04
-(and several versions before), `/bin/sh` is actually a symbolic link
-pointing to `/bin/dash`. This shell program has a countermeasure that
-prevents itself from being executed in a Set-UID process. Basically,
-if `dash` detects that it is executed in a Set-UID process, it
-immediately changes the effective user ID to the process's real user ID,
-essentially dropping the privilege.    
-
-Since our victim program is a Set-UID program, the countermeasure in
-`/bin/dash` can prevent our attack. To see how our attack works without
-such a countermeasure, we will link `/bin/sh` to another shell that does
-not have such a countermeasure. We have installed a shell program called
-`zsh` in our Ubuntu 20.04 VM. We use the following commands to link
-`/bin/sh` to `/bin/zsh`:
-
-```bash
-$ sudo ln -sf /bin/zsh /bin/sh
-```
-
-</div>
-</div>
+{% include lab_shells.html %}
 
 ### Task 7: `LD_PRELOAD` and Set-UID Programs
 
