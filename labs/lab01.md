@@ -395,6 +395,4 @@ you observe. Will the file `/etc/zzz` be modified? Please explain.
 <!-- https://emgithub.com -->
 <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F01_envvars_setuid%2Fcap_leak.c&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
-## Submission
-
 {% include lab_submission.html %}
