@@ -37,7 +37,7 @@ are usually privileged programs. This lab covers the following topics:
 ### Resources
 
 - Code related to this lab can be found in our [class's GitHub repository](https://github.com/traviswpeters/cs476-code). Specifically, see `01_envvars_setuid/`.
-- Chapters 1 & 2 in the [SEED Textbook]({{site.data.settings.textbookseedlink}})
+- Chapters 1 & 2 in the [SEED Textbook]({{site.data.settings.textbookseedlink}}).
 - A related [video lecture](https://www.handsonsecurity.net/video.html) (Udemy course) recorded by Kevin Du.
 - [Checklist for Security of Setuid Programs](https://seedsecuritylabs.org/Labs_16.04/Software/Environment_Variable_and_SetUID/files/setuid.pdf)
 - [Setuid Demystified](http://www.cis.syr.edu/%7Ewedu/minix/projects/setuid_paper.pdf), Chen et al.
