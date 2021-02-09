@@ -4,7 +4,7 @@ tags: [labs, seed]
 id: 'lab02'
 title: 'Lab 02: Shellshock Attack Lab'
 duedate: 'Tuesday [02/16/2021] @ 11:59 AM (MST)'
-published: False
+published: True
 ---
 
 _**TODO: Was `bash_shellshock` renamed to `bashbug` on the new VMs?**_
