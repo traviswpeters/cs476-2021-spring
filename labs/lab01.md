@@ -99,7 +99,7 @@ observation. Save the output in another file (e.g., `myenv2`).
 #### Task 2.3
 
 Compare the difference of these two files using the `diff` command.
-Please draw your conclusion.
+Please draw your conclusions.
 
 ### Task 3: Environment Variables and `execve()`
 
@@ -161,15 +161,16 @@ example, if the program's owner is root, when anyone runs this program,
 the program gains root's privileges during its execution. Set-UID
 allows us to do many interesting things, but since it escalates the
 user's privilege, it is quite risky. Although the behavior of Set-UID
-programs is decided by their program logic, not by users, users can
-indeed affect the behavior via environment variables. To understand how
+programs is decided by their program logic, not by users,
+**users can indeed affect the behavior via environment variables**.
+To understand how
 Set-UID programs can be affected, let us first figure out whether
 environment variables are inherited by a Set-UID program's process
 from the user's process.
 
 #### Task 5.1
 
-Write the following program that can print out all the environment variables in the current process.
+Use the following program that can print out all the environment variables in the current process.
 Verify that your implementation correctly prints the environment variables.
 
 <!-- https://emgithub.com -->
@@ -203,7 +204,7 @@ name of the program in your shell, the shell forks a child process, and
 uses the child process to run the program. Please check whether all the
 environment variables you set in the shell process (parent) are inherited in the Set-UID child process.
 Describe your observations.
-If there are surprises to you, describe them.
+If there are any surprises to you, describe them.
 
 ### Task 6: `PATH` and Set-UID Programs
 
@@ -231,30 +232,35 @@ command; however, the programmer only uses the relative path for the
 Please compile the above program, change its owner to `root`, and make it a Set-UID program.
 
 Can you make this Set-UID program run your code instead of `/bin/ls`?
-If you can, is your code running with the root privilege? Describe and explain your observations.
+If you can, is your code running with root privileges? Describe and explain your observations.
 
+<div class="card bg-secondary border-primary" markdown="1">
+<div class="card-body" markdown="1">
+<h4 class="card-title">Shell Countermeasures</h4>
+<h6 class="card-subtitle mb-2 text-muted">An important change is needed to circumvent shell countermeasures</h6>
 
-> **Important Note:**
->
-> The `system(cmd)` function executes the `/bin/sh` program first, and
-> then asks this shell program to run the `cmd` command. In Ubuntu 20.04
-> (and several versions before), `/bin/sh` is actually a symbolic link
-> pointing to `/bin/dash`. This shell program has a countermeasure that
-> prevents itself from being executed in a Set-UID process. Basically,
-> if `dash` detects that it is executed in a Set-UID process, it
-> immediately changes the effective user ID to the process's real user ID,
-> essentially dropping the privilege.    
->
-> Since our victim program is a Set-UID program, the countermeasure in
-> `/bin/dash` can prevent our attack. To see how our attack works without
-> such a countermeasure, we will link `/bin/sh` to another shell that does
-> not have such a countermeasure. We have installed a shell program called
-> `zsh` in our Ubuntu 20.04 VM. We use the following commands to link
-> `/bin/sh` to `/bin/zsh`:
+The `system(cmd)` function executes the `/bin/sh` program first, and
+then asks this shell program to run the `cmd` command. In Ubuntu 20.04
+(and several versions before), `/bin/sh` is actually a symbolic link
+pointing to `/bin/dash`. This shell program has a countermeasure that
+prevents itself from being executed in a Set-UID process. Basically,
+if `dash` detects that it is executed in a Set-UID process, it
+immediately changes the effective user ID to the process's real user ID,
+essentially dropping the privilege.    
+
+Since our victim program is a Set-UID program, the countermeasure in
+`/bin/dash` can prevent our attack. To see how our attack works without
+such a countermeasure, we will link `/bin/sh` to another shell that does
+not have such a countermeasure. We have installed a shell program called
+`zsh` in our Ubuntu 20.04 VM. We use the following commands to link
+`/bin/sh` to `/bin/zsh`:
 
 ```bash
 $ sudo ln -sf /bin/zsh /bin/sh
 ```
+
+</div>
+</div>
 
 ### Task 7: `LD_PRELOAD` and Set-UID Programs
 
@@ -327,6 +333,8 @@ After you have done Task 7.1, run `myprog` under the following conditions, and o
 -   Make `myprog` a Set-UID root program, and run it as a normal user.
 -   Make `myprog` a Set-UID root program, export the `LD_PRELOAD`
     environment variable again in the root account and run it.
+    > You can run `sudo su` to login as root. Make sure to `exit` when you are done.
+
 -   Make `myprog` a Set-UID user1 program (i.e., the owner is user1,
     which is another user account), export the `LD_PRELOAD` environment
     variable again in a different user's account (not-root user) and run
