@@ -38,7 +38,23 @@ show:
 
 .PHONY: convert # convert a LaTeX file to Markdown --> make convert infile=example.tex outfile=example.md
 convert:
-	@pandoc -s $(infile) -o $(outfile)
+	# NOTE: Too awkward to do this automatically - we have to clean-up the files quite a bit before publishing...
+	#       For now, use the commands/comments below for reference.
+	#
+	# @pandoc -s $(infile) -o $(outfile)
+	#
+	# cd ~/projects/class/seed-labs/category-software/Environment_Variable_and_SetUID/ && pandoc -s Environment_Variable_and_SetUID.tex -o $(WEBSITE)/labs/lab01.md
+	# cd ~/projects/class/seed-labs/category-software/Shellshock/                      && pandoc -s Shellshock.tex                      -o $(WEBSITE)/labs/lab02.md
+	# cd ~/projects/class/seed-labs/category-software/Buffer_Overflow_Setuid/          && pandoc -s Buffer_Overflow_Setuid.tex          -o $(WEBSITE)/labs/lab03.md
+	#
+	# cd ~/projects/class/seed-labs/category-web/ && pandoc -s TEXFILE -o $(WEBSITE)/labs/lab04.md
+	# cd ~/projects/class/seed-labs/category-web/ && pandoc -s TEXFILE -o $(WEBSITE)/labs/lab05.md
+	# cd ~/projects/class/seed-labs/category-web/ && pandoc -s TEXFILE -o $(WEBSITE)/labs/lab06.md
+	#
+	# cd ~/projects/class/seed-labs/category-crypto/ && pandoc -s TEXFILE -o $(WEBSITE)/labs/lab07.md
+	# cd ~/projects/class/seed-labs/category-crypto/ && pandoc -s TEXFILE -o $(WEBSITE)/labs/lab08.md
+	# cd ~/projects/class/seed-labs/category-crypto/ && pandoc -s TEXFILE -o $(WEBSITE)/labs/lab09.md
+	#
 
 .PHONY: slides # fetch exported PDF versions of slides from iCloud and copy to website
 slides:
