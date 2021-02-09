@@ -1,7 +1,7 @@
 ---
 layout: default
 tags: [labs, seed]
-id: 'lab02'
+dirname: 'lab02'
 title: 'Lab 02: Shellshock Attack Lab'
 duedate: 'Tuesday [02/16/2021] @ 11:59 AM (MST)'
 published: False
