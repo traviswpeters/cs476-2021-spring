@@ -110,7 +110,7 @@ If you have any questions, please contact me.
 <!--   Week #   --><td id="week02" markdown="span">Week 02</td>
 <!-- Week Title --><td markdown="span" class="note">Software Security</td>
 <!--   BLANK    --><td markdown="span" class="note" markdown="1">
-- Read Chapters 1, 2, 3 [(SS3P)]({{site.data.settings.textbookss3plink}}),
+- Read Chapters 1, 2, 3 [(SS3P)]({{site.data.settings.textbookss3plink}})
 </td>
 </tr>
 
@@ -185,7 +185,8 @@ If you have any questions, please contact me.
 <!--   Week #   --><td id="week04" markdown="span">Week 04</td>
 <!-- Week Title --><td markdown="span" class="note">Software Security --- Privileged Programs, Env. Variables, and Attacks via Program Inputs</td>
 <!--   BLANK    --><td markdown="span" class="note" markdown="1">
-- (Optional) Chapters 1, 2 [(SEED)]({{site.data.settings.textbookseedlink}})
+- Read Chapters 6.2, 6.3, 6.4, 7.1.1, 7.1.3 [(SS3P)]({{site.data.settings.textbookss3plink}}),
+(Optional) Chapters 1, 2 [(SEED)]({{site.data.settings.textbookseedlink}})
 - [[Linux File Permissions Complete Guide]](https://devconnected.com/linux-file-permissions-complete-guide/)
 </td>
 </tr>
@@ -228,7 +229,8 @@ If you have any questions, please contact me.
 <!--   Week #   --><td id="week05" markdown="span">Week 05</td>
 <!-- Week Title --><td markdown="span" class="note">Software Security --- The Shellshock Attack</td>
 <!--   BLANK    --><td markdown="span" class="note" markdown="1">
-- (Optional) Chapters 3, 9 [(SEED)]({{site.data.settings.textbookseedlink}}),
+- Read Chapters 6.2, 6.3, 6.4 [(SS3P)]({{site.data.settings.textbookss3plink}}),
+(Optional) Chapters 3, 9 [(SEED)]({{site.data.settings.textbookseedlink}}),
 - [[CVE-2014-6271]](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6271), [[shellshocker.net]](https://www.minttm.com/takeover-shellshocker-net)
 </td>
 </tr>
@@ -238,8 +240,8 @@ If you have any questions, please contact me.
 <td markdown="span">02/09/2021 (T)</td>
 <td markdown="span" markdown="1">
 - The Shellshock Attack (Part I)
-<!-- - [video](){:.video} -->
-<!-- [slides](files/){:.slides} -->
+- [video](https://zoom.us/rec/share/Ktnsd3Em-Fn6rNqbZ8RcLnLEZp_m6ibIQ8uWP_vQz51Be6tam895GVmOH78pf9nM.Xb8oXel3xuLQUMYp){:.video}
+[slides](files/cs476-09-10-shellshock.pdf){:.slides}
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
