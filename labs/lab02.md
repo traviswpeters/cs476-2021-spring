@@ -44,8 +44,8 @@ This lab covers the following topics:
 - A related [video lecture](https://www.handsonsecurity.net/video.html) (Udemy course) recorded by Kevin Du.
 
 <!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
-<!-- <div class="card bg-secondary border-primary" markdown="1"> -->
-<!-- <div class="card-body" markdown="1"> -->
+<div class="card bg-secondary border-primary" markdown="1">
+<div class="card-body" markdown="1">
 <!-- <h2 class="card-title">Environment Setup</h2> -->
 <!-- {:.titletext} -->
 <!-- This lab has been tested on the pre-built SEED VM (Ubuntu 20.04 VM). -->
@@ -57,39 +57,40 @@ This lab uses a new approach that is dependent on docker/containers.
 The transition to containers was meant to make the setup for this lab easier.
 (Old versions of network and web security labs required multiple VMs - containers are much more lightweight and easy to work with.)
 If, however, you encounter any issues, please let me know, and we can work to troubleshoot.
-Please follow the rest of this section very carefully:
-it contains critical information to ensure that this lab will work properly.
+Please follow the rest of this section _**very carefully**_ - it contains critical information to ensure that this lab will work properly.
 
 For reference, here is a link to the official [SEED Manual for Containers](https://github.com/seed-labs/seed-labs/blob/master/manuals/docker/SEEDManual-Container.md).
 
-### DNS Settings
-
-In our setup, the web server container's IP address is `10.9.0.80`.
-The hostname of the server is called `www.seedlab-shellshock.com`.
-We need to map this name to the IP address.
-Please add the following to the end of the `/etc/hosts` on your SEED VM.
-You need root privileges to modify this file:
-
-```
-10.9.0.80   www.seedlab-shellshock.com
-```
+> If this is the first time you set up a SEED lab environment using containers, it is quite important that you read the user manual.
 
 ### Container Setup and Commands
 
-Please download the `Labsetup.zip` file to your VM from the lab's
-website, unzip it, enter the `Labsetup` folder, and use the
-`docker-compose.yml` file to set up the lab environment. Detailed
-explanation of the content in this file and all the involved
-`Dockerfile` can be found from the user manual, which is linked to the
-website of this lab. If this is the first time you set up a SEED lab
-environment using containers, it is very important that you read the
-user manual.
+Please ensure that you have the class repo cloned locally.
+Once this is done, navigate to `02_shellshock/` directory.
 
-In the following, we list some of the commonly used commands related to
-Docker and Compose. Since we are going to use these commands very
-frequently, we have created aliases for them in the `.bashrc` file (in
-our provided SEEDUbuntu 20.04 VM).
+```bash
+$ git clone git@github.com:traviswpeters/cs476-code.git code # name the local clone 'code'
+$ cd /home/seed/code/02_shellshock
+```
 
+We will make use of **Docker** and **Compose** to make working with containers easy.
+
+```bash
+# First, build the container
+$ docker-compose build    # Build the container image
+
+# Next, start/stop the container(s) as needed
+$ docker-compose up -d    # Start the container (-d runs container in the background; i.e., detached)
+$ docker-compose down     # Shut down the container
+```
+
+<!-- Please download the `Labsetup.zip` file to your VM from the lab's website, unzip it, enter the `Labsetup` folder, and use the `docker-compose.yml` file to set up the lab environment. -->
+<!-- Detailed explanation of the content in this file and all the involved `Dockerfile` can be found from the user manual, which is linked to the website of this lab.  -->
+<!-- If this is the first time you set up a SEED lab environment using containers, it is very important that you read the user manual. -->
+
+<!-- In the following, we list some of the commonly used commands related to Docker and Compose. -->
+<!-- Since we are going to use these commands frequently, we have created aliases for them in the `.bashrc` file within the official SEEDUbuntu 20.04 VM. -->
+<!--
 ```
 $ docker-compose build  # Build the container image
 $ docker-compose up     # Start the container
@@ -100,73 +101,103 @@ $ dcbuild       # Alias for: docker-compose build
 $ dcup          # Alias for: docker-compose up
 $ dcdown        # Alias for: docker-compose down
 ```
-
+ -->
+<!--
 All the containers will be running in the background.
 To run commands on a container, we often need to get a shell on that container.
 We first need to use the `docker ps` command to find out the ID of the container,
 and then use `docker exec` to start a shell on that container.
 We have created aliases for them in the `.bashrc` file.
+-->
+
+In general for our labs, we will create and start containers that will run in the background
+(i.e., use the `-d` flag when bringing your container up).
+
+At times we may need to run commands on a container --- docker makes it pretty easy to attach to a container running in the background and get a shell on that container.
+To run commands on a specific container, we first need to use the `docker ps` command to find out the ID of the container,
+and then we can use `docker exec` to start a shell on that container.
+_(I told you this would be easy!)_
 
 ```bash
-# see docker aliases
-$ cat ~/.bashrc | grep docker
+$ docker ps -a   # Show all containers (default shows just running)
+$ dockps         # Show active containers using custom formatting for docker ps
+$ docksh <id>    # Connect to container with <id>
 
-$ dockps
-$ docksh <id>
+### Examples ###
 
-// The following example shows how to get a shell inside hostC
+# The following example shows how to get a shell inside hostC
 $ dockps
 b1004832e275  hostA-10.9.0.5
 0af4ea7a3e2e  hostB-10.9.0.6
 9652715c8e0a  hostC-10.9.0.7
 
+# Attach to docker with ID that starts with "96"
 $ docksh 96
 root@9652715c8e0a:/#  
 
-// Note: If a docker command requires a container ID, you do not need to
-//       type the entire ID string. Typing the first few characters will
-//       be sufficient, as long as they are unique among all the containers.
+# NOTE: If a docker command requires a container ID, you do not need to type the entire ID string.
+# Typing the first few characters will be sufficient so long as it can uniquely identify a container.
 ```
 
-If you encounter problems when setting up the lab environment, please
-read the "Common Problems" section of the manual for potential
-solutions.
+
+**Docker/Compose Aliases.**
+For convenience we provide a number of aliases for the commands above.
+Feel free to use them (or don't).
+```bash
+### see docker aliases ###
+$ cat ~/.bashrc | grep docker
+```
+**Troubleshooting.**
+If you encounter problems when setting up the lab environment,
+please read the **"Common Problems"** section of the [SEED Manual for Containers](https://github.com/seed-labs/seed-labs/blob/master/manuals/docker/SEEDManual-Container.md) for potential solutions.
+If you still can't get things figured out, please connect a member of the course staff.
+
+### DNS Settings
+
+> **NOTE:** In our setup, the web server container's IP address is `10.9.0.80`.
+> The hostname of the server is called `www.seedlab-shellshock.com`.
+> We need to map this name to the IP address.
+> Please add the following to the end of the `/etc/hosts` on your SEED VM.
+> (You need root privileges to modify this file.)
+
+This step should already be done, but please verify that your `/etc/hosts` file has this line:
+
+```
+10.9.0.80   www.seedlab-shellshock.com
+```
 
 ### Web Server and CGI
 
-In this lab, we will launch a Shellshock attack on the web server
-container. Many web servers enable CGI, which is a standard method used
-to generate dynamic content on web pages and for web applications. Many
-CGI programs are shell scripts, so before the actual CGI program runs, a
-shell program will be invoked first, and such an invocation is triggered
-by users from remote computers. If the shell program is a vulnerable
-bash program, we can exploit the Shellshock vulnerable to gain
-privileges on the server.
+In this lab, we will carry out various Shellshock attacks targeted at the web server container.
+Many web servers enable CGI, which is a standard method used to generate dynamic content on web pages and for web applications.
+Many CGI programs are shell scripts, so before the actual CGI program runs, a shell program will be invoked first, and such an invocation is triggered by users from remote computers.
+If the shell program is a vulnerable bash program, we can exploit the Shellshock vulnerability to gain privileges on the server.
 
-In our web server container, we have already set up a very simple CGI
-program (called `vul.cgi`). It simply prints out "Hello World" using a
-shell script. The CGI program is put inside Apache's default CGI folder
-`/usr/lib/cgi-bin`, and it must be executable.
+In our web server container, we have already set up a very simple CGI program (called `vul.cgi`).
+It simply prints out "Hello World" using a shell script.
+The CGI program is located inside Apache's default CGI folder `/usr/lib/cgi-bin`.
+_(**NOTE:** CGI scripts must be executable.)_
 
 <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F02_shellshock%2Fimage_www%2Fvul.cgi&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
-The CGI program uses `/bin/bash_shellshock` (the first line), instead of
-using `/bin/bash`. This line specifies what shell program should be
-invoked to run the script. We do need to use the vulnerable bash in this
-lab.
+The CGI program uses `/bin/bash_shellshock` (note the first line), instead of using `/bin/bash`.
+(`/bin/bash_shellshock` is just an older version of bash that has been intentionally installed in our SEED environment for this lab. As the name suggests, this version of bash is still vulnerable to Shellshock attacks.)
+The first line in shell scripts is known as a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)); this line specifies what shell program should be invoked to run the script.
+In order to carry out Shellshock attacks, we need to use the vulnerable version of bash in this lab.
 
-To access the CGI program from the Web, we can either use a browser by
-typing the following URL:
-<http://www.seedlab-shellshock.com/cgi-bin/vul.cgi>, or use the
-following command line program `curl` to do the same thing. Please make
-sure that the web server container is running.
+**CGI Test.**
+Before getting started with the lab tasks, make sure that you can access this CGI script.
+Before you try this, _make sure that the web server container is running!_ ;-)
 
-```bash
-$ curl http://www.seedlab-shellshock.com/cgi-bin/vul.cgi
-```
+There are two main approaches to access the CGI program running on our web server:
+1. We can use a web browser (within the VM) and access the following URL: <http://www.seedlab-shellshock.com/cgi-bin/vul.cgi>
+2. We can use the command line program `curl`:
+    ```bash
+    $ curl http://www.seedlab-shellshock.com/cgi-bin/vul.cgi
+    ```
 
-<!-- </div> -->
-<!-- </div> -->
+</div>
+</div>
 <!-- END Special Section -->
 
 ## Lab Tasks
@@ -174,46 +205,43 @@ $ curl http://www.seedlab-shellshock.com/cgi-bin/vul.cgi
 This lab has been tested on the pre-built SEED VM (Ubuntu 20.04 VM).
 {:.subtitletext}
 
-Detailed guidelines on the Shellshock attack can be found in the SEED
-book, so we will not repeat the guidelines in the lab description.
+<!-- Detailed guidelines on the Shellshock attack can be found in the SEED book, so we will not repeat the guidelines in the lab description. -->
 
 ### Task 1: Experimenting with Bash Functions
 
-The bash program in Ubuntu 20.04 has already been patched, so it is no
-longer vulnerable to the Shellshock attack. For the purpose of this lab,
-we have installed a vulnerable version of bash inside the container
-(inside `/bin`). The program can also be found in the `Labsetup` folder
-(inside `image_www`). Its name is `bash_shellshock`. We need to use this
-bash in our task. You can run this shell program either in the container
-or directly on your computer. The container manual is linked to the
-lab's website.
+The bash program in Ubuntu 20.04 has already been patched, so it is no longer vulnerable to the Shellshock attack.
 
-Please design an experiment to verify whether this bash is vulnerable to
-the Shellshock attack or not. Conduct the same experiment on the patched
-version `/bin/bash` and report your observations.
+For the purpose of this lab, we have installed a vulnerable version of bash inside the container (see `/bin/bash_shellshock`).
+<!-- The program can also be found in the `Labsetup` folder (inside `image_www`).  -->
+<!-- Its name is `bash_shellshock`.  -->
+<!-- Throughout this lab, we need to use this version of bash (unless otherwise stated). -->
+<!-- You can run this shell program either in the container or directly on your computer.  -->
+<!-- The container manual is linked to the lab's website. -->
+
+Please design an experiment to verify whether `/bin/bash_shellshock` is vulnerable to the Shellshock attack.
+Conduct the same experiment on the patched version `/bin/bash` and report your observations.
+
+> **NOTE:** For this experiment, you can use `docksh <id>` to attach to your container.
+  Once you have a shell within the terminal, you can create a child shell that runs either `/bin/bash` or `/bin/bash_shellshock` to conduct your experiment.
+  In later tasks you will conduct shellshock attacks from outside the web server container, but for this task it is OK to do this within the container.
 
 ### Task 2: Passing Data to Bash via Environment Variables
 
-To exploit a Shellshock vulnerability in a bash-based CGI program,
-attackers need to pass their data to the vulnerable bash program,
-and the data needs to be passed via an environment variable.
+To exploit a Shellshock vulnerability in a bash-based CGI program, attackers need to pass their data to the vulnerable bash program, and the data needs to be passed via an environment variable.
 In this task, we need to see how we can achieve this goal.
-We have provided another CGI program (`getenv.cgi`) on the server to help you identify what user data is translated into environment variables,
-which are ultimately passed to a CGI program.
+We have provided another CGI program (`getenv.cgi`) on the server to help you identify what user data is translated into environment variables, which are ultimately passed to a CGI program.
 This CGI program prints out all its environment variables for the current process.
 
 <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F02_shellshock%2Fimage_www%2Fgetenv.cgi&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
-#### Task 2.1: Passing Data via A Browser
+#### Task 2.1: Passing Data via the Browser
 
-In the code above, Line prints out the contents of all the environment
-variables in the current process. Normally, you would see something like
-the following if you use a browser to access the CGI program. Please
-identify which environment variable(s)' values are set by the browser.
-You can turn on the HTTP Header Live extension on your browser to
-capture the HTTP request, and compare the request with the environment
-variables printed out by the server. Please include your investigation
-results in the lab report.
+In the code above, line 6 prints out the contents of all the environment variables in the current process.
+Normally, you would see something like the output below if you use a browser to access the CGI program.
+Please identify which of the environment variable(s)' values are set according to data sent from the browser.
+You can turn on the [HTTP Header Live extension on your browser](https://www.techwalla.com/articles/how-to-use-live-http-headers) to capture the HTTP request,
+and compare the request with the environment variables printed out by the server.
+Please include your investigation results in your lab report.
 
 ```
 ****** Environment Variables ******
@@ -227,58 +255,79 @@ HTTP_ACCEPT_ENCODING=gzip, deflate
 
 #### Task 2.2: Passing Data via `curl`
 
-If we want to set the environment variable data to arbitrary values, we
-will have to modify the behavior of the browser, that will be too
-complicated. Fortunately, there is a command-line tool called `curl`,
-which allows users to to control most of fields in an HTTP request. Here
-are some of the userful options: (1) the `-v` field can print out the
-header of the HTTP request; (2) the `-A`, `-e`, and `-H` options can set
-some fields in the header request, and you need to figure out what
-files are set by each of them. Please include your findings in the lab
-report. Here are the examples on how to use these fields:
+If we want to set the environment variable data on the server to arbitrary values,
+we could modify the behavior of the browser so that we can control the HTTP request data... but that sounds like a lot of work...
+Fortunately there is an easier way!
+There is a command-line tool called `curl`, which allows users to set/control many of the fields in an HTTP request.
+
+Some of the useful options for `curl`:
+1. the `-v` option will print verbose information about the header of the HTTP request/response;
+2. the `-A`, `-e`, and `-H` options can be used to set specific fields in the header request; you need to figure out what fields are set by each of these options (see below).
+
+Please run the commands below (Tasks 2.2.1-2.2.4) and include your findings in your lab report.
+Specifically, please briefly describe what each option does, and provide relevant evidence (e.g., a snippet of output from the HTTP request/response).
+
+##### Task 2.2.1: The `-v` option
 
 ```
 $ curl -v www.seedlab-shellshock.com/cgi-bin/getenv.cgi
 ```
+
+##### Task 2.2.2: The `-A` option
+
 ```
 $ curl -A "my data" -v www.seedlab-shellshock.com/cgi-bin/getenv.cgi
 ```
+
+##### Task 2.2.3: The `-e` option
+
 ```
 $ curl -e "my data" -v www.seedlab-shellshock.com/cgi-bin/getenv.cgi
 ```
+
+##### Task 2.2.4: The `-H` option
+
 ```
 $ curl -H "AAAAAA: BBBBBB" -v www.seedlab-shellshock.com/cgi-bin/getenv.cgi
 ```
 
-Based on this experiment, please describe what options of `curl` can be
-used to inject data into the environment variables of the target CGI
-program.
+##### Task 2.2.5: Developing an Initial Attack Strategy
+
+After completing tasks 2.2.1-2.2.4, please describe which options of `curl` could be used to inject data into the environment variables of the target CGI program.
 
 ### Task 3: Launching the Shellshock Attack
 
-We can now launch the Shellshock attack. The attack does not depend on
-what is in the CGI program, as it targets the bash program, which is
-invoked before the actual CGI script is executed. Your job is to launch
-the attack through the URL
-<http://www.seedlab-shellshock.com/cgi-bin/vul.cgi>, so you can get the
-server to run an arbitrary command.
+We can now launch the Shellshock attack.
+The attack does not depend on what is in the CGI program, as it targets the bash program, which is invoked before the actual CGI script is executed.
+You should launch your attack targeting the CGI script located at the following URL: <http://www.seedlab-shellshock.com/cgi-bin/vul.cgi>.
+_**Your ultimate objective is to get the server to run an arbitrary command of your choosing.**_
 
-If your command has a plain-text output, and you want the output
-returned to you, your output needs to follow a protocol: it should start
-with `Content_type: text/plain`, followed by an empty line, and then you
-can place your plain-text output. For example, if you want the server to
-return a list of files in its folder, your command will look like the
-following:
+In this task, you are required to use three different `curl` options (i.e., three different HTTP header fields) to launch the Shellshock attack against the target CGI program.
+
+Each of the following subtasks (3.1-3.6) explicitly identifies your objective.
+
+For each objective, please report:
+1. A summary of your approach, with relevant command inputs/outputs
+2. The `curl` option you used
+3. The result (i.e., was your attack successful? Why or why not? Other observations?)
+
+Note that for each of the following subtasks you only need to use one of the `curl` options in your attack, but in total, you need to use three different `curl` options.
+
+<!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
+<div class="card bg-secondary border-primary mb-3" markdown="1">
+<div class="card-body" markdown="1">
+#### Aside: CGI Scripts & Returning Plaintext Output
+
+If your command has a plaintext output, and you want the output returned to you, your output needs to follow a specific format/protocol:
+it needs to start with `Content_type: text/plain`, followed by an empty line, and then you can place your plain-text output.
+For example, if you want the server to return a list of files in its folder, your command could be structured like this:
 
 ```
 echo Content_type: text/plain; echo; /bin/ls -l
 ```
-
-In this task, please use three different approaches (i.e., three
-different HTTP header fields) to launch the Shellshock attack against
-the target CGI program. You need to achieve the following objectives.
-For each objective, you only need to use one approach, but in total, you
-need to use three different approaches.
+As another example, see the `getenv.cgi` script, which adheres to this format when returning plaintext output consisting of the environment variables.
+</div>
+</div>
 
 #### Task 3.1: Shellshock & Reading A File
 
@@ -286,15 +335,13 @@ Get the server to send back the content of the `/etc/passwd` file.
 
 #### Task 3.2: Shellshock & Process Info
 
-Get the server to tell you its process' user ID.
-
-You can use the `/bin/id` command to print out the ID information.
+Get the server to tell you its process' user ID. You can use the `/bin/id` command to print out the ID information.
 
 #### Task 3.3: Shellshock & Creating A File
 
 Get the server to create a file inside the `/tmp` folder.
 
-You need to get into the container to see whether the file is created, or use another Shellshock attack to list the `/tmp` folder.
+You will either need to get into the container to verify whether the file was actually created, or use another Shellshock attack to list the contents of the `/tmp` folder.
 
 #### Task 3.4: Shellshock & Deleting A File
 
@@ -302,26 +349,30 @@ Get the server to delete the file that you just created inside the `/tmp` folder
 
 #### Task 3.5: Shellshock & Reading A Privileged File
 
-Will you be able to steal the content of the shadow file `/etc/shadow` from the server?
-Why or why not?
+"Steal" the shadow file `/etc/shadow` from the server.
 
-The information obtained in Task 3.2 should give you a clue...
+> **Hint:** Should you be able to steal the contents of the shadow file `/etc/shadow` from the server? Why or why not?
 
-#### Task 3.6: Shellshock & Reading A Privileged File
+> **Hint:** The information obtained in Task 3.2 could give you a clue...
 
-HTTP GET requests typically attach data directly in the URL, just after the `?` (the question mark symbol).
+#### Task 3.6: Shellshock via Query Parameters (Graduate Credit)
+
+HTTP GET requests typically include data directly in the URL, just after the `?` (the question mark symbol).
 This could be another approach that we can use to launch an attack.
-In the following example, we attach some data in the URL, and we found that this data is used to set the following environment variable:
+In the following example, we included some data in the URL, and we found that this data was used to set the following environment variable:
 
 ```
-$ curl "http://www.seedlab-shellshock.com/cgi-bin/getenv.cgi?AAAAA"
+$ curl "http://www.seedlab-shellshock.com/cgi-bin/getenv.cgi?MYPARAMDATATEST"
 ...
-QUERY_STRING=AAAAA
+QUERY_STRING=MYPARAMDATATEST
 ...
 ```
 
 Can we use this method to launch a Shellshock attack?
-Please conduct an experiment and derive your conclusions based on your results.
+Please describe your approach, conduct an experiment, and describe your conclusions based on your results.
+
+> **Hint:** This is intended to be more of an open-ended exploration. You may find this to be trickier than it first appears.
+> You'll likely want to be familiar with [URL encoding](https://en.wikipedia.org/wiki/Percent-encoding) and the challenges this may pose.
 
 ### Task 4: Getting a Reverse Shell via Shellshock
 
@@ -338,9 +389,11 @@ Basically, the shell runs on the victim's machine, but it takes input
 from the attacker machine and also prints its output on the attacker's machine.
 A reverse shell gives an attacker a convenient way to run commands on a compromised machine.
 
-In this task, you need to demonstrate that you can get a reverse shell from the victim using the Shellshock attack.
+In this task, _**you need to demonstrate that you can get a reverse shell**_ from the victim (the web server) back to the attacker's machine using the Shellshock attack.
 
 To help you, we summarize some of the major ideas below.
+
+> This example is instructive, but for your attack you need to keep in mind that **the victim is the web server container**, and **the attacker is your SEED VM**. 
 
 <!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
 <div class="card bg-secondary border-primary" markdown="1">
@@ -359,7 +412,7 @@ This server program basically prints out whatever is sent by the client, and sen
 In the following experiment, `netcat` (`nc` for short) is used to listen for a connection on port `9090` (let us focus only on the first line).
 
 ```bash
-Attacker(10.0.2.6):$ nc -nv -l 9090   # Waiting for reverse shell
+Attacker(10.0.2.6):$ nc -nvl 9090     # Waiting for reverse shell
 Listening on 0.0.0.0 9090
 Connection received on 10.0.2.5 39452
 Server(10.0.2.5):$                    # <-- Reverse shell from 10.0.2.5.
@@ -371,7 +424,8 @@ enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 ```
 
 The above `nc` command will block, waiting for a connection.
-We now directly run the following bash program on the Server machine (`10.0.2.5`)
+
+We now open a separate terminal and directly run the following bash program on the server machine (`10.0.2.5` in this example)
 to emulate what attackers would run after compromising the server via the Shellshock attack.
 This bash command will trigger a TCP connection to the attacker machine's port 9090, and a reverse shell will be created.
 We can see the shell prompt from the above result, indicating that the shell is running on the Server machine;
@@ -426,6 +480,6 @@ Please use the following code from our course repository as the target of your a
 
 <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F02_shellshock%2Fimage_www%2Fvul.c&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
-Please explain your attack strategy and observed outcome. 
+Please explain your setup, attack strategy, and observed outcome.
 
 {% include lab_submission.html %}
