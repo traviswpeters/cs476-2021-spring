@@ -235,7 +235,7 @@ command; however, the programmer only uses the relative path for the
 
 Please compile the above program, change its owner to `root`, and make it a Set-UID program.
 
-Can you make this Set-UID program run your code instead of `/bin/ls`?
+Can you make this Set-UID program run your code (e.g., code that launches a new shell) instead of `/bin/ls`?
 
 If you can, is your code running with root privileges? Describe and explain your observations.
 
