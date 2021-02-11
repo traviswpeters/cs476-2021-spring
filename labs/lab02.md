@@ -237,7 +237,7 @@ This CGI program prints out all its environment variables for the current proces
 #### Task 2.1: Passing Data via the Browser
 
 Please use your browser to access the following URL from within your VM:
-[http://www.seedlab-shellshock.com/cgi-bin/getenv.cgi](http://www.seedlab-shellshock.com/cgi-bin/getenv.cgi). 
+[http://www.seedlab-shellshock.com/cgi-bin/getenv.cgi](http://www.seedlab-shellshock.com/cgi-bin/getenv.cgi).
 
 In the code above, line 6 prints out the contents of all the environment variables in the current process.
 Normally, you would see something like the output below if you use a browser to access the CGI program.
@@ -474,6 +474,8 @@ The program `/bin/bash` is a patched version.
 Please replace the first line of the CGI programs with this program to have your CGI programs used the patched version of bash.
 
 Repeat Task 3 and describe your observations.
+
+> **NOTE:** You will need to modify the CGI script on the victim web server to use `/bin/bash` instead of `/bin/bash_shellshock`. 
 
 ### Task 6: Attacking Set-UID Programs via Shellshock (Graduate Credit)
 
