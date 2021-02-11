@@ -236,6 +236,9 @@ This CGI program prints out all its environment variables for the current proces
 
 #### Task 2.1: Passing Data via the Browser
 
+Please use your browser to access the following URL from within your VM:
+[http://www.seedlab-shellshock.com/cgi-bin/getenv.cgi](http://www.seedlab-shellshock.com/cgi-bin/getenv.cgi). 
+
 In the code above, line 6 prints out the contents of all the environment variables in the current process.
 Normally, you would see something like the output below if you use a browser to access the CGI program.
 Please identify which of the environment variable(s)' values are set according to data sent from the browser.
@@ -393,7 +396,7 @@ In this task, _**you need to demonstrate that you can get a reverse shell**_ fro
 
 To help you, we summarize some of the major ideas below.
 
-> This example is instructive, but for your attack you need to keep in mind that **the victim is the web server container**, and **the attacker is your SEED VM**. 
+> This example is instructive, but for your attack you need to keep in mind that **the victim is the web server container**, and **the attacker is your SEED VM**.
 
 <!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
 <div class="card bg-secondary border-primary" markdown="1">
