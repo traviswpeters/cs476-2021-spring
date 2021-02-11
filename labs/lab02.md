@@ -73,7 +73,7 @@ $ git clone git@github.com:traviswpeters/cs476-code.git code # name the local cl
 $ cd /home/seed/code/02_shellshock
 ```
 
-We will make use of **Docker** and **Compose** to make working with containers easy.
+We will make use of [**Docker**](https://www.docker.com/resources/what-container) and [**Compose**](https://docs.docker.com/compose/) to make working with containers easy.
 
 ```bash
 # First, build the container
@@ -475,7 +475,7 @@ Please replace the first line of the CGI programs with this program to have your
 
 Repeat Task 3 and describe your observations.
 
-> **NOTE:** You will need to modify the CGI script on the victim web server to use `/bin/bash` instead of `/bin/bash_shellshock`. 
+> **NOTE:** You will need to modify the CGI script on the victim web server to use `/bin/bash` instead of `/bin/bash_shellshock`.
 
 ### Task 6: Attacking Set-UID Programs via Shellshock (Graduate Credit)
 
