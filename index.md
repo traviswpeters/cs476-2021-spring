@@ -241,7 +241,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 - The Shellshock Attack (Part I)
 - [video](https://zoom.us/rec/share/Ktnsd3Em-Fn6rNqbZ8RcLnLEZp_m6ibIQ8uWP_vQz51Be6tam895GVmOH78pf9nM.Xb8oXel3xuLQUMYp){:.video}
-[slides](files/cs476-09-10-shellshock.pdf){:.slides}
+[slides](files/cs476-09-shellshock.pdf){:.slides}
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -254,8 +254,8 @@ If you have any questions, please contact me.
 <td markdown="span">02/11/2021 (R)</td>
 <td markdown="span" markdown="1">
 - The Shellshock Attack (Part II)
-<!-- - [video](){:.video} -->
-<!-- [slides](files/){:.slides} -->
+- [video](https://zoom.us/rec/share/xE9l9czuJJSHaRDDW7JrDqaknRZc3cdishmlf2mxIESD1SqnkfDsAS0Kw9Cz6ve-.Vmm6b15hrxoCH6qA){:.video}
+[slides](files/cs476-10-shellshock.pdf){:.slides}
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
