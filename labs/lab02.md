@@ -69,7 +69,7 @@ Please ensure that you have the class repo cloned locally.
 Once this is done, navigate to `02_shellshock/` directory.
 
 ```bash
-$ git clone git@github.com:traviswpeters/cs476-code.git code # name the local clone 'code'
+$ git clone https://github.com/traviswpeters/cs476-code.git code # name the local clone 'code'
 $ cd /home/seed/code/02_shellshock
 ```
 
