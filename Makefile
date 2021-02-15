@@ -84,7 +84,8 @@ VMNAME=SEEDUbuntu20.04
 
 .PHONY: vmstart # -> start the primary SEED VM
 vmstart:
-	-VBoxManage startvm $(VMNAME) --type headless && ssh seed
+	-VBoxManage startvm $(VMNAME) --type headless
+	-ssh seed #-v
 
 #-VBoxManage sharedfolder add $(VMNAME) --name "shared_admin" --hostpath "/Users/twp/projects/class/admin" --automount --auto-mount-point "/home/seed/shared_admin"
 #-VBoxManage sharedfolder add $(VMNAME) --name "shared_code" --hostpath "/Users/twp/projects/class/msu-cs476-code" --automount --auto-mount-point "/home/seed/shared_code"
