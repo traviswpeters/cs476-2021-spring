@@ -3,6 +3,14 @@ layout: default
 published: true
 ---
 
+## Misc. Future Ideas:
+
+- A summary/more tips around SetUID Programs in general:
+  https://www.gnu.org/software/libc/manual/html_node/Tips-for-Setuid.html
+- Use a game / editing scores as a motivating example for setuid?
+  https://www.gnu.org/software/libc/manual/html_node/Setuid-Program-Example.html
+
+
 ## Spring 2021 Roadmap
 
 **Software Security**
