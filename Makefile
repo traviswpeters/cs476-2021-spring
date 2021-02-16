@@ -1,6 +1,9 @@
 # Website Helper Makefile
 # -> a bunch of phony targets to help me do things I do a lot...
 
+MYWEBSITE=$(HOME)/projects/traviswpeters.github.io
+MYDESTURL=https://www.traviswpeters.com
+
 SCHOOL=msu
 CLASS=cs476
 YEAR=2021
@@ -70,6 +73,14 @@ release:
 	git add index.md files/ #*.md
 	git commit -m "Release course updates (slides, links, etc.)"
 	git push origin HEAD
+
+.PHONY: custom # Update global vmcustomizations file
+custom:
+	@if [ -d "${MYWEBSITE}/" ]; then \
+		echo "$@: Found website directory @ $(MYWEBSITE) -> deploy to $(MYDESTURL)/classes/vmcustomizations.txt"; \
+ 		cd $(MYWEBSITE) && git add classes/vmcustomizations.txt && git commit -m "auto update vmcustomizations for class" && git push && echo "...updated!"; \
+	else echo "$@: $(MYWEBSITE) not found"; \
+    fi
 
 ######################################
 # SEED Helpers
