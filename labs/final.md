@@ -1,8 +1,9 @@
 ---
 title: 'Final Lab'
 layout: default
-tags: [final]
-published: True
+tags: [labs, seed, final]
+duedate: 'Tuesday [04/30/2021] @ 11:59 AM (MST)'
+published: False
 ---
 
 ## {{page.title}}
