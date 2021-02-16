@@ -319,16 +319,25 @@ Note that for each of the following subtasks you only need to use one of the `cu
 <!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
 <div class="card bg-secondary border-primary mb-3" markdown="1">
 <div class="card-body" markdown="1">
-#### Aside: CGI Scripts & Returning Plaintext Output
 
-If your command has a plaintext output, and you want the output returned to you, your output needs to follow a specific format/protocol:
-it needs to start with `Content_type: text/plain`, followed by an empty line, and then you can place your plain-text output.
+#### A Note About CGI Scripts & Returning Plaintext Output
+
+In this lab we target [Common Gateway Interface (CGI) scripts](https://en.wikipedia.org/wiki/Common_Gateway_Interface)
+that use a vulnerable version of bash to generate and return dynamic content from the webserver (e.g., output from the script or another command).
+While it is helpful to be familiar with the CGI, we can get by with just a few insights.
+
+One important note: If your command has a plaintext output, and you want the output returned to you, your output needs to follow a specific format/protocol.
+Most importantly, the returned output must be preceded with a blank line.
 For example, if you want the server to return a list of files in its folder, your command could be structured like this:
 
+```bash
+echo; /bin/ls -l
 ```
-echo Content_type: text/plain; echo; /bin/ls -l
-```
-As another example, see the `getenv.cgi` script, which adheres to this format when returning plaintext output consisting of the environment variables.
+
+It turns out that you can also include a [media type](https://en.wikipedia.org/wiki/Media_type)
+by setting the `Content_type` field to explicitly state the format of the output that follows
+(e.g., `Content-Type: text/plain` indicates that the output is plaintext), which should be followed by an empty line, and then your output.
+For example, see the `getenv.cgi` script, which adheres to this format when returning plaintext output consisting of the environment variables.
 </div>
 </div>
 
@@ -352,9 +361,13 @@ Get the server to delete the file that you just created inside the `/tmp` folder
 
 #### Task 3.5: Shellshock & Reading A Privileged File
 
-"Steal" the shadow file `/etc/shadow` from the server.
+(Try) to "steal" the shadow file `/etc/shadow` from the server.
 
-> **Hint:** Should you be able to steal the contents of the shadow file `/etc/shadow` from the server? Why or why not?
+If you got it to work, how did you do it?!
+
+If you couldn't get it to work, why not?
+
+> **Hint:** Really think about it! Should you be able to steal the contents of the shadow file `/etc/shadow` from the server? Why or why not?
 
 > **Hint:** The information obtained in Task 3.2 could give you a clue...
 
