@@ -320,7 +320,7 @@ If you have any questions, please contact me.
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
-- Lab 03 Due!
+- [Lab 03](labs/lab03) Due!
 </td>
 </tr>
 

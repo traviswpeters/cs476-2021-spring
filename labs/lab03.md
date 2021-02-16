@@ -6,7 +6,7 @@ labprefix: 'Lab 03'
 labtitle: 'Buffer Overflow Attack Lab'
 title: 'Lab 03: Buffer Overflow Attack Lab'
 duedate: 'Tuesday [02/23/2021] @ 11:59 AM (MST)'
-published: False
+published: True
 ---
 
 # {{page.labprefix}}: {{page.labtitle}}
@@ -36,7 +36,7 @@ This lab covers the following topics:
 -   The return-to-libc attack, which aims at defeating the
     non-executable stack countermeasure, is covered in a separate lab.
 
-> This lab is an adaptation of the Buffer Overflow Attack Lab. (Specifically, the Set-UID version.)
+> This lab is an adaptation of the SEED Labs "Buffer Overflow Attack Lab". (Specifically, the Set-UID version.)
 
 ### Resources
 
@@ -105,6 +105,11 @@ The following command can be used to link `/bin/sh` to `/bin/zsh`:
 $ sudo ln -sf /bin/zsh /bin/sh
 ```
 
+You can verify how `/bin/sh` is configured at any time:
+```bash
+$ ls -l /bin/sh /bin/zsh /bin/dash
+```
+
 <!--
 ### StackGuard and Non-Executable Stack.
 
@@ -117,9 +122,9 @@ when we compile the vulnerable program.
 
 The following program has a buffer-overflow vulnerability.
 
-Your **main objective** throughout parts of this lab will be to exploit this vulnerability and gain root privileges.
+Your **main objective** throughout parts of this lab will be to exploit this vulnerability and get a shell with root privileges.
 
-##### How The Program Works
+##### A Brief Summary of How the Program Works
 
 The program first reads in input from a file called `badfile`, and ultimately passes this input to another buffer in the function `bof()`.
 The original input can have a maximum length of `517` bytes, but the buffer in `bof()` is only `BUF_SIZE` bytes long,  which is less than `517`.
@@ -130,14 +135,14 @@ if a normal user can exploit this buffer overflow vulnerability, the user might 
 It should be noted that the program gets its input from a file called `badfile`.
 The contents of this file are specified by an untrusted user (you!).
 Thus, your objective is to create the `badfile` with the necessary contents such that,
-when the vulnerable program copies the contents into its buffer, a root shell can be spawned.
+when the vulnerable program copies the contents into its buffer, a root shell gets spawned.
 
 <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F03_buffer_overflow%2Fcode%2Fstack.c&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
 ##### A Note About Compilation
 
 When compiling the above program for this task,
-we must not forget to turn off the StackGuard (`-fno-stack-protector`) and the non-executable stack protections (`-z execstack`) options.
+we must not forget to turn off the StackGuard (`-fno-stack-protector`) and the non-executable stack (`-z execstack`) countermeasures.
 After the compilation, we need to make the program a root-owned set-uid program.
 We can achieve this by first changing the ownership of the program to `root`, and then changing the permissions for the executable to `4755`, which enables the set-uid bit.
 It should be noted that changing ownership must
@@ -148,7 +153,7 @@ In summary, a command sequence such as this will yield the desired setup:
 ```bash
 $ gcc -DBUF_SIZE=100 -m32 -o stack -z execstack -fno-stack-protector stack.c
 $ sudo chown root stack  # change owner to root
-$ sudo chmod 4755 stack  # flip the set-bit bit
+$ sudo chmod 4755 stack  # flip the set-uid bit
 ```
 
 The compilation and setup commands are already included in the [Makefile](https://github.com/traviswpeters/cs476-code/blob/master/03_buffer_overflow/code/Makefile),
@@ -275,12 +280,16 @@ Using the provided [Makefile](https://github.com/traviswpeters/cs476-code/blob/m
 you can compile the code by typing `make` in that directory.
 The Makefile will product two binaries: `a32.out` (32-bit shellcode) and `a64.out` (64-bit shellcode).
 
-1. Please compile and run them both, and describe your observations.
-2. Please briefly describe what this program is doing; i.e., what does the code in `main()` actually do?
+#### Task 1.1
+
+Please compile and run both executables, and describe your observations.
+
+#### Task 1.2
+
+Please briefly describe what this program is doing; i.e., what does the code in `main()` actually do?
 
 > **NOTE:** If you look at the Makefile you can see that we use the `execstack` option when compiling the programs,
 > which allows code to be executed from the stack; without this option, the program will fail.
-
 
 ### Task 2: Attacking a Vulnerable 32-bit Program (Level 1)
 
@@ -295,13 +304,17 @@ most important thing to know is the distance between the buffer's
 starting position and the place where the return-address is stored.
 We will use a debugging method to determine this value.
 Since we have the source code of the target program, we can compile it with the debugging flag (`-g`) turned on, which makes debugging a lot more convenient.
-(You should be using our provided Makefile. If you are, when run `make`, the debugging version should be created automatically.)
+(You should be using our provided Makefile. If you are, when you run `make`, the debugging version should be created automatically.)
+
+#### Task 2.1: Finding the Return Address
 
 We will use `gdb` (**[gdb cheatsheet!](https://gist.github.com/rkubik/b96c23bd8ed58333de37f2b8cd052c30)**) to debug `stack-L1-dbg`.
 
 Before running the program under `gdb`, we need to create a file called `badfile`.
 
-#### Task 2.1: Finding the Return Address
+Now, use `gdb` as follows to determine the buffer/ebp offset,
+which you can use to determine where the return address should be in memory.
+
 
 ```
 $ touch badfile            # <= Create an empty badfile
@@ -388,19 +401,8 @@ _You will not get full credit if you use a brute-force method_,
 i.e., iteratively trying a bigger/smaller buffer size each time.
 In the real world, the more you try, the easier it will be for your attack to be detected and defended against.
 That's why minimizing the number of trials is important for attacks.
-In your lab report, you must describe your method, and provide supporting evidence that demonstrates your successful attack.
 
-
-
-
-
-
-
-
-
-
-
-
+In your lab report, please describe your method, and provide supporting evidence that demonstrates your successful attack.
 
 ### Tasks 4: Defeating `dash`'s Countermeasure
 
@@ -421,12 +423,16 @@ To defeat the countermeasure in our buffer-overflow attacks, all we need to do i
 When a root-owned set-uid program runs, the effective UID is zero, so _before we invoke the shell program_, we just need to change the real UID to zero
 (which we can do... because at the time that we do this we are effectively running as root!).
 We can achieve this by invoking `setuid(0)` before executing `execve()` in the shellcode.
-
-The following assembly code shows how to invoke `setuid(0)`.
-The binary code is already put inside `call_shellcode.c`.
+The assembly code to do this is already inside the `call_shellcode.c` code
+(it is commented out at the top of the file.)
 You just need to add it to the beginning of the shellcode.
-Below is a summary of how new assembly code works:
 
+<!-- The following assembly code shows how to invoke `setuid(0)`. -->
+<!-- The binary code is already put inside `call_shellcode.c`. -->
+<!-- You just need to add it to the beginning of the shellcode. -->
+<!-- Below is a summary of how new assembly code works: -->
+
+<!--
 ```asm
 ; Invoke setuid(0): 32-bit
 xor ebx, ebx      ; ebx = 0: setuid()'s argument
@@ -440,6 +446,15 @@ xor rax, rax
 mov  al, 0x69     ; setuid()'s system call number
 syscall
 ```
+-->
+
+<!--
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F03_buffer_overflow%2Fshellcode%2Fassembly_setuid0.asm&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F03_buffer_overflow%2Fshellcode%2Fassembly_shellcode32.asm&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F03_buffer_overflow%2Fshellcode%2Fassembly_shellcode64.asm&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+-->
 
 #### Task 4.1: Experimenting with Set-UID Assembly Code
 
@@ -447,7 +462,7 @@ Compile `call_shellcode.c` into root-owned binary.
 
 > The Makefile in the `shellcode/` folder on GitHub has a target that you can use by running: `make setuid`
 
-Run both the `a32.out` and `a64.out` shellcode programs _with_ and _without_ the `setuid(0)` system call.
+Run both the `a32.out` and `a64.out` shellcode programs _with_ and _without_ the assembly that makes the `setuid(0)` system call.
 
 Please describe your observations and provide supporting evidence.
 
@@ -577,7 +592,8 @@ Therefore, if any zero byte appears in the middle of the payload, the content fo
 How to solve this problem is the most difficult challenge in this attack.
 
 In this task, you must figure out how to solve this problem and show that you can successfully exploit the vulnerable 64-bit program.
-As before, you must describe your method, and provide supporting evidence that demonstrates your successful attack.
+
+You must describe your method, and provide supporting evidence that demonstrates your successful attack.
 
 ### Task 8: Attacking a Vulnerable 64-bit Program (Level 4)
 
@@ -589,8 +605,8 @@ The target program (`stack-L4`) in this task is similar to the one in the Level 
 Here, we set the buffer size to 10 (in Level 2 the buffer size was much larger).
 Your goal is the same: **get a root shell by attacking this set-uid program**
 You may encounter additional challenges in this attack due to the small buffer size.
-You must describe your method, and provide supporting evidence that demonstrates your successful attack.
 
+You must describe your method, and provide supporting evidence that demonstrates your successful attack.
 
 
 <!-- Standard Submission Info -->
