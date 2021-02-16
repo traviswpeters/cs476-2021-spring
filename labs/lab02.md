@@ -334,8 +334,8 @@ For example, if you want the server to return a list of files in its folder, you
 echo; /bin/ls -l
 ```
 
-It turns out that you can also include a [media type](https://en.wikipedia.org/wiki/Media_type)
-by setting the `Content_type` field to explicitly state the format of the output that follows
+It turns out that you can also include a [[media]](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) [[type]](https://en.wikipedia.org/wiki/Media_type)
+by setting the `Content-Type` field to explicitly state the format of the output that follows
 (e.g., `Content-Type: text/plain` indicates that the output is plaintext), which should be followed by an empty line, and then your output.
 For example, see the `getenv.cgi` script, which adheres to this format when returning plaintext output consisting of the environment variables.
 </div>
