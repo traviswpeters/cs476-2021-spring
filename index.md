@@ -279,8 +279,8 @@ If you have any questions, please contact me.
 <td markdown="span">02/16/2021 (T)</td>
 <td markdown="span" markdown="1">
 - Buffer Overflow Vulnerabilities, Attacks, and Defenses (Part I)
-<!-- - [video](){:.video} -->
-<!-- [slides](files/){:.slides} -->
+- [video](https://zoom.us/rec/share/chlIclKOON-q0fVA7fOS-Ekfqm9fmhZPhsgrGIEyVtQwF1VXKCofCFEKPAuYYlwC.26NbeRzBvpxmwmfT){:.video}
+[slides](files/cs476-11-buffer-overflow.pdf){:.slides}
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
