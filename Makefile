@@ -82,6 +82,15 @@ custom:
 	else echo "$@: $(MYWEBSITE) not found"; \
     fi
 
+.PHONY: pull # Pull on all course folders... so many... too many...
+pull:
+	echo "Updating code..."
+	cd ~/projects/class/msu-cs476-2021-spring && git pull && cd - > /dev/null   # (public) this repo
+	cd ~/projects/class/msu-cs476-code/       && git pull && cd - > /dev/null   # (public) class code
+	cd ~/projects/class/admin/                && git pull && cd - > /dev/null   # (private) class code
+	cd ~/projects/class/seed-labs/            && git pull && cd - > /dev/null   # (public) seed-labs code
+
+
 ######################################
 # SEED Helpers
 VMNAME=SEEDUbuntu20.04
