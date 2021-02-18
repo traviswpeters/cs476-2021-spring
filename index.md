@@ -320,7 +320,7 @@ If you have any questions, please contact me.
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
-- [Lab 03](labs/lab03) Due!
+- _Lab 03 Deadline Extended!_{:.text-muted}
 </td>
 </tr>
 
@@ -356,6 +356,7 @@ If you have any questions, please contact me.
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
+- [Lab 03](labs/lab03) Due!
 - TBD Due!
 </td>
 </tr>
