@@ -320,7 +320,7 @@ Note that for each of the following subtasks you only need to use one of the `cu
 <div class="card bg-secondary border-primary mb-3" markdown="1">
 <div class="card-body" markdown="1">
 
-#### A Note About CGI Scripts & Returning Plaintext Output
+#### CGI Scripts & Returning Plaintext Output
 
 In this lab we target [Common Gateway Interface (CGI) scripts](https://en.wikipedia.org/wiki/Common_Gateway_Interface)
 that use a vulnerable version of bash to generate and return dynamic content from the webserver (e.g., output from the script or another command).
@@ -340,6 +340,32 @@ by setting the `Content-Type` field to explicitly state the format of the output
 For example, see the `getenv.cgi` script, which adheres to this format when returning plaintext output consisting of the environment variables.
 </div>
 </div>
+<!-- END Special Section -->
+
+<!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
+<div class="card bg-secondary border-primary mb-3" markdown="1">
+<div class="card-body" markdown="1">
+
+#### Using Absolute Paths for Commands in Payloads
+
+You must use absolute paths in the payload of your Shellshock attack.
+An exception to this is calling `echo` because that is (also) a built-in function in bash.
+_Why do you need to use absolute paths for commands?_
+Because the `PATH` environment variable is not actually set in the shell that gets launched!
+You can verify that `PATH` is not set for the shell that your commands run inside by executing `/bin/env` as the payload of a Shellshock attack.
+
+Example:
+```bash
+# this will NOT work!
+echo; ls -l
+
+# this will work!
+echo; /bin/ls -l
+```
+
+</div>
+</div>
+<!-- END Special Section -->
 
 #### Task 3.1: Shellshock & Reading A File
 
