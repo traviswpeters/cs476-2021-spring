@@ -6,7 +6,8 @@ labprefix: 'Lab 03'
 labtitle: 'Buffer Overflow Attack Lab'
 title: 'Lab 03: Buffer Overflow Attack Lab'
 duedate: 'Tuesday [03/02/2021]~~[02/23/2021]~~ @ 11:59 AM (MST)'
-published: True
+#published: True
+released: True
 ---
 
 # {{page.labprefix}}: {{page.labtitle}}

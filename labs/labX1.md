@@ -3,7 +3,8 @@ layout: default
 tags: [labs, seed]
 title: 'Your First Threat Model'
 duedate: 'Tuesday [01/26/2021] @ 11:59 AM (MST)'
-published: True
+#published: True
+released: True
 ---
 
 # {{page.title}}

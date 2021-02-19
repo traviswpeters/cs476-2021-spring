@@ -4,8 +4,9 @@ localurl: './SEEDVM_VirtualBoxManual.pdf'
 seedurl: 'https://seedsecuritylabs.org/Labs_16.04/Documents/SEEDVM_VirtualBoxManual.pdf'
 layout: default
 tags: [labs, seed]
-published: True
 duedate: 'Tuesday [01/19/2021] @ 11:59 AM (MST)'
+#published: True
+released: True
 ---
 
 # {{page.title}}

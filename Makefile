@@ -27,9 +27,15 @@ help:
 	@echo "-----------------"
 	@grep '^.PHONY: .* #' Makefile | sed 's/\.PHONY: \(.*\) # \(.*\)/\1	# \2/' | expand -t10
 
-.PHONY: start # run a local jekyll server
+.PHONY: start # run a local jekyll server (JEKYLL_ENV=local)
 start:
-	@jekyll serve --port $(LOCALSERVERPORT) --livereload-port $(LIVERELOADSERVERPORT) &
+	@echo "(JEKYLL_ENV=local) ~~> This is an ideal configuration for running locally."
+	@JEKYLL_ENV=local jekyll serve --port $(LOCALSERVERPORT) --livereload-port $(LIVERELOADSERVERPORT) &
+
+.PHONY: startdev # run a local jekyll server (JEKYLL_ENV=development)
+startdev:
+	@echo "(JEKYLL_ENV=development) ~~> This is the default server configuration."
+	@JEKYLL_ENV=development jekyll serve --port $(LOCALSERVERPORT) --livereload-port $(LIVERELOADSERVERPORT) &
 
 .PHONY: stop # stop (kill) any/all currently running instances of ruby/jekyll
 stop:

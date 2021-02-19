@@ -3,8 +3,17 @@
 {% for page in sorted_pages %}
 {% for tag in page.tags %}
 {% if tag == "labs" %}
+
+{% if jekyll.environment == "development" %}
+{% if page.released %}
 - [{{page.title}}]({{site.baseurl}}{{page.url}})<br/> _>> **Due:** {{page.duedate}}_{:.text-muted .ml-2}
   {:.m-0 .p-0}
+{% endif %}
+{% elsif jekyll.environment == "local" %}
+- [{{page.title}}]({{site.baseurl}}{{page.url}})<br/> _>> **Due:** {{page.duedate}}_{:.text-muted .ml-2} {% if page.released == false %}**<< NOT RELEASED (JEKYLL_ENV=local)**{% endif %}
+  {:.m-0 .p-0}
+{% endif %}
+
 {% endif %}
 {% endfor %}
 {% endfor %}

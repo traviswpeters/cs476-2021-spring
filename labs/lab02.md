@@ -6,7 +6,8 @@ labprefix: 'Lab 02'
 labtitle: 'Shellshock Attack Lab'
 title: 'Lab 02: Shellshock Attack Lab'
 duedate: 'Tuesday [02/16/2021] @ 11:59 AM (MST)'
-published: True
+#published: True
+released: True
 ---
 
 # {{page.labprefix}}: {{page.labtitle}}

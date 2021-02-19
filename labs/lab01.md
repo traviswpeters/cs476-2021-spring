@@ -6,7 +6,8 @@ labprefix: 'Lab 01'
 labtitle: 'Environment Variables & Set-UID Programs Lab'
 title: 'Lab 01: Environment Variables & Set-UID Programs Lab'
 duedate: 'Tuesday [02/09/2021] @ 11:59 AM (MST)'
-published: True
+#published: True
+released: True
 ---
 
 # {{page.labprefix}}: {{page.labtitle}}

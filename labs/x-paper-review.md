@@ -3,7 +3,8 @@ layout: default
 tags: [labs, seed]
 title: 'Paper Review'
 duedate: 'Tuesday [XX/XX/2021] @ 12:00 PM (MST)'
-published: False
+#published: False
+released: False
 ---
 
 ## {{page.title}}

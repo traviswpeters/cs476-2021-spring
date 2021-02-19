@@ -3,7 +3,8 @@ title: 'Final Lab'
 layout: default
 tags: [labs, seed, final]
 duedate: 'Tuesday [04/30/2021] @ 11:59 AM (MST)'
-published: False
+#published: True
+released: False
 ---
 
 ## {{page.title}}
