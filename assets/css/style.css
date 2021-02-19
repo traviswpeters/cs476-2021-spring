@@ -96,14 +96,14 @@ a:hover {
   /* font-weight: 600; */
 }
 
-ul {
-  /* margin: 0px; */
+ul li * {
+  margin: 0px;
   /* padding: 0px; */
 }
-li {
-  /* margin: 0px; */
-  /* padding: 0px; */
-}
+/* li {
+  margin: 0px;
+  padding: 0px;
+} */
 
 img {
   height: auto;
