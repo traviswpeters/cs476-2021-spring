@@ -278,7 +278,7 @@ one is the 32-bit shellcode and the other is 64-bit shellcode.
 When we compile the program using the `-m32` flag, the 32-bit version will be used; without this flag, the 64-bit version will be used.
 Using the provided [Makefile](https://github.com/traviswpeters/cs476-code/blob/master/03_buffer_overflow/shellcode/Makefile),
 you can compile the code by typing `make` in that directory.
-The Makefile will product two binaries: `a32.out` (32-bit shellcode) and `a64.out` (64-bit shellcode).
+The Makefile will produce two binaries: `a32.out` (32-bit shellcode) and `a64.out` (64-bit shellcode).
 
 #### Task 1.1
 
