@@ -32,10 +32,10 @@ start:
 	@echo "(JEKYLL_ENV=local) ~~> This is an ideal configuration for running locally."
 	@JEKYLL_ENV=local jekyll serve --port $(LOCALSERVERPORT) --livereload-port $(LIVERELOADSERVERPORT) &
 
-.PHONY: startdev # run a local jekyll server (JEKYLL_ENV=development)
+.PHONY: startdev # run a local jekyll server similar to how it runs in production (JEKYLL_ENV=production)
 startdev:
-	@echo "(JEKYLL_ENV=development) ~~> This is the default server configuration."
-	@JEKYLL_ENV=development jekyll serve --port $(LOCALSERVERPORT) --livereload-port $(LIVERELOADSERVERPORT) &
+	@echo "(JEKYLL_ENV=production) ~~> This is the default server configuration."
+	@JEKYLL_ENV=production jekyll serve --port $(LOCALSERVERPORT) --livereload-port $(LIVERELOADSERVERPORT) &
 
 .PHONY: stop # stop (kill) any/all currently running instances of ruby/jekyll
 stop:
