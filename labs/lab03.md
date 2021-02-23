@@ -41,7 +41,7 @@ This lab covers the following topics:
 
 ### Resources
 
-- Code related to this lab can be found in our [class's GitHub repository](https://github.com/traviswpeters/cs476-code). Specifically, see `03_buffer_overflow/`.
+- Code related to this lab can be found in `03_buffer_overflow/` of our [class's GitHub repository](https://github.com/traviswpeters/cs476-code).
 - [The Definitive Guide to Linux System Calls](https://blog.packagecloud.io/eng/2016/04/05/the-definitive-guide-to-linux-system-calls/)
 <!-- - [x86 Assembly/X86 Architecture](https://en.wikibooks.org/wiki/X86_Assembly/X86_Architecture#Segment_Registers) -->
 - [Calling Conventions Demystified](https://www.codeproject.com/articles/1388/calling-conventions-demystified)
