@@ -279,6 +279,7 @@ If you have any questions, please contact me.
 <td markdown="span">02/16/2021 (T)</td>
 <td markdown="span" markdown="1">
 - Buffer Overflow Vulnerabilities, Attacks, and Defenses (Part I)
+- _Program layout in memory, examining program execution & stack frames in gdb_{:.text-muted}
 - [video](https://zoom.us/rec/share/chlIclKOON-q0fVA7fOS-Ekfqm9fmhZPhsgrGIEyVtQwF1VXKCofCFEKPAuYYlwC.26NbeRzBvpxmwmfT){:.video}
 [slides](files/cs476-11-buffer-overflow.pdf){:.slides}
 <!-- [activity](){:.activity} -->
@@ -293,6 +294,7 @@ If you have any questions, please contact me.
 <td markdown="span">02/18/2021 (R)</td>
 <td markdown="span" markdown="1">
 - Buffer Overflow Vulnerabilities, Attacks, and Defenses (Part II)
+- _A buffer overflow vulnerability, big ideas, and exploitation strategies_{:.text-muted}
 - [video](https://zoom.us/rec/share/d8HOkd3BHm4-BTD3LPZMut1c3kQlUrwKsDzsAbqvcwUJ5D3WKAtRh1ivm-28e_c3.16qWMl9zVk6Ck4RL){:.video}
 [slides](files/cs476-12-buffer-overflow.pdf){:.slides}
 <!-- [activity](){:.activity} -->
@@ -314,9 +316,10 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">02/23/2021 (T)</td>
 <td markdown="span" markdown="1">
-- Intro to Web Security
-<!-- - [video](){:.video} -->
-<!-- [slides](files/){:.slides} -->
+- Buffer Overflow Vulnerabilities, Attacks, and Defenses (Part III)
+- _Shellcode_{:.text-muted}
+- [video](https://zoom.us/rec/share/h0Hpw-hJ_RG62TKiSJIiMjoQWXLU_DPrFL_sGwDPjVfVB7ARUie7ROYU3guRHfXB.LkxXD4Pu6b9tRM--){:.video}
+[slides](files/cs476-13-buffer-overflow.pdf){:.slides}
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
@@ -328,6 +331,8 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">02/25/2021 (R)</td>
 <td markdown="span" markdown="1">
+- Buffer Overflow Vulnerabilities, Attacks, and Defenses (Part IV)
+- _Countermeasures to buffer overflow attacks_{:.text-muted}
 <!-- - [video](){:.video} -->
 <!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
@@ -357,7 +362,7 @@ If you have any questions, please contact me.
 </td>
 <td markdown="span" markdown="1">
 - [Lab 03](labs/lab03) Due!
-- TBD Due!
+<!-- - TBD Due! -->
 </td>
 </tr>
 
