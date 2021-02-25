@@ -307,7 +307,7 @@ If you have any questions, please contact me.
 
 <tr>
 <!--   Week #   --><td id="week07" markdown="span">Week 07</td>
-<!-- Week Title --><td markdown="span" class="note">Network & Web Security</td>
+<!-- Week Title --><td markdown="span" class="note">Software Security --- Buffer Overflow Vulnerabilities, Attacks, and Defenses</td>
 <!--   BLANK    --><td markdown="span" class="note" markdown="1">
 </td>
 </tr>
@@ -333,8 +333,8 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 - Buffer Overflow Vulnerabilities, Attacks, and Defenses (Part IV)
 - _Countermeasures to buffer overflow attacks_{:.text-muted}
-<!-- - [video](){:.video} -->
-<!-- [slides](files/){:.slides} -->
+- [video](https://zoom.us/rec/share/_yeO2x1Wso8xyxOQXEUNetBg73Owf8VzhmcbBQlMg_3E-F51QC4XzjYbA_PyjMub.zLQ_OWndO9TzYItU){:.video}
+[slides](files/cs476-14-buffer-overflow.pdf){:.slides}
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
