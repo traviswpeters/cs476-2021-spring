@@ -57,8 +57,11 @@ Great reference materials for labs and programming
 [C](./files/read-intro-to-C-for-java-programmers.pdf) /
 [Python](https://overapi.com/python) /
 [Makefile](https://gist.github.com/evertrol/4b6fd05f3b6be2b331c60638b1af7101) /
-[gdb, valgrind, gprof](https://wiki.tiker.net/ToolCheatSheet/)
+[gdb](https://gist.github.com/rkubik/b96c23bd8ed58333de37f2b8cd052c30) /
+[peda (gdb)](https://github.com/longld/peda)
 {:.text-center .lead}
+
+<!-- [gdb, valgrind, gprof](https://wiki.tiker.net/ToolCheatSheet/) -->
 
 ##### Environment Tools
 - [Wireshark](https://www.wireshark.org)
