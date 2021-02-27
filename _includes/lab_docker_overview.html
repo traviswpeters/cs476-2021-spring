@@ -1,0 +1,88 @@
+Please ensure that you have the class repo cloned locally.
+Once this is done, navigate to the `{{ include.classdir }}/` directory.
+For example:
+
+```bash
+$ cd ~
+$ git clone https://github.com/traviswpeters/cs476-code.git code # name the local clone 'code'
+$ cd /home/seed/code/{{ include.classdir }}
+```
+
+We will make use of [**Docker**](https://www.docker.com/resources/what-container) and [**Compose**](https://docs.docker.com/compose/) to make working with containers easy.
+
+```bash
+# First, build the container
+$ docker-compose build    # Build the container image
+
+# Next, start/stop the container(s) as needed
+$ docker-compose up -d    # Start the container (-d runs container in the background; i.e., detached)
+$ docker-compose down     # Shut down the container
+```
+
+<!-- Please download the `Labsetup.zip` file to your VM from the lab's website, unzip it, enter the `Labsetup` folder, and use the `docker-compose.yml` file to set up the lab environment. -->
+<!-- Detailed explanation of the content in this file and all the involved `Dockerfile` can be found from the user manual, which is linked to the website of this lab.  -->
+<!-- If this is the first time you set up a SEED lab environment using containers, it is very important that you read the user manual. -->
+
+<!-- In the following, we list some of the commonly used commands related to Docker and Compose. -->
+<!-- Since we are going to use these commands frequently, we have created aliases for them in the `.bashrc` file within the official SEEDUbuntu 20.04 VM. -->
+<!--
+```
+$ docker-compose build  # Build the container image
+$ docker-compose up     # Start the container
+$ docker-compose down   # Shut down the container
+
+// Aliases for the Compose commands above
+$ dcbuild       # Alias for: docker-compose build
+$ dcup          # Alias for: docker-compose up
+$ dcdown        # Alias for: docker-compose down
+```
+ -->
+<!--
+All the containers will be running in the background.
+To run commands on a container, we often need to get a shell on that container.
+We first need to use the `docker ps` command to find out the ID of the container,
+and then use `docker exec` to start a shell on that container.
+We have created aliases for them in the `.bashrc` file.
+-->
+
+In general for our labs, we will create and start containers that will run in the background
+(i.e., use the `-d` flag when bringing your container up).
+
+At times we may need to run commands on a container --- docker makes it pretty easy to attach to a container running in the background and get a shell on that container.
+To run commands on a specific container, we first need to use the `docker ps` command to find out the ID of the container,
+and then we can use `docker exec` to start a shell on that container.
+_(I told you this would be easy!)_
+
+```bash
+$ docker ps -a   # Show all containers (default shows just running)
+$ dockps         # Show active containers using custom formatting for docker ps
+$ docksh <id>    # Connect to container with <id>
+
+### Examples ###
+
+# The following example shows how to get a shell inside hostC
+$ dockps
+b1004832e275  hostA-10.9.0.5
+0af4ea7a3e2e  hostB-10.9.0.6
+9652715c8e0a  hostC-10.9.0.7
+
+# Attach to docker with ID that starts with "96"
+$ docksh 96
+root@9652715c8e0a:/#
+
+# NOTE: If a docker command requires a container ID, you do not need to type the entire ID string.
+# Typing the first few characters will be sufficient so long as it can uniquely identify a container.
+```
+
+
+**Docker/Compose Aliases.**
+For convenience we provide a number of aliases for the commands above.
+Feel free to use them (or don't).
+```bash
+### see docker aliases ###
+$ cat ~/.bashrc | grep docker
+```
+**Troubleshooting.**
+If you encounter problems when setting up the lab environment,
+please read the **"Common Problems"** section of the [SEED Manual for Containers](https://github.com/seed-labs/seed-labs/blob/master/manuals/docker/SEEDManual-Container.md) for potential solutions.
+If you still can't get things figured out, please connect a member of the course staff.
