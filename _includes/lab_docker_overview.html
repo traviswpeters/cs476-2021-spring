@@ -66,7 +66,7 @@ b1004832e275  hostA-10.9.0.5
 0af4ea7a3e2e  hostB-10.9.0.6
 9652715c8e0a  hostC-10.9.0.7
 
-# Attach to docker with ID that starts with "96"
+# Attach to the container with an ID that starts with "96"
 $ docksh 96
 root@9652715c8e0a:/#
 
@@ -80,7 +80,7 @@ For convenience we provide a number of aliases for the commands above.
 Feel free to use them (or don't).
 ```bash
 ### see docker aliases ###
-$ cat ~/.bashrc | grep docker
+$ grep docker ~/.bashrc
 ```
 **Troubleshooting.**
 If you encounter problems when setting up the lab environment,

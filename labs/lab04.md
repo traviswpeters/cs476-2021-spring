@@ -18,9 +18,9 @@ Adapted from SEED Labs: A Hands-on Lab for Security Education.
 {:.subtitletext}
 
 SQL injection is a code injection technique that exploits vulnerabilities in the interface between web applications and databases.
-The vulnerability is present when user inputs are not properly validated/sanitized within the web application before being sent to a back-end database.
+The vulnerability is present when user inputs are not properly handled within the web application before being sent to a back-end database.
 
-Many web applications take inputs from users, and then use these inputs to construct SQL queries, which retrieves information from a database.
+Many web applications take inputs from users, and then use these inputs to construct SQL queries, which retrieve information from a database.
 Web applications also use SQL queries to store information in the database.
 These are common practices in the development of web applications.
 When SQL queries are not carefully constructed, SQL injection vulnerabilities can occur.
@@ -29,14 +29,14 @@ SQL injection is one of the most common attacks on web applications.
 In this lab, we have created a web application that is vulnerable to SQL injection attacks.
 Our web application includes examples of common mistakes made by many web developers.
 Your goal is to find ways to exploit these SQL injection vulnerabilities,
-demonstrate the damage that can be achieved by these attacks,
+demonstrate the damage that can be done by these attacks,
 and master the techniques that can help defend against these types of attacks.
 
 This lab covers the following topics:
 
 - Various SQL statements: `SELECT`, `UPDATE`, etc.
 - SQL Injection strategies
-- SQL Injection countermeasures: prepared statements
+- An effective SQL Injection countermeasure: prepared statements
 
 ### Resources
 
@@ -99,9 +99,9 @@ All employee information is described in a single table stored within the databa
 
 ### Validating Your SQL Injection String ("Payload")
 
-In real-world applications, it may be hard to check whether your SQL injection attack contains any syntax errors,
-because servers typically will not return any meaningful error messages.
-To validate your payload, you can copy SQL statement(s) from php source code to the MySQL console.
+In real-world applications, it may be hard to check whether your SQL injection attack contains syntax errors
+(servers typically will not return any meaningful error messages if your injected payload raises errors).
+To validate your payload, you can copy SQL statements from PHP source code to the MySQL console and test them there.
 
 Assume you have the following SQL statement, and the injection string is `' or 1=1;#`.
 
@@ -110,8 +110,8 @@ SELECT * from credential
 WHERE name='$name' and password='$pwd';
 ```
 
-You can replace the value of `$name` with the injection string and test it using the MySQL console.
-This approach can help you construct a valid injection string before launching the real attack.
+You can replace the value of `$name` with your payload and test it using the MySQL console.
+This approach can help you construct a valid payload before launching the real attack.
 
 </div>
 </div>
