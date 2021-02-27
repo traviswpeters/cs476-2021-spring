@@ -17,17 +17,17 @@ released: False
 Adapted from SEED Labs: A Hands-on Lab for Security Education.
 {:.subtitletext}
 
-SQL injection is a code injection technique that exploits vulnerabilities in the interface between web applications and databases.
-The vulnerability is present when user inputs are not properly handled within the web application before being sent to a back-end database.
+SQL injection is a code injection technique that exploits vulnerabilities in the interface between web applications (web apps) and databases.
+The vulnerability is present when user inputs are not properly handled within the web app before being sent to a back-end database.
 
-Many web applications take inputs from users, and then use these inputs to construct SQL queries, which retrieve information from a database.
-Web applications also use SQL queries to store information in the database.
-These are common practices in the development of web applications.
+Many web apps take inputs from users, and then use these inputs to construct SQL queries, which retrieve information from a database.
+Web apps also use SQL queries to store information in the database.
+These are common practices in the development of web apps.
 When SQL queries are not carefully constructed, SQL injection vulnerabilities can occur.
-SQL injection is one of the most common attacks on web applications.
+SQL injection is one of the most common attacks on web apps.
 
-In this lab, we have created a web application that is vulnerable to SQL injection attacks.
-Our web application includes examples of common mistakes made by many web developers.
+In this lab, we have created a web app that is vulnerable to SQL injection attacks.
+Our web app includes examples of common mistakes made by many web developers.
 Your goal is to find ways to exploit these SQL injection vulnerabilities,
 demonstrate the damage that can be done by these attacks,
 and master the techniques that can help defend against these types of attacks.
@@ -51,20 +51,20 @@ This lab covers the following topics:
 
 ## Environment Setup
 
-We have developed a web application for this lab, which runs inside docker containers.
-There are two containers in the lab setup, one for hosting the web application, and the other for hosting the database.
+We have developed a web app for this lab, which runs inside docker containers.
+There are two containers in the lab setup, one for hosting the web app, and the other for hosting the database.
 
 ### DNS Settings
 
-The IP address for the web application container is `10.9.0.5`,
-and the URL for the web application is: `http://www.SEEDLabSQLInjection.com`
+The IP address for the web app container is `10.9.0.5`,
+and the URL for the web app is: `http://www.seedlabsqlinjection.com`
 Your VM should already be configured to have this hostname/IP address mapping in the `/etc/hosts` file:
 
 ```bash
-10.9.0.5        www.SEEDLabSQLInjection.com
+10.9.0.5        www.seedlabsqlinjection.com
 ```
 
-If you experience issues trying to address the web application by its human-readable hostname, please verify your settings.
+If you experience issues trying to address the web app by its human-readable hostname, please verify your settings.
 If you need to update this information, add the above entry to the `/etc/hosts` file.
 (You need root privileges to modify this file.)
 
@@ -89,13 +89,24 @@ $ sudo rm -rf mysql_data
 
 ### The Web Application
 
-We have created a web application, which is a simple employee management application.
-Employees can view and update their personal information in the database through this web application.
-There are two main roles in this web application:
+We have created a web app, which is a simple employee management application.
+Employees can view and update their personal information in the database through this web app.
+There are two main roles in this web app:
 `Administrator` is a privileged role and can manage each individual employees' profile information;
 `Employee` is a normal role and can view or update only their own profile information.
 All employee information is described in a single table stored within the database.
 (You will get a chance to explore the format of this table in Task 1.)
+
+### Employee Credentials
+
+At various times throughout this lab it may be helpful to know the credentials (username / password) of certain employees:
+
+- Admin / seedadmin
+- Alice / seedalice
+- Boby / seedboby
+- Ryan / seedryan
+- Samy / seedsamy
+- Ted / seedted
 
 ### Validating Your SQL Injection String ("Payload")
 
@@ -124,13 +135,15 @@ This lab has been tested on the pre-built SEED VM (Ubuntu 20.04 VM).
 
 ### Task 1: Get Familiar with SQL Statements
 
-The objective of this task is to get familiar with SQL commands by playing with the provided database.
-The data used by our web application is stored in a MySQL database, which is hosted on our MySQL container.
+The objective of this task is to get familiar with SQL commands by experimenting within the provided database.
+The data used by our web app is stored in a MySQL database, which is hosted on our MySQL container.
 We have created a database called `sqllab_users`, which contains a table called `credential`.
 The table stores the personal information (e.g., eid, password, salary, ssn, etc.) of every employee.
-In this task, you will interact with this database from the `mysql` command line interface to get familiar with SQL queries.
+In this task, you will interact with this database from the `mysql` command line interface (CLI) to get familiar with SQL queries.
 
-First, get a shell on the MySQL container
+First, make sure your containers are running (see the "Environment Setup" section above).
+
+Next, get a shell on the MySQL container:
 
 ```bash
 $ dockps
@@ -146,32 +159,33 @@ The username is `root` and password is `dees`.
 $ mysql --user=root --password=dees
 ```
 
-After login, you can create a new database or use an existing one.
+After you log in, you can create a new database or use an existing one.
 You can see which databases currently exist using the `show databases` command.
 We have already created the `sqllab_users` database for you, so for this task you just need to load this existing database using the `use` command.
 To show what tables exist within the `sqllab_users` database,
 you can use the `show tables` command to print out all the tables of the currently selected database.
 
 After running the commands above, you need to use a SQL command to print all the information for the employee Alice.
+
 Please provide proof of your results (e.g., command line output, screenshot).
 
 ### Task 2: A SQL Injection Attack on a SELECT Statement
 
 A SQL injection is basically a technique through which attackers can execute their own (malicious) SQL statements;
-the input, which is specially crafted, is generally referred to as the _payload_.
+the input, which is specially crafted to inject attacker-chosen SQL statements, is generally referred to as the _payload_.
 Through the injected SQL statements, attackers can steal information from the victim database,
 or even worse, they may be able to make changes to the database (e.g., update or delete information).
 Our employee management web application has SQL injection vulnerabilities that mimic the mistakes frequently made by web app developers.
 
-To explore SQL injection vulnerabilities in this task, we will use the login page found at [www.SEEDLabSQLInjection.com](www.SEEDLabSQLInjection.com).
+To explore SQL injection vulnerabilities in this task, we will use the login page found at [www.seedlabsqlinjection.com](www.seedlabsqlinjection.com).
 The login page is shown in the figure below.
 As is typical in authentication, the web app prompts users to provide a username and a password.
-The web application then authenticates users based on these two pieces of information.
+The web app then authenticates users based on these two pieces of information.
 Presumably, only employees who know their own username and password should be able to log in.
 _**Your objective**_ throughout this task is to exploit a SQL injection vulnerability in the login page
 to successfully log into the web app without knowing any valid employee credentials.
 
-<img src="./figs/login.jpg" alt="login" width="40%"/>
+<img src="./figs/login.png" alt="login" width="40%"/>
 {:.text-center .m-3}
 
 <!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
@@ -180,7 +194,7 @@ to successfully log into the web app without knowing any valid employee credenti
 
 ### Code Review: How Does User Authentication Work?
 
-To help you get started with this task, we explain at a high level how authentication is implemented in the web application.
+To help you get started with this task, we explain at a high level how authentication is implemented in the web app.
 Snippets and pseudocode from the the actual PHP source code that is used to conduct user authentication are shown below.
 You will likely want to review the complete source code more carefully:
 [`04_sqli/image_www/code/unsafe_home.php`](https://github.com/traviswpeters/cs476-code/blob/master/04_sqli/image_www/code/unsafe_home.php).
@@ -231,11 +245,11 @@ if (id != NULL) {
 
 In this task you need to log into the web app as the administrator from the login page, which will enable you to see the information of all employees.
 We assume that _**you do know**_ the administrator's account name, which is `admin`,  but _**you do not know**_ the password.
-You need to decide what to type in the "Username" and "Password" fields to succeed in your attack.
+You need to decide what payload to enter into the "Username" and/or "Password" fields to succeed in your attack.
 
 #### Task 2.2: SQL Injection Attack from the Command Line
 
-In this task you need to repeat Task 2.1, but you need to do it without using the webpage.
+In this task you need to repeat Task 2.1, but you need to do it without using the login webpage.
 You can use command line tools, such as `curl`, which can be used to send HTTP requests.
 Using `curl` is probably the quickest and easiest way to go, but there are also other great libraries that are fun to learn; e.g., `requests` in Python, `httpparty` in Ruby.
 
@@ -248,16 +262,19 @@ Using `curl` is probably the quickest and easiest way to go, but there are also 
 One thing that is worth mentioning is that if you want to include multiple parameters in HTTP requests,
 you need to put the URL and the parameters between a pair of single quotes;
 otherwise, the special characters used to separate parameters (such as `&`) will be interpreted by the shell program, changing the meaning of the command.
-The following example shows how to send an HTTP GET request to our web application, with two parameters (`username` and `password`):
+The following example shows how to send an HTTP GET request to our web app via `curl`, with two parameters (`username` and `password`):
 
 ```bash
-$ curl 'www.SeedLabSQLInjection.com/unsafe_home.php?username=alice&password=11'
+$ curl 'www.seedlabsqlinjection.com/unsafe_home.php?username=alice&password=mypass123'
 ```
 
-If you need to include special characters in the `username` or `password` fields, you need to encode them properly, or they can change the meaning of your requests.
-If you want to include a single quote in any of those fields, you should use `%27` instead;
+If you need to include special characters in the `username` or `password` fields, you need to encode them properly, otherwise the unencoded characters can change the meaning of your requests.
+If you want to include a single quote in any of those fields, you should use `%27`;
 if you want to include a space, you should use `%20`.
 In this task, you do need to handle HTTP encoding while sending requests using `curl`.
+
+There are lots of great resources on the Internet to learn more about encoding characters
+(e.g., [URL Encoded Characters cheatsheet](http://www.cheat-sheets.org/sites/html.su/urlencoding.html), [Online URL Encode/Decode tool](https://www.url-encode-decode.com/)).
 
 </div>
 </div>
@@ -279,14 +296,14 @@ Feel free to do some independent research on this topic and describe your discov
 
 If a SQL injection vulnerability happens to an UPDATE statement, the damage could be quite severe,
 because attackers can use such SQL injection vulnerabilities to modify databases.
-In our Employee Management web app, there is an Edit Profile page (see figure below) that allows employees to update their profile information,
+In our employee management web app, there is an "edit profile" page (see figure below) that allows employees to update their profile information,
 including nickname, email, address, phone number, and password.
-To go to this page, employees need to log in first.
+To access this page, employees need to log in first.
 
-<img src="./figs/editprofile.jpg" alt="edit-profile" width="50%"/>
+<img src="./figs/editprofile.png" alt="edit-profile" width="50%"/>
 {:.text-center .m-3}
 
-When employees update their information through the Edit Profile page, the following SQL UPDATE query will be executed.
+When employees update their information through the edit profile page, the following SQL UPDATE query will be executed.
 The PHP code implemented in [`/var/www/SQLInjection/unsafe_edit_backend.php`](https://github.com/traviswpeters/cs476-code/blob/master/04_sqli/image_www/code/unsafe_edit_backend.php)
 file is used to update employee's profile information.
 
@@ -304,19 +321,20 @@ $conn->query($sql);
 
 #### Task 3.1: Modify Your Salary
 
-As you can see in the Edit Profile page, employees can only update their nicknames, emails, addresses, phone numbers, and passwords;
+As you can see in the edit profile page, employees can only update their nicknames, emails, addresses, phone numbers, and passwords;
 they are not authorized to change their salaries.
 
 Assume that you (Alice) are a disgruntled employee, and your boss did not increase your salary this year.
-You want to increase your own salary by exploiting the SQL injection vulnerability in the Edit-Profile page.
-Please demonstrate how you can achieve that.
-We assume that _**you do know**_ that salaries are stored in a column called `salary`.
+You want to increase your own salary by exploiting the SQL injection vulnerability in the "edit profile" page.
+Please demonstrate how you can achieve this kind of update.
+We assume that _**you do know**_ Alice's credentials and that salary information is stored in a column named `salary`.
 
 #### Task 3.2: Modify the Salary of Others
 
 After increasing your own salary, you decide to punish your boss Samy.
-You want to reduce their salary to 1 dollar.
-Please demonstrate how you can achieve this.
+You want to reduce their salary to 1 dollar. _(Ouch!)_
+
+Please demonstrate how you can achieve this update.
 
 #### Task 3.3: Modify the Password of Others
 
@@ -326,11 +344,16 @@ Please demonstrate how you can achieve this.
 
 You need to demonstrate that you can successfully log into Samy's account using the new password.
 One thing worth mentioning here is that the database stores the SHA1 hash value of passwords instead of the plaintext password string.
-You can again look at the `unsafe_edit_backend.php` code to see exactly how the password is being stored.
+You can look at the `unsafe_edit_backend.php` code to see exactly how the password is being stored.
+
+> You are welcome to generate a sha1 hash of the new password however is most convenient for you.
+For example, you can do this directly in an SQL statement in MySQL or at the MySQL CLI,
+using a normal command line tool such as `openssl`,
+or using an [online sha1 calculator](https://xorbin.com/tools/sha1-hash-calculator).
 
 ### Task 4: SQLi Countermeasure: Prepared Statements
 
-The fundamental problem of the SQL injection vulnerability is the failure to separate code from data.
+The fundamental problem of the SQL injection vulnerability is the failure to clearly separate code from data.
 When constructing a SQL statement, the program (e.g., PHP program) knows which part is data and which part is code.
 Unfortunately, when the SQL statement is sent to the database, the distinction is lost;
 the boundaries that the SQL interpreter sees may be different from the original boundaries that were intended by the developers.
@@ -451,18 +474,19 @@ _**Your objective**_ is to modify the SQL query in `unsafe.php` to use a prepare
 There are two ways that you can make your changes and validate that your fixes work.
 
 1. You can modify the program source code on the host (i.e., within your SEED VM).
-After you are done making changes to the code, _you need to rebuild and restart the container, or the changes will not take effect._
+After you are done making changes to the code on the host, _you need to rebuild and restart the container, or the changes will not take effect._
 
 2. You can modify the file within the container while the container is running.
 On the running container, the `unsafe.php` program is inside `/var/www/sql_injection/defense/`.
 
 Both approaches have advantages and disadvantages.
-In the first approach, you may need to rebuild/restart your container multiple times as you write and validate your code.
-In the second approach,
-the container environment is quite minimal; we have installed a very simple text editor called `nano`,
+In the first approach, you potentially need to rebuild/restart your container multiple times as you write and validate your code.
+In the second approach, the container environment is quite minimal;
+we have installed a very simple text editor called `nano`,
 but you'll have to use `apt install ...` to install other programs if you want them (e.g., vim).
 Another drawback of the second approach is that any changes you make within the running container will be discarded after the container is shutdown and destroyed.
-If you want to make it permanent, add the installation command to the `Dockerfile` inside the folder.
+Thus, you need to ensure that you copy any work that you want to save from the container to your host before the container is shutdown and destroyed.
+<!-- If you want to make your permanent, add the installation command to the `Dockerfile` inside the folder. -->
 
 </div>
 </div>
