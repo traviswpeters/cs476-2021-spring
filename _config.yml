@@ -3,9 +3,25 @@ livereload: true
 exclude:
 - admin/
 
-mathjax: true
 defaults:
     - scope:
         path: "code"
       values:
         code: true
+
+# Build settings
+mathjax:             true
+# markdown:            kramdown # use <TAG markdown="1"> to render markdown within HTML tags!
+# highlighter:         rouge
+
+# rouge-specific configuration; enable line numbers in code by default
+# kramdown:
+#   input: GFM
+#   syntax_highlighter_opts:
+#     default_lang: html
+#     css_class: 'highlight'
+#     span:
+#       line_numbers: false
+#     block:
+#       line_numbers: false
+#       start_line: 1
