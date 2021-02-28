@@ -177,7 +177,7 @@ Through the injected SQL statements, attackers can steal information from the vi
 or even worse, they may be able to make changes to the database (e.g., update or delete information).
 Our employee management web application has SQL injection vulnerabilities that mimic the mistakes frequently made by web app developers.
 
-To explore SQL injection vulnerabilities in this task, we will use the login page found at [www.seedlabsqlinjection.com](www.seedlabsqlinjection.com).
+To explore SQL injection vulnerabilities in this task, we will use the login page found at [http://www.seedlabsqlinjection.com/](http://www.seedlabsqlinjection.com/).
 The login page is shown in the figure below.
 As is typical in authentication, the web app prompts users to provide a username and a password.
 The web app then authenticates users based on these two pieces of information.
