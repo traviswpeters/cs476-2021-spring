@@ -60,7 +60,7 @@ The IP address for the web app container is `10.9.0.5`,
 and the URL for the web app is: `http://www.seedlabsqlinjection.com`
 Your VM should already be configured to have this hostname/IP address mapping in the `/etc/hosts` file:
 
-```bash
+```
 10.9.0.5        www.seedlabsqlinjection.com
 ```
 
@@ -116,7 +116,7 @@ To validate your payload, you can copy SQL statements from PHP source code to th
 
 Assume you have the following SQL statement, and the injection string is `' or 1=1;#`.
 
-```
+```sql
 SELECT * from credential
 WHERE name='$name' and password='$pwd';
 ```
@@ -155,7 +155,7 @@ Then start the `mysql` client program to interact with the database.
 The username is `root` and password is `dees`.
 
 ```bash
-// Inside the MySQL container
+# Inside the MySQL container
 $ mysql --user=root --password=dees
 ```
 
@@ -192,7 +192,8 @@ to successfully log into the web app without knowing any valid employee credenti
 <div class="card bg-secondary border-primary p-0 m-3" markdown="1">
 <div class="card-body pb-0 pt-0 m-0" markdown="1">
 
-### Code Review: How Does User Authentication Work?
+#### Code Review: How Does User Authentication Work?
+{:.pt-3}
 
 To help you get started with this task, we explain at a high level how authentication is implemented in the web app.
 Snippets and pseudocode from the the actual PHP source code that is used to conduct user authentication are shown below.
@@ -257,7 +258,8 @@ Using `curl` is probably the quickest and easiest way to go, but there are also 
 <div class="card bg-secondary border-primary p-0 m-3" markdown="1">
 <div class="card-body pb-0 pt-0 m-0" markdown="1">
 
-### Hacking Tip: Passing Parameters via URLs
+#### Hacking Tip: Passing Parameters via URLs
+{:.pt-3}
 
 One thing that is worth mentioning is that if you want to include multiple parameters in HTTP requests,
 you need to put the URL and the parameters between a pair of single quotes;
@@ -408,7 +410,8 @@ This is how prepared statement prevents SQL injection attacks.
 <div class="card bg-secondary border-primary p-0 m-3" markdown="1">
 <div class="card-body pb-0 pt-0 m-0" markdown="1">
 
-### Example: Re-writing Code to Use Prepared Statements
+#### Example: Re-writing Code to Use Prepared Statements
+{:.pt-3}
 
 Below, we provide an example of how to write a prepared statement in PHP.
 
@@ -469,7 +472,8 @@ _**Your objective**_ is to modify the SQL query in `unsafe.php` to use a prepare
 <div class="card bg-secondary border-primary p-0 m-3" markdown="1">
 <div class="card-body pb-0 pt-0 m-0" markdown="1">
 
-### Hacking Tip: Updating Code that Runs in Containers
+#### Hacking Tip: Updating Code that Runs in Containers
+{:.pt-3}
 
 There are two ways that you can make your changes and validate that your fixes work.
 
