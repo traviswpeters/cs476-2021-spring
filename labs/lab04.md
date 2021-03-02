@@ -6,7 +6,7 @@ labprefix: 'Lab 04'
 labtitle: 'SQL Injection Attack Lab'
 title: 'Lab 04: SQL Injection Attack Lab'
 duedate: 'Tuesday [03/09/2021] @ 11:59 AM (MST)'
-released: False
+released: True
 ---
 
 # {{page.labprefix}}: {{page.labtitle}}
@@ -41,8 +41,14 @@ This lab covers the following topics:
 ### Resources
 
 - Code related to this lab can be found in `04_sqli/` of our [class's GitHub repository](https://github.com/traviswpeters/cs476-code).
-- [PHP Manual](https://www.php.net/manual/en/index.php)
-- [MySQL API](https://www.php.net/manual/en/book.mysql.php)
+<!-- - [How the Internet Works in 5 Minutes (YouTube)](https://www.youtube.com/watch?v=7_LPdttKXPc) -->
+- [How Does the Internet Work? (YouTube)](https://www.youtube.com/watch?v=x3c1ih2NJEg)
+- [How the Internet works (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work)
+- [How the Web works (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works)
+<!-- - [HTTP — An Application-Level Protocol](https://dev.opera.com/articles/http-basic-introduction/) -->
+- [HTTP Tutorials (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+- [PHP Manual (php.net)](https://www.php.net/manual/en/index.php)
+- [MySQL API (php.net)](https://www.php.net/manual/en/book.mysql.php)
 - Chapter 12 in the [SEED Textbook]({{site.data.settings.textbookseedlink}}).
 
 <!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
@@ -74,18 +80,7 @@ If you need to update this information, add the above entry to the `/etc/hosts` 
 
 ### MySQL Database
 
-Containers are usually disposable, so once it is destroyed, all the data inside the containers is lost.
-For this lab, we want to keep the data in the MySQL database (i.e., so that we do not lose our work when we shutdown our container).
-To achieve this, we have mounted the `mysql_data` folder on the host machine to the `/var/lib/mysql` folder inside the MySQL container.
-> The folder is created inside of `04_sqli/` automatically once the MySQL container runs once.
-
-This folder is where MySQL stores its database.
-Thus, even if the container is destroyed, data in the database will persist since it actually resides on the host.
-If you do want to start from a clean database, you can remove this folder:
-
-```bash
-$ sudo rm -rf mysql_data
-```
+{% include lab_mysql.html %}
 
 ### The Web Application
 
