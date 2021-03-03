@@ -49,6 +49,7 @@ This lab covers the following topics:
 - [HTTP Tutorials (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/HTTP)
 - [PHP Manual (php.net)](https://www.php.net/manual/en/index.php)
 - [MySQL API (php.net)](https://www.php.net/manual/en/book.mysql.php)
+- [Getting Started with Burp Suite](https://medium.com/swlh/getting-started-with-burp-suite-on-ubuntu-3c1e665122a3)
 - Chapter 12 in the [SEED Textbook]({{site.data.settings.textbookseedlink}}).
 
 <!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->

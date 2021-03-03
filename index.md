@@ -356,8 +356,8 @@ If you have any questions, please contact me.
 <td markdown="span">03/02/2021 (T)</td>
 <td markdown="span" markdown="1">
 <!-- - TBD -->
-<!-- - [video](){:.video} -->
-<!-- [slides](files/){:.slides} -->
+- [video](https://zoom.us/rec/share/CxdMisAAfB22E5g-4x4EzfWvZ0M3DSyi3ogX80uL1UJtW6_LfM-pFDWefR3Cj9u6.I_jY77MY4UJSsaL0){:.video}
+[slides](files/cs476-15-web-sqli.pdf){:.slides}
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
