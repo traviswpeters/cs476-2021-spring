@@ -41,6 +41,7 @@ This lab covers the following topics:
 ### Resources
 
 - Code related to this lab can be found in `04_sqli/` of our [class's GitHub repository](https://github.com/traviswpeters/cs476-code).
+- Summaries and references that can help you learn about using various [Web Tools]({{ 'webtools' | relative_url }}) (e.g., Burp Suite, HTTP Headers Live).
 <!-- - [How the Internet Works in 5 Minutes (YouTube)](https://www.youtube.com/watch?v=7_LPdttKXPc) -->
 - [How Does the Internet Work? (YouTube)](https://www.youtube.com/watch?v=x3c1ih2NJEg)
 - [How the Internet works (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work)
@@ -49,7 +50,6 @@ This lab covers the following topics:
 - [HTTP Tutorials (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/HTTP)
 - [PHP Manual (php.net)](https://www.php.net/manual/en/index.php)
 - [MySQL API (php.net)](https://www.php.net/manual/en/book.mysql.php)
-- [Getting Started with Burp Suite](https://medium.com/swlh/getting-started-with-burp-suite-on-ubuntu-3c1e665122a3)
 - Chapter 12 in the [SEED Textbook]({{site.data.settings.textbookseedlink}}).
 
 <!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->

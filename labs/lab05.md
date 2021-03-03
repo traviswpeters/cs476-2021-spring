@@ -45,6 +45,7 @@ This lab covers the following topics:
 ### Resources
 
 - Code related to this lab can be found in `05_xss/` of our [class's GitHub repository](https://github.com/traviswpeters/cs476-code).
+- Summaries and references that can help you learn about using various [Web Tools]({{ 'webtools' | relative_url }}) (e.g., Burp Suite, HTTP Headers Live).
 - Chapter 10 in the [SEED Textbook]({{site.data.settings.textbookseedlink}}).
 
 <!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
