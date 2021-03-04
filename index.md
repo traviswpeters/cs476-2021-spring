@@ -920,6 +920,13 @@ A couple of clarifications and additions:
 - Anything you submit that did not originate from you must be accompanied by attribution.
 - Also, please do not share solutions or detailed information about solutions (e.g., specific code, non-trivial command line sequences) with others.
 
+## Protection of Intellectual Property Rights in Course Materials
+
+This syllabus, course lectures and presentations, and any course materials provided throughout this term are protected by U.S. copyright laws.
+Students enrolled in the course may use them for their own research and educational purposes.  
+However, reproducing, selling or otherwise distributing these materials without written permission of the copyright owner is expressly prohibited, including providing materials to commercial platforms such as Chegg or CourseHero.
+Doing so may constitute a violation of U.S. copyright law as well as MSU’s Code of Student Conduct.
+
 ## FAQs
 
 This is a collection of general FAQs related to our course. I will update this section as other questions arise.
