@@ -269,6 +269,7 @@ If you have any questions, please contact me.
 <!-- Week Title --><td markdown="span" class="note">Software Security --- Buffer Overflow Vulnerabilities, Attacks, and Defenses</td>
 <!-- - Return-to-libc Attacks / Generalizing Return-to-libc Attacks: Return-Oriented Programming? -->
 <!--   BLANK    --><td markdown="span" class="note" markdown="1">
+- Read Chapters 5.4 (focus on 5.4.1-5.4.3), 6.4 [(SS3P)]({{site.data.settings.textbookss3plink}}),
 - (Optional) Chapters 4, 9 [(SEED)]({{site.data.settings.textbookseedlink}}),
 - [[Demystifying the Execve Shellcode (Stack Method)]](http://hackoftheday.securitytube.net/2013/04/demystifying-execve-shellcode-stack.html)
 </td>
@@ -323,6 +324,7 @@ If you have any questions, please contact me.
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
+- Read Appendix 8.1 [(SS3P)]({{site.data.settings.textbookss3plink}})
 - _Lab 03 Deadline Extended!_{:.text-muted}
 </td>
 </tr>
@@ -347,6 +349,7 @@ If you have any questions, please contact me.
 <!--   Week #   --><td id="week08" markdown="span">Week 08</td>
 <!-- Week Title --><td markdown="span" class="note">Network & Web Security --- SQL Injection Attacks & Countermeasures</td>
 <!--   BLANK    --><td markdown="span" class="note" markdown="1">
+- Read Chapter 7.1 (focus on 7.1.4) [(SS3P)]({{site.data.settings.textbookss3plink}}),
 - (Optional) Chapter 12 [(SEED)]({{site.data.settings.textbookseedlink}})
 </td>
 </tr>
@@ -385,6 +388,7 @@ If you have any questions, please contact me.
 <!--   Week #   --><td id="week09" markdown="span">Week 09</td>
 <!-- Week Title --><td markdown="span" class="note">Network & Web Security --- Cross-Site Scripting (XSS) Attacks & Countermeasures</td>
 <!--   BLANK    --><td markdown="span" class="note" markdown="1">
+- Read Chapter 7.1 (focus on 7.1.5) [(SS3P)]({{site.data.settings.textbookss3plink}}),
 - (Optional) Chapter 11 [(SEED)]({{site.data.settings.textbookseedlink}})
 </td>
 </tr>
@@ -422,6 +426,7 @@ If you have any questions, please contact me.
 <!--   Week #   --><td id="week10" markdown="span">Week 10</td>
 <!-- Week Title --><td markdown="span" class="note">Network & Web Security --- Cross-Site Request Forgery (XSRF) Attacks & Countermeasures</td>
 <!--   BLANK    --><td markdown="span" class="note" markdown="1">
+- Read Chapter 7.1 (focus on 7.1.6) [(SS3P)]({{site.data.settings.textbookss3plink}}),
 - (Optional) Chapter 10 [(SEED)]({{site.data.settings.textbookseedlink}})
 </td>
 </tr>
