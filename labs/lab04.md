@@ -42,6 +42,7 @@ This lab covers the following topics:
 
 - Code related to this lab can be found in `04_sqli/` of our [class's GitHub repository](https://github.com/traviswpeters/cs476-code).
 - Summaries and references that can help you learn about using various [Web Tools]({{ 'webtools' | relative_url }}) (e.g., Burp Suite, HTTP Headers Live).
+- A website dedicated to [SQL injection attacks](https://www.sqlinjection.net).
 <!-- - [How the Internet Works in 5 Minutes (YouTube)](https://www.youtube.com/watch?v=7_LPdttKXPc) -->
 - [How Does the Internet Work? (YouTube)](https://www.youtube.com/watch?v=x3c1ih2NJEg)
 - [How the Internet works (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work)
