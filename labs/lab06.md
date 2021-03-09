@@ -2,6 +2,7 @@
 layout: default
 tags: [labs, seed]
 dirname: 'lab06'
+dircode: '06_csrf'
 labprefix: 'Lab 06'
 labtitle: 'Cross-Site Request Forgery (CSRF) Attack Lab'
 title: 'Lab 06: Cross-Site Request Forgery (CSRF) Attack Lab'
@@ -35,7 +36,7 @@ This lab covers the following topics:
 
 ### Resources
 
-- Code related to this lab can be found in `06_csrf/` of our [class's GitHub repository](https://github.com/traviswpeters/cs476-code).
+- Code related to this lab can be found in `{{page.dircode}}/` of our [class's GitHub repository](https://github.com/traviswpeters/cs476-code).
 - Summaries and references that can help you learn about using various [Web Tools]({{ 'webtools' | relative_url }}) (e.g., Burp Suite, HTTP Headers Live).
 - Chapter 10 in the [SEED Textbook]({{site.data.settings.textbookseedlink}}).
 
@@ -119,7 +120,7 @@ We have already placed some skeleton code inside this folder.
 
 ### MySQL Database
 
-{% include lab_mysql.html %}
+{% include lab_mysql.html classdir="06_csrf" %}
 
 </div>
 </div>

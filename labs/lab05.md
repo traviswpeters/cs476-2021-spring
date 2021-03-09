@@ -2,6 +2,7 @@
 layout: default
 tags: [labs, seed]
 dirname: 'lab05'
+dircode: '05_xss'
 labprefix: 'Lab 05'
 labtitle: 'Cross-Site Scripting (XSS) Attack Lab'
 title: 'Lab 05: Cross-Site Scripting (XSS) Attack Lab'
@@ -44,8 +45,10 @@ This lab covers the following topics:
 
 ### Resources
 
-- Code related to this lab can be found in `05_xss/` of our [class's GitHub repository](https://github.com/traviswpeters/cs476-code).
+- Code related to this lab can be found in `{{page.dircode}}/` of our [class's GitHub repository](https://github.com/traviswpeters/cs476-code).
 - Summaries and references that can help you learn about using various [Web Tools]({{ 'webtools' | relative_url }}) (e.g., Burp Suite, HTTP Headers Live).
+- [Cross-Site Scripting (PortSwigger)](https://portswigger.net/web-security/cross-site-scripting)
+<!-- - [Same Origin Policy (MDN)](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) -->
 - Chapter 10 in the [SEED Textbook]({{site.data.settings.textbookseedlink}}).
 
 <!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
@@ -92,7 +95,7 @@ so please do not change them within the `docker-compose.yml` file.
 
 ### MySQL Database
 
-{% include lab_mysql.html %}
+{% include lab_mysql.html classdir="05_xss" %}
 
 </div>
 </div>

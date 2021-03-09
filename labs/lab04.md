@@ -2,6 +2,7 @@
 layout: default
 tags: [labs, seed]
 dirname: 'lab04'
+dircode: '04_sqli'
 labprefix: 'Lab 04'
 labtitle: 'SQL Injection Attack Lab'
 title: 'Lab 04: SQL Injection Attack Lab'
@@ -40,7 +41,7 @@ This lab covers the following topics:
 
 ### Resources
 
-- Code related to this lab can be found in `04_sqli/` of our [class's GitHub repository](https://github.com/traviswpeters/cs476-code).
+- Code related to this lab can be found in `{{page.dircode}}/` of our [class's GitHub repository](https://github.com/traviswpeters/cs476-code).
 - Summaries and references that can help you learn about using various [Web Tools]({{ 'webtools' | relative_url }}) (e.g., Burp Suite, HTTP Headers Live).
 - A website dedicated to [SQL injection attacks](https://www.sqlinjection.net).
 <!-- - [How the Internet Works in 5 Minutes (YouTube)](https://www.youtube.com/watch?v=7_LPdttKXPc) -->
@@ -82,7 +83,7 @@ If you need to update this information, add the above entry to the `/etc/hosts` 
 
 ### MySQL Database
 
-{% include lab_mysql.html %}
+{% include lab_mysql.html classdir="04_sqli" %}
 
 ### The Web Application
 
