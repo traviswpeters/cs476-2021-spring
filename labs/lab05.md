@@ -7,7 +7,7 @@ labprefix: 'Lab 05'
 labtitle: 'Cross-Site Scripting (XSS) Attack Lab'
 title: 'Lab 05: Cross-Site Scripting (XSS) Attack Lab'
 duedate: 'Tuesday [03/16/2021] @ 11:59 AM (MST)'
-released: False
+released: True
 ---
 
 # {{page.labprefix}}: {{page.labtitle}}
@@ -80,6 +80,21 @@ Your VM should already be configured to have these IP/hostname mappings in the `
 10.9.0.5        www.example60.com
 10.9.0.5        www.example70.com
 ```
+
+By using `ifconfig` we can verify our host's IP address within the docker network:
+
+```
+[VM]$ ifconfig
+#...snipped...
+
+br-f2fb40f6b8ae: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.9.0.1  netmask 255.255.255.0  broadcast 10.9.0.255
+             ^^^^^^^^
+#...snipped...
+```
+
+In this case, my host can be addressed from a container by accessing `10.9.0.1`.
+(This should be the same for you, but you should verify.)
 
 ### Elgg Web Application
 
@@ -183,10 +198,10 @@ Type the following command below to listen on port `5555`:
 $ nc -lknv 5555
 ```
 
-The `-l` option is used to specify that nc should listen for an incoming connection rather than initiate a connection to a remote host.
-The `-v` option is used to have `nc` give more verbose output.
-The `-n` option forces `nc`  to not do any DNS or service lookups on any specified addresses, hostnames or ports.
-The `-k` option indicates that, when a connection is completed, listen for another one.
+- The `-l` option is used to specify that nc should listen for an incoming connection rather than initiate a connection to a remote host.
+- The `-v` option is used to have `nc` give more verbose output.
+- The `-n` option forces `nc`  to not do any DNS or service lookups on any specified addresses, hostnames or ports.
+- The `-k` option indicates that, when a connection is completed, listen for another one.
 
 ### Task 4: Becoming the Victim's Friend
 
@@ -210,8 +225,10 @@ We provide template code that aids in completing the task.
 window.onload = function () {
     var Ajax=null;
 
-    var ts="&__elgg_ts="+elgg.security.token.__elgg_ts;           // (line 1)
-    var token="&__elgg_token="+elgg.security.token.__elgg_token;  // (line 2)
+    // This data is sent by the server (look at the page's source code!)
+    // and must be included in subsequent requests.
+    var ts="&__elgg_ts="+elgg.security.token.__elgg_ts;           // (1) elgg CSRF countermeasure
+    var token="&__elgg_token="+elgg.security.token.__elgg_token;  // (2) elgg CSRF countermeasure
 
     // Construct the HTTP request to add Samy as a friend.
     var sendurl=...;  //FILL IN
@@ -236,11 +253,11 @@ This can be done by clicking on "Edit HTML", which can be found at the top right
 
 Carry out the attack to add Samy as a friend to the victim. Describe your strategy and provide supporting code/details.
 
+<!-- #### Task 4.2 -->
+
+<!-- Explain the purpose of lines (1) and (2), and why are they are needed. -->
+
 #### Task 4.2
-
-Explain the purpose of lines 1 and 2, and why are they are needed.
-
-#### Task 4.3
 
 If the Elgg application only provided the Editor mode for the "About Me" field (i.e., you cannot switch to the Text mode), can you still launch a successful attack?
 
@@ -270,7 +287,7 @@ window.onload = function(){
     var content=...;     //FILL IN
 
     var samyGuid=...;    //FILL IN
-    if (elgg.session.user.guid!=samyGuid)       // (line 1)
+    if (elgg.session.user.guid!=samyGuid)       // (1)
     {
         // Create and send Ajax request to modify profile
         var Ajax=null;
@@ -293,7 +310,7 @@ Carry out the attack to modify the victim's profile when the victim visits Samy'
 
 #### Task 5.2
 
-Why do we need line 1?
+Why do we need line (1) in the code above?
 
 Remove this line, and repeat your attack. Report and explain your observation(s).
 
