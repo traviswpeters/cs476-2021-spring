@@ -58,7 +58,7 @@ This lab covers the following topics:
 ## Environment Setup
 
 In this lab, we will use a variety of websites all running on the same container.
-Notably, the vulnerable Elgg site is accessible at [www.csrflabelgg.com](www.csrflabelgg.com).
+Notably, the vulnerable Elgg site is accessible at [www.xsslabelgg.com](www.xsslabelgg.com).
 
 > **WARNING:** Do not visit these websites outside of the VM / when the local webserver is not running.
 
