@@ -6,7 +6,7 @@ dircode: '05_xss'
 labprefix: 'Lab 05'
 labtitle: 'Cross-Site Scripting (XSS) Attack Lab'
 title: 'Lab 05: Cross-Site Scripting (XSS) Attack Lab'
-duedate: 'Tuesday [03/16/2021] @ 11:59 AM (MST)'
+duedate: 'Tuesday [03/23/2021] @ 11:59 AM (MST)'
 released: True
 ---
 
@@ -49,6 +49,7 @@ This lab covers the following topics:
 - Summaries and references that can help you learn about using various [Web Tools]({{ 'webtools' | relative_url }}) (e.g., Burp Suite, HTTP Headers Live).
 - [Cross-Site Scripting (PortSwigger)](https://portswigger.net/web-security/cross-site-scripting)
 <!-- - [Same Origin Policy (MDN)](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) -->
+- [Introduction to the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 - Chapter 10 in the [SEED Textbook]({{site.data.settings.textbookseedlink}}).
 
 <!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
