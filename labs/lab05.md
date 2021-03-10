@@ -58,7 +58,7 @@ This lab covers the following topics:
 ## Environment Setup
 
 In this lab, we will use a variety of websites all running on the same container.
-Notably, the vulnerable Elgg site is accessible at [www.xsslabelgg.com](www.xsslabelgg.com).
+Notably, the vulnerable Elgg site is accessible at [http://www.xsslabelgg.com/](http://www.xsslabelgg.com/).
 
 > **WARNING:** Do not visit these websites outside of the VM / when the local webserver is not running.
 
@@ -202,6 +202,13 @@ $ nc -lknv 5555
 - The `-v` option is used to have `nc` give more verbose output.
 - The `-n` option forces `nc`  to not do any DNS or service lookups on any specified addresses, hostnames or ports.
 - The `-k` option indicates that, when a connection is completed, listen for another one.
+
+#### For Fun!
+
+While running `netcat` on the VM is interesting in its own right,
+we can also use other approaches to receive the information exfiltrated from the user's browser.
+For example, we could use something like [https://webhook.site/](https://webhook.site/),
+which lets you, for instance, easily inspect any incoming HTTP request that is directed to a temporary URL they assign you.
 
 ### Task 4: Becoming the Victim's Friend
 
