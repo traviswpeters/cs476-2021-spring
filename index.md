@@ -398,8 +398,8 @@ If you have any questions, please contact me.
 <td markdown="span">03/09/2021 (T)</td>
 <td markdown="span" markdown="1">
 <!-- - TBD -->
-<!-- - [video](){:.video} -->
-<!-- [slides](files/){:.slides} -->
+- [video](https://zoom.us/rec/share/KYxk_wqPYygvK6E5N7S20lMTvp9ZFTatsOiERcQem0jbHbeJrPCfkkYf-hKiD4Jb.HXvzqOPnHF8Mm48b){:.video}
+[slides](files/cs476-17-web-xss.pdf){:.slides}
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
