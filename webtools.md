@@ -47,7 +47,7 @@ Below we summarize how you can use your Host browser (e.g., Chrome) to interact 
 
 - In Chrome, navigate to **Settings** and search for **Proxy**.
   - Select "Open your computer's proxy settings." _>> On macOS this will direct your to System Preferences_{:.text-muted}
-  - Go to **Network** $$\rightarrow$$ **Advanced...** $$\rightarrow$$ select the **Proxies** tab $$\rightarrow$$ check the **SOCKS proxy** option.
+  - Go to **Network** &#8594; **Advanced...** &#8594; select the **Proxies** tab &#8594; check the **SOCKS proxy** option.
   - Enter **127.0.0.1** (IP address) and **8080** (port).
   - Click **OK** and then **Apply**.
   > **NOTE:** Here we are indicating that all of our Host's web traffic should be proxied through 127.0.0.1:8080,
@@ -107,8 +107,8 @@ The tool is the Web Developer Network Tool.
 In this section, we cover some of the important features of the tool.
 The Web Developer Network Tool can be enabled by doing the following:
 
-- Click Firefox's top right menu $$\rightarrow$$ Web Developer $$\rightarrow$$ Network, or
-- Click the "Tools" menu $$\rightarrow$$ Web Developer $$\rightarrow$$ Network
+- Click Firefox's top right menu &#8594; Web Developer &#8594; Network, or
+- Click the "Tools" menu &#8594; Web Developer &#8594; Network
 
 Below, we use the user login page in Elgg to show the Network Tool as it captures the HTTP POST request that was sent for a login request.
 
@@ -143,7 +143,7 @@ Firefox's Developer Tool can also help debug JavaScript code.
 For example, it can point us to the precise places where errors occur.
 The following instruction shows how to enable this debugging tool:
 
-- Click the "Tools" menu $$\rightarrow$$ Web Developer $$\rightarrow$$ Web Console, or
+- Click the "Tools" menu &#8594; Web Developer &#8594; Web Console, or
 - use the Shift+Ctrl+K shortcut.
 
 Once you are in the web console, click the "JS" tab.

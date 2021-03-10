@@ -413,8 +413,8 @@ function filter_tags($var) {
 **To turn on this countermeasure**,
 login to the application as admin,
 go to Account
-$$\rightarrow$$ administration (top right)
-$$\rightarrow$$ plugins (on the right panel),
+&#8594; administration (top right)
+&#8594; plugins (on the right panel),
 and then click on "security and spam" under the filter options at the top of the page.
 You should find the "HTMLawed" plugin here.
 Click "Activate" to enable the countermeasure.
