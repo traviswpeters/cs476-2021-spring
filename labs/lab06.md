@@ -2,11 +2,10 @@
 layout: default
 tags: [labs, seed]
 dirname: 'lab06'
-dircode: '06_csrf'
 labprefix: 'Lab 06'
-labtitle: 'Cross-Site Request Forgery (CSRF) Attack Lab'
-title: 'Lab 06: Cross-Site Request Forgery (CSRF) Attack Lab'
-duedate: 'Tuesday [03/23/2021] @ 11:59 AM (MST)'
+labtitle: 'Secret-Key Encryption Lab'
+title: 'Lab 06: Secret-Key Encryption Lab'
+duedate: 'Tuesday [04/06/2021] @ 11:59 AM (MST)'
 released: False
 ---
 
@@ -18,475 +17,556 @@ released: False
 Adapted from SEED Labs: A Hands-on Lab for Security Education.
 {:.subtitletext}
 
-The objective of this lab is to help students understand the Cross-Site Request Forgery (CSRF) attack.
-A CSRF attack involves a victim user, a trusted site, and a malicious site.
-The victim user holds an active session with a trusted site while visiting a malicious site.
-The malicious site injects an HTTP request for the trusted site into the victim user's session, abusing the user's active session with the trusted site.
 
-In this lab, students will attack a social networking web application using the CSRF attack.
-The open-source social networking application, Elgg, is accessible as a Docker container.
-Elgg has implemented countermeasures against CSRF, but we have disabled them for the purpose of this lab.
 
-This lab covers the following topics:
 
--   Cross-Site Request Forgery attack
--   CSRF countermeasures: Secret token and Same-site cookie
--   HTTP GET and POST requests
--   JavaScript and Ajax
 
-### Resources
 
-- Code related to this lab can be found in `{{page.dircode}}/` of our [class's GitHub repository](https://github.com/traviswpeters/cs476-code).
-- Summaries and references that can help you learn about using various [Web Tools]({{ 'webtools' | relative_url }}) (e.g., Burp Suite, HTTP Headers Live).
-- Chapter 10 in the [SEED Textbook]({{site.data.settings.textbookseedlink}}).
 
-<!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
-<div class="card bg-secondary border-primary" markdown="1">
-<div class="card-body" markdown="1">
 
-## Environment Setup
 
-In this lab, we will use two websites.
-The first website, the vulnerable Elgg site, is accessible at [www.csrflabelgg.com](www.csrflabelgg.com).
-The second website is the attacker's malicious website that is used for attacking Elgg,
-which is accessible at [www.csrflab-attacker.com](www.csrflab-attacker.com).
-These websites are run in docker containers.
 
-> **WARNING:** Do not visit these websites outside of the VM / when the local webserver is not running.
+
+Secret-Key Encryption Lab
+
+Overview
+========
+
+The learning objective of this lab is for students to get familiar with
+the concepts in the secret-key encryption and some common attacks on
+encryption. From this lab, students will gain a first-hand experience on
+encryption algorithms, encryption modes, paddings, and initial vector
+(IV). Moreover, students will be able to use tools and write programs to
+encrypt/decrypt messages.
+
+Many common mistakes have been made by developers in using the
+encryption algorithms and modes. These mistakes weaken the strength of
+the encryption, and eventually lead to vulnerabilities. This lab exposes
+students to some of these mistakes, and ask students to launch attacks
+to exploit those vulnerabilities. This lab covers the following topics:
+
+-   Secret-key encryption
+
+-   Substitution cipher and frequency analysis
+
+-   Encryption modes, IV, and paddings
+
+-   Common mistakes in using encryption algorithms
+
+-   Programming using the crypto library
+
+#### Readings.
+
+Detailed coverage of the secret-key encryption can be found in the
+following:
+
+-   Chapter 21 of the SEED Book, *Computer & Internet Security: A
+    Hands-on Approach*, 2nd Edition, by Wenliang Du. See details at
+    <https://www.handsonsecurity.net>.
+
+#### Lab Environment.
+
+This lab has been tested on our pre-built Ubuntu 20.04 VM, which can be
+downloaded from the SEED website.
+
+Lab Environment
+===============
+
+In this lab, we use a container to run an encryption oracle. The
+container is only needed in Task 6.3, so you do not need to start the
+container for other tasks.
 
 ### Container Setup and Commands
 
-{% include lab_docker_overview.html classdir="06_csrf" %}
-
-#### DNS Configuration
-
-We can access the Elgg website, the attacker website, and the defense site using their respective URLs.
-To ensure these hostnames are mapped to their corresponding IP addresses
-we added the following entries to the `/etc/hosts` file.
-
-```
-10.9.0.5        www.csrflabelgg.com
-10.9.0.5        www.csrflab-defense.com
-10.9.0.105      www.csrflab-attacker.com
-```
-
-### The Elgg Web Application
-
-In this lab we use an open-source web application called Elgg.
-Elgg is a web-based social-networking application.
-It is already set up in the provided container images.
-
-We use two containers, one running the web server (`10.9.0.5`), and the other running the MySQL database (`10.9.0.6`).
-The IP addresses for these two containers are hardcoded in various places in the configuration,
-so please do not change them within the `docker-compose.yml` file.
-
-{% include lab_elgg_users.html %}
-
-### The Elgg Container
-
-We host the Elgg web application using an Apache web server.
-The website setup is included in `apache_elgg_csrf.conf` inside the Elgg image folder.
-The configuration specifies the URL for the website and the folder where the web application code is stored.
-
-```
-<VirtualHost *:80>
-     DocumentRoot /var/www/elgg
-     ServerName www.csrflabelgg.com
-     <Directory /var/www/elgg>
-          Options FollowSymlinks
-          AllowOverride All
-          Require all granted
-     </Directory>
-</VirtualHost>
-```
-
-### The Attacker Container
-
-We use another container (`10.9.0.105`) to play the role of the attacker machine, which hosts a malicious website.
-The Apache configuration for this website is detailed below.
-
-```
-<VirtualHost *:80>
-    ServerName www.csrflab-attacker.com
-    DocumentRoot /var/www/attacker
-</VirtualHost>
-```
-
-Since we need to create web pages inside this container, for convenience, as well as for keeping the pages we have created,
-we mounted a folder on the hosting VM (`attacker`) to the container's `/var/www/attacker` folder,
-which is the `DocumentRoot` folder in our Apache configuration.
-Therefore, the web pages we put inside the `attacker` folder on the VM will be hosted by the attacker's website.
-We have already placed some skeleton code inside this folder.
-
-### MySQL Database
-
-{% include lab_mysql.html classdir="06_csrf" %}
-
-</div>
-</div>
-<!-- END Special Section -->
-
-## Lab Tasks
-{:.titletext}
-This lab has been tested on the pre-built SEED VM (Ubuntu 20.04 VM).
-{:.subtitletext}
-
-### Task 1: Observing HTTP Request.
-
-In Cross-Site Request Forget attacks, we need to forge HTTP requests.
-Therefore, we need to know what a legitimate HTTP request looks like and
-what parameters it uses, etc. We can use a Firefox add-on called
-`"HTTP Header Live"` for this purpose. The goal of this task is to get
-familiar with this tool. Instructions on how to use this tool is given
-in the Guideline
-section (§ [5.1](#web:sec:httpheaderlive){reference-type="ref"
-reference="web:sec:httpheaderlive"}). Please use this tool to capture an
-HTTP GET request and an HTTP POST request in Elgg. In your report,
-please identify the parameters used in this these requests, if any.
-
-### Task 2: CSRF Attack using GET Request
-
-In this task, we need two people in the Elgg social network: Alice and
-Samy. Samy wants to become a friend to Alice, but Alice refuses to add
-him to her Elgg friend list. Samy decides to use the CSRF attack to
-achieve his goal. He sends Alice an URL (via an email or a posting in
-Elgg); Alice, curious about it, clicks on the URL, which leads her to
-Samy's website: `www.csrflab-attacker.com`. Pretend that you are Samy,
-describe how you can construct the content of the web page, so as soon
-as Alice visits the web page, Samy is added to the friend list of Alice
-(assuming Alice has an active session with Elgg).
-
-To add a friend to the victim, we need to identify what the legitimate
-Add-Friend HTTP request (a GET request) looks like. We can use the
-`"HTTP Header Live"` Tool to do the investigation. In this task, you are
-not allowed to write JavaScript code to launch the CSRF attack. Your job
-is to make the attack successful as soon as Alice visits the web page,
-without even making any click on the page (hint: you can use the `img`
-tag, which automatically triggers an HTTP GET request).
-
-Elgg has implemented a countermeasure to defend against CSRF attacks. In
-Add-Friend HTTP requests, you may notice that each request includes two
-wired-looking parameters, `__elgg_ts` and `__elgg_token`. These
-parameters are used by the countermeasure, so if they do not contain
-correct values, the request will not be accepted by Elgg. We have
-disabled the countermeasure for this lab, so there is no need to include
-these two parameters in the forged requests.
-
-### Task 3: CSRF Attack using POST Request
-
-After adding himself to Alice's friend list, Samy wants to do something
-more. He wants Alice to say "Samy is my Hero" in her profile, so
-everybody knows about that. Alice does not like Samy, let alone putting
-that statement in her profile. Samy plans to use a CSRF attack to
-achieve that goal. That is the purpose of this task.
-
-One way to do the attack is to post a message to Alice's Elgg account,
-hoping that Alice will click the URL inside the message. This URL will
-lead Alice to your (i.e., Samy's) malicious website
-[www.csrflab-attacker.com](www.csrflab-attacker.com), where you can
-launch the CSRF attack.
-
-The objective of your attack is to modify the victim's profile. In
-particular, the attacker needs to forge a request to modify the profile
-information of the victim user of Elgg. Allowing users to modify their
-profiles is a feature of Elgg. If users want to modify their profiles,
-they go to the profile page of Elgg, fill out a form, and then submit
-the form---sending a POST request---to the server-side script
-`/profile/edit.php`, which processes the request and does the profile
-modification.
-
-The server-side script `edit.php` accepts both GET and POST requests, so
-you can use the same trick as that in Task 1 to achieve the attack.
-However, in this task, you are required to use the POST request. Namely,
-attackers (you) need to forge an HTTP POST request from the victim's
-browser, when the victim is visiting their malicious site. Attackers
-need to know the structure of such a request. You can observe the
-structure of the request, i.e., the parameters of the request, by making
-some modifications to the profile and monitoring the request using the
-`"HTTP Header Live"` tool. You may see something similar to the
-following. Unlike HTTP `GET` requests, which append parameters to the
-URL strings, the parameters of HTTP `POST` requests are included in the
-HTTP message body (see the contents between the two symbols):
-
-```
-http://www.csrflabelgg.com/action/profile/edit
-
-POST /action/profile/edit HTTP/1.1
-Host: www.csrflabelgg.com
-User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:23.0) ...
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-Referer: http://www.csrflabelgg.com/profile/elgguser1/edit
-Cookie: Elgg=p0dci8baqrl4i2ipv2mio3po05
-Connection: keep-alive
-Content-Type: application/x-www-form-urlencoded
-Content-Length: 642
-__elgg_token=fc98784a9fbd02b68682bbb0e75b428b&__elgg_ts=1403464813  (*@\ding{80}@*)
-&name=elgguser1&description=%3Cp%3Iamelgguser1%3C%2Fp%3E
-&accesslevel%5Bdescription%5D=2&briefdescription= Iamelgguser1
-&accesslevel%5Bbriefdescription%5D=2&location=US
-......                                                              (*@\ding{80}@*)
-```
-
-After understanding the structure of the request, you need to be able to
-generate the request from your attacking web page using JavaScript code.
-To help you write such a JavaScript program, we provide a sample code in
-the following You can use this sample code to construct your malicious
-website for the CSRF attacks. This is only a sample code, and you need
-to modify it to make it work for your attack.
-
-```html
-<html>
-<body>
-<h1>This page forges an HTTP POST request.</h1>
-<script type="text/javascript">
-
-function forge_post()
-{
-    var fields;
-
-    // The following are form entries need to be filled out by attackers.
-    // The entries are made hidden, so the victim won't be able to see them.
-    fields += "<input type='hidden' name='name' value='****'>";
-    fields += "<input type='hidden' name='briefdescription' value='****'>";
-    fields += "<input type='hidden' name='accesslevel[briefdescription]'
-                                    value='2'>";                         (*@\ding{192}@*)
-    fields += "<input type='hidden' name='guid' value='****'>";
-
-    // Create a <form> element.
-    var p = document.createElement("form");
-
-    // Construct the form
-    p.action = "http://www.example.com";
-    p.innerHTML = fields;
-    p.method = "post";
-
-    // Append the form to the current page.
-    document.body.appendChild(p);
-
-    // Submit the form
-    p.submit();
-}
-
-// Invoke forge_post() after the page is loaded.
-window.onload = function() { forge_post();}
-</script>
-</body>
-</html>
-```
-
-In Line , the value `2` sets the access level of a field to public. This
-is needed, otherwise, the access level will be set by default to
-private, so others cannot see this field. It should be noted that when
-copy-and-pasting the above code from a PDF file, the single quote
-character in the program may become something else (but still looks like
-a single quote). That will cause syntax errors. Replace all the single
-quote symbols with the one typed from your keyboard will fix those
-errors.
-
-#### Questions.
-
-In addition to describing your attack in full details, you also need to
-answer the following questions in your report:
-
--   **Question 1**: The forged HTTP request needs Alice's user id (guid)
-    to work properly. If Boby targets Alice specifically, before the
-    attack, he can find ways to get Alice's user id. Boby does not know
-    Alice's Elgg password, so he cannot log into Alice's account to get
-    the information. Please describe how Boby can solve this problem.
-
--   **Question 2:** If Boby would like to launch the attack to anybody
-    who visits his malicious web page. In this case, he does not know
-    who is visiting the web page beforehand. Can he still launch the
-    CSRF attack to modify the victim's Elgg profile? Please explain.
-
-
-
-
-
-
-
-
-## Lab Tasks: Defense
-{:.titletext}
-This lab has been tested on the pre-built SEED VM (Ubuntu 20.04 VM).
-{:.subtitletext}
-
-CSRF is not difficult to defend against. Initially, most applications
-put a secret token in their pages, and by checking whether the token is
-present in the request or not, they can tell whether a request is a
-same-site request or a cross-site request. This is called *secret token*
-approach. More recently, most browsers have implemented a mechanism
-called *SameSite cookie*, which is intended to simplify the
-implementation of CSRF countermeasures. We will conduct experiments on
-both methods.
-
-### Task 4: Enabling Elgg's Countermeasure
-
-To defend against CSRF attacks, web applications can embed a secret
-token in their pages. All the requests coming from these pages must
-carry this token, or they will be considered as a cross-site request,
-and will not have the same privilege as the same-site requests. Attacker
-will not be able to get this secret token, so their requests are easily
-identified as cross-site requests.
-
-Elgg uses this secret-token approach as its built-in countermeasures to
-defend against CSRF attacks. We have disabled the countermeasures to
-make the attack work. Elgg embeds two parameters `__elgg_ts` and
-`__elgg_token` in the request. The two parameters are added to the HTTP
-message body for the POST requests and to the URL string for the HTTP
-GET requests. The server will validate them before processing a request.
-
-#### Embedding secret token and timestamp to web pages.
-
-Elgg adds security token and timestamp to all the HTTP requests. The
-following HTML code is present in all the forms where user action is
-required. These are two hidden fields; when the form is submitted, these
-two hidden parameters are added to the request:
-
-```html
-<input type = "hidden" name = "__elgg_ts" value = "" />
-<input type = "hidden" name = "__elgg_token" value = "" />
-```
-
-Elgg also assign the values of the security token and timestamp to
-JavaScript variables, so they can be easily accessed by the JavaScript
-code on the same page.
-
-```js
-elgg.security.token.__elgg_ts;
-elgg.security.token.__elgg_token;
-```
-
-The secret token and timestamp are added to Elgg's web pages by the
-module. The code snippet below shows how they are dynamically added to
-web pages.
-
-```js
-$ts = time();
-$token = elgg()->csrf->generateActionToken($ts);
-
-echo elgg_view('input/hidden', ['name' => '__elgg_token', 'value' => $token]);
-echo elgg_view('input/hidden', ['name' => '__elgg_ts', 'value' => $ts]);
-```
-
-#### Secret token generation.
-
-Elgg's security token is a hash value (md5 message digest) of the site
-secret value (retrieved from database), timestamp, user session ID and
-random generated session string. The code below shows the secret token
-generation in Elgg (in ).
-
-```js
-/**
- * Generate a token from a session token (specifying the user),
- * the timestamp, and the site key.
- */
-public function generateActionToken($timestamp, $session_token = '') {
-  if (!$session_token) {
-          $session_token = $this->session->get('__elgg_session');
-          if (!$session_token) {
-                  return false;
-          }
-  }
-
-  return $this->hmac
-          ->getHmac([(int) $timestamp, $session_token], 'md5')
-          ->getToken();
-}
-```
-
-#### Secret token validation.
-
-The elgg web application validates the generated token and timestamp to
-defend against the CSRF attack. Every user action calls the `validate`
-function inside `Csrf.php`, and this function validates the tokens. If
-tokens are not present or invalid, the action will be denied and the
-user will be redirected. In our setup, we added a `return` at the
-beginning of this function, essentially disabling the validation.
-
-```js
-public function validate(Request $request) {
-   (*@\textbf{return;}@*) // Added for SEED Labs (disabling the CSRF countermeasure)
-
-   $token = $request->getParam('__elgg_token');
-   $ts = $request->getParam('__elgg_ts');
-   ... (code omitted) ...
-}
-```
-
-#### Task: Turn on countermeasure.
-
-To turn on the countermeasure, just remove the `return` from the
-`Csrf.php` file inside the `image_elgg/elgg` folder (on your host VM),
-rebuild the container images, and restart all the containers. Then
-repeat the attack again, and see whether your attack will be successful
-or not. Please point out the secret tokens in the captured HTTP
-requests. Please explain why the attacker cannot send these secret
-tokens in the CSRF attack; what prevents them from finding out the
-secret tokens from the web page?
-
-### Task 5: Experimenting with the SameSite Cookie Method
-
-Most browsers have now implemented a mechanism called SameSite cookie,
-which is a property associated with cookies. When sending out requests,
-browsers will check this property, and decide whether to attach the
-cookie in a cross-site request. A web application can set a cookie as
-SameSite if it does not want the cookie to be attached to cross-site
-requests. For example, they can mark the session ID cookie as SameSite,
-so no cross-site request can use the session ID, and will therefore not
-be able to launch CSRF attacks.
-
-To help students get an idea on how the SameSite cookies can help defend
-against CSTF attacks, we have created a website called
-[www.csrflab-defense.com](www.csrflab-defense.com) on one of the
-containers. Please visit the following URL (the hostname is already
-mapped to `10.9.0.5` in the `/etc/hosts` file; if you are not using the
-SEED VM, you should add this mapping to your machine):
-
-```
-URL: http://www.csrflab-defense.com/
-```
-
-Once you have visited this website once, three cookies will be set on
-your browser, `cookie-normal`, `cookie-lax`, and `cookie-strict`. As
-indicated by the name, the first cookie is just a normal one, the second
-and third cookies are samesite cookies of two different types (`Lax` and
-`Strict` types). We have designed two sets of experiments to see which
-cookies will be attached when you send an HTTP request back to the
-server. Typically, all the cookies belonging to the server will be
-attached, but this is not the case if a cookie is a samesite type.
-
-Please follow the links for the two experiments. Link A points to a page
-on [csrflab-defense.com](csrflab-defense.com), while Link B points to a
-page on [csrflab-attacker.com](csrflab-attacker.com). Both pages are
-identical (except for the background color), and they both send three
-different types of requests to
-[www.csrflab-defense.com/showcookies.php](www.csrflab-defense.com/showcookies.php),
-which simply displays the cookies sent by the browser. By looking at the
-display results, you can tell which cookies were sent by the browser.
-Please do the following:
-
--   Please describe what you see and explain why some cookies are not
-    sent in certain scenarios.
-
--   Based on your understanding, please describe how the SameSite
-    cookies can help a server detect whether a request is a cross-site
-    or same-site request.
-
--   Please describe how you would use the SameSite cookie mechanism to
-    help Elgg defend against CSRF attacks. You only need to describe
-    general ideas, and there is no need to implement them.
-
-#### Bonus points.
-
-Although it is not required, students are encouraged to modify the Elgg
-application, so they can use the samesite cookie mechanism to defend
-against CSRF attacks. We recommend instructors to give bonus points to
-the students who can do this. Students should check with their
-instructors regarding the bonus points.
-
-
-<!-- Submission Instructions -->
-{% include lab_submission.html %}
+{% include lab_docker_overview.html classdir="07_ske" %}
+
+
+Task 1: Frequency Analysis
+==========================
+
+It is well-known that monoalphabetic substitution cipher (also known as
+monoalphabetic cipher) is not secure, because it can be subjected to
+frequency analysis. In this lab, you are given a cipher-text that is
+encrypted using a monoalphabetic cipher; namely, each letter in the
+original text is replaced by another letter, where the replacement does
+not vary (i.e., a letter is always replaced by the same letter during
+the encryption). Your job is to find out the original text using
+frequency analysis. It is known that the original text is an English
+article.
+
+In the following, we describe how we encrypt the original article, and
+what simplification we have made. Instructors can use the same method to
+encrypt an article of their choices, instead of asking students to use
+the ciphertext made by us.
+
+-   Step 1: let us generate the encryption key, i.e., the substitution
+    table. We will permute the alphabet from `a` to `z` using Python,
+    and use the permuted alphabet as the key. See the following program.
+
+        #!/bin/env python3
+
+        import random
+        s = "abcdefghijklmnopqrstuvwxyz"
+        list = random.sample(s, len(s))
+        key = ''.join(list)
+        print(key)
+
+-   Step 2: let us do some simplification to the original article. We
+    convert all upper cases to lower cases, and then removed all the
+    punctuations and numbers. We do keep the spaces between words, so
+    you can still see the boundaries of the words in the ciphertext. In
+    real encryption using monoalphabetic cipher, spaces will be removed.
+    We keep the spaces to simplify the task. We did this using the
+    following command:
+
+        $ tr [:upper:] [:lower:] < article.txt > lowercase.txt
+        $ tr -cd '[a-z][\n][:space:]' < lowercase.txt > plaintext.txt
+
+-   Step 3: we use the `tr` command to do the encryption. We only
+    encrypt letters, while leaving the space and return characters
+    alone.
+
+        $ tr 'abcdefghijklmnopqrstuvwxyz' 'sxtrwinqbedpvgkfmalhyuojzc' \
+              < plaintext.txt > ciphertext.txt
+
+We have created a ciphertext using a different encryption key (not the
+one described above). It is included in `Labsetup.zip` file, which can
+be downloaded from the lab's website. Your job is to use the frequency
+analysis to figure out the encryption key and the original plaintext.
+
+#### Guidelines.
+
+Using the frequency analysis, you can find out the plaintext for some of
+the characters quite easily. For those characters, you may want to
+change them back to its plaintext, as you may be able to get more clues.
+It is better to use capital letters for plaintext, so for the same
+letter, we know which is plaintext and which is ciphertext. You can use
+the `tr` command to do this. For example, in the following, we replace
+letters `a`, `e`, and `t` in `in.txt` with letters `X`, `G`, `E`,
+respectively; the results are saved in `out.txt`.
+
+    $ tr 'aet' 'XGE' < in.txt > out.txt
+
+There are many online resources that you can use. We list four useful
+links in the following:
+
+-   <http://www.richkni.co.uk/php/crypta/freq.php> : This website can
+    produce the statistics from a ciphertext, including the
+    single-letter frequencies, bigram frequencies (2-letter sequence),
+    and trigram frequencies (3-letter sequence), etc.
+
+-   <https://en.wikipedia.org/wiki/Frequency_analysis>: This Wikipedia
+    page provides frequencies for a typical English plaintext.
+
+-   <https://en.wikipedia.org/wiki/Bigram>: Bigram frequency.
+
+-   <https://en.wikipedia.org/wiki/Trigram>: Trigram frequency.
+
+Task 2: Encryption using Different Ciphers and Modes
+====================================================
+
+In this task, we will play with various encryption algorithms and modes.
+You can use the following `openssl enc` command to encrypt/decrypt a
+file. To see the manuals, you can type `man openssl` and `man enc`.
+
+    $ openssl enc -ciphertype -e  -in plain.txt -out cipher.bin \
+                  -K  00112233445566778889aabbccddeeff \
+                  -iv 0102030405060708
+
+Please replace the `ciphertype` with a specific cipher type, such as
+`-aes-128-cbc`, `-bf-cbc`, `-aes-128-cfb`, etc. In this task, you should
+try at least 3 different ciphers. You can find the meaning of the
+command-line options and all the supported cipher types by typing
+`"man enc"`. We include some common options for the `openssl enc`
+command in the following:
+
+      -in <file>     input file
+      -out <file>    output file
+      -e             encrypt
+      -d             decrypt
+      -K/-iv         key/iv in hex is the next argument
+      -[pP]          print the iv/key (then exit if -P)
+
+Task 3: Encryption Mode -- ECB vs. CBC
+======================================
+
+The file `pic_original.bmp` is included in the `Labsetup.zip` file, and
+it is a simple picture. We would like to encrypt this picture, so people
+without the encryption keys cannot know what is in the picture. Please
+encrypt the file using the ECB (Electronic Code Book) and CBC (Cipher
+Block Chaining) modes, and then do the following:
+
+1.  Let us treat the encrypted picture as a picture, and use a picture
+    viewing software to display it. However, For the `.bmp` file, the
+    first 54 bytes contain the header information about the picture, we
+    have to set it correctly, so the encrypted file can be treated as a
+    legitimate `.bmp` file. We will replace the header of the encrypted
+    picture with that of the original picture. We can use the `bless`
+    hex editor tool (already installed on our VM) to directly modify
+    binary files. We can also use the following commands to get the
+    header from `p1.bmp`, the data from `p2.bmp` (from offset 55 to the
+    end of the file), and then combine the header and data together into
+    a new file.
+
+        $ head -c 54 p1.bmp  > header
+        $ tail -c +55 p2.bmp > body
+        $ cat header body > new.bmp
+
+2.  Display the encrypted picture using a picture viewing program (we
+    have installed an image viewer program called `eog` on our VM). Can
+    you derive any useful information about the original picture from
+    the encrypted picture? Please explain your observations.
+
+Select a picture of your choice, repeat the experiment above, and report
+your observations.
+
+Task 4: Padding
+===============
+
+For block ciphers, when the size of a plaintext is not a multiple of the
+block size, padding may be required. The PKCS\#5 padding scheme is
+widely used by many block ciphers (see Chapter 21.4 of the SEED book for
+details). We will conduct the following experiments to understand how
+this type of padding works:
+
+1.  Use ECB, CBC, CFB, and OFB modes to encrypt a file (you can pick any
+    cipher). Please report which modes have paddings and which ones do
+    not. For those that do not need paddings, please explain why.
+
+2.  Let us create three files, which contain 5 bytes, 10 bytes, and 16
+    bytes, respectively. We can use the following `"echo -n"` command to
+    create such files. The following example creates a file `f1.txt`
+    with length 5 (without the `-n` option, the length will be 6,
+    because a newline character will be added by `echo`):
+
+        $ echo -n "12345" > f1.txt
+
+    We then use `"openssl enc -aes-128-cbc -e"` to encrypt these three
+    files using 128-bit AES with CBC mode. Please describe the size of
+    the encrypted files.
+
+    We would like to see what is added to the padding during the
+    encryption. To achieve this goal, we will decrypt these files using
+    `"openssl enc -aes-128-cbc -d"`. Unfortunately, decryption by
+    default will automatically remove the padding, making it impossible
+    for us to see the padding. However, the command does have an option
+    called `"-nopad"`, which disables the padding, i.e., during the
+    decryption, the command will not remove the padded data. Therefore,
+    by looking at the decrypted data, we can see what data are used in
+    the padding. Please use this technique to figure out what paddings
+    are added to the three files.
+
+    It should be noted that padding data may not be printable, so you
+    need to use a hex tool to display the content. The following example
+    shows how to display a file in the hex format:
+
+        $ hexdump -C p1.txt
+        00000000  31 32 33 34 35 36 37 38  39 49 4a 4b 4c 0a   |123456789IJKL.|
+        $ xxd p1.txt
+        00000000: 3132 3334 3536 3738 3949 4a4b 4c0a            123456789IJKL.
+
+Task 5: Error Propagation -- Corrupted Cipher Text
+==================================================
+
+To understand the error propagation property of various encryption
+modes, we would like to do the following exercise:
+
+1.  Create a text file that is at least 1000 bytes long.
+
+2.  Encrypt the file using the AES-128 cipher.
+
+3.  Unfortunately, a single bit of the 55th byte in the encrypted file
+    got corrupted. You can achieve this corruption using the `bless` hex
+    editor.
+
+4.  Decrypt the corrupted ciphertext file using the correct key and IV.
+
+Please answer the following question: How much information can you
+recover by decrypting the corrupted file, if the encryption mode is ECB,
+CBC, CFB, or OFB, respectively? Please answer this question before you
+conduct this task, and then find out whether your answer is correct or
+wrong after you finish this task. Please provide justification.
+
+Task 6: Initial Vector (IV) and Common Mistakes
+===============================================
+
+Most of the encryption modes require an initial vector (IV). Properties
+of an IV depend on the cryptographic scheme used. If we are not careful
+in selecting IVs, the data encrypted by us may not be secure at all,
+even though we are using a secure encryption algorithm and mode. The
+objective of this task is to help students understand the problems if an
+IV is not selected properly. The detailed guidelines for this task is
+provided in Chapter 21.5 of the SEED book.
+
+Task 6.1. IV Experiment
+-----------------------
+
+A basic requirement for IV is *uniqueness*, which means that no IV may
+be reused under the same key. To understand why, please encrypt the same
+plaintext using (1) two different IVs, and (2) the same IV. Please
+describe your observation, based on which, explain why IV needs to be
+unique.
+
+Task 6.2. Common Mistake: Use the Same IV
+-----------------------------------------
+
+One may argue that if the plaintext does not repeat, using the same IV
+is safe. Let us look at the Output Feedback (OFB) mode. Assume that the
+attacker gets hold of a plaintext (`P1`) and a ciphertext (`C1`) , can
+he/she decrypt other encrypted messages if the IV is always the same?
+You are given the following information, please try to figure out the
+actual content of `P2` based on `C2`, `P1`, and `C1`.
+
+    Plaintext  (P1): This is a known message!
+    Ciphertext (C1): a469b1c502c1cab966965e50425438e1bb1b5f9037a4c159
+
+    Plaintext  (P2): (unknown to you)
+    Ciphertext (C2): bf73bcd3509299d566c35b5d450337e1bb175f903fafc159
+
+If we replace OFB in this experiment with CFB (Cipher Feedback), how
+much of `P2` can be revealed? You only need to answer the question;
+there is no need to demonstrate that.
+
+The attack used in this experiment is called the *known-plaintext
+attack*, which is an attack model for cryptanalysis where the attacker
+has access to both the plaintext and its encrypted version (ciphertext).
+If this can lead to the revealing of further secret information, the
+encryption scheme is not considered as secure.
+
+#### Sample Code.
+
+We provide a sample program called `sample_code.py`, which can be found
+inside the folder. It shows you how to XOR strings (ascii strings and
+hex strings). The code is shown in the following:
+
+    #!/usr/bin/python3
+
+    # XOR two bytearrays
+    def xor(first, second):
+       return bytearray(x^y for x,y in zip(first, second))
+
+    MSG   = "A message"
+    HEX_1 = "aabbccddeeff1122334455"
+    HEX_2 = "1122334455778800aabbdd"
+
+    # Convert ascii/hex string to bytearray
+    D1 = bytes(MSG, 'utf-8')
+    D2 = bytearray.fromhex(HEX_1)
+    D3 = bytearray.fromhex(HEX_2)
+
+    r1 = xor(D1, D2)
+    r2 = xor(D2, D3)
+    r3 = xor(D2, D2)
+    print(r1.hex())
+    print(r2.hex())
+    print(r3.hex())
+
+Task 6.3. Common Mistake: Use a Predictable IV
+----------------------------------------------
+
+From the previous tasks, we now know that IVs cannot repeat. Another
+important requirement on IV is that IVs need to be unpredictable for
+many schemes, i.e., IVs need to be randomly generated. In this task, we
+will see what is going to happen if IVs are predictable.
+
+Assume that Bob just sent out an encrypted message, and Eve knows that
+its content is either `Yes` or `No`; Eve can see the ciphertext and the
+IV used to encrypt the message, but since the encryption algorithm AES
+is quite strong, Eve has no idea what the actual content is. However,
+since Bob uses predictable IVs, Eve knows exactly what IV Bob is going
+to use next.
+
+A good cipher should not only tolerate the known-plaintext attack
+described previously, it should also tolerate the *chosen-plaintext
+attack*, which is an attack model for cryptanalysis where the attacker
+can obtain the ciphertext for an arbitrary plaintext. Since AES is a
+strong cipher that can tolerate the chosen-plaintext attack, Bob does
+not mind encrypting any plaintext given by Eve; he does use a different
+IV for each plaintext, but unfortunately, the IVs he generates are not
+random, and they can always be predictable.
+
+Your job is to construct a message and ask Bob to encrypt it and give
+you the ciphertext. Your objective is to use this opportunity to figure
+out whether the actual content of Bob's secret message is `Yes` or `No`.
+For this task, your are given an encryption oracle which simulates Bob
+and encrypts message with 128-bit AES with CBC mode. You can get access
+to the oracle by running the following command:
+
+    $ nc 10.9.0.80 3000
+    Bob's secret message is either "Yes" or "No", without quotations.
+    Bob's ciphertex: 54601f27c6605da997865f62765117ce
+    The IV used    : d27d724f59a84d9b61c0f2883efa7bbc
+
+    Next IV        : d34c739f59a84d9b61c0f2883efa7bbc
+    Your plaintext : 11223344aabbccdd
+    Your ciphertext: 05291d3169b2921f08fe34449ddc3611
+
+    Next IV        : cd9f1ee659a84d9b61c0f2883efa7bbc
+    Your plaintext : <your input>
+
+After showing you the next IV, the oracle will ask you to input a
+plaintext message (as a hex string). The oracle will encrypt the message
+with the next IV, and outputs the new ciphertext. You can try different
+plaintexts, but keep in mind that every time, the IV will change, but it
+is predictable. To simply your job, we let the oracle print out the next
+IV. To exit from the interaction, press .
+
+Additional Readings
+-------------------
+
+There are more advanced cryptanalysis on IV that is beyond the scope of
+this lab. Students can read the article posted in this URL:
+<https://defuse.ca/cbcmodeiv.htm>. Because the requirements on IV really
+depend on cryptographic schemes, it is hard to remember what properties
+should be maintained when we select an IV. However, we will be safe if
+we always use a new IV for each encryption, and the new IV needs to be
+generated using a good pseudo random number generator, so it is
+unpredictable by adversaries. See another SEED lab (Random Number
+Generation Lab) for details on how to generate cryptographically strong
+pseudo random numbers.
+
+Task 7: Programming using the Crypto Library
+============================================
+
+This task is mainly designed for students in Computer
+Science/Engineering or related fields, where programming is required.
+Students should check with their professors to see whether this task is
+required for their courses or not.
+
+In this task, you are given a plaintext and a ciphertext, and your job
+is to find the key that is used for the encryption. You do know the
+following facts:
+
+-   The `aes-128-cbc` cipher is used for the encryption.
+
+-   The key used to encrypt this plaintext is an English word shorter
+    than 16 characters; the word can be found from a typical English
+    dictionary. Since the word has less than 16 characters (i.e. 128
+    bits), pound signs (`#`: hexadecimal value is `0x23`) are appended
+    to the end of the word to form a key of 128 bits.
+
+Your goal is to write a program to find out the encryption key. You can
+download a English word list from the Internet. We have also included
+one in the `Labsetup.zip` file. The plaintext, ciphertext, and IV are
+listed in the following:
+
+    Plaintext (total 21 characters): This is a top secret.
+    Ciphertext (in hex format): 764aa26b55a4da654df6b19e4bce00f4
+                                ed05e09346fb0e762583cb7da2ac93a2
+    IV (in hex format):         aabbccddeeff00998877665544332211
+
+You need to pay attention to the following issues:
+
+-   If you choose to store the plaintext message in a file, and feed the
+    file to your program, you need to check whether the file length
+    is 21. If you type the message in a text editor, you need to be
+    aware that some editors may add a special character to the end of
+    the file. The easiest way to store the message in a file is to use
+    the following command (the `-n` flag tells `echo` not to add a
+    trailing newline):
+
+        $ echo -n "This is a top secret." > file
+
+-   In this task, you are supposed to write your own program to invoke
+    the crypto library. No credit will be given if you simply use the
+    `openssl` commands to do this task. Sample code can be found from
+    the following URL:
+
+         https://www.openssl.org/docs/man1.1.1/man3/EVP_CipherInit.html
+
+-   When you compile your code using `gcc`, do not forget to include the
+    `-lcrypto` flag, because your code needs the `crypto` library. See
+    the following example:
+
+        $ gcc -o myenc myenc.c -lcrypto
+
+#### Note to instructors.
+
+We encourage instructors to generate their own plaintext and ciphertext
+using a different key; this way students will not be able to get the
+answer from another place or from previous courses. Instructors can use
+the following commands to achieve this goal (please replace the word
+`example` with another secret word, and add the correct number of \#
+signs to make the length of the string to be 16):
+
+    $ echo -n "This is a top secret." > plaintext.txt
+    $ echo -n "example#########" > key
+    $ xxd -p key
+    6578616d706c65232323232323232323
+    $ openssl enc -aes-128-cbc -e -in plaintext.txt -out ciphertext.bin \
+          -K  6578616d706c65232323232323232323  \
+          -iv 010203040506070809000a0b0c0d0e0f  \
+    $ xxd -p ciphertext.bin
+    e5accdb667e8e569b1b34f423508c15422631198454e104ceb658f5918800c22
+
+Submission
+==========
+
+You need to submit a detailed lab report, with screenshots, to describe
+what you have done and what you have observed. You also need to provide
+explanation to the observations that are interesting or surprising.
+Please also list the important code snippets followed by explanation.
+Simply attaching code without any explanation will not receive credits.
+
+Acknowledgment
+==============
+
+We would like to acknowledge the contribution made by the following
+people and organizations:
+
+-   Jiamin Shen developed the following: the code running inside the
+    container, and the container version of the task on predictable IV.
+
+-   The US National Science Foundation provided the funding for the SEED
+    project from 2002 to 2020.
+
+-   Syracuse University provided the resources for the SEED project from
+    2001 onwards.
+
+Task 6: Encrypting UDP Communication
+------------------------------------
+
+So far, we have learned how to use the existing tools provided by
+`openssl`to encrypt and decrypt messages. We would like to build our own
+tools. Therefore, the objective of this task is to learn how to use
+`openssl`'s crypto library to encrypt/decrypt messages in programs.
+
+OpenSSL provides an API called EVP, which is a high-level interface to
+cryptographic functions. Although OpenSSL also has direct interfaces for
+each individual encryption algorithm, the EVP library provides a common
+interface for various encryption algorithms. To ask EVP to use a
+specific algorithm, we simply need to pass our choice to the EVP
+interface. A sample code is given in
+<https://www.openssl.org/docs/man1.1.1/man3/EVP_CipherInit.html> Please
+get familiar with this program.
+
+In this task, we will build a client/server program, which use the UDP
+protocol and the communication is encrypted. The client and server side
+of the program should satisfy the following requirements:
+
+-   The data sent between the client and server should be encrypted
+    using an encryption algorithm and mode of your choice (e.g.
+    `aes-128-cbc`).
+
+-   The client program runs in a loop, and keeps asking the user to type
+    a message. Once the user hits the return, the message will be sent
+    to the server using UDP. Upon receiving the UDP packet, the server
+    simply prints out the decrypted message.
+
+-   The client and server need a common secret key to encrypt the
+    communication. Obviously, they cannot send the key to each other in
+    plaintext. In practice, they need to run a key-exchange protocol to
+    get the key. We will cover that protocol after we have learned the
+    public key encryption. In this task, we assume that the client and
+    server has already obtained a secret key between them, so we will
+    just type in the key as an argument when we run the client and
+    server programs. **Note:** you cannot hardcode the key in your
+    program, because it is a very bad habit.
+
+-   The Initial Vector (IV) needs to be randomly generated by the
+    client, and should be sent to the server in plaintext. You can put
+    the IV at the beginning of the UDP data. In your report, please
+    answer why the client cannot reuse the IV throughout its execution
+    (hint: try to fix your IV in your client program, then type the same
+    message, and use Wireshark to see what you can infer about the
+    encrypted data).

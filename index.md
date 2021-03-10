@@ -424,10 +424,10 @@ If you have any questions, please contact me.
 
 <tr>
 <!--   Week #   --><td id="week10" markdown="span">Week 10</td>
-<!-- Week Title --><td markdown="span" class="note">Network & Web Security --- Cross-Site Request Forgery (XSRF) Attacks & Countermeasures</td>
+<!-- Week Title --><td markdown="span" class="note">~~Network & Web Security --- Cross-Site Request Forgery (XSRF) Attacks & Countermeasures~~</td>
 <!--   BLANK    --><td markdown="span" class="note" markdown="1">
-- Read Chapter 7.1 (focus on 7.1.6) [(SS3P)]({{site.data.settings.textbookss3plink}}),
-- (Optional) Chapter 10 [(SEED)]({{site.data.settings.textbookseedlink}})
+<!-- - Read Chapter 7.1 (focus on 7.1.6) [(SS3P)]({{site.data.settings.textbookss3plink}}), -->
+<!-- - (Optional) Chapter 10 [(SEED)]({{site.data.settings.textbookseedlink}}) -->
 </td>
 </tr>
 
@@ -435,13 +435,13 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">03/16/2021 (T)</td>
 <td markdown="span" markdown="1">
-<!-- - TBD -->
+- _Class Cancelled_
 <!-- - [video](){:.video} -->
 <!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
-- [Lab 05](labs/lab05) Due!
+<!-- - [Lab 05](labs/lab05) Due! -->
 </td>
 </tr>
 
@@ -449,7 +449,7 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">03/18/2021 (R)</td>
 <td markdown="span" markdown="1">
-<!-- - TBD -->
+- _Class Cancelled_
 <!-- - [video](){:.video} -->
 <!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
@@ -477,7 +477,8 @@ If you have any questions, please contact me.
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
-- Lab 06 Due!
+- [Lab 05](labs/lab05) Due!
+<!-- - Lab 06 Due! -->
 </td>
 </tr>
 
@@ -550,7 +551,7 @@ If you have any questions, please contact me.
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
-- Lab 07 Due!
+- Lab 06 Due!
 </td>
 </tr>
 
@@ -587,7 +588,7 @@ If you have any questions, please contact me.
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
-- Lab 08 Due!
+- Lab 07 Due!
 </td>
 </tr>
 
@@ -623,7 +624,7 @@ If you have any questions, please contact me.
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
-- Lab 9 Due!
+- Lab 08 Due!
 </td>
 </tr>
 
