@@ -441,7 +441,7 @@ If you have any questions, please contact me.
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
-- Lab 05 Due!
+- [Lab 05](labs/lab05) Due!
 </td>
 </tr>
 
