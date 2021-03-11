@@ -618,7 +618,7 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">04/20/2021 (T)</td>
 <td markdown="span" markdown="1">
-<!-- - TBD -->
+- Hold for [Ryan Darnell](https://www.linkedin.com/in/darneseytech) (MSU alum, now @ Rockwell Automation) - Crypto In the Real World
 <!-- - [video](){:.video} -->
 <!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
@@ -632,7 +632,7 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">04/22/2021 (R)</td>
 <td markdown="span" markdown="1">
-<!-- - TBD -->
+- Hold for [Reese Pearsall](https://www.linkedin.com/in/reese-pearsall-662084126) (MSU alum and current M.S. Student, also @ Hoplite Industries) - Topic TBD
 <!-- - [video](){:.video} -->
 <!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
