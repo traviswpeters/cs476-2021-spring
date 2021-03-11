@@ -345,9 +345,10 @@ but also add a copy of the worm itself to the victim's profile, so the victim is
 To achieve self-propagation, when the malicious JavaScript modifies the victim's profile, it should copy itself to the victim's profile.
 There are several approaches to achieve this, and we will discuss two common approaches.
 
+<!-- In this lab, you are **required** to use the DOM approach to carry out your attack. -->
+<!-- This approach is more challenging and it does not rely on external JavaScript code. -->
+
 > **Note:**
-In this lab, you are **required** to use the DOM approach to carry out your attack.
-This approach is more challenging and it does not rely on external JavaScript code.
 You are encouraged (but not required) to try both the Link and DOM approaches if you are interested in comparing the approaches.
 
 #### Link Approach
