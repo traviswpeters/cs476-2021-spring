@@ -90,11 +90,29 @@ custom:
 
 .PHONY: pull # Pull on all course folders... so many... too many...
 pull:
-	echo "Updating code..."
+	@echo "Updating code..."
+	@echo "----------------------------------------------------------------------------------------"
 	cd ~/projects/class/msu-cs476-2021-spring && git pull && cd - > /dev/null   # (public) this repo
+	@echo "----------------------------------------------------------------------------------------"
 	cd ~/projects/class/msu-cs476-code/       && git pull && cd - > /dev/null   # (public) class code
+	@echo "----------------------------------------------------------------------------------------"
 	cd ~/projects/class/admin/                && git pull && cd - > /dev/null   # (private) class code
+	@echo "----------------------------------------------------------------------------------------"
 	cd ~/projects/class/seed-labs/            && git pull && cd - > /dev/null   # (public) seed-labs code
+	@echo "----------------------------------------------------------------------------------------"
+
+.PHONY: status # Check status on all course folders... so many... too many...
+status:
+	@echo "Checking status..."
+	@echo "----------------------------------------------------------------------------------------"
+	cd ~/projects/class/msu-cs476-2021-spring && git status && cd - > /dev/null   # (public) this repo
+	@echo "----------------------------------------------------------------------------------------"
+	cd ~/projects/class/msu-cs476-code/       && git status && cd - > /dev/null   # (public) class code
+	@echo "----------------------------------------------------------------------------------------"
+	cd ~/projects/class/admin/                && git status && cd - > /dev/null   # (private) class code
+	@echo "----------------------------------------------------------------------------------------"
+	cd ~/projects/class/seed-labs/            && git status && cd - > /dev/null   # (public) seed-labs code
+	@echo "----------------------------------------------------------------------------------------"
 
 
 ######################################
