@@ -49,7 +49,9 @@ This lab covers the following topics:
 - Summaries and references that can help you learn about using various [Web Tools]({{ 'webtools' | relative_url }}) (e.g., Burp Suite, HTTP Headers Live).
 - [Cross-Site Scripting (PortSwigger)](https://portswigger.net/web-security/cross-site-scripting)
 <!-- - [Same Origin Policy (MDN)](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) -->
-- [Introduction to the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+- [Introduction to the DOM (MDN)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+- [Using HTTP cookies (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
+- [Document.cookie (MDN)](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
 - Chapter 10 in the [SEED Textbook]({{site.data.settings.textbookseedlink}}).
 
 <!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
@@ -286,14 +288,18 @@ We provide template code that aids in completing the task.
 <script type="text/javascript">
 window.onload = function(){
     // JavaScript code to access user name, user guid, Time Stamp __elgg_ts and Security Token __elgg_token
-    var userName=elgg.session.user.name;
+    var name=elgg.session.user.name;
     var guid="&guid="+elgg.session.user.guid;
     var ts="&__elgg_ts="+elgg.security.token.__elgg_ts;
     var token="&__elgg_token="+elgg.security.token.__elgg_token;
 
-    // Construct the content of your url.
+    // Construct your url.
+    var sendurl=...;     //FILL IN
+
+    // Construct the content of your request.
     var content=...;     //FILL IN
 
+    // Send the HTTP POST request
     var samyGuid=...;    //FILL IN
     if (elgg.session.user.guid!=samyGuid)       // (1)
     {
@@ -337,6 +343,11 @@ but also add a copy of the worm itself to the victim's profile, so the victim is
 To achieve self-propagation, when the malicious JavaScript modifies the victim's profile, it should copy itself to the victim's profile.
 There are several approaches to achieve this, and we will discuss two common approaches.
 
+> **Note:**
+In this lab, you are **required** to use the DOM approach to carry out your attack.
+This approach is more challenging and it does not rely on external JavaScript code.
+You are encouraged (but not required) to try both the Link and DOM approaches if you are interested in comparing the approaches.
+
 #### Link Approach
 
 If the worm is included using the `src` attribute in the `<script>` tag, writing self-propagating worms is quite easy.
@@ -374,20 +385,14 @@ which is the type used in our code, the data should also be encoded.
 The encoding scheme, *URL encoding*, replaces non-alphanumeric characters in the data with `%HH` (i.e., a percentage sign and two hexadecimal digits representing the ASCII code of the character).
 The `encodeURIComponent()` function (4) is used to URL-encode a string.
 
-> **Note:**
-In this lab, you are **required** to use the DOM approach to carry out your attack.
-This approach is more challenging and it does not rely on external JavaScript code.
-You are encouraged (but not required) to try both the Link and DOM approaches if you are interested in comparing the approaches.
-
-
-
 <!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
 <div class="card bg-secondary border-primary" markdown="1">
 <div class="card-body" markdown="1">
 
 ## Elgg's Countermeasures
 
-<!-- This sub-section is only for information, and there is no specific task to do.  -->
+This aside is only for informational purposes, and there is no specific task to do.
+
 In reality Elgg does have two effective countermeasures in place to defend against XSS attacks.
 As noted earlier, we have disabled/commented out these countermeaures to make your attacks possible.
 <!-- Actually, Elgg uses two countermeasures. -->
@@ -441,6 +446,12 @@ grep -n 'htmlspecialchars' *
 </div>
 <!-- END Special Section -->
 
+## Lab Tasks - Grad Student Credit
+
+In addition to the problems above, students enrolled in CSCI 594 must also complete the following problems.
+
+Students enrolled in CSCI 476 are encouraged to try these problems, but are not expected to submit solutions for these problems.
+
 ### Task 7: Defeating XSS Attacks Using CSP
 
 The fundamental problem of the XSS vulnerability is that HTML allows JavaScript **code** to be mixed with **data**.
@@ -468,16 +479,16 @@ Here, we will only focus on how to use CSP to defeat XSS attacks.
 <div class="card bg-secondary border-primary" markdown="1">
 <div class="card-body" markdown="1">
 
-### CSP Experiment Setup
+#### CSP Experiment Setup
 
 To conduct experiments on CSP, we will set up several websites.
-Inside `image_www/` directory for this lab, there is a file called `apache_csp.conf`.
+Inside the `image_www/` directory for this lab, there is a file called `apache_csp.conf`.
 This configuration file defines five websites, which share the same directory, but they will use different files in this directory.
 The `example60` and `example70` sites are used for hosting JavaScript code.
 The `example32a`, `example32b`, and `example32c` are the three websites that have different CSP configurations.
 Details of the configuration are explained below.
 
-### Changing the Configuration File
+#### Changing the Configuration File
 
 In the experiment, you need to modify the above-mentioned Apache configuration file (`apache_csp.conf`).
 If you make modifications directly to the file inside the image directory stored on the host (i.e., your SEED VM),
@@ -495,12 +506,12 @@ After making changes, you need to restart the Apache server for the changes to t
 $ service apache2 restart
 ```
 
-### DNS Setup
+#### DNS Setup
 
 We will access the above websites from our VM.
 Please see the DNS section under "Environment Setup" to learn more about the IP address / hostname mappings.
 
-### The CSP Experiment Webpage
+#### The CSP Experiment Webpage
 
 The `example32(a|b|c)` servers host the same web page `index.html`, which is used to demonstrate how CSP policies work.
 In this page, there are six areas: area1 to area6.
@@ -513,13 +524,13 @@ If it is clicked, and the underlying JavaScript code gets triggered, a message w
 
 <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F05_xss%2Fimage_www%2Fcsp%2Findex.html&style=monokai&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
-### Setting CSP Policies
+#### Setting CSP Policies
 
 CSP is set by the web server as an HTTP header.
 There are two typical ways to set the header, by the web server (such as Apache) or by the web application.
 In this experiment, we will conduct experiments using both approaches.
 
-#### CSP Set By Apache
+##### CSP Set By Apache
 
 Apache can set HTTP headers for all the responses, so we can use Apache to set CSP policies.
 In our configuration, we set up three websites, but only the second one sets CSP policies (lines 13-16).
@@ -527,7 +538,7 @@ With this setup, when we visit `example32b`, Apache will add the specified CSP h
 
 <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Ftraviswpeters%2Fcs476-code%2Fblob%2Fmaster%2F05_xss%2Fimage_www%2Fapache_csp.conf&style=monokai&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
-#### CSP Set By Web Apps
+##### CSP Set By Web Apps
 
 For the third `VirtualHost` entry in our configuration file (lines 20-24), we did not set up any CSP policy.
 However, instead of accessing `index.html`, the entry point of this site is `phpindex.php`, which is a PHP program.
@@ -539,7 +550,8 @@ This program, listed below, adds a CSP header to the response generated from the
 </div>
 <!-- END Special Section -->
 
-### Lab Tasks
+#### Lab Tasks
+{:.pt-3}
 
 After starting the containers, please visit the following URLs from your VM.
 
@@ -547,25 +559,25 @@ After starting the containers, please visit the following URLs from your VM.
 - [http://www.example32b.com](http://www.example32b.com)
 - [http://www.example32c.com](http://www.example32c.com)
 
-#### Task 7.1
+##### Task 7.1
 
 Describe and explain your observations when you visit these websites.
 
-#### Task 7.2
+##### Task 7.2
 
 Click the button in the web pages from all the three websites, describe and explain your observations.
 
-#### Task 7.3
+##### Task 7.3
 
 Change the server configuration on `example32b` (modify the Apache configuration), so Areas 5 and 6 display "OK".
 Please include your modified configuration in the lab report.
 
-#### Task 7.4
+##### Task 7.4
 
 Change the server configuration on `example32c` (modify the PHP code), so Areas 1, 2, 4, 5, and 6 all display "OK".
 Please include your modified configuration in the lab report.
 
-#### Task 7.5
+##### Task 7.5
 
 Please explain why CSP can help prevent XSS attacks.
 
