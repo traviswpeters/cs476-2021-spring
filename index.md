@@ -412,8 +412,8 @@ If you have any questions, please contact me.
 <td markdown="span">03/11/2021 (R)</td>
 <td markdown="span" markdown="1">
 <!-- - TBD -->
-<!-- - [video](){:.video} -->
-<!-- [slides](files/){:.slides} -->
+- [video](https://zoom.us/rec/share/b7vgfv-kpsX--S3ClNqMmcx0angXCHrlkZ_7SyrmQLLc0-0MBJpgmUZdX6YMbGG1.VUZhK3EnmOF9dcNL){:.video}
+[slides](files/cs476-18-web-xss.pdf){:.slides}
 <!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
