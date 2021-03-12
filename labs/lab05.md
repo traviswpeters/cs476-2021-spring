@@ -325,6 +325,22 @@ and the Text mode should enabled before entering the above JavaScript code.
 
 Carry out the attack to modify the victim's profile when the victim visits Samy's page.
 
+> _**Hint!**_ You need not send back data in the verbose way that data is sent in a typical "edit" request
+> (i.e., using `Content-Type: multipart/form-data`, specifying a boundary, etc. ).
+> It turns out you can also indicate `Content-Type: application/x-www-form-urlencoded`,
+> as we do in the provided template above,
+> and as a result you can send back the data as one query string.
+> This is basically what we've done before where we have passed data in the form of
+> name/value pairs that are separated by the ampersand (`&`),
+> and names are separated from values by the equals symbol (`=`).
+> The only difference now is that we send back the data as part of the body of the request.
+> Even this is handled for you though --- just make sure that the `content` variable contains the
+> properly-formatted data that you want to send to the server as part of your "edit" request.
+> <br/><br/>
+> See this Stack Overflow post for a little more info:
+> [https://stackoverflow.com/a/4073451](https://stackoverflow.com/a/4073451).
+
+
 #### Task 5.2
 
 Why do we need line (1) in the code above?
