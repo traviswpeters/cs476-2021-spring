@@ -37,26 +37,41 @@ Below we summarize how you can use your Host browser (e.g., Chrome) to interact 
   # NOTE: Assumes your ssh config file is configured to allow passwordless ssh
   # NOTE: This terminal will block so you need to open another terminal to ssh into your VM normally
   ```
-- To proxy traffic through Burp Proxy and _then_ to the VM:
-  - Open Burp Suite and navigate to the **User options** Tab.
-  - Scroll down to the bottom. Under **SOCKS Proxy** check the boxes to "Use SOCKS proxy" and "Do DNS lookups over SOCKS proxy".
+- **Option 1:** To proxy traffic through Burp Proxy and _then_ to the VM using Burp's built-in Chromium browser:
+  - Open Burp Suite and navigate to the **User options** tab.
+  - Scroll down to the bottom.
+  - Under **SOCKS Proxy** check the boxes to "Use SOCKS proxy" and "Do DNS lookups over SOCKS proxy".
   - Also set the host to **127.0.0.1** and the port to **4321**.
-  > **NOTE:** If you use Burp Proxy's built-in Chrome browser, which I recommend for ease of configuration, it binds to 127.0.0.1:8080 by default.
+  - If you use Burp Proxy's built-in Chromium browser, you are done!
+    You can now use the built-in browser to interact with the web services running on your VM.
+  > **NOTE:** I recommend this approach for ease of configuration.
+  > Burp Suite binds to 127.0.0.1:8080 by default.
   > All traffic in the built-in browser will proxy traffic to Burp Suite on port 8080.
   > By configuring Burp Suite to then use a SOCKS Proxy to 127.0.0.1:4321 we are tunneling traffic to the SSH tunnel.
+  > No other configuration is needed!
 
-- In Chrome, navigate to **Settings** and search for **Proxy**.
+- **Option 2:** If you prefer to use one of your normal browsers (e.g., Chrome, Firefox) and proxy traffic through Burp Proxy:
+  - In Chrome, navigate to **Settings** and search for **Proxy**.
   - Select "Open your computer's proxy settings." _>> On macOS this will direct your to System Preferences_{:.text-muted}
   - Go to **Network** &#8594; **Advanced...** &#8594; select the **Proxies** tab &#8594; check the **SOCKS proxy** option.
   - Enter **127.0.0.1** (IP address) and **8080** (port).
   - Click **OK** and then **Apply**.
+  - Now use your browser (and Burp Suite) normally!
   > **NOTE:** Here we are indicating that all of our Host's web traffic should be proxied through 127.0.0.1:8080,
   > which is where our Burp Proxy is running. Burp will then pass traffic it receives to the SSH tunnel to your VM.
   > If you don't want to use Burp Proxy, you should set your browser to proxy traffic directly to the SSH proxy running on port 4321.
+  > See Option 3 below.
 
-- Now use Chrome (and Burp Suite) normally!
+- **Option 3:** If you prefer to use one of your normal browsers (e.g., Chrome, Firefox) and prefer **not** to use Burp Suite:
+  - Follow the same instructions for Option 2,
+    but instead configure your computer's proxy settings to proxy traffic directly to
+    **127.0.0.1** (IP address) and **4321** (port).
+  - Now use your browser normally!
+  > **NOTE:** Here we are indicating that all of our Host's web traffic should be proxied through 127.0.0.1:4321,
+  > which will  pass traffic to the SSH tunnel to your VM.
 
-When you are done you’ll want to go back into the proxy settings and uncheck/disable the proxy configuration and click **OK** and then **Apply**.
+If you changed your system's proxy settings,
+when you are done you’ll want to go back into the proxy settings and uncheck/disable the proxy configuration and click **OK** and then **Apply**.
 
 ## Using Burp Suite to Inspect HTTP Traffic
 
