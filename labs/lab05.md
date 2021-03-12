@@ -399,7 +399,12 @@ This code gets a copy of itself, and displays it in an alert window:
 
     var wormCode = encodeURIComponent(headerTag + jsCode + tailTag);  // (4)
 
-    alert(jsCode);
+    alert(jsCode); // this can be used for testing; replace with actual XSS worm payload.
+
+    // TODO: Get the name, guid, timestamp, and token.
+    // TODO: Set the content of the description field and access level.
+    // TODO: Set the URL, and create and send Ajax request to modify profile
+    // TODO: Set the URL, and create and send Ajax request to add Samy as a friend
 </script>
 ```
 
