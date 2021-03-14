@@ -126,22 +126,25 @@ VMNAME=SEEDUbuntu20.04
 # 2. Reboot the VM and log back in.
 # 3. Shared folders should be added/removed on start/stop (similar to how vagrant does it)
 
-.PHONY: vmstart # -> start the primary SEED VM
-vmstart:
-	-VBoxManage startvm $(VMNAME) --type headless
-	-ssh seed #-v
-
 #-VBoxManage sharedfolder add $(VMNAME) --name "shared_admin" --hostpath "/Users/twp/projects/class/admin" --automount --auto-mount-point "/home/seed/shared_admin"
 #-VBoxManage sharedfolder add $(VMNAME) --name "shared_code" --hostpath "/Users/twp/projects/class/msu-cs476-code" --automount --auto-mount-point "/home/seed/shared_code"
 #-VBoxManage sharedfolder add $(VMNAME) --name "shared_website" --hostpath "/Users/twp/projects/class/msu-cs476-2021-spring" --automount --auto-mount-point "/home/seed/shared_website"
+#-VBoxManage sharedfolder remove $(VMNAME) --name "shared_website"
+#-VBoxManage sharedfolder remove $(VMNAME) --name "shared_code"
+#-VBoxManage sharedfolder remove $(VMNAME) --name "shared_admin"
+
+.PHONY: proxy # -> start the socks proxy
+proxy:
+	-ssh seed -D 4321 -C -N #&
+
+.PHONY: vmstart # -> start the primary SEED VM
+vmstart:
+	-VBoxManage startvm $(VMNAME) --type headless
+	-ssh seed
 
 .PHONY: vmstop # -> stop the primary SEED VM
 vmstop:
 	-VBoxManage controlvm $(VMNAME) poweroff
-
-#-VBoxManage sharedfolder remove $(VMNAME) --name "shared_website"
-#-VBoxManage sharedfolder remove $(VMNAME) --name "shared_code"
-#-VBoxManage sharedfolder remove $(VMNAME) --name "shared_admin"
 
 .PHONY: vmrestart # -> restart the primary SEED VM
 vmrestart: vmstop vmstart
