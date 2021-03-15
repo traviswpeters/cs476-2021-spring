@@ -55,7 +55,7 @@ The container is only needed in Task 6.3, so you do not need to start the contai
 
 ### Container Setup and Commands
 
-{% include lab_docker_overview.html classdir="07_ske" %}
+{% include lab_docker_overview.html classdir="06_ske" %}
 
 </div>
 </div>
