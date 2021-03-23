@@ -479,6 +479,7 @@ If you have any questions, please contact me.
 - [Cryptography 101 - The Basics](https://www.youtube.com/watch?v=fNC3jCCGJ0o){:.video} <span class="text-muted">(8:56)</span>
 - [History and Evolution of Cryptography and Cryptanalysis](https://www.youtube.com/watch?v=z9Qi5mDSYb8){:.video} <span class="text-muted">(5:49)</span>
 - [Cryptography: The Science of Making and Breaking Codes](https://www.youtube.com/watch?v=-yFZGF8FHSg){:.video} <span class="text-muted">(8:20)</span>
+- [Substitution Ciphers (Deep Dive & Tutorial)](https://montana.techsmithrelay.com/ZWNl){:.video} <span class="text-muted">(23:07)</span>
 </td>
 <td markdown="span" markdown="1">
 - [Lab 05](labs/lab05) Due!
@@ -490,8 +491,8 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">03/25/2021 (R)</td>
 <td markdown="span" markdown="1">
-- Basic Ciphers
-- [Substitution Ciphers (Deep Dive & Tutorial)](https://montana.techsmithrelay.com/ZWNl){:.video} <span class="text-muted">(23:07)</span>
+- TBD
+<!-- - Basic Ciphers -->
 <!-- - [Review: XOR Operator](https://www.youtube.com/watch?v=Vca83H_anBY){:.video} <span class="text-muted">(7:23) --- YouTube</span> -->
 <!-- - [Review: All About XOR (read)](https://accu.org/journals/overload/20/109/lewin_1915/){:.reading} -->
 <!-- - [Review: Cryptography 101 - XOR Cipher?](https://www.youtube.com/watch?v=xK_SqWG9w-Y){:.video} <span class="text-muted">(5:33) --- YouTube</span> -->
