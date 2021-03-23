@@ -56,19 +56,27 @@ $(document).ready(function() {
 
     // add icons / style class elements...
     $( ".activity" ).each(function(index) {
-        $(this).html('<i class="far fa-lightbulb"></i> ' +$(this).html()+ '' );
+        $(this).html('<i class="fas fa-lightbulb"></i> ' +$(this).html()+ '' );
+        $(this).attr('target', '_blank');
     });
     $( ".code" ).each(function(index) {
-        $(this).html('<i class="far fa-file-code"></i> ' +$(this).html()+ '' );
+        $(this).html('<i class="fas fa-file-code"></i> ' +$(this).html()+ '' );
+        $(this).attr('target', '_blank');
     });
     $( ".slides" ).each(function(index) {
-        $(this).html('<i class="far fa-file-pdf pl-1"></i> ' +$(this).html()+ '' );
+        $(this).html('<i class="fas fa-file-pdf pl-1"></i> ' +$(this).html()+ '' );
+        $(this).attr('target', '_blank');
     });
     $( ".pdf" ).each(function(index) {
-        $(this).html('<i class="far fa-file-pdf"></i> ' +$(this).html()+ '' );
+        $(this).html('<i class="fas fa-file pl-1"></i> ' +$(this).html()+ '' );
+        $(this).attr('target', '_blank');
+    });
+    $( ".reading" ).each(function(index) {
+        $(this).html('<i class="fas fa-book pl-1"></i> ' +$(this).html()+ '' );
+        $(this).attr('target', '_blank');
     });
     $( ".video" ).each(function(index) {
-        $(this).html('<i class="far fa-play-circle pl-1"></i> ' +$(this).html()+ '' );
+        $(this).html('<i class="fas fa-play-circle pl-1"></i> ' +$(this).html()+ '' );
         $(this).attr('target', '_blank');
     });
 

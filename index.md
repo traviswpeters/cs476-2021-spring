@@ -471,10 +471,14 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">03/23/2021 (T)</td>
 <td markdown="span" markdown="1">
-- Intro to Cryptography
+- Introduction to Cryptography
 <!-- - [video](){:.video} -->
 <!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
+<!-- - [What is Cryptography - Introduction to Cryptography](https://www.youtube.com/watch?v=68Pqir_moqA){:.video} <span class="text-muted">(4:31) --- YouTube</span> -->
+- [Cryptography 101 - The Basics](https://www.youtube.com/watch?v=fNC3jCCGJ0o){:.video} <span class="text-muted">(8:56)</span>
+- [History and Evolution of Cryptography and Cryptanalysis](https://www.youtube.com/watch?v=z9Qi5mDSYb8){:.video} <span class="text-muted">(5:49)</span>
+- [Cryptography: The Science of Making and Breaking Codes](https://www.youtube.com/watch?v=-yFZGF8FHSg){:.video} <span class="text-muted">(8:20)</span>
 </td>
 <td markdown="span" markdown="1">
 - [Lab 05](labs/lab05) Due!
@@ -486,6 +490,11 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">03/25/2021 (R)</td>
 <td markdown="span" markdown="1">
+- Basic Ciphers
+- [Substitution Ciphers (Deep Dive & Tutorial)](https://montana.techsmithrelay.com/ZWNl){:.video} <span class="text-muted">(23:07)</span>
+<!-- - [Review: XOR Operator](https://www.youtube.com/watch?v=Vca83H_anBY){:.video} <span class="text-muted">(7:23) --- YouTube</span> -->
+<!-- - [Review: All About XOR (read)](https://accu.org/journals/overload/20/109/lewin_1915/){:.reading} -->
+<!-- - [Review: Cryptography 101 - XOR Cipher?](https://www.youtube.com/watch?v=xK_SqWG9w-Y){:.video} <span class="text-muted">(5:33) --- YouTube</span> -->
 <!-- - [video](){:.video} -->
 <!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
@@ -512,9 +521,16 @@ If you have any questions, please contact me.
 <!-- - [video](){:.video} -->
 <!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
+<!-- - [<i class="fas fa-play-circle"></i> 1. Intro to Secret Key Encryption](https://montana.techsmithrelay.com/iWCI) <span class="text-muted">(4:07)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 2. Substitution Ciphers](https://montana.techsmithrelay.com/ZWNl) <span class="text-muted">(23:07)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 3. Block Ciphers and Modes of Operation](https://montana.techsmithrelay.com/tmHq) <span class="text-muted">(50:50)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 4. Padding](https://montana.techsmithrelay.com/bTYJ) <span class="text-muted">(14:02)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 5. Initialization Vectors & Common Mistakes](https://montana.techsmithrelay.com/7R9e) <span class="text-muted">(17:24)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 6. Programming Using Crypto APIs (Part I)](https://montana.techsmithrelay.com/PwiE) <span class="text-muted">(11:42)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 7. Programming Using Crypto APIs (Part II)](https://montana.techsmithrelay.com/cjgP) <span class="text-muted">(20:23)</span> -->
 </td>
 <td markdown="span" markdown="1">
-- TBD Due!
+- [Intro to Crypto](labs/labX3) Due!
 </td>
 </tr>
 
@@ -549,6 +565,16 @@ If you have any questions, please contact me.
 <!-- - [video](){:.video} -->
 <!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
+<!-- - [<i class="fas fa-play-circle"></i> 1. Introduction to One-way Hash Functions (Part I)](https://montana.techsmithrelay.com/VdN5) <span class="text-muted">(14:06)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 2. Introduction to One-way Hash Functions (Part II)](https://montana.techsmithrelay.com/D2Z9) <span class="text-muted">(22:05)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 3. Check your intuition: The birthday problem](https://www.youtube.com/watch?v=KtT_cgMzHx8) <span class="text-muted">(5:06) --- YouTube</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 4. How secure is 256 bit security?](https://www.youtube.com/watch?v=S9JGmA5_unY) <span class="text-muted">(5:05) --- YouTube</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 5. Application: Integrity Verification](https://montana.techsmithrelay.com/CGZr) <span class="text-muted">(10:50)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 6. Application: Commitments](https://montana.techsmithrelay.com/OHQG) <span class="text-muted">(8:42)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 7. Application: Password Verification](https://montana.techsmithrelay.com/YIkN) <span class="text-muted">(21:35)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 8. Application: But how does bitcoin actually work?](https://www.youtube.com/watch?v=bBC-nXj3Ng4) <span class="text-muted">(26:20) --- YouTube</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 9. Message Authentication Code (MAC)](https://montana.techsmithrelay.com/GrPy) <span class="text-muted">(14:41)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 10. Hash Collision Attacks](https://montana.techsmithrelay.com/wOgU) <span class="text-muted">(25:08)</span> -->
 </td>
 <td markdown="span" markdown="1">
 - Lab 06 Due!
@@ -586,7 +612,23 @@ If you have any questions, please contact me.
 <!-- - [video](){:.video} -->
 <!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
-</td>
+<!-- - [<i class="fas fa-play-circle"></i> 1. Introduction to Public Key Cryptography](https://montana.techsmithrelay.com/BiFm) <span class="text-muted">(11:21)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 2. Diffie-Hellman Key Exchange](https://montana.techsmithrelay.com/bpww) <span class="text-muted">(16:40)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 3. The RSA Algorithm (Overview)](https://montana.techsmithrelay.com/Sm8j) <span class="text-muted">(16:05)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 4. The RSA Encryption Algorithm (1 of 2: Computing an Example)](https://www.youtube.com/watch?v=4zahvcJ9glg) <span class="text-muted">(8:39) --- YouTube</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 5. The RSA Encryption Algorithm (2 of 2: Generating the Keys)](https://www.youtube.com/watch?v=oOcTVTpUsPQ) <span class="text-muted">(11:54) --- YouTube</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> X. The RSA Algorithm (Part I): Modulo Operation](https://montana.techsmithrelay.com/) <span class="text-muted">(:)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> X. The RSA Algorithm (Part II): Euler’s Theorem](https://montana.techsmithrelay.com/) <span class="text-muted">(:)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> X. The RSA Algorithm (Part III): Extended Euclidean Algorithm](https://montana.techsmithrelay.com/) <span class="text-muted">(:)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> X. The RSA Algorithm (Part IV): How it works](https://montana.techsmithrelay.com/) <span class="text-muted">(:)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> X. The RSA Algorithm (Part V): Example on small and large number](https://montana.techsmithrelay.com/) <span class="text-muted">(:)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 6. Using OpenSSL Tools to Conduct RSA Operations](https://montana.techsmithrelay.com/y7I8) <span class="text-muted">(18:21)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 7. RSA and Padding](https://montana.techsmithrelay.com/7Po6) <span class="text-muted">(16:40)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> 8. Digital Signatures](https://montana.techsmithrelay.com/9QyP) <span class="text-muted">(18:03)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> X. Programming using Public-Key Cryptography APIs](https://montana.techsmithrelay.com/) <span class="text-muted">(:)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> X. Applications (Part I): Authentication](https://montana.techsmithrelay.com/) <span class="text-muted">(:)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> X. Applications (Part II): HTTPS and TLS/SSL](https://montana.techsmithrelay.com/) <span class="text-muted">(:)</span> -->
+<!-- - [<i class="fas fa-play-circle"></i> X. Applications (Part III): Chip Technology Used in Credit Cards](https://montana.techsmithrelay.com/) <span class="text-muted">(:)</span> --></td>
 <td markdown="span" markdown="1">
 - Lab 07 Due!
 </td>
@@ -658,6 +700,7 @@ If you have any questions, please contact me.
 <!-- - [video](){:.video} -->
 <!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
+<!-- - [<i class="fas fa-play-circle"></i> Course Wrap-Up _(Final Video...)_](https://montana.techsmithrelay.com/xYPl) <span class="text-muted">(21:41)</span> -->
 </td>
 <td markdown="span" markdown="1">
 - Final Lab Due!

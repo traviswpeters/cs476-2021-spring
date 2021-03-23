@@ -30,10 +30,10 @@ and gives students the opportunity to work through the process of exploiting wea
 This lab covers the following topics:
 
 - Secret-key encryption
-- Substitution cipher and frequency analysis
+<!-- - Substitution cipher and frequency analysis -->
 - Encryption modes, IV, and padding
 - Common mistakes in using encryption algorithms
-- Programming using the crypto library
+<!-- - Programming using the crypto library -->
 
 ### Resources
 
@@ -66,108 +66,7 @@ The container is only needed in Task 6.3, so you do not need to start the contai
 This lab has been tested on the pre-built SEED VM (Ubuntu 20.04 VM).
 {:.subtitletext}
 
-### Task 1: Frequency Analysis
-
-It is well-known that monoalphabetic substitution cipher (also known as monoalphabetic cipher) is not secure,
-because it can be subjected to frequency analysis.
-In this lab, [you are given a ciphertext](https://github.com/traviswpeters/cs476-code/blob/master/06_ske/files/ciphertext.txt)
-that is encrypted using a monoalphabetic cipher;
-namely, each letter in the original text is replaced by another letter, where the replacement does not vary
-(i.e., a letter is always replaced by the same letter during the encryption).
-_**Your task**_ is to find out the original text using frequency analysis.
-It is known that the original text is an article written in the English language.
-
-**_TODO: UPDATE ARTICLE?_**
-{:.lead .text-danger}
-
-<!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
-<div class="card bg-secondary border-primary mb-3" markdown="1">
-<div class="card-body" markdown="1">
-
-#### How We Made the Ciphertext
-
-In the following, we describe how we pre-process and encrypt the original article to produce the ciphertext.
-
-You don't need to do anything here - this is simply to give you useful information into how the article was prepared for this task.
-
-<!-- Instructors can use the same method to encrypt an article of their choices, instead of asking students to use the ciphertext made by us. -->
-
-- **Step 1:** Generate the encryption key, i.e., the substitution table.
-  We permute the alphabet from "a" to "z" using Python, and use the permuted alphabet as the key:
-
-    ```python
-    #!/bin/env python3
-    import random
-    s = "abcdefghijklmnopqrstuvwxyz"
-    list = random.sample(s, len(s))
-    key = ''.join(list)
-    print(key)
-
-    # Example Output: sxtrwinqbedpvgkfmalhyuojzc
-    ```
-
-- **Step 2:** Apply some transformations to the text to simplify the original article.
-  We convert all uppercase letters to lowercase letters, and then remove all punctuation and numbers.
-  We do keep spaces between words, so you can still see the boundaries between words in the ciphertext.
-  In a more realistic application of encryption that uses a monoalphabetic cipher, spaces would be removed.
-  We keep the spaces here to simplify the task.
-  We can apply the transformations described in this step by running the following commands:
-
-    ```bash
-    $ tr [:upper:] [:lower:] < article.txt > lowercase.txt         # uppercase to lowercase
-    $ tr -cd '[a-z][\n][:space:]' < lowercase.txt > plaintext.txt  # preserve only letters and spaces
-    ```
-
-- **Step 3:** We use the `tr` command to do the encryption.
-  We only encrypt letters, while leaving the space and return characters alone.
-
-    ```bash
-    $ tr 'abcdefghijklmnopqrstuvwxyz' 'sxtrwinqbedpvgkfmalhyuojzc' < plaintext.txt > ciphertext.txt
-    ```
-
-We have created a ciphertext using a different encryption key (not the one shown above).
-<!-- It is included in `Labsetup.zip` file, which can be downloaded from the lab's website. -->
-<!-- Your job is to use the frequency analysis to figure out the encryption key and the original plaintext. -->
-
-</div>
-</div>
-<!-- END Special Section -->
-
-<!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
-<div class="card bg-secondary border-primary" markdown="1">
-<div class="card-body" markdown="1">
-
-#### Additional Tips & Resources
-
-Using frequency analysis, you can decipher the plaintext for some of the characters fairly easily.
-For those characters, you may want to change them back to their plaintext form, as you may be able to get more clues.
-Consider using capital letters for plaintext characters --- then, for the same letter,
-we know which is plaintext and which is ciphertext.
-You can use the `tr` command to help with this.
-For example, in the following, we replace letters "a", "e", and "t" in `in.txt`
-with letters "X", "G", "E", respectively; the results are then saved in `out.txt`.
-
-```bash
-$ tr 'aet' 'XGE' < in.txt > out.txt
-```
-
-There are many online resources that you can use to help with frequency analysis.
-For example:
-
-- This [frequency analysis website](http://www.richkni.co.uk/php/crypta/freq.php)
-  can be used to show statistics from a ciphertext, including the
-  single-letter frequencies, bigram frequencies (2-letter sequence),
-  and trigram frequencies (3-letter sequence), etc.
-- This [Wikipedia page on Frequency Analysis](https://en.wikipedia.org/wiki/Frequency_analysis)
-  provides frequencies for a typical English plaintext.
-- [Bigram Frequency](https://en.wikipedia.org/wiki/Bigram)
-- [Trigram Frequency](https://en.wikipedia.org/wiki/Trigram)
-
-</div>
-</div>
-<!-- END Special Section -->
-
-### Task 2: Encryption using Different Ciphers and Modes
+### Task 1: Encryption Ciphers and Modes
 
 In this task, you will experiment with various encryption algorithms and modes.
 
@@ -192,14 +91,14 @@ You need to replace `ciphertype` with a specific cipher type, such as `-aes-128-
 
 _**Your task**_ is to use the above `openssl enc` command to encrypt data using at least 3 different ciphers.
 
-### Task 3: Encryption Mode --- ECB vs. CBC
+### Task 2: Comparing Encryption Modes
 
 In the supplied files, [`files/pic_original.bmp`](https://github.com/traviswpeters/cs476-code/blob/master/06_ske/files/pic_original.bmp) is a simple picture
 in the [BMP - or bitmap - file format](https://en.wikipedia.org/wiki/BMP_file_format).
 
 We would like to encrypt this picture so that anyone without the encryption key is unable to know what the file contains.
 
-#### Task 3.1
+#### Task 2.1
 
 In this task, you must encrypt the file using the ECB (Electronic Code Book) and CBC (Cipher Block Chaining) modes, and then do the following:
 
@@ -224,17 +123,17 @@ In this task, you must encrypt the file using the ECB (Electronic Code Book) and
    Can you derive any useful information about the original picture from simply viewing the encrypted picture?
    Please explain your observations.
 
-#### Task 3.2
+#### Task 2.2
 
 Now, select a picture of your choice, repeat the experiment above, and report your process and observations.
 
-### Task 4: Padding
+### Task 3: Padding
 
 For block ciphers, when the size of a plaintext is not a multiple of the block size, padding may be required.
 The [PKCS\#5 padding scheme](https://www.cryptosys.net/pki/manpki/pki_paddingschemes.html) is widely used by many block ciphers.
 We will conduct the following experiments to understand how this type of padding works.
 
-#### Task 4.1
+#### Task 3.1
 
 Create three files, which contain 5 bytes, 10 bytes, and 16 bytes, respectively.
 We can use the following command to create such files.
@@ -265,19 +164,19 @@ $ xxd p1.txt
 00000000: 3132 3334 3536 3738 3949 4a4b 4c0a            123456789IJKL.
 ```
 
-#### Task 4.2
+#### Task 3.2
 
 Please repeat the previous task for each of the following modes of operation using the `aes` cipher with 128-bit keys: ECB, CFB OFB.
 
 Please report which modes have padding and which ones do not.
 For those that do not need padding, please explain why.
 
-### Task 5: Error Propagation --- Corrupted Ciphertext
+### Task 4: Error Propagation & Corrupted Ciphertext
 
 To understand the error propagation property of various encryption modes, in this task you will create a ciphertext using a specific encryption mode,
 intentionally corrupt a bit in the ciphertext, decrypt the corrupted ciphertext, and then examine the result.
 
-#### Task 5.1: Predictions
+#### Task 4.1: Predictions
 
 Before you actually conduct this task, please answer the following question:
 
@@ -285,7 +184,7 @@ _How much information can you recover by decrypting the corrupted file, if the e
 
 Please note your answers (and provide any relevant justification for each) before proceeding with actually carrying out the steps below.
 
-#### Task 5.2: ECB & Data Corruption
+#### Task 4.2: ECB & Data Corruption
 
 _After_ you have answered the question in Task 5.1, please carry out the following steps:
 
@@ -297,15 +196,15 @@ _After_ you have answered the question in Task 5.1, please carry out the followi
 How much information can you recover by decrypting the corrupted file if the mode of operation used in encryption is ECB?
 Please provide justification.
 
-#### Task 5.3: CBC & Data Corruption
+#### Task 4.3: CBC & Data Corruption
 
 Please repeat Task 5.2, but this time use the CBC mode when encrypting/decrypting data.
 
-#### Task 5.4: CFB & Data Corruption
+#### Task 4.4: CFB & Data Corruption
 
 Please repeat Task 5.2, but this time use the CFB mode when encrypting/decrypting data.
 
-#### Task 5.5: OFB & Data Corruption
+#### Task 4.5: OFB & Data Corruption
 
 Please repeat Task 5.2, but this time use the OFB mode when encrypting/decrypting data.
 
@@ -320,7 +219,7 @@ Please repeat Task 5.2, but this time use the OFB mode when encrypting/decryptin
 
 
 
-### Task 6: Initialization Vector (IV) and Common Mistakes
+### Task 5: Common Mistakes with IVs
 
 Most of the encryption modes require an Initialization Vector (IV).
 Properties of an IV depend on the cryptographic scheme used.
@@ -329,13 +228,13 @@ _the encrypted data may not be secure, even though we are using a secure encrypt
 The objective of this task is to help students understand some of the problems that arise if an IV is not chosen properly.
 <!-- The detailed guidelines for this task is provided in Chapter 21.5 of the SEED book. -->
 
-#### Task 6.1: Uniqueness of the IV
+#### Task 5.1: Uniqueness of the IV
 
 A basic requirement for the IV is ***uniqueness***, which means that no IV may be reused under the same key.
 To understand why, please encrypt the same plaintext using (1) two different IVs, and (2) the same IV.
 Please describe your observation and explain why the IV needs to be unique.
 
-#### Task 6.2: Known Plaintext Attack
+#### Task 5.2: Known Plaintext Attack
 
 One may argue that if the _plaintext_ does not repeat, using the same IV (and key) is safe.
 Let us investigate this matter.
@@ -376,7 +275,7 @@ Feel free to do whatever makes the most sense for you.
 <!-- If we replace OFB in this experiment with CFB (Cipher Feedback), _how much of P2 can be revealed?_ -->
 <!-- (You only need to answer the question; there is no need to demonstrate.) -->
 
-#### Task 6.3: Chosen Ciphertext Attack
+#### Task 5.3: Chosen Ciphertext Attack
 
 From the previous tasks, we now know that IVs should not be reused.
 Another important requirement for the IV is that they need to be _**unpredictable**_ for many schemes,
