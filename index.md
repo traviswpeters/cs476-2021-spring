@@ -471,7 +471,7 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">03/23/2021 (T)</td>
 <td markdown="span" markdown="1">
-- Introduction to Cryptography
+- Introduction to Cryptography <span class="text-muted">(Asynchronous Class)</span>
 <!-- - [video](){:.video} -->
 <!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
