@@ -68,7 +68,8 @@ For example:
 
 - This [frequency analysis website](https://www.dcode.fr/frequency-analysis), for example, <!-- (http://www.richkni.co.uk/php/crypta/freq.php) -->
   can be used to show statistics from a ciphertext.
-  You are allowed to use other tools if you find a better one, but please include a citation and any relevant info about how you used the tool.
+  (_You are allowed to use other tools if you find a better one, but please include a citation and any relevant info about how you used the tool._)
+- Or this [frequency counter script](https://github.com/traviswpeters/cs476-code/blob/master/06_ske/files/freq_counter.py) from our course GitHub can be used to do basically the same thing.
 - This [Wikipedia page on Frequency Analysis](https://en.wikipedia.org/wiki/Frequency_analysis) provides frequencies for a typical English plaintext.
 - [Bigram Frequency](https://en.wikipedia.org/wiki/Bigram)
 - [Trigram Frequency](https://en.wikipedia.org/wiki/Trigram)
