@@ -491,7 +491,7 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">03/25/2021 (R)</td>
 <td markdown="span" markdown="1">
-- TBD
+- Help Session <span class="text-muted">(Optional)</span>
 <!-- - Basic Ciphers -->
 <!-- - [Review: XOR Operator](https://www.youtube.com/watch?v=Vca83H_anBY){:.video} <span class="text-muted">(7:23) --- YouTube</span> -->
 <!-- - [Review: All About XOR (read)](https://accu.org/journals/overload/20/109/lewin_1915/){:.reading} -->
