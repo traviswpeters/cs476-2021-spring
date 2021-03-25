@@ -52,10 +52,12 @@ _**Your task**_ is to find out the original text using frequency analysis.
 #### Tips & Resources
 
 Using frequency analysis, you can decipher the plaintext for some of the characters fairly easily.
-For those characters, you may want to change them back to their plaintext form, as you may be able to get more clues.
-Consider using capital letters for plaintext characters --- then, for the same letter,
+For those characters, you may want to change them back to their plaintext form as you go, which may give you more clues.
+Since the ciphertext is all lowercase,
+I recommend you use capital letters to show your intermediate plaintext/plaintext characters --- then, if the same letter appears as both ciphertext and plaintext,
 we know which is plaintext and which is ciphertext.
 You can use the `tr` command to help with this.
+
 For example, in the following, we replace letters "a", "e", and "t" in `in.txt`
 with letters "X", "G", "E", respectively; the results are then saved in `out.txt`.
 
@@ -63,8 +65,17 @@ with letters "X", "G", "E", respectively; the results are then saved in `out.txt
 $ tr 'aet' 'XGE' < in.txt > out.txt
 ```
 
-There are many online resources that you can use to help with frequency analysis.
-For example:
+In general:
+
+```bash
+# encipher
+$ tr 'a-z' '...key...' < plaintext > ciphertext
+
+# decipher
+$ tr '...key...' 'a-z' < ciphertext > plaintext
+```
+
+There are many online resources that you can use to help with frequency analysis:
 
 - This [frequency analysis website](https://www.dcode.fr/frequency-analysis), for example, <!-- (http://www.richkni.co.uk/php/crypta/freq.php) -->
   can be used to show statistics from a ciphertext.
