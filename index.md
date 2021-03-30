@@ -516,6 +516,7 @@ If you have any questions, please contact me.
 - [The XOR Operator](https://www.youtube.com/watch?v=Vca83H_anBY){:.video} <span class="text-muted">(7:23)</span>
   / [XOR Example](https://www.youtube.com/watch?v=xK_SqWG9w-Y){:.video} <span class="text-muted">(5:33)</span>
   / [All About XOR](https://accu.org/journals/overload/20/109/lewin_1915/){:.reading} <i class="text-muted">#review</i>
+- [An Overview of Symmetric Encryption and the Key Lifecycle](https://www.cryptomathic.com/news-events/blog/an-overview-of-symmetric-encryption-and-the-key-lifecycle){:.reading}
 - [Feistel Cipher](https://www.youtube.com/watch?v=FGhj3CGxl8I){:.video} <span class="text-muted">(7:30)</span>
 - [AES Explained](https://www.youtube.com/watch?v=O4xNJsjtN6E){:.video} <span class="text-muted">(14:13)</span>
 - [Block Ciphers and Modes of Operation](https://montana.techsmithrelay.com/tmHq){:.video} <span class="text-muted">(50:50)</span>
@@ -668,6 +669,9 @@ If you have any questions, please contact me.
 - Hold for [Ryan Darnell](https://www.linkedin.com/in/darneseytech) (MSU alum, now @ Rockwell Automation) - Crypto In the Real World
 <!-- - [video](){:.video} -->
 <!-- [slides](files/){:.slides} -->
+- [An Overview of Symmetric Encryption and the Key Lifecycle](https://www.cryptomathic.com/news-events/blog/an-overview-of-symmetric-encryption-and-the-key-lifecycle){:.reading}
+- [Block Cipher Mode of Operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation){:.reading}
+- [GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode){:.reading}
 <!-- - [pre-class activity](files/StudentReferenceExercises.pdf){:.activity} -->
 <!-- - [class activity](files/StudentClassActivity.pdf){:.activity} -->
 </td>
