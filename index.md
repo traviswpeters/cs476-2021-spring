@@ -492,13 +492,6 @@ If you have any questions, please contact me.
 <td markdown="span">03/25/2021 (R)</td>
 <td markdown="span" markdown="1">
 - Help Session <span class="text-muted">(Optional)</span>
-<!-- - Basic Ciphers -->
-<!-- - [Review: XOR Operator](https://www.youtube.com/watch?v=Vca83H_anBY){:.video} <span class="text-muted">(7:23) --- YouTube</span> -->
-<!-- - [Review: All About XOR (read)](https://accu.org/journals/overload/20/109/lewin_1915/){:.reading} -->
-<!-- - [Review: Cryptography 101 - XOR Cipher?](https://www.youtube.com/watch?v=xK_SqWG9w-Y){:.video} <span class="text-muted">(5:33) --- YouTube</span> -->
-<!-- - [video](){:.video} -->
-<!-- [slides](files/){:.slides} -->
-<!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
 </td>
@@ -518,13 +511,25 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">03/30/2021 (T)</td>
 <td markdown="span" markdown="1">
-<!-- - TBD -->
 <!-- - [video](){:.video} -->
 <!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
+- [The XOR Operator](https://www.youtube.com/watch?v=Vca83H_anBY){:.video} <span class="text-muted">(7:23)</span> <i class="text-muted">#review</i>
+  / [XOR Example](https://www.youtube.com/watch?v=xK_SqWG9w-Y){:.video} <span class="text-muted">(5:33)</span> <i class="text-muted">#review</i>
+  / [All About XOR](https://accu.org/journals/overload/20/109/lewin_1915/){:.reading} <i class="text-muted">#review</i>
+- [Feistel Cipher](https://www.youtube.com/watch?v=FGhj3CGxl8I){:.video} <span class="text-muted">(7:30)</span>
+- [AES Explained](https://www.youtube.com/watch?v=O4xNJsjtN6E){:.video} <span class="text-muted">(14:13)</span>
+- [Block Ciphers and Modes of Operation](https://montana.techsmithrelay.com/tmHq){:.video} <span class="text-muted">(50:50)</span>
+  / [Block Cipher Mode of Operation (Wiki)](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation){:.reading}
+- [Padding](https://montana.techsmithrelay.com/bTYJ){:.video} <span class="text-muted">(14:02)</span>
+  / [Padding (Wiki)](https://en.wikipedia.org/wiki/Padding_(cryptography)){:.reading}
+- [Initialization Vectors & Common Mistakes](https://montana.techsmithrelay.com/7R9e){:.video} <span class="text-muted">(17:24)</span>
+  / [Initialization Vector (Wiki)](https://en.wikipedia.org/wiki/Initialization_vector){:.reading}
+<!-- - [Programming Using Crypto APIs (Part I)](https://montana.techsmithrelay.com/PwiE){:.video} <span class="text-muted">(11:42)</span> -->
+<!-- - [Programming Using Crypto APIs (Part II)](https://montana.techsmithrelay.com/cjgP){:.video} <span class="text-muted">(20:23)</span> -->
+<!-- - [modes of operation - slides](https://www.cs.columbia.edu/~smb/classes/s09/l05.pdf) -->
 <!-- - [<i class="fas fa-play-circle"></i> 1. Intro to Secret Key Encryption](https://montana.techsmithrelay.com/iWCI) <span class="text-muted">(4:07)</span> -->
 <!-- - [<i class="fas fa-play-circle"></i> 2. Substitution Ciphers](https://montana.techsmithrelay.com/ZWNl) <span class="text-muted">(23:07)</span> -->
-<!-- - [<i class="fas fa-play-circle"></i> 3. Block Ciphers and Modes of Operation](https://montana.techsmithrelay.com/tmHq) <span class="text-muted">(50:50)</span> -->
 <!-- - [<i class="fas fa-play-circle"></i> 4. Padding](https://montana.techsmithrelay.com/bTYJ) <span class="text-muted">(14:02)</span> -->
 <!-- - [<i class="fas fa-play-circle"></i> 5. Initialization Vectors & Common Mistakes](https://montana.techsmithrelay.com/7R9e) <span class="text-muted">(17:24)</span> -->
 <!-- - [<i class="fas fa-play-circle"></i> 6. Programming Using Crypto APIs (Part I)](https://montana.techsmithrelay.com/PwiE) <span class="text-muted">(11:42)</span> -->
@@ -539,10 +544,7 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">04/01/2021 (R)</td>
 <td markdown="span" markdown="1">
-<!-- - TBD -->
-<!-- - [video](){:.video} -->
-<!-- [slides](files/){:.slides} -->
-<!-- [activity](){:.activity} -->
+- Help Session <span class="text-muted">(Optional)</span>
 </td>
 <td markdown="span" markdown="1">
 </td>
@@ -578,7 +580,7 @@ If you have any questions, please contact me.
 <!-- - [<i class="fas fa-play-circle"></i> 10. Hash Collision Attacks](https://montana.techsmithrelay.com/wOgU) <span class="text-muted">(25:08)</span> -->
 </td>
 <td markdown="span" markdown="1">
-- Lab 06 Due!
+- [Lab 06](labs/lab06) Due!
 </td>
 </tr>
 

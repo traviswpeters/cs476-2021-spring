@@ -7,7 +7,7 @@ labprefix: 'Lab 06'
 labtitle: 'Secret-Key Encryption Lab'
 title: 'Lab 06: Secret-Key Encryption Lab'
 duedate: 'Tuesday [04/06/2021] @ 11:59 AM (MST)'
-released: False
+released: True
 ---
 
 # {{page.labprefix}}: {{page.labtitle}}
@@ -32,7 +32,7 @@ This lab covers the following topics:
 - Secret-key encryption
 <!-- - Substitution cipher and frequency analysis -->
 - Encryption modes, IV, and padding
-- Common mistakes in using encryption algorithms
+- Common mistakes when using encryption algorithms
 <!-- - Programming using the crypto library -->
 
 ### Resources
@@ -51,7 +51,8 @@ This lab covers the following topics:
 ## Environment Setup
 
 In this lab, we use a container to run an encryption oracle.
-The container is only needed in Task 6.3, so you do not need to start the container for other tasks.
+
+The container is only needed in Task 6.2 (graduate credit), so you do not need to start the container for other tasks.
 
 ### Container Setup and Commands
 
@@ -73,7 +74,7 @@ In this task, you will experiment with various encryption algorithms and modes.
 You can use the following `openssl enc` command to encrypt/decrypt a file.
 
 ```bash
-$ openssl enc -ciphertype -e -in plain.txt -out cipher.bin -K 00112233445566778889aabbccddeeff -iv 0102030405060708 -p
+$ openssl enc -CIPHERTYPE -e -in plain.txt -out cipher.bin -K KEY -iv IV -p
 
 # Summary of common `openssl enc` options:
 # -in <file>     input file
@@ -87,7 +88,9 @@ $ openssl enc -ciphertype -e -in plain.txt -out cipher.bin -K 001122334455667788
 
 To view the manual pages, type `man openssl` and `man enc`.
 
-You need to replace `ciphertype` with a specific cipher type, such as `-aes-128-cbc`, `-bf-cbc`, `-aes-128-cfb`, etc.
+You need to replace `-CIPHERTYPE` with a specific cipher type, such as `-aes-128-cbc`, `-bf-cbc`, `-aes-128-cfb`, etc.
+
+You also need to replace `KEY` and `IV` with the encryption/decryption key and initialization vector, respectively.
 
 _**Your task**_ is to use the above `openssl enc` command to encrypt data using at least 3 different ciphers.
 
@@ -208,23 +211,12 @@ Please repeat Task 5.2, but this time use the CFB mode when encrypting/decryptin
 
 Please repeat Task 5.2, but this time use the OFB mode when encrypting/decrypting data.
 
-
-
-
-
-
-
-
-
-
-
-
 ### Task 5: Common Mistakes with IVs
 
 Most of the encryption modes require an Initialization Vector (IV).
 Properties of an IV depend on the cryptographic scheme used.
 If we are not careful in selecting IVs,
-_the encrypted data may not be secure, even though we are using a secure encryption algorithm and mode._
+_the encrypted data may not be secure, even though we are using a secure encryption algorithm and mode!_
 The objective of this task is to help students understand some of the problems that arise if an IV is not chosen properly.
 <!-- The detailed guidelines for this task is provided in Chapter 21.5 of the SEED book. -->
 
@@ -232,24 +224,36 @@ The objective of this task is to help students understand some of the problems t
 
 A basic requirement for the IV is ***uniqueness***, which means that no IV may be reused under the same key.
 To understand why, please encrypt the same plaintext using (1) two different IVs, and (2) the same IV.
-Please describe your observation and explain why the IV needs to be unique.
+Please describe your observations and explain why the IV needs to be unique.
 
-#### Task 5.2: Known Plaintext Attack
+## Lab Tasks - Grad Student Credit
+
+In addition to the problems above, students enrolled in CSCI 594 must also complete the following problems.
+
+Students enrolled in CSCI 476 are encouraged to try these problems, but are not expected to submit solutions for these problems.
+
+### Task 6: Exploiting Common Mistakes with IVs
+
+_These tasks are a continuation of Task 5, and allow students to delve deeper into issues that can arise from reusing IVs._
+
+#### Task 6.1: Known Plaintext Attack
+<!-- was Task 5.2 -->
 
 One may argue that if the _plaintext_ does not repeat, using the same IV (and key) is safe.
-Let us investigate this matter.
+In this task we will investigate this matter.
 
 > The attack used in this experiment is known as the _**known-plaintext attack**_,
 > which is an attack model for cryptanalysis where the attacker has access to both the plaintext and its encrypted version (ciphertext).
 > If this situation can lead to the revealing of further secret information, the encryption scheme is not considered to be secure.
 
-
-In this task we will specifically look at the Output Feedback (OFB) mode.
+In this task we will specifically look at the [Output Feedback (OFB) mode](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Output_feedback_(OFB)).
 
 Assume that the attacker gets hold of a plaintext ($$P1$$) and a ciphertext ($$C1$$).
-_Can they decrypt other (different) encrypted messages if the same IV is always used?_
 
-Assume you are given the following information.
+**Question:** _Can they decrypt other (different) encrypted messages if the same IV is always used?_
+
+To examine whether this is possible,
+assume you are given the following information.
 Please try to figure out the actual content of $$P2$$ based on $$C2$$, $$P1$$, and $$C1$$.
 
 ```
@@ -275,32 +279,45 @@ Feel free to do whatever makes the most sense for you.
 <!-- If we replace OFB in this experiment with CFB (Cipher Feedback), _how much of P2 can be revealed?_ -->
 <!-- (You only need to answer the question; there is no need to demonstrate.) -->
 
-#### Task 5.3: Chosen Ciphertext Attack
+#### Task 6.2: Chosen Ciphertext Attack
+<!-- was Task 5.3 -->
 
 From the previous tasks, we now know that IVs should not be reused.
-Another important requirement for the IV is that they need to be _**unpredictable**_ for many schemes,
+Another important requirement for IVs is that they need to be _**unpredictable**_ for many schemes,
 i.e., IVs need to be randomly generated.
 In this task, we will observe what happens if IVs are predictable.
 
-Assume that Bob just sent an encrypted message, and Eve knows that its content is either "Yes" or "No";
-Eve can see the ciphertext and the IV used to encrypt the message, but since the AES encryption algorithm has been used,
-Eve has no idea what the actual content is.
+Assume that Bob just sent an encrypted message, and Eve knows that its content are either "Yes" or "No";
+Eve can see the ciphertext and the IV used to encrypt the message, but since the AES encryption algorithm has been used, Eve has no idea what the actual content is.
 However, Eve knows that Bob uses predictable IVs, so Eve knows exactly what IV Bob is going to use next.
 
 A good cipher should not only tolerate the known-plaintext attack described previously,
 it should also tolerate the _**chosen-plaintext attack**_,
 which is an attack model for cryptanalysis where the attacker can obtain the ciphertext for an arbitrary plaintext.
-Since AES is a strong cipher that can tolerate the chosen-plaintext attack, Bob does not mind encrypting any plaintext given by Eve;
+Since AES is a strong cipher that can tolerate the chosen-plaintext attack, Bob does not mind encrypting any plaintext provided by Eve;
 he does use a different IV for each plaintext, but unfortunately, the IVs he generates are not random, and they can always be easily predicted by Eve.
 
-Your job is to construct a message $$P2$$, and ask Bob to encrypt it and give you the resulting ciphertext.
+You must construct a message $$P2$$, and ask Bob to encrypt it and give you the resulting ciphertext.
+
 Your objective then is to use this opportunity to figure out whether the actual content of $$P1$$ is "Yes" or "No".
 
-##### The Oracle
+> _**Hint 1:** You will need to manually pad the message since we will perform XOR operations with various 16 bytes values._
+> _For ideas on how to pad your message, recall our discussion of PKCS#5._
+
+> _**Hint 2:**_
+> _Having trouble getting started?_
+> _Read up a bit more on initialization vectors._
+> _For example, you can read this Wikipedia page for ideas:_
+> _[https://en.wikipedia.org/wiki/Initialization_vector](https://en.wikipedia.org/wiki/Initialization_vector)._
+
+<!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
+<div class="card bg-secondary border-primary" markdown="1">
+<div class="card-body" markdown="1">
+#### The Oracle
 
 For this task, your are given an encryption oracle which simulates Bob and encrypts message with 128-bit AES with CBC mode.
 
-You can get access to the oracle by running the following command:
+After you start the container (recall: Environment Setup), you can get access to the oracle by running the following command within the SEED VM:
 
 ```bash
 $ nc 10.9.0.80 3000
@@ -327,18 +344,11 @@ You can try different plaintexts, but keep in mind that every time, the IV will 
 (But it is predictable!)
 To simplify your job, the oracle prints out the next IV.
 To exit from the interaction, press `ctrl-C`.
-
-> _**Hint 1:** You will need to manually pad the message since we will perform XOR operations with various 16 bytes values._
-> _For ideas on how to pad your message, recall our discussion of PKCS#5._
-
-> _**Hint 2:**_
-> _Having trouble getting started?_
-> _Be sure to read up a bit more on initialization vectors._
-> _For example, you can read this Wikipedia page for ideas:_
-> _[https://en.wikipedia.org/wiki/Initialization_vector](https://en.wikipedia.org/wiki/Initialization_vector)._
+</div>
+</div>
 
 <!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
-<div class="card bg-secondary border-primary" markdown="1">
+<div class="card bg-secondary border-primary mt-2" markdown="1">
 <div class="card-body" markdown="1">
 #### Additional Reading
 There are more advanced cryptanalysis techniques on IV that is beyond the scope of this lab.
@@ -353,13 +363,6 @@ which delves deeper into the topic of how to generate cryptographically strong p
 </div>
 </div>
 
-<!--
-## Lab Tasks - Grad Student Credit
-
-In addition to the problems above, students enrolled in CSCI 594 must also complete the following problems.
-
-Students enrolled in CSCI 476 are encouraged to try these problems, but are not expected to submit solutions for these problems.
--->
 
 <!--
 ### Task 7: Programming using the Crypto Library
