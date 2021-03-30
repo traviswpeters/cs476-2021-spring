@@ -476,6 +476,7 @@ If you have any questions, please contact me.
 <!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
 <!-- - [What is Cryptography - Introduction to Cryptography](https://www.youtube.com/watch?v=68Pqir_moqA){:.video} <span class="text-muted">(4:31) --- YouTube</span> -->
+- [Intro slides](files/cs476-crypto-intro.pdf){:.slides}
 - [Cryptography 101 - The Basics](https://www.youtube.com/watch?v=fNC3jCCGJ0o){:.video} <span class="text-muted">(8:56)</span>
 - [History and Evolution of Cryptography and Cryptanalysis](https://www.youtube.com/watch?v=z9Qi5mDSYb8){:.video} <span class="text-muted">(5:49)</span>
 - [Cryptography: The Science of Making and Breaking Codes](https://www.youtube.com/watch?v=-yFZGF8FHSg){:.video} <span class="text-muted">(8:20)</span>
@@ -511,19 +512,19 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">03/30/2021 (T)</td>
 <td markdown="span" markdown="1">
-<!-- - [video](){:.video} -->
-<!-- [slides](files/){:.slides} -->
-<!-- [activity](){:.activity} -->
-- [The XOR Operator](https://www.youtube.com/watch?v=Vca83H_anBY){:.video} <span class="text-muted">(7:23)</span> <i class="text-muted">#review</i>
-  / [XOR Example](https://www.youtube.com/watch?v=xK_SqWG9w-Y){:.video} <span class="text-muted">(5:33)</span> <i class="text-muted">#review</i>
+- [The XOR Operator](https://www.youtube.com/watch?v=Vca83H_anBY){:.video} <span class="text-muted">(7:23)</span>
+  / [XOR Example](https://www.youtube.com/watch?v=xK_SqWG9w-Y){:.video} <span class="text-muted">(5:33)</span> 
   / [All About XOR](https://accu.org/journals/overload/20/109/lewin_1915/){:.reading} <i class="text-muted">#review</i>
 - [Feistel Cipher](https://www.youtube.com/watch?v=FGhj3CGxl8I){:.video} <span class="text-muted">(7:30)</span>
 - [AES Explained](https://www.youtube.com/watch?v=O4xNJsjtN6E){:.video} <span class="text-muted">(14:13)</span>
 - [Block Ciphers and Modes of Operation](https://montana.techsmithrelay.com/tmHq){:.video} <span class="text-muted">(50:50)</span>
+  / [slides](files/cs476-crypto-ske.pdf){:.slides}
   / [Block Cipher Mode of Operation (Wiki)](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation){:.reading}
 - [Padding](https://montana.techsmithrelay.com/bTYJ){:.video} <span class="text-muted">(14:02)</span>
+  / [slides](files/cs476-crypto-padding.pdf){:.slides}
   / [Padding (Wiki)](https://en.wikipedia.org/wiki/Padding_(cryptography)){:.reading}
 - [Initialization Vectors & Common Mistakes](https://montana.techsmithrelay.com/7R9e){:.video} <span class="text-muted">(17:24)</span>
+  / [slides](files/cs476-crypto-IVs.pdf){:.slides}
   / [Initialization Vector (Wiki)](https://en.wikipedia.org/wiki/Initialization_vector){:.reading}
 <!-- - [Programming Using Crypto APIs (Part I)](https://montana.techsmithrelay.com/PwiE){:.video} <span class="text-muted">(11:42)</span> -->
 <!-- - [Programming Using Crypto APIs (Part II)](https://montana.techsmithrelay.com/cjgP){:.video} <span class="text-muted">(20:23)</span> -->
