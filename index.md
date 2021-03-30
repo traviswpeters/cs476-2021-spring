@@ -462,7 +462,7 @@ If you have any questions, please contact me.
 
 <tr>
 <!--   Week #   --><td id="week11" markdown="span">Week 11</td>
-<!-- Week Title --><td markdown="span" class="note">Cryptography</td>
+<!-- Week Title --><td markdown="span" class="note">Introduction to Cryptography</td>
 <!--   BLANK    --><td markdown="span" class="note" markdown="1">
 </td>
 </tr>
@@ -471,7 +471,7 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">03/23/2021 (T)</td>
 <td markdown="span" markdown="1">
-- Introduction to Cryptography <span class="text-muted">(Asynchronous Class)</span>
+- Asynchronous Class <span class="text-muted">(see videos & readings below)</span>
 <!-- - [video](){:.video} -->
 <!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
@@ -502,7 +502,7 @@ If you have any questions, please contact me.
 
 <tr>
 <!--   Week #   --><td id="week12" markdown="span">Week 12</td>
-<!-- Week Title --><td markdown="span" class="note">Cryptography --- Symmetric Key Cryptography</td>
+<!-- Week Title --><td markdown="span" class="note">Cryptography --- Symmetric Key Cryptography (Asynchronous Class)</td>
 <!--   BLANK    --><td markdown="span" class="note" markdown="1">
 - (Optional) Chapter 21 [(SEED)]({{site.data.settings.textbookseedlink}})
 </td>
@@ -512,8 +512,9 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">03/30/2021 (T)</td>
 <td markdown="span" markdown="1">
+- Asynchronous Class <span class="text-muted">(see videos & readings below)</span> / Help Session <span class="text-muted">(optional)</span>
 - [The XOR Operator](https://www.youtube.com/watch?v=Vca83H_anBY){:.video} <span class="text-muted">(7:23)</span>
-  / [XOR Example](https://www.youtube.com/watch?v=xK_SqWG9w-Y){:.video} <span class="text-muted">(5:33)</span> 
+  / [XOR Example](https://www.youtube.com/watch?v=xK_SqWG9w-Y){:.video} <span class="text-muted">(5:33)</span>
   / [All About XOR](https://accu.org/journals/overload/20/109/lewin_1915/){:.reading} <i class="text-muted">#review</i>
 - [Feistel Cipher](https://www.youtube.com/watch?v=FGhj3CGxl8I){:.video} <span class="text-muted">(7:30)</span>
 - [AES Explained](https://www.youtube.com/watch?v=O4xNJsjtN6E){:.video} <span class="text-muted">(14:13)</span>
@@ -667,7 +668,8 @@ If you have any questions, please contact me.
 - Hold for [Ryan Darnell](https://www.linkedin.com/in/darneseytech) (MSU alum, now @ Rockwell Automation) - Crypto In the Real World
 <!-- - [video](){:.video} -->
 <!-- [slides](files/){:.slides} -->
-<!-- [activity](){:.activity} -->
+<!-- - [pre-class activity](files/StudentReferenceExercises.pdf){:.activity} -->
+<!-- - [class activity](files/StudentClassActivity.pdf){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
 - Lab 08 Due!
