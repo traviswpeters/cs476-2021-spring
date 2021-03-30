@@ -669,10 +669,10 @@ If you have any questions, please contact me.
 - Hold for [Ryan Darnell](https://www.linkedin.com/in/darneseytech) (MSU alum, now @ Rockwell Automation) - Crypto In the Real World
 <!-- - [video](){:.video} -->
 <!-- [slides](files/){:.slides} -->
-- _>> Pre-work: Please review the following links before this class._
-- [An Overview of Symmetric Encryption and the Key Lifecycle](https://www.cryptomathic.com/news-events/blog/an-overview-of-symmetric-encryption-and-the-key-lifecycle){:.reading}
-- [Block Cipher Mode of Operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation){:.reading}
-- [GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode){:.reading}
+<!-- - _>> Pre-work: Please review the following links before this class._ -->
+<!-- - [An Overview of Symmetric Encryption and the Key Lifecycle](https://www.cryptomathic.com/news-events/blog/an-overview-of-symmetric-encryption-and-the-key-lifecycle){:.reading} -->
+<!-- - [Block Cipher Mode of Operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation){:.reading} -->
+<!-- - [GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode){:.reading} -->
 <!-- - [pre-class activity](files/StudentReferenceExercises.pdf){:.activity} -->
 <!-- - [class activity](files/StudentClassActivity.pdf){:.activity} -->
 </td>
