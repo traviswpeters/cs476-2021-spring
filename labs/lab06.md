@@ -38,7 +38,8 @@ This lab covers the following topics:
 ### Resources
 
 - Code related to this lab can be found in `{{page.dircode}}/` of our [class's GitHub repository](https://github.com/traviswpeters/cs476-code).
-- [Sample Code --- Encryption w/ the OpenSSL Cryptography and SSL/TLS Toolkit](https://www.openssl.org/docs/man1.0.2/man3/EVP_EncryptInit.html)
+- [OpenSSL Cryptography and SSL/TLS Toolkit - Manuals](https://www.openssl.org/docs/manmaster/)
+<!-- - [Sample Code --- Encryption w/ the OpenSSL Cryptography and SSL/TLS Toolkit](https://www.openssl.org/docs/man1.0.2/man3/EVP_EncryptInit.html) -->
 <!-- - [ciphertext.txt (Task 1)](https://seedsecuritylabs.org/Labs_16.04/Crypto/Crypto_Encryption/files/ciphertext.txt) -->
 <!-- - [pic_original.bmp (Task 3)](https://seedsecuritylabs.org/Labs_16.04/Crypto/Crypto_Encryption/files/pic_original.bmp) -->
 <!-- - [English Word List (Task 7)](https://seedsecuritylabs.org/Labs_16.04/Crypto/Crypto_Encryption/files/words.txt) -->
