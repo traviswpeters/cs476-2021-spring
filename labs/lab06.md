@@ -288,13 +288,13 @@ Another important requirement for IVs is that they need to be _**unpredictable**
 i.e., IVs need to be randomly generated.
 In this task, we will observe what happens if IVs are predictable.
 
-Assume that Bob just sent an encrypted message, and Eve knows that its content are either "Yes" or "No";
-Eve can see the ciphertext and the IV used to encrypt the message, but since the AES encryption algorithm has been used, Eve has no idea what the actual content is.
+Assume that Bob just sent an encrypted message, and Eve knows that its contents are either "Yes" or "No";
+Eve can see the ciphertext and the IV used to encrypt the message, but since the AES encryption algorithm has been used, Eve has no idea what the actual content is (Eve does **not** know the key).
 However, Eve knows that Bob uses predictable IVs, so Eve knows exactly what IV Bob is going to use next.
 
 A good cipher should not only tolerate the known-plaintext attack described previously,
 it should also tolerate the _**chosen-plaintext attack**_,
-which is an attack model for cryptanalysis where the attacker can obtain the ciphertext for an arbitrary plaintext.
+which is an attack model for cryptanalysis where the attacker can obtain the ciphertext for an _arbitrary plaintext_.
 Since AES is a strong cipher that can tolerate the chosen-plaintext attack, Bob does not mind encrypting any plaintext provided by Eve;
 he does use a different IV for each plaintext, but unfortunately, the IVs he generates are not random, and they can always be easily predicted by Eve.
 
