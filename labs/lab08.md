@@ -2,7 +2,7 @@
 layout: default
 tags: [labs, seed]
 dirname: 'lab08'
-dircode: '07_ake'
+dircode: '08_rsa'
 labprefix: 'Lab 08'
 labtitle: 'RSA Public-Key Encryption and Signature Lab'
 title: 'Lab 08: RSA Public-Key Encryption and Signature Lab'
