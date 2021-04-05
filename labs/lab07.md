@@ -7,7 +7,7 @@ labprefix: 'Lab 07'
 labtitle: 'MD5 Collision Attack Lab'
 title: 'Lab 07: MD5 Collision Attack Lab'
 duedate: 'Tuesday [04/13/2021] @ 11:59 AM (MST)'
-released: False
+released: True
 ---
 
 # {{page.labprefix}}: {{page.labtitle}}
