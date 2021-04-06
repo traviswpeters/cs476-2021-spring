@@ -202,15 +202,15 @@ Please provide justification.
 
 #### Task 4.3: CBC & Data Corruption
 
-Please repeat Task 5.2, but this time use the CBC mode when encrypting/decrypting data.
+Please repeat Task 4.2, but this time use the CBC mode when encrypting/decrypting data.
 
 #### Task 4.4: CFB & Data Corruption
 
-Please repeat Task 5.2, but this time use the CFB mode when encrypting/decrypting data.
+Please repeat Task 4.2, but this time use the CFB mode when encrypting/decrypting data.
 
 #### Task 4.5: OFB & Data Corruption
 
-Please repeat Task 5.2, but this time use the OFB mode when encrypting/decrypting data.
+Please repeat Task 4.2, but this time use the OFB mode when encrypting/decrypting data.
 
 ### Task 5: Common Mistakes with IVs
 
