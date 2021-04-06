@@ -89,7 +89,7 @@ $ openssl enc -CIPHERTYPE -e -in plain.txt -out cipher.bin -K KEY -iv IV -p
 
 To view the manual pages, type `man openssl` and `man enc`.
 
-You need to replace `-CIPHERTYPE` with a specific cipher type, such as `-aes-128-cbc`, `-bf-cbc`, `-aes-128-cfb`, etc.
+You need to replace `-CIPHERTYPE` with a specific cipher type, such as `-aes-128-cbc`, `-aes-128-cfb`, `-aes-128-ofb`, etc.
 
 You also need to replace `KEY` and `IV` with the encryption/decryption key and initialization vector, respectively.
 
