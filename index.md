@@ -477,7 +477,7 @@ If you have any questions, please contact me.
 <!-- [activity](){:.activity} -->
 <!-- - [What is Cryptography - Introduction to Cryptography](https://www.youtube.com/watch?v=68Pqir_moqA){:.video} <span class="text-muted">(4:31) --- YouTube</span> -->
 <!-- - [<i class="fas fa-play-circle"></i> 1. Intro to Secret Key Encryption](https://montana.techsmithrelay.com/iWCI) <span class="text-muted">(4:07)</span> -->
-- [Intro slides](files/cs476-crypto-intro.pdf){:.slides}
+- [Intro slides](files/cs476-crypto.pdf){:.slides}
 - [Cryptography 101 - The Basics](https://www.youtube.com/watch?v=fNC3jCCGJ0o){:.video} <span class="text-muted">(8:56)</span>
 - [History and Evolution of Cryptography and Cryptanalysis](https://www.youtube.com/watch?v=z9Qi5mDSYb8){:.video} <span class="text-muted">(5:49)</span>
 - [Cryptography: The Science of Making and Breaking Codes](https://www.youtube.com/watch?v=-yFZGF8FHSg){:.video} <span class="text-muted">(8:20)</span>
@@ -493,7 +493,7 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">03/25/2021 (R)</td>
 <td markdown="span" markdown="1">
-- Help Session <span class="text-muted">(Optional)</span>
+- Help Session <span class="text-muted">(optional)</span>
 </td>
 <td markdown="span" markdown="1">
 </td>
@@ -525,10 +525,10 @@ If you have any questions, please contact me.
   / [Block Cipher Mode of Operation (Wiki)](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation){:.reading}
   <!-- - [modes of operation - slides](https://www.cs.columbia.edu/~smb/classes/s09/l05.pdf) -->
 - [Padding](https://montana.techsmithrelay.com/bTYJ){:.video} <span class="text-muted">(14:02)</span>
-  / [slides](files/cs476-crypto-padding.pdf){:.slides}
+  / [slides](files/cs476-crypto-ske-padding.pdf){:.slides}
   / [Padding (Wiki)](https://en.wikipedia.org/wiki/Padding_(cryptography)){:.reading}
 - [Initialization Vectors & Common Mistakes](https://montana.techsmithrelay.com/7R9e){:.video} <span class="text-muted">(17:24)</span>
-  / [slides](files/cs476-crypto-IVs.pdf){:.slides}
+  / [slides](files/cs476-crypto-ske-IVs.pdf){:.slides}
   / [Initialization Vector (Wiki)](https://en.wikipedia.org/wiki/Initialization_vector){:.reading}
 <!-- - [Programming Using Crypto APIs (Part I)](https://montana.techsmithrelay.com/PwiE){:.video} <span class="text-muted">(11:42)</span> -->
 <!-- - [Programming Using Crypto APIs (Part II)](https://montana.techsmithrelay.com/cjgP){:.video} <span class="text-muted">(20:23)</span> -->
@@ -542,7 +542,7 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">04/01/2021 (R)</td>
 <td markdown="span" markdown="1">
-- Help Session <span class="text-muted">(Optional)</span>
+- Help Session <span class="text-muted">(optional)</span>
 </td>
 <td markdown="span" markdown="1">
 </td>
@@ -593,7 +593,7 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">04/08/2021 (R)</td>
 <td markdown="span" markdown="1">
-- Help Session <span class="text-muted">(Optional)</span>
+- Help Session <span class="text-muted">(optional)</span>
 </td>
 <td markdown="span" markdown="1">
 </td>
@@ -613,15 +613,27 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">04/13/2021 (T)</td>
 <td markdown="span" markdown="1">
-<!-- - Asynchronous Class <span class="text-muted">(see videos & readings below)</span> / Help Session <span class="text-muted">(optional)</span> -->
-<!-- - [Intro to Public Key Cryptography](https://montana.techsmithrelay.com/BiFm){:.video} <span class="text-muted">(11:21)</span> -->
-<!-- - [Diffie-Hellman Key Exchange](https://montana.techsmithrelay.com/bpww){:.video} <span class="text-muted">(16:40)</span> -->
-<!-- - [The RSA Algorithm (Overview)](https://montana.techsmithrelay.com/Sm8j){:.video} <span class="text-muted">(16:05)</span> -->
-<!-- - [The RSA Encryption Algorithm (1 of 2: Computing an Example)](https://www.youtube.com/watch?v=4zahvcJ9glg){:.video} <span class="text-muted">(8:39)</span> -->
-<!-- - [The RSA Encryption Algorithm (2 of 2: Generating the Keys)](https://www.youtube.com/watch?v=oOcTVTpUsPQ){:.video} <span class="text-muted">(11:54)</span> -->
-<!-- - [Using OpenSSL Tools to Conduct RSA Operations](https://montana.techsmithrelay.com/y7I8){:.video} <span class="text-muted">(18:21)</span> -->
-<!-- - [RSA and Padding](https://montana.techsmithrelay.com/7Po6){:.video} <span class="text-muted">(16:40)</span> -->
-<!-- - [Digital Signatures](https://montana.techsmithrelay.com/9QyP){:.video} <span class="text-muted">(18:03)</span> -->
+- Asynchronous Class <span class="text-muted">(see videos & readings below)</span> / Help Session <span class="text-muted">(optional)</span>
+- [Intro to Public Key Cryptography](https://montana.techsmithrelay.com/BiFm){:.video} <span class="text-muted">(11:21)</span>
+/ [slides](files/cs476-crypto-pke.pdf){:.slides}
+- [Diffie-Hellman Key Exchange](https://montana.techsmithrelay.com/bpww){:.video} <span class="text-muted">(16:40)</span>
+/ [slides](files/cs476-crypto-pke-dh.pdf){:.slides}
+- [The RSA Algorithm (Overview)](https://montana.techsmithrelay.com/Sm8j){:.video} <span class="text-muted">(16:05)</span>
+/ [slides](files/cs476-crypto-pke-rsa.pdf){:.slides}
+- [The RSA Encryption Algorithm (1 of 2: Computing an Example)](https://www.youtube.com/watch?v=4zahvcJ9glg){:.video} <span class="text-muted">(8:39)</span>
+- [The RSA Encryption Algorithm (2 of 2: Generating the Keys)](https://www.youtube.com/watch?v=oOcTVTpUsPQ){:.video} <span class="text-muted">(11:54)</span>
+- [Using OpenSSL Tools to Conduct RSA Operations](https://montana.techsmithrelay.com/y7I8){:.video} <span class="text-muted">(18:21)</span>
+/ [slides](files/cs476-crypto-pke-rsa-openssl.pdf){:.slides}
+- [RSA and Padding](https://montana.techsmithrelay.com/7Po6){:.video} <span class="text-muted">(16:40)</span>
+/ [slides](files/cs476-crypto-pke-rsa-padding.pdf){:.slides}
+- [Digital Signatures](https://montana.techsmithrelay.com/9QyP){:.video} <span class="text-muted">(18:03)</span>
+/ [slides](files/cs476-crypto-pke-rsa-digital-signatures.pdf){:.slides}
+<!-- <br/><br/> -->
+<!-- - _Recommended Extras:_ -->
+<!-- - [Programming Using Symmetric Key Crypto APIs (Part I)](https://montana.techsmithrelay.com/PwiE){:.video} <span class="text-muted">(11:42)</span> -->
+<!-- - [Programming Using Symmetric Key Crypto APIs (Part II)](https://montana.techsmithrelay.com/cjgP){:.video} <span class="text-muted">(20:23)</span> -->
+<!-- - [Programming Using Symmetric Key Crypto APIs (slides)](files/cs476-crypto-ske-programming.pdf){:.reading} -->
+<!-- - [Programming Using Asymmetric Key Crypto APIs (slides)](files/cs476-crypto-pke-programming.pdf){:.reading} -->
 <!-- OLD APPROACH (BELOW)? -->
 <!-- - [<i class="fas fa-play-circle"></i> X. The RSA Algorithm (Part I): Modulo Operation](https://montana.techsmithrelay.com/) <span class="text-muted">(:)</span> -->
 <!-- - [<i class="fas fa-play-circle"></i> X. The RSA Algorithm (Part II): Euler’s Theorem](https://montana.techsmithrelay.com/) <span class="text-muted">(:)</span> -->
@@ -642,7 +654,7 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">04/15/2021 (R)</td>
 <td markdown="span" markdown="1">
-<!-- - Help Session <span class="text-muted">(Optional)</span> -->
+- Help Session <span class="text-muted">(optional)</span>
 </td>
 <td markdown="span" markdown="1">
 </td>
@@ -672,8 +684,8 @@ If you have any questions, please contact me.
 <!-- - [class activity](files/StudentClassActivity.pdf){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
-- Lab 08 Due!
-<!-- - [Lab 08](labs/lab08) Due! -->
+<!-- - Lab 08 Due! -->
+- [Lab 08](labs/lab08) Due!
 </td>
 </tr>
 

@@ -20,19 +20,19 @@ Adapted from SEED Labs: A Hands-on Lab for Security Education.
 
 RSA (Rivest-Shamir-Adleman) is one of the first public-key cryptosystems and is widely used for secure communication.
 The RSA algorithm first generates two large random prime numbers,
- and then use them to generate public and private key pairs,
+ and then uses them to generate public and private key pairs,
  which can be used to do encryption, decryption, digital signature generation, and digital signature verification.
-The RSA algorithm is built upon number theories, and it can be quite easily implemented with the support of libraries.
-
+The RSA algorithm is built upon ideas from number theory, and it can be easily implemented with the support of libraries.
 The learning objective of this lab is for students to gain hands-on experience with the RSA algorithm.
-From lectures, students should have learned the theoretic part of the RSA algorithm,
+<!-- From lectures, students should have learned the theoretic parts of the RSA algorithm,
  so they know how to generate public and private keys and can conduct operations,
- such as encryption, decryption, signature generation, and signature verification.
-This lab enhances student's learning by requiring students to conduct RSA operations on actual numbers,
-and see whether they can perform the calculations correctly.
-In this way, students are given a chance to apply the theory behind RSA that we learned in class.
+ such as encryption, decryption, signature generation, and signature verification. -->
+<!-- This lab enhances student's learning by requiring students to conduct RSA operations on actual numbers, -->
+<!-- and see whether they can perform the calculations correctly. -->
+<!-- In this way, students are given a chance to apply the theory behind RSA that we learned in class. -->
 
 This lab covers the following topics:
+
 - Public-key cryptography
 - The RSA algorithm and key generation
 - Big number calculation
@@ -51,18 +51,23 @@ This lab covers the following topics:
 This lab has been tested on the pre-built SEED VM (Ubuntu 20.04 VM).
 {:.subtitletext}
 
-<center class="mb-3 text-danger" markdown="span">
-_To avoid mistakes, please avoid manually typing the numbers used in the lab tasks. <br/>
-Instead, copy and paste the numbers from this page._
-</center>
+<div class="alert alert-dismissible alert-danger text-center">
+To avoid mistakes, please avoid manually typing the numbers used in the lab tasks. <br/>
+Instead, copy and paste the numbers from this page.
+</div>
 
 <!-- BEGIN Special Section (Use Bootstrap "Card" Styles). This is nice for formatting background, setup, special instructions, etc. -->
 <div class="card bg-secondary border-primary" markdown="1">
 <div class="card-body" markdown="1">
 
-#### Setup
+### Background
 
-This lab requires the `openssl` library, which should already be installed on the Ubuntu 16.04.
+This section covers a variety of topics that will be helpful throughout this lab.
+
+#### Setup
+{:.mt-3}
+
+This lab requires the `openssl` library, which should already be installed on the SEED VM.
 
 If you find that the the `openssl` library is _**not**_ installed, please run the following two commands to install it:
 
@@ -71,7 +76,8 @@ $ sudo apt-get update
 $ sudo apt-get install libssl-dev
 ```
 
-#### Background
+#### BIGNUM APIs
+{:.mt-3}
 
 The RSA algorithm involves computations on large numbers.
 These computations cannot be directly conducted using simple arithmetic operators in programs,
@@ -86,9 +92,6 @@ In this lab, we will use the Big Number library provided by `openssl`.
 To use this library, we will define each big number as a `BIGNUM` type,
 and then use the APIs provided by the library for various operations,
 such as addition, multiplication, exponentiation, modular operations, etc.
-
-##### BIGNUM APIs
-{:.mt-3}
 
 All of the big number APIs can be found at [https://linux.die.net/man/3/bn](https://linux.die.net/man/3/bn).
 
@@ -138,7 +141,7 @@ void printBN(char *msg, BIGNUM * a)
 }
 ```
 
-Compute $$res = a−b$$ and $$res = a+b$$:
+Compute $$\mathtt{res} = a−b$$ and $$\mathtt{res} = a+b$$:
 
 ```bash
 BN_sub(res, a, b);
@@ -147,25 +150,25 @@ BN_add(res, a, b);
 
 _Notice that a `BN_CTX` structure is needed in the following API calls._
 
-Compute $$res = a ∗ b$$:  
+Compute $$\mathtt{res} = a ∗ b$$:  
 
 ```bash
 BN_mul(res, a, b, ctx)
 ```
 
-Compute $$res = a * b\ mod\ n$$:
+Compute $$\mathtt{res} = a * b\ mod\ n$$:
 
 ```bash
 BN_mod_mul(res, a, b, n, ctx)
 ```
 
-Compute $$res = a^c\ mod\ n$$:
+Compute $$\mathtt{res} = a^c\ mod\ n$$:
 
 ```bash
 BN_mod_exp(res, a, c, n, ctx)
 ```
 
-Compute modular inverse, i.e., given $$a$$, find $$b$$, such that $$a*b\ mod\ n = 1$$.
+Compute modular inverse, i.e., given $$a$$, find $$b$$, such that $$a*b\ \mathtt{mod}\ n = 1$$.
 The value $$b$$ is called the inverse of $$a$$, with respect to modular $$n$$.
 
 ```bash
@@ -178,11 +181,11 @@ BN_mod_inverse(b, a, n, ctx);
 Here, we show a complete example.
 In this example, we initialize three `BIGNUM` variables,
 $$a$$, $$b$$, and $$n$$;
-we then compute $$a * b$$ and $$(a^b mod\ n)$$.
+we then compute $$a * b$$ and $$(a^b \; \mathtt{mod} \; n)$$.
 
-```bash
+```c
 // bn_sample.c
-
+//
 // To compile this example program, run:
 //    $ gcc bn_sample.c -lcrypto
 
@@ -228,7 +231,6 @@ int main ()
 </div>
 <!-- END Special Section -->
 
-
 ### Task 1: Deriving the Private Key
 Let $$p$$, $$q$$, and $$e$$ be three prime numbers.
 Let $$n = p*q$$.
@@ -242,10 +244,10 @@ p = F7E75FDC469067FFDC4E847C51F452DF
 q = E85CED54AF57E53E092113E62F436F4F
 e = 0D88C3
 ```
-**Hint:** Euler's formula is useful here ;)
 
-_**NOTE:** It should be noted that although $$p$$ and $$q$$ used in this task are quite large numbers,
-they are not large enough to be secure.
+_**HINT:** Euler's formula is useful here ;-)_
+
+_**NOTE:** Although $$p$$ and $$q$$ used in this task are quite large, they are not large enough to be secure.
 We intentionally make them small for the sake of simplicity.
 In practice, these numbers should be at least 512 bits long (the ones used here are only 128 bits)._
 
@@ -253,18 +255,19 @@ In practice, these numbers should be at least 512 bits long (the ones used here 
 
 Let $$(e, n)$$ be the public key.
 Please encrypt the message $$m$$ provided below.
-After you encrypt the message, you should decrypt it (we provide you with the private key, $$d$$) to verify that you can recover the message.
 
-_**Note:**_ We first need to convert this ASCII string to a hex string, and then convert the hex string to a `BIGNUM` using the hex-to-bn API `BN_hex2bn()`.
+After you encrypt the message, you should decrypt it---we provide you with the private key, $$d$$---to verify that you can recover the message.
+
+_**Note:**_ We first need to convert this ASCII string to a hex string, and then convert the hex string to a `BIGNUM` using the `BN_hex2bn()` API.
 You can use whatever utility is easiest for you to do this conversion (e.g., `xxd`, `python`).
 For reference, I recommend the following python commands that can be used to convert a plain ASCII string to a hex string and vice versa.
 
 ```python
-# convert ASCII to hex-encoded string
+# ("encode") convert ASCII to hex-encoded string
 $ python -c 'print("A top secret!".encode("hex"))'
 4120746f702073656372657421
 
-# convert hex-encoded string ("decode") to ASCII
+# ("decode") convert hex-encoded string to ASCII
 $ python -c 'print("4120746f702073656372657421".decode("hex"))'
 A top secret!
 ```
@@ -289,38 +292,39 @@ Please decrypt the following ciphertext $$C$$, and convert it back to a plain AS
 C = 8C0F971DF2F3672B28811407E2DABBE1DA0FEBBBDFC7DCB67396567EA1E2493F
 ```
 
-You can use the following `python` command to convert a hex string back to to a plain ASCII string.
+<!-- Recall the `python` command from above that can be used to convert a hex string back to to a plain ASCII string. -->
 
-```python
-$ python  -c 'print("4120746f702073656372657421".decode("hex"))'
-A top secret!
-```
+## Lab Tasks - Grad Student Credit
+
+In addition to the problems above, students enrolled in CSCI 594 must also complete the following problems.
+
+Students enrolled in CSCI 476 are encouraged to try these problems, but are not expected to submit solutions for these problems.
 
 ### Task 4: Signing a Message
 
 The public/private keys used in this task are the same as the ones used in Task 2.
 
-Please generate a signature for the following message $$M$$
-(please directly sign this message, instead of signing its hash value):
+Please generate a signature for the following message $$M$$.
+_(To be clear, please directly sign the message $$M$$, instead of signing its hash value.)_
 
-```bash
+```
 M = I owe you $2000.
 ```
 
-Please make a slight change to the message $$M$$, such as changing $2000 to $3000, and sign the modified message.
+Next, please make a slight change to the message $$M$$, such as changing $2000 to $3000, and sign the modified message as well.
 
 Compare both signatures and describe what you observe.
 
 ### Task 5: Verifying a Signature
 
-Bob receives a message **$$M$$ = "Launch a missile."** from Alice, with her signature $$S$$.
+Assume that Bob receives a message **$$M$$ = "Launch a missile."** from Alice, with her signature $$S$$.
 We know that Alice's public key is $$(e, n)$$.
 
-Please verify whether the signature is indeed Alice's or not.
+Please verify whether or not the signature is indeed Alice's.
 
 The public key and signature (hexadecimal) are as follows:
 
-```bash
+```
 M = Launch a missile.
 S = 643D6F34902D9C7EC90CB0B2BCA36C47FA37165C0005CAB026C0542CBDB6802F
 e = 010001 (this hex value equals to decimal 65537)
@@ -329,16 +333,14 @@ n = AE1CD4DC432798D933779FBD46C6E1247F0CF1233595113AA51B450F18116115
 
 Suppose that the signature is corrupted, such that the last byte of the signature changes from **2F** to **3F**,
 i.e, only one bit is changed.
+
 Please repeat this task, and describe what will happen during the verification process.
 
 
+<!--
+### Task 6: Manually Verifying an X.509 Certificate
 
-
-
-<!-- GRAD CREDIT? EXTRA CREDIT?! -->
-### GRAD CREDIT? / Task 6: Manually Verifying an X.509 Certificate
-
-In this task, we will manually verify an X.509 certificate using a program that you write.
+In this task, you will manually verify an X.509 certificate using a program that you write.
 An X.509 certificate contains data about a public key and an issuer's signature over the data.
 We will download a real X.509 certificate from a web server,
 get its issuer's public key (certificates for Certificate Authorities can be downloaded from your browser),
@@ -454,6 +456,7 @@ $ sha256sum c0_body.bin
 Now we have all the information, including the CA's public key, the CA's signature, and the body of the server's certificate.
 We can run our own program to verify whether the signature is valid or not.
 While `openssl` does provide a command to verify the certificate, students are required to use their own programs to do the verification.
+-->
 
 <!-- Submission Instructions -->
 {% include lab_submission.html %}
