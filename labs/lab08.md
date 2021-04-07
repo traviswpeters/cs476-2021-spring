@@ -7,7 +7,7 @@ labprefix: 'Lab 08'
 labtitle: 'RSA Public-Key Encryption and Signature Lab'
 title: 'Lab 08: RSA Public-Key Encryption and Signature Lab'
 duedate: 'Tuesday [04/20/2021] @ 11:59 AM (MST)'
-released: False
+released: True
 ---
 
 # {{page.labprefix}}: {{page.labtitle}}
