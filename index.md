@@ -628,12 +628,17 @@ If you have any questions, please contact me.
 / [slides](files/cs476-crypto-pke-rsa-padding.pdf){:.slides}
 - [Digital Signatures](https://montana.techsmithrelay.com/9QyP){:.video} <span class="text-muted">(18:03)</span>
 / [slides](files/cs476-crypto-pke-rsa-digital-signatures.pdf){:.slides}
-<!-- <br/><br/> -->
-<!-- - _Recommended Extras:_ -->
+<br/><br/>
+- _Recommended Extras:_
 <!-- - [Programming Using Symmetric Key Crypto APIs (Part I)](https://montana.techsmithrelay.com/PwiE){:.video} <span class="text-muted">(11:42)</span> -->
 <!-- - [Programming Using Symmetric Key Crypto APIs (Part II)](https://montana.techsmithrelay.com/cjgP){:.video} <span class="text-muted">(20:23)</span> -->
 <!-- - [Programming Using Symmetric Key Crypto APIs (slides)](files/cs476-crypto-ske-programming.pdf){:.reading} -->
-<!-- - [Programming Using Asymmetric Key Crypto APIs (slides)](files/cs476-crypto-pke-programming.pdf){:.reading} -->
+- Programming Using Symmetric Key Crypto APIs:
+  [Part I](https://montana.techsmithrelay.com/PwiE){:.video} <span class="text-muted">(11:42)</span>
+  / [Part II](https://montana.techsmithrelay.com/cjgP){:.video} <span class="text-muted">(20:23)</span>
+  / [slides](files/cs476-crypto-ske-programming.pdf){:.slides}
+- Programming Using Asymmetric Key Crypto APIs:
+  [slides](files/cs476-crypto-pke-programming.pdf){:.slides}
 <!-- OLD APPROACH (BELOW)? -->
 <!-- - [<i class="fas fa-play-circle"></i> X. The RSA Algorithm (Part I): Modulo Operation](https://montana.techsmithrelay.com/) <span class="text-muted">(:)</span> -->
 <!-- - [<i class="fas fa-play-circle"></i> X. The RSA Algorithm (Part II): Euler’s Theorem](https://montana.techsmithrelay.com/) <span class="text-muted">(:)</span> -->
@@ -716,9 +721,6 @@ If you have any questions, please contact me.
 <td markdown="span">04/27/2021 (T)</td>
 <td markdown="span" markdown="1">
 - _No Class_
-<!-- - [video](){:.video} -->
-<!-- [slides](files/){:.slides} -->
-<!-- [activity](){:.activity} -->
 <!-- - [<i class="fas fa-play-circle"></i> Course Wrap-Up _(Final Video...)_](https://montana.techsmithrelay.com/xYPl) <span class="text-muted">(21:41)</span> -->
 </td>
 <td markdown="span" markdown="1">
@@ -731,9 +733,6 @@ If you have any questions, please contact me.
 <td markdown="span">04/29/2021 (R)</td>
 <td markdown="span" markdown="1">
 - _No Class_
-<!-- - [video](){:.video} -->
-<!-- [slides](files/){:.slides} -->
-<!-- [activity](){:.activity} -->
 </td>
 <td markdown="span" markdown="1">
 </td>
