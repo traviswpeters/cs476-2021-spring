@@ -245,10 +245,12 @@ q = E85CED54AF57E53E092113E62F436F4F
 e = 0D88C3
 ```
 
-_**HINT:** Euler's formula is useful here ;-)_
+_**HINT 1:** Euler's formula is useful here ;-)_
 
-_**NOTE:** Although $$p$$ and $$q$$ used in this task are quite large, they are not large enough to be secure.
-We intentionally make them small for the sake of simplicity.
+_**HINT 2:** Note that we give an example of how to compute the modular inverse in the examples above..._
+
+> _**NOTE:** Although $$p$$ and $$q$$ used in this task are quite large, they are not large enough to be secure.
+We intentionally make them small in this task for the sake of simplicity.
 In practice, these numbers should be at least 512 bits long (the ones used here are only 128 bits)._
 
 ### Task 2: Encrypting a Message
