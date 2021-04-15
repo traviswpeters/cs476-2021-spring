@@ -42,9 +42,9 @@ This lab covers the following topics:
 
 ###### Resources
 
-- Chapter 23 in {{ site.data.settings.textbook }}
 - The BIGNUM API (Linux man page): [https://linux.die.net/man/3/bn](https://linux.die.net/man/3/bn)
 - The OpenSSL documentation is also great (search on "BN_"): [https://www.openssl.org/docs/man1.1.0/man3/](https://www.openssl.org/docs/man1.1.0/man3/)
+- Chapter 23 in the [SEED Textbook]({{site.data.settings.textbookseedlink}}).
 
 ## Lab Tasks
 {:.titletext}
