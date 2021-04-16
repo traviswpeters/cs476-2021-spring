@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="projects.xsd"?>
+<projects>
+    <project>
+        <name>Project 1</name>
+        <projectID>15276</projectID>
+        <lastModified>2020-06-20 08:05</lastModified>
+        <data>
+            Some project data
+        </data>
+    </project>
+    <project>
+        <name>Project 1</name>
+        <projectID>16854</projectID>
+        <lastModified>2020-06-20 12:54</lastModified>
+        <data>
+            Some different project data
+        </data>
+    </project>
+    <project>
+        <name>Projecty McProjectface</name>
+        <projectID>2756</projectID>
+        <lastModified>2020-12-20 00:15</lastModified>
+        <data>
+            Some projecty data
+        </data>
+    </project>
+    <project>
+        <name>Project YoRHa</name>
+        <projectID>5013</projectID>
+        <lastModified>2021-01-30 16:45</lastModified>
+        <data>
+            Some android data
+        </data>
+    </project>
+</projects>

@@ -678,15 +678,21 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">04/20/2021 (T)</td>
 <td markdown="span" markdown="1">
-- "Security in the Real World: Crypto" with [Ryan Darnell](https://www.linkedin.com/in/darneseytech) (MSU alum, now @ Rockwell Automation)
+- "Security in the Real World: Crypto" w/ [Ryan Darnell](https://www.linkedin.com/in/darneseytech) (MSU alum, now @ Rockwell Automation)
 <!-- - [video](){:.video} -->
 <!-- [slides](files/){:.slides} -->
-<!-- - _>> Pre-work: Please review the following links before this class._ -->
-<!-- - [An Overview of Symmetric Encryption and the Key Lifecycle](https://www.cryptomathic.com/news-events/blog/an-overview-of-symmetric-encryption-and-the-key-lifecycle){:.reading} -->
-<!-- - [Block Cipher Mode of Operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation){:.reading} -->
-<!-- - [GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode){:.reading} -->
-<!-- - [pre-class activity](files/StudentReferenceExercises.pdf){:.activity} -->
-<!-- - [class activity](files/StudentClassActivity.pdf){:.activity} -->
+- _NOTE: The slides & recording will be posted sometime after class._{:.text-muted}
+- [class activity](files/student-share-ryan-darnell/activity.pdf){:.slides}
+  / [projects.xml](files/student-share-ryan-darnell/projects.xml){:.slides}
+  / [projects.xsd](files/student-share-ryan-darnell/projects.xsd){:.slides}
+<br/><br/>
+- _Pre-work: Please review the following links before this class._
+- [Pre-Class Exercises](files/student-share-ryan-darnell/exercises.pdf){:.slides} _>> A good review - you do not need to submit anything for these exercises._{:.text-muted}
+- [CyberChef](https://gchq.github.io/CyberChef/){:.code} _>> A great data/crypto tool!_{:.text-muted}
+- [Block Cipher Mode of Operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation){:.reading}
+- [Galois/Counter Mode (GCM)](https://en.wikipedia.org/wiki/Galois/Counter_Mode){:.reading}
+- [Stream Ciphers](https://en.wikipedia.org/wiki/Stream_cipher){:.reading}
+- [An Overview of Symmetric Encryption and the Key Lifecycle](https://www.cryptomathic.com/news-events/blog/an-overview-of-symmetric-encryption-and-the-key-lifecycle){:.reading}
 </td>
 <td markdown="span" markdown="1">
 <!-- - Lab 08 Due! -->
@@ -698,7 +704,8 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">04/22/2021 (R)</td>
 <td markdown="span" markdown="1">
-- "Security in the Real World: Compliance" with [Reese Pearsall](https://www.linkedin.com/in/reese-pearsall-662084126) (MSU alum, current M.S. student, also @ Hoplite Industries)
+- "Security in the Real World: Compliance" w/ [Reese Pearsall](https://www.linkedin.com/in/reese-pearsall-662084126) (MSU alum, current M.S. student, also @ Hoplite Industries)
+- _NOTE: The slides & recording will be posted sometime after class._{:.text-muted}
 <!-- - [video](){:.video} -->
 <!-- [slides](files/){:.slides} -->
 <!-- [activity](){:.activity} -->
@@ -725,6 +732,7 @@ If you have any questions, please contact me.
 </td>
 <td markdown="span" markdown="1">
 - Final Lab Due!
+<!-- - [Final Lab](labs/final) Due! -->
 </td>
 </tr>
 
