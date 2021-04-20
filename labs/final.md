@@ -6,7 +6,7 @@ dirname: 'final'
 labprefix: 'Lab 09'
 labtitle: 'Final Lab'
 title: 'Final Lab'
-duedate: 'Tuesday [04/27/2021] @ 11:59 AM (MST)'
+duedate: 'Tuesday [04/27/2021] @ 11:59 AM (MT)'
 released: True
 ---
 
