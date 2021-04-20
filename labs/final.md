@@ -204,11 +204,11 @@ Again, for your demonstration, you'll need to compile [audit2.c] and make the re
 
 In this task you will demonstrate your understanding of SQL Injection attacks.
 
-> In tasks 5.2 and 5.3 we ask that you not only explain your approach,
+> In tasks 4.2 and 4.3 we ask that you not only explain your approach,
 but also that you **demonstrate** that your approach can be successful.
 For the purposes of this task, you may take whatever approach you like to conduct your demonstration.
 For example, you may modify any of the code/examples from the lab on SQL Injections,
-you may use the MySQL commandline, etc.
+you may use the MySQL command line, etc.
 Whatever you do, you must explain your setup and your approach,
 and you must present evidence that your attack was successful.
 
