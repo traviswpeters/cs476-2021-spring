@@ -731,8 +731,8 @@ If you have any questions, please contact me.
 <!-- - [<i class="fas fa-play-circle"></i> Course Wrap-Up _(Final Video...)_](https://montana.techsmithrelay.com/xYPl) <span class="text-muted">(21:41)</span> -->
 </td>
 <td markdown="span" markdown="1">
-- Final Lab Due!
-<!-- - [Final Lab](labs/final) Due! -->
+<!-- - Final Lab Due! -->
+- [Final Lab](labs/final) Due!
 </td>
 </tr>
 

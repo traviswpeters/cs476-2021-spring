@@ -7,11 +7,18 @@ labprefix: 'Lab 09'
 labtitle: 'Final Lab'
 title: 'Final Lab'
 duedate: 'Tuesday [04/27/2021] @ 11:59 AM (MST)'
-released: False
+released: True
 ---
 
 # {{page.labprefix}}: {{page.labtitle}}
 {:.pb-4}
+
+<div class="alert alert-dismissible alert-danger text-center" markdown="1">
+_**Please Remember:**_ <br/>
+The deadline for this lab is a hard deadline. <br/>
+No submissions will be graded after **{{page.duedate}}**.
+{:.lead}
+</div>
 
 ## {{page.labtitle}}
 {:.titletext}
@@ -38,18 +45,18 @@ _(I think it should take approximately 3 hours to actually complete the final la
 ### Statement of Academic Honesty
 <!-- ### Statement of Academic Honesty and Integrity -->
 
-You _**must**_ include the following statement at the top of your submission (with your first name, last name, and Net ID filled in).
+You _**must**_ include the following statement at the top of your submission (substituting your first name, last name, and Net ID, of course).
 
 > I **firstname lastname (Net ID)** agree that the solutions presented below are entirely my own.<br/>
 > If I have used resources that are not my own, I have included appropriate citations.
 
+Failure to include this statement will result in an immediate 0 on the Final Lab; _we will not grade submissions without this statement!_
+
 Failure to adhere to this policy will result in an immediate 0 on the Final Lab.
 
 ### Task 1: Short Answer
-<!-- **(50 points)**{:.score} -->
-{:.titletext}
-Short Answer. Please be clear and concise. (We only want to see that you understand what these concepts are.)
-{:.subtitletext}
+
+> Short Answer. Please be clear and concise. (We only want to see that you understand what these concepts are.)
 
 ##### Task 1.1 **(5 points)**{:.score}
 
@@ -114,30 +121,29 @@ Identify at least three countermeasures to buffer-overflow attacks and briefly d
 
 
 ### Task 2: Guest Visit Questions
-<!-- **(20 points)**{:.score} -->
+
+> Long Answer. These problems may warrant more elaborate responses than in Task 1, but please try to keep your responses clear and concise.
 
 #### Task 2.1: Security in the Real World: Crypto **(10 points)**{:.score}
 
-Please recall our class on 4/20 with a guest visit from Ryan Darnell.
+Please recall our class on 4/20 with a guest visit from **Ryan Darnell**.
 During this class we discussed a real-world scenario where you needed to design a feature that used
 an assortment of ideas we've learned about from cryptography to protect project files.
 Your primary objectives were to
 (1) securely store sensitive project data, while
 (2) trying to minimize overhead and data loss (e.g., due to partial file corruption).
 
-Please write a brief summary of the approach you settled on, the pros/cons, and any potential challenges/issues with your approach.
+Please write a brief summary of the approach you settled on, the pros/cons, and any potential challenges or issues with your approach.
 
 #### Task 2.2: Security in the Real World: Compliance **(10 points)**{:.score}
 
-Please recall our class on 4/22 with a guest visit from Reese Pearsall.
+Please recall our class on 4/22 with a guest visit from **Reese Pearsall**.
 During this class we learned about real-world work that aims to automate aspects of compliance.
 
 Please answer the following questions:
-- What is compliance?
-- What is the purpose of compliance?
-- What is an example of something that one may want to check to ensure compliance?
-
-
+- In your own words, what is compliance and why is compliance important?
+- What is a compliance framework?
+- Please provide three (3) examples of a compliance rule/test, and briefly explain why this check could be helpful towards ensuring compliance?
 
 
 
@@ -147,7 +153,6 @@ Please answer the following questions:
 
 
 ### Task 3: I Got 99 Problems But Auditing Ain't One
-<!-- **(15 points)**{:.score} -->
 
 Early in the semester we studied Set-UID programs and considered scenarios where Set-UID programs can be useful.
 We considered various examples of Set-UID programs.
@@ -160,7 +165,7 @@ and you will demonstrate your understanding of the Set-UID mechanism as well as 
 [audit2.c]: https://gist.github.com/traviswpeters/e9786c9d8ff9cea79a78c76343953e93
 
 > For these tasks, you'll need [audit.c] and [audit2.c].
-Both programs are "gists" stored on GitHub - click the link to access them.
+<!-- Both programs are "gists" stored on GitHub - click the link to access them. -->
 
 ##### Task 3.1 **(5 points)**{:.score}
 
@@ -170,10 +175,10 @@ Please read the source code for [audit.c] and, a high-level, describe what this 
 
 ##### Task 3.2 **(5 points)**{:.score}
 
-With our understanding of [audit.c] (Task 3.1),
+With our understanding of [audit.c] from the previous task,
 please demonstrate how it can be exploited to run an arbitrary command with elevated privileges.
 
-For your demonstration, you'll need to make the executable produced from [audit.c] a privileged Set-UID program.
+For your demonstration, you'll need to compile [audit.c] and  make the resulting executable a privileged Set-UID program.
 
 ##### Task 3.3 **(5 points)**{:.score}
 
@@ -184,7 +189,7 @@ You can see that this new program uses `execve()` instead of `system()`, and now
 Please read the manual of the `more` program to find out what the auditor could do to gain more privileges beyond what is intended by the sysadmin.
 Your task is to explain, and demonstrate, how the auditor can exploit [audit2.c] to do something they should not be able to do.
 
-Again, for your demonstration, you'll need to make the executable produced from [audit2.c] a privileged Set-UID program.
+Again, for your demonstration, you'll need to compile [audit2.c] and make the resulting executable a privileged Set-UID program.
 
 
 
@@ -196,25 +201,25 @@ Again, for your demonstration, you'll need to make the executable produced from 
 
 
 ### Task 4: Inject This...
-<!-- **(15 points)**{:.score} -->
 
 In this task you will demonstrate your understanding of SQL Injection attacks.
 
-> _**NOTE:**_
-In tasks 5.2 and 5.3 we ask that you not only explain your approach,
+> In tasks 5.2 and 5.3 we ask that you not only explain your approach,
 but also that you **demonstrate** that your approach can be successful.
 For the purposes of this task, you may take whatever approach you like to conduct your demonstration.
 For example, you may modify any of the code/examples from the lab on SQL Injections,
 you may use the MySQL commandline, etc.
 Whatever you do, you must explain your setup and your approach,
-and you must present evidence that your attack is successful.
+and you must present evidence that your attack was successful.
 
 ##### Task 4.1 **(5 points)**{:.score}
-To defeat SQL injection attacks, a web application has implemented a filtering scheme at the client side:
+
+To defeat SQL injection attacks, a web application has implemented a filtering scheme on the client side:
 basically, on the page where users type their data, a filter is implemented using JavaScript.
 It removes any special character found in the data, such as apostrophes, characters for comments, and keywords reserved for SQL statements.
-Assume that the filtering logic does it job, and can remove all the code from the data;
-is this solution able to defeat SQL injection attacks? Explain.
+_**Assume that the filtering logic does it job, and can escape/remove all the code from the data**_.
+
+Is this solution able to defeat SQL injection attacks? Explain.
 
 ##### Task 4.2 **(5 points)**{:.score}
 
@@ -233,8 +238,9 @@ $sql = "INSERT INTO employee (Name, EID, Password, Salary)
 The following SQL statement is sent to the database, where `$eid` and `$passwd` contain data provided by the user.
 An attacker wants to try to get the database to run an arbitrary SQL statement.
 What should the attacker put inside `$eid` or `$passwd` to achieve that goal?
-(In this task, you can and should enable the code/database to be able to execute multiple statements. )
 Please demonstrate and explain your approach.
+
+> In this task, you can and should enable the code/database to be able to execute multiple statements. 
 
 ```sql
 $sql = "SELECT * FROM employee  
@@ -259,7 +265,6 @@ Students enrolled in CSCI 476 are encouraged to try these problems, but are not 
 
 
 ### Task 5: Can't Hack This
-<!-- **(20 points)**{:.score} -->
 
 In this task you will demonstrate your understanding of various cryptographic operations.
 Specifically, your objective will be to use your understanding of cryptographic operations to uncover secret information given only partial context.
@@ -267,18 +272,21 @@ Specifically, your objective will be to use your understanding of cryptographic 
 ##### Task 5.1: XOR Galore **(10 points)**{:.score}
 
 I've hidden some data using XOR with a single byte.
-(Don't forget to decode from hex first.)
 
 ```bash
 73626960647f6b206821204f21254f7d694f7624662065622127234f726927756d
 ```
 
 You need to figure out what byte I used and what the correct decoded data is.
-Note, you'll likely want to write a little, e.g., Python script, for this problem;
-a brute force solution to this problem is permissible.
-(**hint:** the correctly decoded data takes the form `crypto{ ...FLAG... }`)
 
-> **Credit:** This problem inspired by 'The Favorite byte' challenge on [cryptohack.org](https://cryptohack.org).
+You'll likely want to make sure you understand how the XOR operator works and/or write a little script (e.g., Python) to help you solve this problem.
+
+**Tips & Notes:**
+- Don't forget to decode from hex first.
+- The correctly decoded data takes the form `crypto{ ...FLAG... }`.
+- A brute force solution to this problem is permissible.
+
+> **Credit:** This problem was inspired by 'The Favorite byte' challenge on [cryptohack.org](https://cryptohack.org).
 
 ##### Task 5.2: I Lost My Key... Can You Help Me Out? **(10 points)**{:.score}
 
@@ -303,6 +311,7 @@ You know the following **facts**:
 
 **Tips & Notes:**
 - This does not require a lot of code. My solution is less than 30 lines of Python code.
+- If you are stuck, the _"Recommended Extras"_ in Week 14 have helpful videos and examples of using crypto APIs in Python programs.
 - A brute force approach is permissible and straightforward. (In fact, I'm not sure of a better way...)
 - I recommend storing the plaintext, ciphertext, and IV as variables in your program (no need to read these in from files).
 - In this task, you are supposed to write your own program to invoke the crypto library.
