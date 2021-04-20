@@ -679,10 +679,10 @@ If you have any questions, please contact me.
 <td markdown="span">04/20/2021 (T)</td>
 <td markdown="span" markdown="1">
 - "Security in the Real World: Crypto" w/ [Ryan Darnell](https://www.linkedin.com/in/darneseytech) (MSU alum, now @ [Rockwell Automation](https://www.rockwellautomation.com/en-us/products/hardware/allen-bradley.html))
+<!-- - _NOTE: The slides & recording will be posted sometime after class._{:.text-muted} -->
 - [video](https://zoom.us/rec/share/9mcaMGQ8GqBOH6G9-fXJrTA6RlS5UkeyfMy2waiM4ts4PT0Z-J12SWgz1SpIRdm7.mYRvyUjNzgEQrzi8){:.video}
 <!-- [slides](files/){:.slides} -->
-- _NOTE: The slides & recording will be posted sometime after class._{:.text-muted}
-- [class activity](files/student-share-ryan-darnell/activity.pdf){:.slides}
+  / [class activity (summary)](files/student-share-ryan-darnell/activity.pdf){:.slides}
   / [projects.xml](files/student-share-ryan-darnell/projects.xml){:.slides}
   / [projects.xsd](files/student-share-ryan-darnell/projects.xsd){:.slides}
 <br/><br/>
