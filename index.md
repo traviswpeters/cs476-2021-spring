@@ -678,11 +678,13 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">04/20/2021 (T)</td>
 <td markdown="span" markdown="1">
-- "Security in the Real World: Crypto" w/ [Ryan Darnell](https://www.linkedin.com/in/darneseytech) (MSU alum, now @ [Rockwell Automation](https://www.rockwellautomation.com/en-us/products/hardware/allen-bradley.html))
+- "Cryptography in the Real World" w/ [Ryan Darnell](https://www.linkedin.com/in/darneseytech)
+  (MSU alum, now @ [Rockwell Automation](https://www.rockwellautomation.com/en-us/products/hardware/allen-bradley.html))
 <!-- - _NOTE: The slides & recording will be posted sometime after class._{:.text-muted} -->
 - [video](https://zoom.us/rec/share/9mcaMGQ8GqBOH6G9-fXJrTA6RlS5UkeyfMy2waiM4ts4PT0Z-J12SWgz1SpIRdm7.mYRvyUjNzgEQrzi8){:.video}
-<!-- [slides](files/){:.slides} -->
-  / [class activity (summary)](files/student-share-ryan-darnell/activity.pdf){:.slides}
+  [slides](files/student-share-ryan-darnell/Cryptography_In_The_Real_World_Lecture.pdf){:.slides}
+  / [class activity (prompt)](files/student-share-ryan-darnell/activity.pdf){:.slides}
+  / [product overview](files/student-share-ryan-darnell/ProductOverview.pdf){:.slides}
   / [projects.xml](files/student-share-ryan-darnell/projects.xml){:.slides}
   / [projects.xsd](files/student-share-ryan-darnell/projects.xsd){:.slides}
 <br/><br/>
@@ -704,7 +706,8 @@ If you have any questions, please contact me.
 <tr>
 <td markdown="span">04/22/2021 (R)</td>
 <td markdown="span" markdown="1">
-- "Security in the Real World: Compliance" w/ [Reese Pearsall](https://www.linkedin.com/in/reese-pearsall-662084126) (MSU alum, now @ [Hoplite Industries](https://www.hopliteindustries.com/))
+- "Security in the Real World: Compliance" w/ [Reese Pearsall](https://www.linkedin.com/in/reese-pearsall-662084126)
+  (MSU alum, now @ [Hoplite Industries](https://www.hopliteindustries.com/))
 - _NOTE: The slides & recording will be posted sometime after class._{:.text-muted}
 <!-- - [video](){:.video} -->
 <!-- [slides](files/){:.slides} -->
