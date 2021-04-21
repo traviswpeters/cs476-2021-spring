@@ -523,7 +523,7 @@ If you have any questions, please contact me.
 - [Block Ciphers and Modes of Operation](https://montana.techsmithrelay.com/tmHq){:.video} <span class="text-muted">(50:50)</span>
   / [slides](files/cs476-crypto-ske.pdf){:.slides}
   / [Block Cipher Mode of Operation (Wiki)](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation){:.reading}
-  <!-- - [modes of operation - slides](https://www.cs.columbia.edu/~smb/classes/s09/l05.pdf) -->
+  / [more slides](https://www.cs.columbia.edu/~smb/classes/s09/l05.pdf){:.slides}
 - [Padding](https://montana.techsmithrelay.com/bTYJ){:.video} <span class="text-muted">(14:02)</span>
   / [slides](files/cs476-crypto-ske-padding.pdf){:.slides}
   / [Padding (Wiki)](https://en.wikipedia.org/wiki/Padding_(cryptography)){:.reading}
