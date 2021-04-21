@@ -628,6 +628,7 @@ If you have any questions, please contact me.
 / [slides](files/cs476-crypto-pke-rsa-padding.pdf){:.slides}
 - [Digital Signatures](https://montana.techsmithrelay.com/9QyP){:.video} <span class="text-muted">(18:03)</span>
 / [slides](files/cs476-crypto-pke-rsa-digital-signatures.pdf){:.slides}
+- [Asymmetric (Public Key) Cryptography](https://www.usna.edu/Users/cs/wcbrown/courses/si110AY13S/lec/l26/lec.html){:.reading}
 <br/><br/>
 - _Recommended Extras:_
 <!-- - [Programming Using Symmetric Key Crypto APIs (Part I)](https://montana.techsmithrelay.com/PwiE){:.video} <span class="text-muted">(11:42)</span> -->
