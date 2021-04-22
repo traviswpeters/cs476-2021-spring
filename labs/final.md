@@ -165,13 +165,16 @@ and you will demonstrate your understanding of the Set-UID mechanism as well as 
 [audit2.c]: https://gist.github.com/traviswpeters/e9786c9d8ff9cea79a78c76343953e93
 
 > For these tasks, you'll need [audit.c] and [audit2.c].
-<!-- Both programs are "gists" stored on GitHub - click the link to access them. -->
+Both programs are "gists" stored on GitHub - click the link to access them or see below.
+
 
 ##### Task 3.1 **(5 points)**{:.score}
 
-Please read the source code for [audit.c] and, a high-level, describe what this program does and how it works.
+Please read the source code for [audit.c] and, at a high level, describe what this program does and how it works.
 
 > You can assume that the program is compiled into an executable, which is then modified to be a privileged Set-UID program.
+
+<script src="https://gist.github.com/traviswpeters/76be624297fb69a30254042f712d6d0a.js"></script>
 
 ##### Task 3.2 **(5 points)**{:.score}
 
@@ -191,7 +194,7 @@ Your task is to explain, and demonstrate, how the auditor can exploit [audit2.c]
 
 Again, for your demonstration, you'll need to compile [audit2.c] and make the resulting executable a privileged Set-UID program.
 
-
+<script src="https://gist.github.com/traviswpeters/e9786c9d8ff9cea79a78c76343953e93.js"></script>
 
 
 
