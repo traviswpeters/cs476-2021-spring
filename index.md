@@ -709,7 +709,7 @@ If you have any questions, please contact me.
 <td markdown="span" markdown="1">
 - "Security in the Real World: Compliance" w/ [Reese Pearsall](https://www.linkedin.com/in/reese-pearsall-662084126)
   (MSU alum, now @ [Hoplite Industries](https://www.hopliteindustries.com/))
-- _NOTE: The slides & recording will be posted sometime after class._{:.text-muted}
+<!-- - _NOTE: The slides & recording will be posted sometime after class._{:.text-muted} -->
 - [video](https://zoom.us/rec/share/XNMfIieCuxMyrNld5V5YipAC51dRjoKK2ppvp-wPSlczCTUgHzogNW5mpK-IHXpD.LqQXmbgWaWiNXNgD){:.video}
   [slides](files/student-share-reese-pearsall/GuestLecture_Compliance.pdf){:.slides}
   / [STIG Viewer Tool](https://www.stigviewer.com/){:.code}
