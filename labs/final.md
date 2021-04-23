@@ -183,6 +183,8 @@ please demonstrate how it can be exploited to run an arbitrary command with elev
 
 For your demonstration, you'll need to compile [audit.c] and  make the resulting executable a privileged Set-UID program.
 
+> You are permitted to change `/bin/sh` to point to a shell without the setuid != ruid countermeasure.
+
 ##### Task 3.3 **(5 points)**{:.score}
 
 Suppose now that we want to fix the issue from the previous part.
@@ -193,6 +195,8 @@ Please read the manual of the `more` program to find out what the auditor could 
 Your task is to explain, and demonstrate, how the auditor can exploit [audit2.c] to do something they should not be able to do.
 
 Again, for your demonstration, you'll need to compile [audit2.c] and make the resulting executable a privileged Set-UID program.
+
+> You are permitted to change `/bin/sh` to point to a shell without the setuid != ruid countermeasure.
 
 <script src="https://gist.github.com/traviswpeters/e9786c9d8ff9cea79a78c76343953e93.js"></script>
 
